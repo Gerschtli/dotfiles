@@ -1,0 +1,236 @@
+[core]
+    compression = 9
+    editor = nano
+    excludesfile = ~/.gitignore
+    loosecompression = 9
+    preloadindex = true
+
+[add]
+    ignore-errors = true
+
+[alias]
+    ac = commit --all --branch --status
+    ad = add --all --ignore-errors --
+    ba = branch -a --verbose
+    bc = checkout -b
+    bd = branch --verbose --delete
+    bdd = branch --verbose -D
+    br = branch --verbose
+    ca = commit -q --branch --status --amend
+    cf = checkout --quiet --force
+    cl = clone --progress
+    cm = commit --branch --status
+    cn = !"git reflog expire --all && git fsck --unreachable --full && git prune && git gc --aggressive --quiet && git repack -Adq && git prune-packed --quiet"
+    co = checkout
+    cp = cherry-pick
+    dt = difftool
+    fe = fetch --prune --progress
+    fm = !"git fe --all && git fe --all --tags"
+    gr = grep --ignore-case --line-number --break --heading
+    l1 = !"GIT_PAGER=less git log -10 --pretty=short --notes --date=short"
+    la = !"GIT_PAGER=less git log --all --pretty=graph --date=short --abbrev-commit --graph"
+    lg = log --stat
+    lm = log --merges --stat
+    lo = !"GIT_PAGER=less git log --pretty=graph --date=short --abbrev-commit --graph"
+    lp = log -10 --patch-with-stat
+    ls = ls-files -cdkmosu --no-empty-directory --exclude-standard --full-name --
+    ma = merge --abort
+    me = merge --stat --summary
+    mm = !"git me origin/$(git branch-name)"
+    mt = mergetool --no-prompt
+    pa = !"for i in $(git remote); do git push --all --progress ${i}; done"
+    pd = push --delete --progress origin
+    pf = !"git push --force --progress --tags origin $(git branch-name)"
+    pg = !"git ph --force bitbucket $(git branch-name)"
+    pg = !"git ph --force github $(git branch-name)"
+    ph = push --progress --tags
+    pu = !"for i in $(git remote); do git ph ${i} $(git branch-name); done"
+    ra = rebase --abort
+    rc = rebase --continue
+    re = reset
+    rh = reset --hard
+    ri = !"(git sa || true) && git rh --quiet $(git rev-list --reverse HEAD | head -n 1) && git merge --quiet origin/$(git for-each-ref --format='%(refname:short)' $(git symbolic-ref HEAD)); (git so || true)"
+    rp = rebase --skip
+    rs = reset --soft
+    rv = remote --verbose
+    sa = stash save
+    saa = stash save --all
+    sb = !"git br && git sr \"git br\""
+    sc = stash clear
+    se = !"git rebase --interactive $(git rev-list --reverse HEAD | head -n 1)"
+    sf = !"git sm foreach"
+    sl = stash list
+    sm = submodule
+    so = stash pop
+    sr = !"git sf --recursive"
+    ss = !"git st && git sf \"git st -s; echo\" && git sm status --recursive"
+    st = status
+    su = !"git upre && echo && git sr \"git upre\" && git sm -q sync && git ss"
+    sw = stash show
+    tg = !"git tag -s -m $(date '+%F') $(date '+%F')"
+
+    clo = !"git co development && git rebase -n origin/development"
+    cma = !"git co master && git rebase -n origin/master"
+
+    can = !"git co ananke && git rebase -n origin/ananke"
+    cde = !"git co desktop && git rebase -n origin/desktop"
+    ceu = !"git co europa && git rebase -n origin/europa"
+    cga = !"git co ganymed && git rebase -n origin/ganymed"
+    chi = !"git co himalia && git rebase -n origin/himalia"
+    cio = !"git co io && git rebase -n origin/io"
+    cly = !"git co lysithea && git rebase -n origin/lysithea"
+    cpa = !"git co pasiphae && git rebase -n origin/pasiphae"
+    cse = !"git co server && git rebase -n origin/server"
+
+    rde = rebase desktop
+    rma = rebase master
+    rse = rebase server
+
+    rlo = rebase origin/development
+
+    mlo = merge origin/development
+    mma = merge origin/master
+
+    aliases = config --get-regexp "^alias"
+    brup = !"git fm && git branch --column=never --list --no-color | \
+        xargs -I {} bash -c 'i=\"{}\" && git co ${i//\\*/} && git ri >> /dev/null' && git cma"
+
+    add-new = !"git ls-files -zo --no-empty-directory --exclude-standard --full-name | \
+        xargs -I {} -0 bash -c 'git add \"{}\" && git cm -m \"add file {} to repository\"'"
+    update = !"git ls-files -zm --no-empty-directory --exclude-standard --full-name | \
+        xargs -I {} -0 bash -c 'git add \"{}\" && git cm -m \"update file {} in repository on date $(date \"+%F\")\"'"
+    remove = !"git ls-files -zd --no-empty-directory --exclude-standard --full-name | \
+        xargs -I {} -0 bash -c 'git rm \"{}\" && git cm -m \"remove file {} from repository\"'"
+
+    branch-name = !"git for-each-ref --format='%(refname:short)' $(git symbolic-ref HEAD)"
+    total-clean = "!git co -f && git clean -dfx && git clean -dfX"
+    upre = !"git fm && git ri && while ! $(git cn >| /dev/null); do true; done"
+    uppush = !"git update && git pu"
+
+[apply]
+    ignorewhitespace = change
+    whitespace = nowarn
+
+[branch]
+    autosetuprebase = always
+
+[clean]
+    requireForce = true
+
+[color]
+    branch = auto
+    diff = auto
+    grep = auto
+    interactive = auto
+    showbranch = auto
+    status = auto
+
+[color "branch"]
+    current = green normal bold
+    local = yellow normal bold
+    plain = white normal bold
+    remote = red normal bold
+
+[color "status"]
+    added = green normal bold
+    updated = green normal bold
+    changed = yellow normal bold
+    nobranch = red white blink
+    untracked = red normal bold
+
+[commit]
+    status = true
+
+[credential]
+    helper = cache
+
+[diff]
+    mnemonicprefix = true
+    renames = copy
+    tool = vimdiff
+
+[format]
+    thread = deep
+
+[help]
+    autocorrect = 10
+    format = man
+
+[i18n]
+    logOutputEncoding = utf8
+
+[interactive]
+    singlekey = false
+
+[log]
+    date = iso
+    showroot = true
+
+[merge]
+    log = true
+    stat = true
+    tool = subl
+    verbosity = 5
+
+[mergetool]
+    keepBackup = false
+
+[mergetool "subl"]
+    cmd = subl -w $MERGED
+    trustExitCode = false
+
+[pack]
+    compression = 9
+
+[pretty]
+    graph = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset
+
+[push]
+    default = matching
+
+[rebase]
+    autosquash = true
+    stat = true
+
+[receive]
+    autogc = true
+    fsckObjects = true
+    updateserverinfo = true
+
+[status]
+    relativePaths = false
+    showUntrackedFiles = all
+
+[user]
+    email = tobias.happ@gmx.de
+    name = Tobias Happ
+
+[tig]
+    commit-order = topo
+    horizontal-scroll = 95%
+    ignore-case = yes
+    line-graphics = utf-8
+    mouse = yes
+    mouse-scroll = 5
+    refresh-interval = 300
+    refresh-mode = periodic
+    split-view-height = 75%
+    tab-size = 4
+    vertical-split = false
+
+    # View settings
+    main-view = line-number:yes,interval=5 id:no date:short author:abbreviated,width=15 commit-title:yes,graph=yes,refs=yes,overflow=no
+    blame-view = line-number:yes,interval=5 date:short author:abbreviated,width=15 file-name:auto id:yes,color text
+
+    # Pager based views
+    blob-view = line-number:yes,interval=5 text
+    diff-view = line-number:yes,interval=5 text:yes,commit-title-overflow=no
+    log-view = line-number:yes,interval=5 text
+    pager-view = line-number:yes,interval=5 text
+    stage-view = line-number:yes,interval=5 text
+
+[tig "color"]
+    default = default default normal
+    cursor = white blue bold
+    title-blur = blue default
+    title-focus = blue default bold
