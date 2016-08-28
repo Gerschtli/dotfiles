@@ -1,0 +1,11 @@
+{
+    "phpcs_executable_path": "[phpcs]",
+    "phpcs_additional_args": {
+        "--standard": "[phpcs-ruleset.xml]"
+    },
+    "phpmd_run": true,
+    "phpmd_executable_path": "[phpmd]",
+    "phpmd_additional_args": {
+        "codesize,unusedcode,naming,design": ""
+    }
+}

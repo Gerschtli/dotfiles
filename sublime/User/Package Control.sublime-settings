@@ -1,0 +1,38 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Alignment",
+		"ApacheConf.tmLanguage",
+		"Behat",
+		"DocBlockr",
+		"Emmet",
+		"Git",
+		"GitGutter",
+		"GitSyntaxes",
+		"HTML-CSS-JS Prettify",
+		"Indent XML",
+		"INI",
+		"Jade",
+		"JSHint Gutter",
+		"JSON Reindent",
+		"LESS",
+		"Package Control",
+		"PHP Completions Kit",
+		"Phpcs",
+		"PHPUnit",
+		"PHPUnit Completions",
+		"Pretty JSON",
+		"Puppet",
+		"Sass",
+		"SFTP",
+		"SqlBeautifier",
+		"SSH Config",
+		"SublimeCodeIntel",
+		"TrailingSpaces",
+		"Twig"
+	]
+}

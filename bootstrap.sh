@@ -18,7 +18,7 @@ link_file() {
     local src="${1}"
     local dst="${2}"
 
-    if [[ -f "${dst}" && ! -L "${dst}" ]]; then
+    if [[ -e  "${dst}" && ! -L "${dst}" ]]; then
         mv "${dst}" "${dst}.backup"
         info "moved $dst to ${dst}.backup"
     fi

@@ -1,0 +1,21 @@
+<snippet>
+    <content><![CDATA[
+<?php
+
+class ${1:Class}Test extends PHPUnit_Framework_TestCase
+{
+    private \$_object;
+
+    public function setUp()
+    {
+        parent::setUp();
+        \$this->_object = new ${1:Class}();
+    }
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>testclass</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

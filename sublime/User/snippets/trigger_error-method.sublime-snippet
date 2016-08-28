@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+trigger_error('Method deprectated ' . __METHOD__, E_USER_WARNING);
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>terrm</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>
