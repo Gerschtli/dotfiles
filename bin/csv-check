@@ -1,0 +1,21 @@
+#!/bin/bash
+
+file="test.csv"
+
+curl -o "$file" -L "$1"
+
+echo $'\n'
+
+file "$file"
+
+echo $'\n'
+
+head -n5 "$file"
+
+echo $'\n'
+
+tail -n5 "$file"
+
+echo $'\n\n'
+
+exit 0
