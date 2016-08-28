@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SUBL="$(which -a subl | head -n 2 | tail -n 1)"
+
+if [[ -z "${SUBL}" ]]; then
+	echo "ERROR: which -a subl -> "
+	which -a subl
+	exit 1
+else
+	nohup "${SUBL}" "$@" > /dev/null 2>&1 &
+fi
+
+exit 0
