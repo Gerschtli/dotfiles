@@ -1,5 +1,5 @@
 # hyphen-insensitive completion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}'
 
 # add list-colors
 zstyle ':completion:*' list-colors ''
