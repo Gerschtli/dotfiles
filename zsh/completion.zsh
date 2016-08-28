@@ -9,7 +9,7 @@ zstyle ':completion:*:corrections'     format $'%{\e[0;31m%}%d (errors: %e)%{\e[
 zstyle ':completion:*:correct:*'       original true
 
 # activate color-completion
-zstyle ':completion:*'                 list-colors ''
+zstyle ':completion:*:default'         list-colors ${(s.:.)LS_COLORS}
 
 # format on completion
 zstyle ':completion:*:descriptions'    format $'%{\e[0;31m%}completing %B%d%b%{\e[0m%}'
@@ -33,7 +33,7 @@ zstyle ':completion:*:matches'         group 'yes'
 zstyle ':completion:*'                 group-name ''
 
 # if there are more than 5 options allow selecting from a menu
-zstyle ':completion:*'                 menu select=5
+zstyle ':completion:*'                 menu select=3
 
 zstyle ':completion:*:messages'        format '%d'
 zstyle ':completion:*:options'         auto-description '%d'
