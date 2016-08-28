@@ -9,7 +9,7 @@ zstyle ':completion:*:corrections'     format $'%{\e[0;31m%}%d (errors: %e)%{\e[
 zstyle ':completion:*:correct:*'       original true
 
 # activate color-completion
-zstyle ':completion:*:default'         list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*'                 list-colors ''
 
 # format on completion
 zstyle ':completion:*:descriptions'    format $'%{\e[0;31m%}completing %B%d%b%{\e[0m%}'
