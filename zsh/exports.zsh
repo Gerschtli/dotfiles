@@ -15,4 +15,4 @@ export LC_IDENTIFICATION=en_US.UTF-8
 export LC_ALL=
 
 export LANG=en_US.UTF-8
-export LANGUAGE=en_US:en:de_DE:de
+export LANGUAGE=en_US.UTF-8
