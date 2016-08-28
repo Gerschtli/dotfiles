@@ -32,7 +32,11 @@ for src in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name '*.symlink'); do
     link_file "${src}" "${dst}"
 done
 
-if [[ ! -n "$SSH_CLIENT" && ! -n "$SSH_TTY" ]]; then
+if ! $(which is_ssh > /dev/null 2>&1); then
+    source "${DOTFILES_ROOT}/zsh/functions.zsh"
+fi
+
+if ! is_ssh; then
     for symlink in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name 'symlink.sh'); do
         source "${symlink}"
     done
