@@ -1,3 +1,3 @@
 if available git; then
-    alias git="LC_ALL=${LANG} git"
+    alias git="LC_ALL=en_US git"
 fi
