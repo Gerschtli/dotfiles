@@ -1,6 +1,7 @@
 alias zsh-reload="source ${HOME}/.zshrc"
 
 alias ls="ls --color=tty"
+alias la="ls -AFv"
 alias ll="ls -AFhlv"
 
 available xdg-open && alias open="xdg-open"
