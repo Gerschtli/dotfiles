@@ -1,0 +1,7 @@
+*.min.*
+.DS_Store
+.git/
+app/cache/
+app/logs/
+node_modules/
+tests/
