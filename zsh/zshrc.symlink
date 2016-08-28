@@ -13,18 +13,18 @@ typeset -U config_files
 config_files=(${DOTFILES_ROOT}/**/*.zsh)
 
 for file in ${(M)config_files:#*/path.zsh}; do
-    source $file
+    source "${file}"
 done
 
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}; do
-    source $file
+    source "${file}"
 done
 
 autoload -U compinit
 compinit
 
 for file in ${(M)config_files:#*/completion.zsh}; do
-    source $file
+    source "${file}"
 done
 
 unset config_files
