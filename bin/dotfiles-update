@@ -1,0 +1,12 @@
+#!/bin/bash
+
+pushd "$(dirname "$0")/.." 1> /dev/null
+
+git fetch --prune
+git checkout master && git rebase -n origin/master
+
+./bootstrap.sh
+
+popd 1> /dev/null
+
+exit 0
