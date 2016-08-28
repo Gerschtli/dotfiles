@@ -5,26 +5,21 @@ if [[ -e "${HOME}/.localrc" ]]; then
     source "${HOME}/.localrc"
 fi
 
-available() {
-    return $(which "${1}" > /dev/null 2>&1)
+_zshrc_source() {
+    for file in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f $@); do
+        source "${file}"
+    done
 }
 
-typeset -U config_files
-config_files=(${DOTFILES_ROOT}/**/*.zsh)
+_zshrc_source -name 'functions.zsh'
 
-for file in ${(M)config_files:#*/path.zsh}; do
-    source "${file}"
-done
+_zshrc_source -name 'path.zsh'
 
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}; do
-    source "${file}"
-done
+_zshrc_source -name '*.zsh' ! -name 'path.zsh' ! -name 'completion.zsh' ! -name 'functions.zsh'
 
 autoload -U compinit
 compinit
 
-for file in ${(M)config_files:#*/completion.zsh}; do
-    source "${file}"
-done
+_zshrc_source -name 'completion.zsh'
 
-unset config_files
+unset -f _zshrc_source
