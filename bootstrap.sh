@@ -20,11 +20,11 @@ link_file() {
 
     if [[ -e  "${dst}" && ! -L "${dst}" ]]; then
         mv "${dst}" "${dst}.backup"
-        info "moved $dst to ${dst}.backup"
+        info "Moved $dst to ${dst}.backup"
     fi
 
     ln -snf "${src}" "${dst}"
-    success "linked ${src} to ${dst}"
+    success "Linked ${src} to ${dst}"
 }
 
 for src in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name '*.symlink'); do
@@ -35,5 +35,7 @@ done
 for symlink in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name 'symlink.sh'); do
     source "${symlink}"
 done
+
+success "All files linked"
 
 exit 0
