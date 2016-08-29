@@ -1,5 +1,6 @@
 {
   "git_binary": {
-    "default": "/usr/bin/git"
+    "default": "/usr/bin/git",
+    "osx": "/usr/local/bin/git"
   }
 }
