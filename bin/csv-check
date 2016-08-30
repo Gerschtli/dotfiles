@@ -1,21 +1,33 @@
 #!/bin/bash
 
-file="test.csv"
+URL="$1"
+NAME="${2:-test}.csv"
 
-curl -o "$file" -L "$1"
-
-echo $'\n'
-
-file "$file"
+rm "${NAME}"
 
 echo $'\n'
-
-head -n5 "$file"
-
+curl -L "$URL" -o "$NAME"
 echo $'\n'
 
-tail -n5 "$file"
+file "$NAME" | grep "Zip archive data" > /dev/null
 
-echo $'\n\n'
+if [[ "$?" == 0 ]]; then
+    rm -rf csv
+    unzip -d "csv" "$NAME"
+    echo $'\n'
+    NAME=csv/*
+fi;
+
+file $NAME
+echo $'\n'
+
+wc -l $NAME
+echo $'\n'
+
+head -n5 $NAME
+echo $'\n'
+
+tail -n5 $NAME
+echo $'\n'
 
 exit 0
