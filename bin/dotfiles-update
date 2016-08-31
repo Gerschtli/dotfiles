@@ -20,8 +20,10 @@ git stash
 print "git rebase -n origin/master ..."
 git rebase -n origin/master
 
-print "git stash pop ..."
-git stash pop
+if [[ $(git stash list | wc -l) > 0 ]]; then
+    print "git stash pop ..."
+    git stash pop
+fi
 
 print "./bootstrap.sh ..."
 ./bootstrap.sh
