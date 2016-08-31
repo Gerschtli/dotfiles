@@ -107,6 +107,8 @@
     upre = !"git fm && git ri && while ! $(git cn >| /dev/null); do true; done"
     uppush = !"git update && git pu"
 
+    set-upstream = "!git branch --set-upstream-to=origin/$(git branch-name) $(git branch-name)"
+
 [apply]
     ignorewhitespace = change
     whitespace = nowarn
