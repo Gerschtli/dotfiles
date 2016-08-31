@@ -1,10 +1,29 @@
 #!/bin/bash
 
+print() {
+    printf "[\033[00;34mINFO\033[0m] ${1}\n"
+}
+
+set -e
+
 pushd "$(dirname "$0")/.." 1> /dev/null
 
+print "git fetch --prune ..."
 git fetch --prune
-git checkout master && git stash && git rebase -n origin/master && git stash pop
 
+print "git checkout master ..."
+git checkout master
+
+print "git stash ..."
+git stash
+
+print "git rebase -n origin/master ..."
+git rebase -n origin/master
+
+print "git stash pop ..."
+git stash pop
+
+print "./bootstrap.sh ..."
 ./bootstrap.sh
 
 popd 1> /dev/null
