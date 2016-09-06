@@ -12,7 +12,7 @@ is_ssh() {
 }
 
 is_osx() {
-    return $([[ "$(uname -s)" == "Darwin" ]])
+    [[ "$(uname -s)" == "Darwin" ]]
 }
 
 # to open a new tab in the current directory on osx
