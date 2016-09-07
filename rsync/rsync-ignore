@@ -1,7 +1,9 @@
 *.min.*
 .DS_Store
 .git/
+.phpintel/
 app/cache/
 app/logs/
+build/
 node_modules/
 tests/
