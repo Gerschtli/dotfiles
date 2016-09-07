@@ -23,6 +23,7 @@
 		"Package Control",
 		"PHP Completions Kit",
 		"Phpcs",
+		"PHPIntel",
 		"PHPUnit",
 		"PHPUnit Completions",
 		"Pretty JSON",
@@ -31,7 +32,6 @@
 		"SFTP",
 		"SqlBeautifier",
 		"SSH Config",
-		"SublimeCodeIntel",
 		"TrailingSpaces",
 		"Twig"
 	]
