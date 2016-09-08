@@ -1,3 +1,5 @@
-export PATH="${DOTFILES_ROOT}/bin:${PATH}"
+if [[ -z "${PATH_LOADED}" ]]; then
+    export PATH="${DOTFILES_ROOT}/bin:${PATH}"
+fi
 
-[[ -d "${HOME}/bin" ]] && export PATH="${HOME}/bin:${PATH}"
+PATH_LOADED=1
