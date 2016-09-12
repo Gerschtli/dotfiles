@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SUBL="$(which -a subl | tail -n 1)"
+SUBL=$(which -a subl | grep -v ".dotfiles/bin" | head -n 1)
 
 if [[ -z "${SUBL}" ]]; then
 	echo "ERROR: which -a subl -> "
