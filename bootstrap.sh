@@ -4,7 +4,7 @@ if [[ -r "${HOME}/.localrc" ]]; then
     source "${HOME}/.localrc"
 fi
 
-DOTFILES_ROOT="$( cd "$(dirname "$0")" ; pwd -P )"
+DOTFILES_ROOT="$( cd "$(dirname "$0")" && pwd -P )"
 FULL_LINK="${FULL_LINK:-1}"
 
 print() {
@@ -37,7 +37,7 @@ for src in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name '*.symlink'); do
     link_file "${src}" "${dst}"
 done
 
-if [[ ! -z "${FULL_LINK}" ]]; then
+if [[ "${FULL_LINK}" == "1" ]]; then
     source "${DOTFILES_ROOT}/zsh/functions.zsh"
 
     for symlink in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name 'symlink.sh'); do
