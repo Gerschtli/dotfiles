@@ -1,6 +1,7 @@
 #!/bin/bash
 
-SUBL=$(which -a subl | grep -v ".dotfiles/bin" | head -n 1)
+DIR=$( cd "$(dirname "$0")" && pwd -P )
+SUBL=$(which -a subl | grep -v "${DIR}" | head -n 1)
 
 if [[ -z "${SUBL}" ]]; then
 	echo "ERROR: which -a subl -> "
