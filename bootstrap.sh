@@ -1,12 +1,11 @@
 #!/bin/bash
 
-DOTFILES_ROOT="$( cd "$(dirname "$0")" ; pwd -P )"
-
-
-if ! $(which is_ssh > /dev/null 2>&1); then
-    source "${DOTFILES_ROOT}/zsh/functions.zsh"
+if [[ -r "${HOME}/.localrc" ]]; then
+    source "${HOME}/.localrc"
 fi
 
+DOTFILES_ROOT="$( cd "$(dirname "$0")" ; pwd -P )"
+FULL_LINK="${FULL_LINK:-1}"
 
 print() {
     printf "  [\033[00;${2}m${3}\033[0m] ${1}\n"
@@ -38,7 +37,9 @@ for src in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name '*.symlink'); do
     link_file "${src}" "${dst}"
 done
 
-if ! is_ssh; then
+if [[ ! -z "${FULL_LINK}" ]]; then
+    source "${DOTFILES_ROOT}/zsh/functions.zsh"
+
     for symlink in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name 'symlink.sh'); do
         source "${symlink}"
     done

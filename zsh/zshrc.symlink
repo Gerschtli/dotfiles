@@ -1,9 +1,12 @@
-DOTFILES_ROOT="${HOME}/.dotfiles"
-PROJECTS="${HOME}/projects"
+#!/bin/zsh
+# NOTE: shebang only for proper syntax highlithing
 
-if [[ -e "${HOME}/.localrc" ]]; then
+if [[ -r "${HOME}/.localrc" ]]; then
     source "${HOME}/.localrc"
 fi
+
+DOTFILES_ROOT="${DOTFILES_ROOT:-${HOME}/.dotfiles}"
+PROJECTS="${PROJECTS:-${HOME}/projects}"
 
 _zshrc_source() {
     for file in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f $@); do
@@ -17,8 +20,7 @@ _zshrc_source -name 'path.zsh'
 
 _zshrc_source -name '*.zsh' ! -name 'path.zsh' ! -name 'completion.zsh' ! -name 'functions.zsh'
 
-autoload -U compinit
-compinit
+autoload -U compinit && compinit
 
 _zshrc_source -name 'completion.zsh'
 
