@@ -2,6 +2,15 @@ available() {
     which "${1}" > /dev/null 2>&1
 }
 
+zreload() {
+    source "${HOME}/.profile"
+    source "${HOME}/.zshrc"
+}
+
+dotupdate() {
+    dotfiles-update "$1" && zreload
+}
+
 is_osx() {
     [[ "$(uname -s)" == "Darwin" ]]
 }

@@ -1,6 +1,3 @@
-alias dotupdate="dotfiles-update && zreload"
-alias zreload="source ${HOME}/.zshrc"
-
 if is_osx; then
     alias ls="ls -G"
 else

@@ -8,21 +8,23 @@ set -e
 
 pushd "$(dirname "$0")/.." 1> /dev/null
 
-print "git fetch --prune ..."
-git fetch --prune
+if [[ -z "${1}" ]]; then
+    print "git fetch --prune ..."
+    git fetch --prune
 
-print "git checkout master ..."
-git checkout master
+    print "git checkout master ..."
+    git checkout master
 
-print "git stash ..."
-git stash
+    print "git stash ..."
+    git stash
 
-print "git rebase -n origin/master ..."
-git rebase -n origin/master
+    print "git rebase -n origin/master ..."
+    git rebase -n origin/master
 
-if [[ $(git stash list | wc -l) -gt 0 ]]; then
-    print "git stash pop ..."
-    git stash pop
+    if [[ $(git stash list | wc -l) -gt 0 ]]; then
+        print "git stash pop ..."
+        git stash pop
+    fi
 fi
 
 print "./bootstrap.sh ..."
