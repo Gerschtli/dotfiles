@@ -1,0 +1,8 @@
+## folder of dotfiles installation
+# DOTFILES_ROOT="${HOME}/.dotfiles"
+
+## folder of projects
+# PROJECTS="${HOME}/projects"
+
+## link all files and folders (disable for servers)
+# FULL_LINK=1
