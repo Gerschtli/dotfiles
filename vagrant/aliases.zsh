@@ -1,5 +1,6 @@
 if available vagrant; then
-    alias vcon="vagrant ssh-config --host vagrant >| .vagrant/ssh_config"
+    alias cdv="cd vagrant"
+
     alias vdes="vagrant destroy"
     alias vhalt="vagrant halt"
     alias vpro="vagrant provision"
