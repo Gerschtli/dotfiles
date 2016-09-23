@@ -75,12 +75,12 @@ zstyle ':completion:*:man:*'      menu yes select
 
 # Search path for sudo completion
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin \
-                                           /usr/local/bin  \
-                                           /usr/sbin       \
-                                           /usr/bin        \
-                                           /sbin           \
-                                           /bin            \
-                                           /usr/X11R6/bin
+    /usr/local/bin  \
+    /usr/sbin       \
+    /usr/bin        \
+    /sbin           \
+    /bin            \
+    /usr/X11R6/bin
 
 # provide .. as a completion
 zstyle ':completion:*' special-dirs ..
@@ -104,7 +104,6 @@ zstyle ':completion:*:hosts' hosts $hosts
 
 # use generic completion system for programs not yet defined; (_gnu_generic works
 # with commands that provide a --help option with "standard" gnu-like output.)
-for compcom in cp deborphan df feh fetchipac gpasswd head hnb ipacsum mv \
-               pal stow uname ; do
+for compcom in cp deborphan df feh fetchipac gpasswd head hnb ipacsum mv pal stow uname ; do
     [[ -z ${_comps[$compcom]} ]] && compdef _gnu_generic ${compcom}
 done; unset compcom
