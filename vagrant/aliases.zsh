@@ -8,4 +8,6 @@ if available vagrant; then
     alias vssh="vagrant ssh"
     alias vst="vagrant status"
     alias vup="vagrant up"
+
+    alias cdvpro="cdv && vpro && cd -"
 fi
