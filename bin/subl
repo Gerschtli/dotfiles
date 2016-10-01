@@ -3,6 +3,12 @@
 DIR=$( cd "$(dirname "$0")" && pwd -P )
 SUBL=$(which -a subl | grep -v "${DIR}" | head -n 1)
 
+if [[ "$@" == "--get-executable" ]]; then
+    echo "${SUBL}"
+    [[ ! -z "${SUBL}" ]]
+    exit "$?"
+fi
+
 if [[ -z "${SUBL}" ]]; then
 	echo "ERROR: which -a subl -> "
 	which -a subl
