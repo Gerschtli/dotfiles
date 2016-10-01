@@ -72,21 +72,8 @@
     clo = !"git co development && git rebase -n origin/development"
     cma = !"git co master && git rebase -n origin/master"
 
-    can = !"git co ananke && git rebase -n origin/ananke"
-    cde = !"git co desktop && git rebase -n origin/desktop"
-    ceu = !"git co europa && git rebase -n origin/europa"
-    cga = !"git co ganymed && git rebase -n origin/ganymed"
-    chi = !"git co himalia && git rebase -n origin/himalia"
-    cio = !"git co io && git rebase -n origin/io"
-    cly = !"git co lysithea && git rebase -n origin/lysithea"
-    cpa = !"git co pasiphae && git rebase -n origin/pasiphae"
-    cse = !"git co server && git rebase -n origin/server"
-
-    rde = rebase desktop
-    rma = rebase master
-    rse = rebase server
-
     rlo = rebase origin/development
+    rma = rebase master
 
     mlo = merge origin/development
     mma = merge origin/master
@@ -94,13 +81,6 @@
     aliases = config --get-regexp "^alias"
     brup = !"git fm && git branch --column=never --list --no-color | \
         xargs -I {} bash -c 'i=\"{}\" && git co ${i//\\*/} && git ri >> /dev/null' && git cma"
-
-    add-new = !"git ls-files -zo --no-empty-directory --exclude-standard --full-name | \
-        xargs -I {} -0 bash -c 'git add \"{}\" && git cm -m \"add file {} to repository\"'"
-    update = !"git ls-files -zm --no-empty-directory --exclude-standard --full-name | \
-        xargs -I {} -0 bash -c 'git add \"{}\" && git cm -m \"update file {} in repository on date $(date \"+%F\")\"'"
-    remove = !"git ls-files -zd --no-empty-directory --exclude-standard --full-name | \
-        xargs -I {} -0 bash -c 'git rm \"{}\" && git cm -m \"remove file {} from repository\"'"
 
     branch-name = !"git for-each-ref --format='%(refname:short)' $(git symbolic-ref HEAD)"
     total-clean = "!git co -f && git clean -dfx && git clean -dfX"
@@ -178,7 +158,7 @@
     keepBackup = false
 
 [mergetool "subl"]
-    cmd = subl -w $MERGED
+    cmd = $(subl --get-executable) -w $MERGED
     trustExitCode = false
 
 [pack]
