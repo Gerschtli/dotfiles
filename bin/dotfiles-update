@@ -15,13 +15,16 @@ if [[ -z "${1}" ]]; then
     print "git checkout master ..."
     git checkout master
 
-    print "git stash ..."
-    git stash
+    if [[ $(git status --porcelain) != "" ]]; then
+        STASH=true
+        print "git stash ..."
+        git stash
+    fi
 
     print "git rebase -n origin/master ..."
     git rebase -n origin/master
 
-    if [[ $(git stash list | wc -l) -gt 0 ]]; then
+    if [[ ! -z "${STASH}" ]]; then
         print "git stash pop ..."
         git stash pop
     fi
