@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# For lazy copying of shell commmands..
+
+"$@"
