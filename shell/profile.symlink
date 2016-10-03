@@ -1,1 +1,3 @@
 umask 022
+
+mesg n
