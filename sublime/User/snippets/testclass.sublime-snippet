@@ -4,6 +4,9 @@
 
 class ${1:Class}Test extends PHPUnit_Framework_TestCase
 {
+    /**
+     * @var ${1:Class}
+     */
     private \$_object;
 
     public function setUp()
