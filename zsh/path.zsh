@@ -1,8 +1,11 @@
-if [[ -z "${PATH_LOADED}" ]]; then
-    if [[ -d "${HOME}/bin" ]]; then
-        export PATH="${HOME}/bin:${PATH}"
-    fi
+HOME_BIN="${HOME}/bin"
+DOTFILES_BIN="${DOTFILES_ROOT}/bin"
+
+if [[ -d "${HOME}/bin" && "${PATH}" != *:"${HOME_BIN}":* ]]; then
+    export PATH="${HOME}/bin:${PATH}"
+fi
+if [[ "${PATH}" != *:"${DOTFILES_BIN}":* ]]; then
     export PATH="${DOTFILES_ROOT}/bin:${PATH}"
 fi
 
-PATH_LOADED=1
+unset HOME_BIN DOTFILES_BIN
