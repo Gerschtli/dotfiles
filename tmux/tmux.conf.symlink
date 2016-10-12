@@ -1,19 +1,67 @@
 set-option -g prefix C-a
 
+# start windows and panes at 1, not 0
+set-option -g base-index 1
+set-window-option -g pane-base-index 1
+
+set-option -g default-terminal "screen-256color"
+
+# Set the height of the other panes (not the main pane) in the main-horizontal
+# layout. If this option is set to 0 (the default), it will have no effect. If
+# both the main-pane-height and other-pane-height options are set, the main pane
+# will grow taller to make the other panes the specified height, but will never
+# shrink to do so.
+set-window-option -g other-pane-height 10
+set-window-option -g other-pane-width 30
+
+# Bind key to command. By default (without -t) the primary key bindings are
+# modified (those normally activated with the prefix key); in this case, if -n
+# is specified, it is not necessary to use the prefix key, command is bound to
+# key alone. The -r flag indicates this key may repeat, see the repeat-time
+# option.
+# If -t is present, key is bound in key-table: the binding for command mode with
+# -c or for normal mode without. To view the default bindings and possible
+# commands, see the list-keys command
 bind-key a send-prefix
+
 bind-key Escape copy-mode
 
 bind-key C-a last-window
+bind-key A   last-pane
 bind-key C-l refresh
 
+bind-key \; select-layout main-horizontal
+bind-key _ select-layout even-vertical
+
+bind-key o select-pane -t :.+
+bind-key O select-pane -t :.-
+bind-key / display-panes \; select-pane -t :.
+
+bind-key 0   select-window -t :10
+bind-key F1  select-window -t :11
+bind-key F2  select-window -t :12
+bind-key F3  select-window -t :13
+bind-key F4  select-window -t :14
+bind-key F5  select-window -t :15
+bind-key F6  select-window -t :16
+bind-key F7  select-window -t :17
+bind-key F8  select-window -t :18
+bind-key F9  select-window -t :19
+bind-key F10 select-window -t :20
+bind-key F11 select-window -t :21
+bind-key F12 select-window -t :22
+
+bind-key : command-prompt
+
+bind -r h select-pane -L
+bind -r j select-pane -D
+bind -r k select-pane -U
+bind -r l select-pane -R
+
 # open new pane in same directory
-bind '"' split-window -c "#{pane_current_path}"
-bind % split-window -h -c "#{pane_current_path}"
-bind c new-window -c "#{pane_current_path}"
+bind-key '"' split-window -c "#{pane_current_path}"
+bind-key %   split-window -h -c "#{pane_current_path}"
+bind-key c   new-window -c "#{pane_current_path}"
 
 # fix osx problem, e.g. can not use subl command because of wrong context
 if-shell 'test "$(uname -s)" = Darwin' 'set-option -g default-command "exec reattach-to-user-namespace -l zsh"'
-
-# start windows and panes at 1, not 0
-set -g base-index 1
-setw -g pane-base-index 1
