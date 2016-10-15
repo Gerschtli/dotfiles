@@ -58,10 +58,5 @@ bind -r j select-pane -D
 bind -r k select-pane -U
 bind -r l select-pane -R
 
-# open new pane in same directory
-bind-key '"' split-window -c "#{pane_current_path}"
-bind-key %   split-window -h -c "#{pane_current_path}"
-bind-key c   new-window -c "#{pane_current_path}"
-
 # fix osx problem, e.g. can not use subl command because of wrong context
 if-shell 'test "$(uname -s)" = Darwin' 'set-option -g default-command "exec reattach-to-user-namespace -l zsh"'
