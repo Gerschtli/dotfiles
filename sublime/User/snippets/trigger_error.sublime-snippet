@@ -2,8 +2,6 @@
     <content><![CDATA[
 trigger_error('Class deprectated ' . __CLASS__, E_USER_WARNING);
 ]]></content>
-    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>terr</tabTrigger>
-    <!-- Optional: Set a scope to limit where the snippet will trigger -->
-    <!-- <scope>source.python</scope> -->
+    <scope>text.plain, source.php</scope>
 </snippet>
