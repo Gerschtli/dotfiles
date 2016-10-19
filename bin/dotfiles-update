@@ -4,11 +4,7 @@ print() {
     printf "[\033[00;34mINFO\033[0m] ${1}\n"
 }
 
-set -e
-
-pushd "$(dirname "$0")/.." 1> /dev/null
-
-if [[ -z "${1}" ]]; then
+pull() {
     print "git fetch --prune ..."
     git fetch --prune
 
@@ -16,7 +12,7 @@ if [[ -z "${1}" ]]; then
     git checkout master
 
     if [[ $(git status --porcelain) != "" ]]; then
-        STASH=true
+        local stash=true
         print "git stash ..."
         git stash
     fi
@@ -24,9 +20,25 @@ if [[ -z "${1}" ]]; then
     print "git rebase -n origin/master ..."
     git rebase -n origin/master
 
-    if [[ ! -z "${STASH}" ]]; then
+    if [[ ! -z "${stash}" ]]; then
         print "git stash pop ..."
         git stash pop
+    fi
+}
+
+set -e
+
+pushd "$(dirname "$0")/.." 1> /dev/null
+
+if [[ -z "${1}" ]]; then
+    print "========= DOTFILES ========="
+    pull
+
+    if [[ -d "ssh" ]]; then
+        pushd "ssh" 1> /dev/null
+        print "============ SSH ==========="
+        pull
+        popd 1> /dev/null
     fi
 fi
 
