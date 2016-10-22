@@ -27,6 +27,12 @@ link_file() {
     local src="${1}"
     local dst="${2}"
 
+    if [[ $(readlink -f "${dst}") == "${src}" ]]; then
+        return
+    fi
+
+    UPDATE=true
+
     if [[ -e  "${dst}" && ! -L "${dst}" ]]; then
         mv "${dst}" "${dst}.backup"
         info "Moved $dst to ${dst}.backup"
@@ -53,10 +59,13 @@ if [[ "${FULL_LINK}" == "1" ]]; then
     done
 fi
 
-if [[ -z "${FAIL}" ]]; then
+if [[ -z "${UPDATE}" ]]; then
+    success "-> No links updated"
+elif [[ -z "${FAIL}" ]]; then
     success "-> All files linked"
 else
     error "-> An error occured during linking process. Please consider the log above."
+    exit 1
 fi
 
 exit 0
