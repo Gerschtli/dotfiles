@@ -4,27 +4,33 @@ print() {
     printf "[\033[00;34mINFO\033[0m] ${1}\n"
 }
 
+indent() {
+    while IFS= read -r line; do
+        printf "   ==> %s\n" "${line}"
+    done < /dev/stdin
+}
+
 pull() {
     print "git fetch --prune ..."
-    git fetch --prune
+    git fetch --prune 2>&1 | indent
 
     if [[ $(git rev-parse --abbrev-ref HEAD) != "master" ]]; then
         print "git checkout master ..."
-        git checkout master
+        git checkout master 2>&1 | indent
     fi
 
     if [[ $(git diff --name-only) != "" ]]; then
         local stash=true
         print "git stash ..."
-        git stash
+        git stash 2>&1 | indent
     fi
 
     print "git rebase -n origin/master ..."
-    git rebase -n origin/master
+    git rebase -n origin/master 2>&1 | indent
 
     if [[ ! -z "${stash}" ]]; then
         print "git stash pop ..."
-        git stash pop
+        git stash pop 2>&1 | indent
     fi
 }
 
@@ -38,14 +44,16 @@ if [[ -z "${1}" ]]; then
 
     if [[ -d "ssh" ]]; then
         pushd "ssh" 1> /dev/null
+        echo
         print "============ SSH ==========="
         pull
         popd 1> /dev/null
     fi
 fi
 
+echo
 print "========= BOOTSTRAP ========="
-./bootstrap.sh
+./bootstrap.sh 2>&1 | indent
 
 popd 1> /dev/null
 
