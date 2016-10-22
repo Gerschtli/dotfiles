@@ -8,7 +8,7 @@ DOTFILES_ROOT="$( cd "$(dirname "$0")" && pwd -P )"
 FULL_LINK="${FULL_LINK:-1}"
 
 print() {
-    printf "  [\033[00;${2}m${3}\033[0m] ${1}\n"
+    echo -e "[\033[00;${2}m${3}\033[0m] ${1}"
 }
 
 info() {
@@ -17,6 +17,10 @@ info() {
 
 success() {
     print "${1}" "32" " OK "
+}
+
+error() {
+    print "${1}" "31" "FAIL"
 }
 
 link_file() {
@@ -28,8 +32,12 @@ link_file() {
         info "Moved $dst to ${dst}.backup"
     fi
 
-    ln -snf "${src}" "${dst}"
-    success "Linked ${src} to ${dst}"
+    if $(ln -snf "${src}" "${dst}"); then
+        success "Linked ${src} to ${dst}"
+    else
+        error "Failed linking ${src} to ${dst}"
+        FAIL=true
+    fi
 }
 
 for src in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name '*.symlink'); do
@@ -45,6 +53,10 @@ if [[ "${FULL_LINK}" == "1" ]]; then
     done
 fi
 
-success "All files linked"
+if [[ -z "${FAIL}" ]]; then
+    success "-> All files linked"
+else
+    error "-> An error occured during linking process. Please consider the log above."
+fi
 
 exit 0

@@ -44,7 +44,7 @@ if [[ -z "${1}" ]]; then
     fi
 fi
 
-print "./bootstrap.sh ..."
+print "========= BOOTSTRAP ========="
 ./bootstrap.sh
 
 popd 1> /dev/null
