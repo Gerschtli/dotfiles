@@ -4,5 +4,5 @@
 ## folder of projects
 # PROJECTS="${HOME}/projects"
 
-## link all files and folders (disable for servers)
-# FULL_LINK=1
+## explicitly disable modules
+# DISABLE_MODULES=()

@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/bash -e
 
-print() {
-    printf "[\033[00;34mINFO\033[0m] ${1}\n"
-}
+DOTFILES_ROOT="$( cd "$(dirname "$0")/.." && pwd -P )"
+
+source "${DOTFILES_ROOT}/util/script-functions.sh"
 
 indent() {
     while IFS= read -r line; do
@@ -11,48 +11,46 @@ indent() {
 }
 
 pull() {
-    print "git fetch --prune ..."
+    info "git fetch --prune ..."
     indent git fetch --prune
 
     if [[ $(git rev-parse --abbrev-ref HEAD) != "master" ]]; then
-        print "git checkout master ..."
+        info "git checkout master ..."
         indent git checkout master
     fi
 
     if [[ $(git diff --name-only) != "" ]]; then
         local stash=true
-        print "git stash ..."
+        info "git stash ..."
         indent git stash
     fi
 
-    print "git rebase -n origin/master ..."
+    info "git rebase -n origin/master ..."
     indent git rebase -n origin/master
 
     if [[ ! -z "${stash}" ]]; then
-        print "git stash pop ..."
+        info "git stash pop ..."
         indent git -c color.status=always stash pop
     fi
 }
 
-set -e
-
-pushd "$(dirname "$0")/.." 1> /dev/null
+pushd "${DOTFILES_ROOT}" 1> /dev/null
 
 if [[ -z "${1}" ]]; then
-    print "========= DOTFILES ========="
+    info "========= DOTFILES ========="
     pull
 
     if [[ -d "ssh" ]]; then
         pushd "ssh" 1> /dev/null
         echo
-        print "============ SSH ==========="
+        info "============ SSH ==========="
         pull
         popd 1> /dev/null
     fi
 fi
 
 echo
-print "========= BOOTSTRAP ========"
+info "========= BOOTSTRAP ========"
 indent ./bootstrap.sh
 
 popd 1> /dev/null

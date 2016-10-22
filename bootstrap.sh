@@ -1,27 +1,13 @@
-#!/bin/bash
+#!/bin/bash -e
 
 if [[ -r "${HOME}/.localrc" ]]; then
     source "${HOME}/.localrc"
 fi
 
-DOTFILES_ROOT="$( cd "$(dirname "$0")" && pwd -P )"
-FULL_LINK="${FULL_LINK:-1}"
+DOTFILES_ROOT="${DOTFILES_ROOT:-$( cd "$(dirname "$0")" && pwd -P )}"
+DISABLE_MODULES="${DISABLE_MODULES:-()}"
 
-print() {
-    echo -e "[\033[00;${2}m${3}\033[0m] ${1}"
-}
-
-info() {
-    print "${1}" "34" "INFO"
-}
-
-success() {
-    print "${1}" "32" " OK "
-}
-
-error() {
-    print "${1}" "31" "FAIL"
-}
+source "${DOTFILES_ROOT}/util/script-functions.sh"
 
 link_file() {
     local src="${1}"
@@ -47,17 +33,17 @@ link_file() {
 }
 
 for src in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name '*.symlink'); do
-    dst="${HOME}/.$(basename "${src%.*}")"
-    link_file "${src}" "${dst}"
+    if use_module "${src}"; then
+        dst="${HOME}/.$(basename "${src%.*}")"
+        link_file "${src}" "${dst}"
+    fi
 done
 
-if [[ "${FULL_LINK}" == "1" ]]; then
-    source "${DOTFILES_ROOT}/zsh/functions.zsh"
-
-    for symlink in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name 'symlink.sh'); do
+for symlink in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name 'symlink.sh'); do
+    if use_module "${symlink}"; then
         source "${symlink}"
-    done
-fi
+    fi
+done
 
 if [[ -z "${UPDATE}" ]]; then
     success "-> No links updated"

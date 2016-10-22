@@ -7,22 +7,27 @@ fi
 
 DOTFILES_ROOT="${DOTFILES_ROOT:-${HOME}/.dotfiles}"
 PROJECTS="${PROJECTS:-${HOME}/projects}"
+DISABLE_MODULES="${DISABLE_MODULES:-()}"
 
-_zshrc_source() {
+source "${DOTFILES_ROOT}/util/script-functions.sh"
+
+zshrc_source() {
     for file in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f $@); do
-        source "${file}"
+        if use_module "${file}"; then
+            source "${file}"
+        fi
     done
 }
 
-_zshrc_source -name 'functions.zsh'
+zshrc_source -name 'path.zsh'
 
-_zshrc_source -name 'path.zsh'
-
-_zshrc_source -name '*.zsh' ! -name 'path.zsh' ! -name 'completion.zsh' ! -name 'functions.zsh'
+zshrc_source -name '*.zsh' ! -name 'path.zsh' ! -name 'completion.zsh'
 
 autoload -U compinit && compinit
 
-_zshrc_source -name 'completion.zsh'
+zshrc_source -name 'completion.zsh'
 
-unset -f _zshrc_source
+source "${DOTFILES_ROOT}/util/unset-script-functions.sh"
+
+unset -f zshrc_source
 unset DOTFILES_ROOT PROJECTS
