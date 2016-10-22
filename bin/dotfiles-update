@@ -30,7 +30,7 @@ pull() {
 
     if [[ ! -z "${stash}" ]]; then
         print "git stash pop ..."
-        git stash pop 2>&1 | indent
+        git -c color.status=always stash pop 2>&1 | indent
     fi
 }
 
