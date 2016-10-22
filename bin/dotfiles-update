@@ -52,7 +52,7 @@ if [[ -z "${1}" ]]; then
 fi
 
 echo
-print "========= BOOTSTRAP ========="
+print "========= BOOTSTRAP ========"
 ./bootstrap.sh 2>&1 | indent
 
 popd 1> /dev/null
