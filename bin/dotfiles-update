@@ -7,30 +7,30 @@ print() {
 indent() {
     while IFS= read -r line; do
         printf "   ==> %s\n" "${line}"
-    done < /dev/stdin
+    done < <($@ 2>&1)
 }
 
 pull() {
     print "git fetch --prune ..."
-    git fetch --prune 2>&1 | indent
+    indent git fetch --prune
 
     if [[ $(git rev-parse --abbrev-ref HEAD) != "master" ]]; then
         print "git checkout master ..."
-        git checkout master 2>&1 | indent
+        indent git checkout master
     fi
 
     if [[ $(git diff --name-only) != "" ]]; then
         local stash=true
         print "git stash ..."
-        git stash 2>&1 | indent
+        indent git stash
     fi
 
     print "git rebase -n origin/master ..."
-    git rebase -n origin/master 2>&1 | indent
+    indent git rebase -n origin/master
 
     if [[ ! -z "${stash}" ]]; then
         print "git stash pop ..."
-        git -c color.status=always stash pop 2>&1 | indent
+        indent git -c color.status=always stash pop
     fi
 }
 
@@ -53,7 +53,7 @@ fi
 
 echo
 print "========= BOOTSTRAP ========"
-./bootstrap.sh 2>&1 | indent
+indent ./bootstrap.sh
 
 popd 1> /dev/null
 
