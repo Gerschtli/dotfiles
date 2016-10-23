@@ -39,6 +39,7 @@
 		"SSH Config",
 		"Tmux",
 		"TrailingSpaces",
-		"Twig"
+		"Twig",
+		"VimL"
 	]
 }
