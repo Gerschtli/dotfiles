@@ -1,6 +1,3 @@
-#!/bin/zsh
-# NOTE: shebang only for proper syntax highlithing
-
 source "${HOME}/.dotfiles-variables"
 source "${DOTFILES_ROOT}/util/script-functions.sh"
 
