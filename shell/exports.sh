@@ -1,5 +1,3 @@
-setopt histignorealldups sharehistory
-
 export TZ="Europe/Berlin"
 
 export LC_CTYPE=en_US.UTF-8
@@ -18,7 +16,3 @@ export LC_ALL=
 
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
-
-HISTFILE="${HOME}/.zsh_history"
-HISTSIZE=10000
-SAVEHIST=10000

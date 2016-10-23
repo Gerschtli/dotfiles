@@ -1,4 +1,4 @@
-source "${DOTFILES_ROOT}/zsh/functions.zsh"
+source "${DOTFILES_ROOT}/shell/functions.sh"
 
 print() {
     echo -e "[\033[00;${2}m${3}\033[0m] ${1}"
