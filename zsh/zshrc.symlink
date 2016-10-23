@@ -1,13 +1,13 @@
 source "${HOME}/.dotfiles-variables"
 source "${DOTFILES_ROOT}/util/script-functions"
 
-source_files \( -name '*.sh' -o -name '*.zsh' \) \
-    ! -name 'path.sh' ! -name 'path.zsh' \
-    ! -name 'completion.sh' ! -name 'completion.zsh'
+source_files \( -name "*.sh" -o -name "*.zsh" \) \
+    ! -name "path.sh" ! -name "path.zsh" \
+    ! -name "completion.sh" ! -name "completion.zsh"
 
 autoload -U compinit && compinit
 
-source_files \( -name 'completion.sh' -o -name 'completion.zsh' \)
+source_files \( -name "completion.sh" -o -name "completion.zsh" \)
 
 source "${DOTFILES_ROOT}/util/unset-script-functions"
 source "${DOTFILES_ROOT}/util/unset-variables"
