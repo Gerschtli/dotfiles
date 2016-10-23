@@ -1,14 +1,14 @@
 #!/bin/zsh
 # NOTE: shebang only for proper syntax highlithing
 
-if [[ -r "${HOME}/.localrc" ]]; then
-    source "${HOME}/.localrc"
+if $(which greadlink > /dev/null 2>&1); then
+    COMMAND="greadlink"
+else
+    COMMAND="readlink"
 fi
+FILE="$(${COMMAND} -f "${ZDOTDIR:-$HOME}/.zshrc")"
 
-DOTFILES_ROOT="${DOTFILES_ROOT:-${HOME}/.dotfiles}"
-PROJECTS="${PROJECTS:-${HOME}/projects}"
-DISABLE_MODULES="${DISABLE_MODULES:-()}"
-
+source "$(dirname "${FILE}")/../load-variables.sh"
 source "${DOTFILES_ROOT}/util/script-functions.sh"
 
 zshrc_source() {
@@ -30,4 +30,4 @@ zshrc_source -name 'completion.zsh'
 source "${DOTFILES_ROOT}/util/unset-script-functions.sh"
 
 unset -f zshrc_source
-unset DOTFILES_ROOT PROJECTS
+unset CACHE_FILE DISABLE_MODULES DOTFILES_ROOT PROJECTS COMMAND FILE

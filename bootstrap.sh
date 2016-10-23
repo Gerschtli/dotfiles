@@ -1,12 +1,6 @@
 #!/bin/bash -e
 
-if [[ -r "${HOME}/.localrc" ]]; then
-    source "${HOME}/.localrc"
-fi
-
-DOTFILES_ROOT="${DOTFILES_ROOT:-$( cd "$(dirname "$0")" && pwd -P )}"
-DISABLE_MODULES="${DISABLE_MODULES:-()}"
-
+source "$(dirname "$0")/load-variables.sh"
 source "${DOTFILES_ROOT}/util/script-functions.sh"
 
 declare -A links

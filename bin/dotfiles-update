@@ -1,7 +1,6 @@
 #!/bin/bash -e
 
-DOTFILES_ROOT="$( cd "$(dirname "$0")/.." && pwd -P )"
-
+source "$(dirname "$0")/../load-variables.sh"
 source "${DOTFILES_ROOT}/util/script-functions.sh"
 
 indent() {
