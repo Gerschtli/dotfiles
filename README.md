@@ -34,7 +34,7 @@ $ git submodule update --init
 $ ./bootstrap.sh
 ```
 
-### Change shell to zsh
+### Change shell to zsh (optional)
 
 ```bash
 $ chsh -s /bin/zsh
@@ -45,5 +45,5 @@ $ chsh -s /bin/zsh
 ```zsh
 $ dotupdate
 $ # or
-$ dotfiles-update && zreload
+$ dotfiles-update && shell-reload
 ```
