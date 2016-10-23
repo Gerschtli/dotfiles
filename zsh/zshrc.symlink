@@ -8,5 +8,4 @@ autoload -U compinit && compinit
 source_files -name 'completion.zsh'
 
 source "${DOTFILES_ROOT}/util/unset-script-functions.sh"
-
-unset CACHE_FILE DISABLE_MODULES DOTFILES_ROOT PROJECTS COMMAND FILE
+source "${DOTFILES_ROOT}/util/unset-variables.sh"
