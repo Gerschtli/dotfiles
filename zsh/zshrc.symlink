@@ -4,23 +4,12 @@
 source "${HOME}/.dotfiles-variables"
 source "${DOTFILES_ROOT}/util/script-functions.sh"
 
-zshrc_source() {
-    for file in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f $@); do
-        if use_module "${file}"; then
-            source "${file}"
-        fi
-    done
-}
-
-zshrc_source -name 'path.zsh'
-
-zshrc_source -name '*.zsh' ! -name 'path.zsh' ! -name 'completion.zsh'
+source_files -name '*.zsh' ! -name 'path.zsh' ! -name 'completion.zsh'
 
 autoload -U compinit && compinit
 
-zshrc_source -name 'completion.zsh'
+source_files -name 'completion.zsh'
 
 source "${DOTFILES_ROOT}/util/unset-script-functions.sh"
 
-unset -f zshrc_source
 unset CACHE_FILE DISABLE_MODULES DOTFILES_ROOT PROJECTS COMMAND FILE

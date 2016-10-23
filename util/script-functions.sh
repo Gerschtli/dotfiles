@@ -22,3 +22,11 @@ use_module() {
     local module="${directory##*/}"
     [[ ! "${DISABLE_MODULES}" =~ "${module}" ]]
 }
+
+source_files() {
+    for file in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f $@); do
+        if use_module "${file}"; then
+            source "${file}"
+        fi
+    done
+}
