@@ -1,14 +1,7 @@
 #!/bin/zsh
 # NOTE: shebang only for proper syntax highlithing
 
-if $(which greadlink > /dev/null 2>&1); then
-    COMMAND="greadlink"
-else
-    COMMAND="readlink"
-fi
-FILE="$(${COMMAND} -f "${ZDOTDIR:-$HOME}/.zshrc")"
-
-source "$(dirname "${FILE}")/../load-variables.sh"
+source "${HOME}/.dotfiles-variables"
 source "${DOTFILES_ROOT}/util/script-functions.sh"
 
 zshrc_source() {
