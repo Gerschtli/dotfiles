@@ -3,6 +3,8 @@ if [[ -r "${HOME}/.localrc" ]]; then
 fi
 
 CACHE_FILE="${CACHE_FILE:-${HOME}/.dotfiles-cache}"
-DISABLE_MODULES="${DISABLE_MODULES:-()}"
 DOTFILES_ROOT="${DOTFILES_ROOT:-${HOME}/.dotfiles}"
+MODULES="${MODULES:-()}"
 PROJECTS="${PROJECTS:-${HOME}/projects}"
+
+MODULES+=(util)

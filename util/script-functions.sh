@@ -20,7 +20,7 @@ use_module() {
     local file="${1}"
     local directory="${file%/*}"
     local module="${directory##*/}"
-    [[ ! "${DISABLE_MODULES}" =~ "${module}" || "${module}" == "util" ]]
+    [[ "${MODULES}" =~ "${module}" ]]
 }
 
 source_files() {

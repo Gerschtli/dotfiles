@@ -1,11 +1,11 @@
 ## path to cache file for current symlinks
 # CACHE_FILE="${HOME}/.dotfiles-cache"
 
-## explicitly disable modules
-# DISABLE_MODULES=()
-
 ## folder of dotfiles installation
 # DOTFILES_ROOT="${HOME}/.dotfiles"
+
+## explicitly enable modules
+# MODULES=()
 
 ## folder of projects
 # PROJECTS="${HOME}/projects"
