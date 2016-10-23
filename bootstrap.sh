@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 source "$(dirname "$0")/util/dotfiles-variables.symlink"
-source "${DOTFILES_ROOT}/util/script-functions.sh"
+source "${DOTFILES_ROOT}/util/script-functions"
 
 declare -A links
 
@@ -51,8 +51,8 @@ for src in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name '*.symlink'); do
     fi
 done
 
-# source symlink.sh
-for symlink in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name 'symlink.sh'); do
+# source symlinker
+for symlink in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name 'symlinker'); do
     if use_module "${symlink}"; then
         source "${symlink}"
     fi

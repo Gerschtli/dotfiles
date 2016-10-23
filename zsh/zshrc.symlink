@@ -1,5 +1,5 @@
 source "${HOME}/.dotfiles-variables"
-source "${DOTFILES_ROOT}/util/script-functions.sh"
+source "${DOTFILES_ROOT}/util/script-functions"
 
 source_files -name '*.zsh' ! -name 'path.zsh' ! -name 'completion.zsh'
 
@@ -7,5 +7,5 @@ autoload -U compinit && compinit
 
 source_files -name 'completion.zsh'
 
-source "${DOTFILES_ROOT}/util/unset-script-functions.sh"
-source "${DOTFILES_ROOT}/util/unset-variables.sh"
+source "${DOTFILES_ROOT}/util/unset-script-functions"
+source "${DOTFILES_ROOT}/util/unset-variables"
