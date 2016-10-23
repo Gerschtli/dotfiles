@@ -20,7 +20,6 @@ link_file() {
         return
     fi
 
-    UPDATE=true
     echo "${src}:${dst}" >> "${CACHE_FILE}"
 
     if [[ -e  "${dst}" && ! -L "${dst}" ]]; then
@@ -83,11 +82,7 @@ for old_link in "${links[@]}"; do
     fi
 done
 
-if [[ -z "${UPDATE}" ]]; then
-    success "-> No links updated"
-elif [[ -z "${FAIL}" ]]; then
-    success "-> All files linked"
-else
+if [[ ! -z "${FAIL}" ]]; then
     error "-> An error occured during linking process. Please consider the log above."
     exit 1
 fi
