@@ -1,1 +1,2 @@
-unset CACHE_FILE DOTFILES_ROOT MODULES PROJECTS
+# do not unset DOTFILES_ROOT, is used in shell functions
+unset CACHE_FILE MODULES PROJECTS
