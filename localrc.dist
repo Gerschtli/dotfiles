@@ -7,6 +7,9 @@
 ## folder of dotfiles installation
 # DOTFILES_ROOT="${HOME}/.dotfiles"
 
+## extended path
+# EXTENDED_PATH=()
+
 ## explicitly enable modules
 # MODULES=()
 
