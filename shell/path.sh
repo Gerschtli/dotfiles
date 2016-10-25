@@ -1,11 +1,13 @@
-HOME_BIN="${HOME}/bin"
 DOTFILES_BIN="${DOTFILES_ROOT}/bin"
 
-if [[ -d "${HOME}/bin" && "${PATH}" != "${HOME_BIN}":* ]]; then
-    export PATH="${HOME}/bin:${PATH}"
-fi
+for dir in "${HOME}"{/local,}/bin; do
+    if [[ -d "${dir}" && "${PATH}" != "${dir}":* ]]; then
+        export PATH="${dir}:${PATH}"
+    fi
+done
+
 if [[ "${PATH}" != "${DOTFILES_BIN}":* ]]; then
     export PATH="${DOTFILES_ROOT}/bin:${PATH}"
 fi
 
-unset HOME_BIN DOTFILES_BIN
+unset dir DOTFILES_BIN
