@@ -141,9 +141,9 @@ LP_TIME_ANALOG=0
 # See LP_TITLE_OPEN and LP_TITLE_CLOSE to change escape characters to adapt this
 # feature to your specific terminal.
 if is_osx; then
-  LP_ENABLE_TITLE=0
+  LP_ENABLE_TITLE=${LP_ENABLE_TITLE:-0}
 else
-  LP_ENABLE_TITLE=1
+  LP_ENABLE_TITLE=${LP_ENABLE_TITLE:- 1}
 fi
 
 # Enable Title for screen and byobu
