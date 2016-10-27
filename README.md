@@ -13,13 +13,7 @@ Change options if needed.
 List of all modules, that can be enabled:
 
 ```bash
-MODULES=(bash git liquidprompt nodejs nvim php rsync shell ssh sublime tmux vagrant zsh)
-```
-
-### Clone ssh repo (optional)
-
-```bash
-$ git clone "git@bitbucket.org:Gerschtli/ssh.git" ssh
+MODULES=(bash git liquidprompt nodejs nvim php rsync shell sublime tmux vagrant zsh)
 ```
 
 ### Initialize submodule
@@ -42,8 +36,6 @@ $ chsh -s /bin/zsh
 
 ## Update
 
-```zsh
+```bash
 $ dotupdate
-$ # or
-$ dotfiles-update && shell-reload
 ```
