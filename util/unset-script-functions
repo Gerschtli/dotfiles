@@ -1,1 +1,1 @@
-unset -f print info success error contains_element use_module source_files
+unset -f _d_print _d_info _d_success _d_error _d_contains_element _d_use_module _d_source_files

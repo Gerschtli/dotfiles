@@ -1,7 +1,7 @@
 source "${HOME}/.dotfiles-variables"
 source "${DOTFILES_ROOT}/util/script-functions"
 
-source_files \( -name "path.sh" -o -name "path.zsh" \)
+_d_source_files \( -name "path.sh" -o -name "path.zsh" \)
 
 skip_global_compinit=1
 

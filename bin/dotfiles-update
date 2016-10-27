@@ -3,54 +3,54 @@
 source "$(dirname "$0")/../util/dotfiles-variables.symlink"
 source "${DOTFILES_ROOT}/util/script-functions"
 
-indent() {
+_d_indent() {
     while IFS= read -r line; do
         printf "   ==> %s\n" "${line}"
     done < <($@ 2>&1)
 }
 
-pull() {
-    info "git fetch --prune ..."
-    indent git fetch --prune
+_d_pull() {
+    _d_info "git fetch --prune ..."
+    _d_indent git fetch --prune
 
     if [[ $(git rev-parse --abbrev-ref HEAD) != "master" ]]; then
-        info "git checkout master ..."
-        indent git checkout master
+        _d_info "git checkout master ..."
+        _d_indent git checkout master
     fi
 
     if [[ $(git diff --name-only) != "" ]]; then
         local stash=true
-        info "git stash ..."
-        indent git stash
+        _d_info "git stash ..."
+        _d_indent git stash
     fi
 
-    info "git rebase -n origin/master ..."
-    indent git rebase -n origin/master
+    _d_info "git rebase -n origin/master ..."
+    _d_indent git rebase -n origin/master
 
     if [[ ! -z "${stash}" ]]; then
-        info "git stash pop ..."
-        indent git -c color.status=always stash pop
+        _d_info "git stash pop ..."
+        _d_indent git -c color.status=always stash pop
     fi
 }
 
 pushd "${DOTFILES_ROOT}" 1> /dev/null
 
 if [[ -z "${1}" ]]; then
-    info "========= DOTFILES ========="
-    pull
+    _d_info "========= DOTFILES ========="
+    _d_pull
 
     if [[ -d "ssh" ]]; then
         pushd "ssh" 1> /dev/null
         echo
-        info "============ SSH ==========="
-        pull
+        _d_info "============ SSH ==========="
+        _d_pull
         popd 1> /dev/null
     fi
 fi
 
 echo
-info "========= BOOTSTRAP ========"
-indent ./bootstrap.sh
+_d_info "========= BOOTSTRAP ========"
+_d_indent ./bootstrap.sh
 
 popd 1> /dev/null
 

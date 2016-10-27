@@ -11,7 +11,7 @@ if [[ -r "${CACHE_FILE}" ]]; then
     done < "${CACHE_FILE}"
 fi
 
-link_file() {
+_d_link_file() {
     local src="${1}"
     local dst="${2}"
 
@@ -24,18 +24,18 @@ link_file() {
 
     if [[ -e  "${dst}" && ! -L "${dst}" ]]; then
         mv "${dst}" "${dst}.backup"
-        info "Moved $dst to ${dst}.backup"
+        _d_info "Moved $dst to ${dst}.backup"
     fi
 
     if $(ln -snf "${src}" "${dst}"); then
-        success "Linked ${src} to ${dst}"
+        _d_success "Linked ${src} to ${dst}"
     else
-        error "Failed linking ${src} to ${dst}"
+        _d_error "Failed linking ${src} to ${dst}"
         FAIL=true
     fi
 }
 
-remove_line_in_cache() {
+_d_remove_line_in_cache() {
     local tmp="/tmp/dotfiles-cache"
 
     egrep -v ".*:${1}$" "${CACHE_FILE}" > "${tmp}" \
@@ -44,15 +44,15 @@ remove_line_in_cache() {
 
 # link files with symlink suffix
 for src in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name '*.symlink'); do
-    if use_module "${src}"; then
+    if _d_use_module "${src}"; then
         dst="${HOME}/.$(basename "${src%.*}")"
-        link_file "${src}" "${dst}"
+        _d_link_file "${src}" "${dst}"
     fi
 done
 
 # source symlinker
 for symlink in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name 'symlinker'); do
-    if use_module "${symlink}"; then
+    if _d_use_module "${symlink}"; then
         source "${symlink}"
     fi
 done
@@ -61,29 +61,29 @@ done
 for old_link in "${links[@]}"; do
     if [[ -L "${old_link}" ]]; then
         if $(rm "${old_link}"); then
-            remove_line_in_cache "${old_link}"
-            success "Removed link ${old_link}"
+            _d_remove_line_in_cache "${old_link}"
+            _d_success "Removed link ${old_link}"
 
             if [[ -e "${old_link}.backup" ]]; then
                 if $(mv "${old_link}.backup" "${old_link}"); then
-                    success "Restored backup ${old_link}.backup"
+                    _d_success "Restored backup ${old_link}.backup"
                 else
-                    error "Backup could not be moved: ${old_link}.backup"
+                    _d_error "Backup could not be moved: ${old_link}.backup"
                     FAIL=true
                 fi
             fi
         else
-            error "Link could not be deleted: ${old_link}"
+            _d_error "Link could not be deleted: ${old_link}"
             FAIL=true
         fi
     else
-        remove_line_in_cache "${old_link}"
-        info "${old_link} is not a link, updating cache"
+        _d_remove_line_in_cache "${old_link}"
+        _d_info "${old_link} is not a link, updating cache"
     fi
 done
 
 if [[ ! -z "${FAIL}" ]]; then
-    error "-> An error occured during linking process. Please consider the log above."
+    _d_error "-> An _d_error occured during linking process. Please consider the log above."
     exit 1
 fi
 

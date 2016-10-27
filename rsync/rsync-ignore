@@ -6,4 +6,6 @@ app/cache/
 app/logs/
 build/
 node_modules/
+rsync.conf
+sftp-config.json
 tests/
