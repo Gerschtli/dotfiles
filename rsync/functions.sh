@@ -1,5 +1,8 @@
 if available rsync; then
     rsc() {
+        # content of conf:
+        # <local-dir> <host>:<remote-dir>
+
         local conf="rsync.conf"
         if [[ -r "${conf}" ]]; then
             rsync -avru --delete --chmod="ug=rwX,o=rX" --cvs-exclude --whole-file \
