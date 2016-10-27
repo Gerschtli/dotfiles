@@ -1,0 +1,4 @@
+[[ -e ~/.xsession-errors.old ]] && rm -f ~/.xsession-errors.old
+[[ -e ~/.zcompdump ]]           && rm -f ~/.zcompdump
+
+[[ -x /usr/bin/clear_console ]] && clear_console -q
