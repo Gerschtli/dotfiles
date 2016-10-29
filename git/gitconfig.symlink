@@ -135,7 +135,7 @@
     thread = deep
 
 [help]
-    autocorrect = 10
+    autocorrect = 20
     format = man
 
 [i18n]
