@@ -1,0 +1,7 @@
+#!/bin/sh
+
+VERSION=$(tmux -V | cut -d " " -f 2)
+
+[ $(echo "${VERSION} $@" | bc) = 1 ]
+
+exit $?
