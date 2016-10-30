@@ -1,3 +1,0 @@
-if is_osx; then
-    _d_link_file "${DOTFILES_ROOT}/tmux/tmux.osx.conf" "${HOME}/.tmux.osx.conf"
-fi
