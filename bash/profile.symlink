@@ -1,0 +1,5 @@
+source "${HOME}/.dotfiles-variables"
+
+source "${DOTFILES_ROOT}/shell/source/profile.sh"
+
+source "${DOTFILES_ROOT}/util/unset-variables"
