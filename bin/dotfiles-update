@@ -48,6 +48,12 @@ if [[ -z "${1}" ]]; then
     fi
 fi
 
+if available termux-fix-shebang; then
+    echo
+    _d_info "==== TERMUX FIX SHEBANG ===="
+    _d_indent termux-fix-shebang bootstrap.sh bin/*
+fi
+
 echo
 _d_info "========= BOOTSTRAP ========"
 _d_indent ./bootstrap.sh
