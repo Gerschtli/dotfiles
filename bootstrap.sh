@@ -36,7 +36,7 @@ _d_link_file() {
 }
 
 _d_remove_line_in_cache() {
-    local tmp="/tmp/dotfiles-cache"
+    local tmp="$(mktemp)"
 
     egrep -v ".*:${1}$" "${CACHE_FILE}" > "${tmp}" \
         && mv "${tmp}" "${CACHE_FILE}"
