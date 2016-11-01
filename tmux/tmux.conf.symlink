@@ -66,6 +66,9 @@ bind -r J resize-pane -D
 bind -r K resize-pane -U
 bind -r L resize-pane -R
 
+bind-key x run-shell "tmux new-window -t :10 -n Root 'sudo -i' || tmux new-window -a -t :10 -n Root 'sudo -i'"
+bind-key X split-window "sudo -i"
+
 # open new pane in same directory
 if-shell 'tmux-version \>= 1.9' ' \
     bind-key '"'\"'"' split-window -c "#{pane_current_path}"; \
