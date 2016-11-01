@@ -1,4 +1,6 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
+
+set -e
 
 source "$(dirname "$0")/util/dotfiles-variables.symlink"
 source "${DOTFILES_ROOT}/util/script-functions"
