@@ -23,3 +23,6 @@ set noswapfile
 syntax on
 set ruler
 set number
+
+"" Mappings
+:map <Leader>lc :w<Bar>execute 'silent !tmux send-keys -t right \!\! Enter'<Bar>redraw!<C-M>
