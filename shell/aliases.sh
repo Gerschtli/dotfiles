@@ -14,3 +14,5 @@ alias egrep='egrep --color=auto'
 available xdg-open && alias open="xdg-open"
 
 available dircolors && eval "$(dircolors -b)"
+
+available bc && alias bc="bc -l"
