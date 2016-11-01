@@ -1,6 +1,3 @@
-"" Colorscheme
-colorscheme ron
-
 "" Encoding
 set encoding=utf-8
 set fileencoding=utf-8
@@ -21,6 +18,7 @@ set noswapfile
 
 "" Visual settings
 syntax on
+colorscheme ron
 set ruler
 set number
 
