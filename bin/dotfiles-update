@@ -4,9 +4,14 @@ source "$(dirname "$0")/../util/dotfiles-variables.symlink"
 source "${DOTFILES_ROOT}/util/script-functions"
 
 _d_indent() {
+    local cmd="$1"
+    if [[ "${cmd}" == "git" && "$(git --version)" != *1.7.* ]]; then
+        cmd="git -c color.diff=always -c color.status=always"
+    fi
+
     while IFS= read -r line; do
         printf "     > %s\n" "${line}"
-    done < <($@ 2>&1)
+    done < <(${cmd} ${@:2} 2>&1)
 }
 
 _d_pull() {
@@ -25,11 +30,11 @@ _d_pull() {
     fi
 
     _d_info "git rebase origin/master ..."
-    _d_indent git -c color.diff=always rebase origin/master
+    _d_indent git rebase origin/master
 
     if [[ ! -z "${stash}" ]]; then
         _d_info "git stash pop ..."
-        _d_indent git -c color.status=always stash pop
+        _d_indent git stash pop
     fi
 }
 
