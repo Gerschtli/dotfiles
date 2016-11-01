@@ -25,4 +25,5 @@ set ruler
 set number
 
 "" Mappings
-:map <Leader>lc :w<Bar>execute 'silent !tmux send-keys -t right \!\! Enter'<Bar>redraw!<C-M>
+:map <Leader>cr :w<Bar>execute 'silent !tmux send-keys -t right \!\! Enter'<Bar>redraw!<C-M>
+:map <Leader>cb :w<Bar>execute 'silent !tmux send-keys -t bottom \!\! Enter'<Bar>redraw!<C-M>
