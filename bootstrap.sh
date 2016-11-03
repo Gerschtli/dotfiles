@@ -38,7 +38,12 @@ _d_link_file() {
 }
 
 _d_remove_line_in_cache() {
-    local tmp="$(mktemp)"
+    local option='--tmpdir'
+    if ! is_osx; then
+       option=''
+    fi
+
+    local tmp="$(mktemp ${option} "dotfiles-cache.XXXXXX")"
 
     egrep -v ".*:${1}$" "${CACHE_FILE}" > "${tmp}" \
         && mv "${tmp}" "${CACHE_FILE}"
