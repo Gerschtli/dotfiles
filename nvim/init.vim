@@ -9,6 +9,13 @@ set softtabstop=0
 set shiftwidth=4
 set expandtab
 
+"" Enable filetype detection:
+filetype on
+filetype plugin on
+filetype indent on
+
+autocmd Filetype make set noexpandtab
+
 "" Enable hidden buffers
 set hidden
 
