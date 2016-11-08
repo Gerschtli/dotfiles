@@ -8,6 +8,10 @@
 [add]
     ignore-errors = true
 
+[advice]
+    pushNonFastForward = false
+    statusHints = false
+
 [alias]
     ac = commit --all --branch --status
     ad = add --all --ignore-errors --
@@ -95,6 +99,7 @@
 
 [branch]
     autosetuprebase = always
+    autosetupmerge = true
 
 [clean]
     requireForce = true
@@ -128,7 +133,7 @@
 
 [diff]
     mnemonicprefix = true
-    renames = copy
+    renames = copies
     tool = vimdiff
 
 [format]
@@ -168,7 +173,7 @@
     graph = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset
 
 [push]
-    default = matching
+    default = tracking
 
 [rebase]
     autosquash = true
@@ -178,6 +183,9 @@
     autogc = true
     fsckObjects = true
     updateserverinfo = true
+
+[rerere]
+    enabled = 1
 
 [status]
     relativePaths = false
