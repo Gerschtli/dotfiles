@@ -6,4 +6,9 @@ if available php; then
     alias cdownload='mkdir -p bin && curl -sS "https://getcomposer.org/installer" | php -- --install-dir=bin'
 
     alias ut='./bin/phpunit'
+
+    if available phpenmod && available phpdismod; then
+        alias phpenxdebug='sudo phpenmod -s cli xdebug'
+        alias phpdisxdebug='sudo phpdismod -s cli xdebug'
+    fi
 fi
