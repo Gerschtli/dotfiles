@@ -38,9 +38,9 @@ _d_link_file() {
 }
 
 _d_remove_line_in_cache() {
-    local option='--tmpdir'
-    if ! is_osx; then
-       option=''
+    local option=''
+    if is_osx; then
+       option='-t'
     fi
 
     local tmp="$(mktemp ${option} "dotfiles-cache.XXXXXX")"
