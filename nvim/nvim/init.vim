@@ -1,6 +1,7 @@
 "" Plugins
 call plug#begin('~/.config/nvim/plugins')
 Plug 'vim-airline/vim-airline'
+Plug 'kristijanhusak/vim-hybrid-material'
 call plug#end()
 
 "" Encoding
@@ -27,7 +28,9 @@ set noswapfile
 
 "" Visual settings
 syntax on
-colorscheme ron
+let g:enable_bold_font = 1
+set background=dark
+colorscheme hybrid_material
 set ruler
 set number
 
