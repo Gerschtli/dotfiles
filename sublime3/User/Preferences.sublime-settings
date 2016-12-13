@@ -1,0 +1,32 @@
+{
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+	"ignored_packages":
+	[
+		"CoffeeScript",
+		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"line_padding_bottom": 3,
+	"line_padding_top": 3,
+	"material_theme_accent_sky": true,
+	"material_theme_big_fileicons": true,
+	"material_theme_bright_scrollbars": true,
+	"material_theme_contrast_mode": true,
+	"material_theme_disable_folder_animation": true,
+	"material_theme_small_statusbar": true,
+	"overlay_scroll_bars": "enabled",
+	"rulers":
+	[
+		120
+	],
+	"scroll_past_end": true,
+	"scroll_speed": 0,
+	"theme": "Material-Theme.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": false
+}

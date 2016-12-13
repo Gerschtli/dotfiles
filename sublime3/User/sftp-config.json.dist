@@ -1,0 +1,20 @@
+{
+    "type": "sftp",
+
+    "upload_on_save": true,
+
+    "host": "<host>",
+    "user": "<user>",
+    "password": "<password>",
+    "port": "22",
+
+    "remote_path": "<remote_path>",
+    "file_permissions": "664",
+    "dir_permissions": "775",
+
+    "connect_timeout": 10,
+    "keepalive": 120,
+    "remote_encoding": "utf-8",
+    "remote_locale": "de_DE",
+    "allow_config_upload": false
+}

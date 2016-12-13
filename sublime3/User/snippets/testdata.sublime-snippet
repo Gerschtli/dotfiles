@@ -1,0 +1,20 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * @dataProvider dataProviderForTest$1
+ */
+public function test$1($2)
+{
+    $3
+}
+
+public function dataProviderForTest$1()
+{
+    return [
+        [],
+    ];
+}
+]]></content>
+    <tabTrigger>testdata</tabTrigger>
+    <scope>text.plain, source.php</scope>
+</snippet>

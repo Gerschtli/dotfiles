@@ -13,7 +13,7 @@ Change options if needed.
 List of all modules, that can be enabled:
 
 ```bash
-MODULES=(bash git liquidprompt nodejs nvim php rsync shell sublime tmux vagrant zsh)
+MODULES=(bash git liquidprompt nodejs nvim php rsync shell sublime sublime3 tmux vagrant zsh)
 ```
 
 ### Initialize submodule

@@ -1,0 +1,9 @@
+if is_osx; then
+    SUBLIME="${HOME}/Library/Application Support/Sublime Text 3/Packages/User"
+else
+    SUBLIME="${HOME}/.config/sublime-text-3/Packages/User"
+fi
+
+_d_link_file "${DOTFILES_ROOT}/sublime3/User" "${SUBLIME}"
+
+unset SUBLIME

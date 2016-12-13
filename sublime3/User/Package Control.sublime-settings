@@ -1,0 +1,46 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+		"CoffeeScript"
+	],
+	"installed_packages":
+	[
+		"Alignment",
+		"ApacheConf.tmLanguage",
+		"Behat",
+		"CoffeeScript",
+		"DocBlockr",
+		"Dockerfile Syntax Highlighting",
+		"EditorConfig",
+		"EditorConfigSnippets",
+		"Emmet",
+		"Git",
+		"GitGutter",
+		"GitSyntaxes",
+		"HTML-CSS-JS Prettify",
+		"Indent XML",
+		"INI",
+		"Jade",
+		"JSHint Gutter",
+		"JSON Reindent",
+		"LESS",
+		"Material Theme",
+		"Package Control",
+		"PHP Completions Kit",
+		"Phpcs",
+		"PHPIntel",
+		"PHPUnit",
+		"Pretty JSON",
+		"Puppet",
+		"RAML Syntax Highlighter",
+		"Sass",
+		"SFTP",
+		"SqlBeautifier",
+		"SSH Config",
+		"Tmux",
+		"TrailingSpaces",
+		"Twig",
+		"VimL"
+	]
+}

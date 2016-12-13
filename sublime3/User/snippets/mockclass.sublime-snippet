@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+${1:var} = \$this
+    ->getMockBuilder('${2:Class}')
+    ->disableOriginalConstructor()
+    ->getMock();
+]]></content>
+    <tabTrigger>mockclass</tabTrigger>
+    <scope>text.plain, source.php</scope>
+</snippet>
