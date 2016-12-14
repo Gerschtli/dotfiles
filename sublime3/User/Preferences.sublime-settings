@@ -1,8 +1,8 @@
 {
 	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+	"font_face": "Fira Code",
 	"ignored_packages":
 	[
-		"CoffeeScript",
 		"Vintage"
 	],
 	"indent_guide_options":
@@ -12,12 +12,13 @@
 	],
 	"line_padding_bottom": 3,
 	"line_padding_top": 3,
-	"material_theme_accent_sky": true,
-	"material_theme_big_fileicons": true,
+	"material_theme_arrow_folders": true,
 	"material_theme_bright_scrollbars": true,
 	"material_theme_contrast_mode": true,
 	"material_theme_disable_folder_animation": true,
+	"material_theme_panel_separator": true,
 	"material_theme_small_statusbar": true,
+	"material_theme_tabs_separator": true,
 	"overlay_scroll_bars": "enabled",
 	"rulers":
 	[
