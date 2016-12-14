@@ -2,18 +2,16 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"CoffeeScript"
 	],
 	"installed_packages":
 	[
 		"Alignment",
+		"All Autocomplete",
 		"ApacheConf.tmLanguage",
 		"Behat",
-		"CoffeeScript",
 		"DocBlockr",
 		"Dockerfile Syntax Highlighting",
 		"EditorConfig",
-		"EditorConfigSnippets",
 		"Emmet",
 		"Git",
 		"GitGutter",
@@ -27,6 +25,7 @@
 		"LESS",
 		"Material Theme",
 		"Package Control",
+		"PHP Companion",
 		"PHP Completions Kit",
 		"Phpcs",
 		"PHPIntel",
