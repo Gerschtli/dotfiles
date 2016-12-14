@@ -18,5 +18,5 @@ class ${1:Class}Test extends PHPUnit_Framework_TestCase
 
 ]]></content>
     <tabTrigger>testclass</tabTrigger>
-    <scope>text.plain, source.php</scope>
+    <scope>text.plain</scope>
 </snippet>

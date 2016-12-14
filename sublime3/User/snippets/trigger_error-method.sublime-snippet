@@ -1,7 +1,0 @@
-<snippet>
-    <content><![CDATA[
-trigger_error('Method deprectated ' . __METHOD__, E_USER_WARNING);
-]]></content>
-    <tabTrigger>terrm</tabTrigger>
-    <scope>text.plain, source.php</scope>
-</snippet>
