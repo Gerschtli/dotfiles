@@ -4,6 +4,6 @@ else
     SUBLIME="${HOME}/.config/sublime-text-3/Packages/User"
 fi
 
-_d_link_file "${DOTFILES_ROOT}/sublime3/User" "${SUBLIME}"
+_d_link_file "${DOTFILES_ROOT}/sublime/User" "${SUBLIME}"
 
 unset SUBLIME
