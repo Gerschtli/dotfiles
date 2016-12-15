@@ -10,8 +10,8 @@
 		"draw_normal",
 		"draw_active"
 	],
-	"line_padding_bottom": 3,
-	"line_padding_top": 3,
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
 	"material_theme_arrow_folders": true,
 	"material_theme_bright_scrollbars": true,
 	"material_theme_compact_sidebar": true,
