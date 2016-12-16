@@ -95,8 +95,6 @@ let mapleader=","
 " turn off search highlight with ,-<space>
 nnoremap <leader><space> :nohlsearch<CR>
 
-:map <leader>cr :w<Bar>execute 'silent !tmux send-keys -t right \!\! Enter'<Bar>redraw!<C-M>
-:map <leader>cb :w<Bar>execute 'silent !tmux send-keys -t bottom \!\! Enter'<Bar>redraw!<C-M>
 :map <leader>iso :w ++enc=iso-8859-1<C-M>
 
 
