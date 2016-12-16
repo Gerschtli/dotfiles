@@ -72,8 +72,8 @@ bind-key X split-window "sudo -i"
 
 bind r source-file ~/.tmux.conf
 
-bind E select-pane -l \; send-keys C-c C-m \; send-keys up enter C-m \; select-pane -l
-bind e select-pane -l \; send-keys up enter C-m \; select-pane -l
+bind E select-pane -l \; send-keys C-c C-m up C-m \; select-pane -l
+bind e select-pane -l \; send-keys up C-m \; select-pane -l
 
 # open new pane in same directory
 if-shell 'tmux-version \>= 1.9' ' \
