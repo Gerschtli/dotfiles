@@ -11,4 +11,3 @@ setopt pushd_ignore_dups
 setopt append_history
 
 setopt autocd
-setopt cdable_vars
