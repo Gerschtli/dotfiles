@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/bash -e
 
 URL="$1"
 NAME="${2:-test}.csv"
 
-rm "${NAME}"
+rm -f "${NAME}"
 
 echo $'\n'
 curl -L "$URL" -o "$NAME"
