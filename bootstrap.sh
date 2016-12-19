@@ -90,7 +90,7 @@ for old_link in "${links[@]}"; do
 done
 
 if [[ ! -z "${FAIL}" ]]; then
-    _d_error "-> An _d_error occured during linking process. Please consider the log above."
+    _d_error "-> An error occured during linking process. Please consider the log above."
     exit 1
 fi
 
