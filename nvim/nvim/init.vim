@@ -27,6 +27,8 @@ filetype plugin on
 filetype indent on
 
 autocmd Filetype make set noexpandtab
+autocmd Filetype c set expandtab
+autocmd Filetype cpp set expandtab
 
 
 "" Directories for swp files
@@ -48,7 +50,7 @@ set ruler
 set number
 set cursorline
 set cursorcolumn
-
+set colorcolumn=100
 
 "" Enable modelines
 set modeline
