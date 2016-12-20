@@ -1,5 +1,5 @@
 # remove existing keys
-if [[ ${SHLVL} -eq 1 ]] && avaiable keychain; then
+if [[ ${SHLVL} -eq 1 ]] && available keychain; then
     keychain --clear --quiet
 fi
 
