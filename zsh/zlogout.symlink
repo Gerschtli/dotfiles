@@ -2,6 +2,4 @@ source "${HOME}/.dotfiles-variables"
 
 source "${DOTFILES_ROOT}/shell/source/logout.sh"
 
-[[ -e "${HOME}/.zcompdump" ]] && rm -f "${HOME}/.zcompdump"
-
 source "${DOTFILES_ROOT}/util/unset-variables"
