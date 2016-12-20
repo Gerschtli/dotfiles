@@ -1,5 +1,5 @@
 available() {
-    which "${1}" > /dev/null 2>&1
+    hash "${1}" > /dev/null 2>&1
 }
 
 dotupdate() {
