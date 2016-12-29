@@ -22,3 +22,8 @@ available xdg-open && alias open="xdg-open"
 available dircolors && eval "$(dircolors -b)"
 
 available bc && alias bc="bc -l"
+
+if available pwgen; then
+    alias pwgen="pwgen -cny"
+    alias pwgens="pwgen -s"
+fi
