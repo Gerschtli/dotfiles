@@ -1,3 +1,1 @@
-if available git; then
-    alias ga="git aliases | grep"
-fi
+available git && ga="git aliases | grep"
