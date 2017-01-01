@@ -1,19 +1,24 @@
 source "${DOTFILES_ROOT}/shell/functions.sh"
 
 _d_print() {
-    echo -e "[\033[00;${2}m${3}\033[0m] ${1}"
+    local parameters=()
+    for param in ${@:4}; do
+        parameters+=("\033[1m${param/${HOME}/\~}\033[0m")
+    done
+
+    echo -e "[\033[00;${1}m${2}\033[0m] $(printf "${3}" "${parameters[@]}")"
 }
 
 _d_info() {
-    _d_print "${1}" "34" "INFO"
+    _d_print "34" "INFO" "$@"
 }
 
 _d_success() {
-    _d_print "${1}" "32" " OK "
+    _d_print "32" " OK " "$@"
 }
 
 _d_error() {
-    _d_print "${1}" "31" "FAIL"
+    _d_print "31" "FAIL" "$@"
 }
 
 _d_contains_element() {
