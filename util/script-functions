@@ -29,6 +29,10 @@ _d_contains_element() {
     return 1
 }
 
+_d_get_symlink_target() {
+    [ -e "${1}" ] && ls -l "${1}" | sed -e 's/.* -> //'
+}
+
 _d_use_module() {
     local file="${1}"
     local directory="${file%/*}"
@@ -42,4 +46,48 @@ _d_source_files() {
             source "${file}"
         fi
     done
+}
+
+_d_link_file() {
+    local target="${1}"
+    local linkname="${2}"
+
+    local cached_target="${links["${linkname}"]}"
+    unset links["${linkname}"]
+
+    if [[ "${cached_target}" != "${target}" ]]; then
+        _d_remove_line_in_cache "${linkname}"
+    fi
+
+    if [[ $(_d_get_symlink_target "${linkname}") == "${target}" ]]; then
+        if [[ "${cached_target}" != "${target}" ]]; then
+            echo "${target}:${linkname}" >> "${CACHE_FILE}"
+        fi
+        return
+    fi
+
+    if [[ -e "${linkname}" && ! -L "${linkname}" ]]; then
+        mv "${linkname}" "${linkname}${BACKUP_SUFFIX}"
+        _d_info "Moved %s to %s" "${linkname}" "${linkname}${BACKUP_SUFFIX}"
+    fi
+
+    if $(ln -snf "${target}" "${linkname}"); then
+        _d_success "Linked %s to %s" "${target}" "${linkname}"
+        echo "${target}:${linkname}" >> "${CACHE_FILE}"
+    else
+        _d_error "Failed linking %s to %s" "${target}" "${linkname}"
+        FAIL=true
+    fi
+}
+
+_d_remove_line_in_cache() {
+    local option
+    if is_osx; then
+       option='-t'
+    fi
+
+    local tmp="$(mktemp ${option} "dotfiles-cache.XXXXXX")"
+
+    egrep -v ".*:${1}$" "${CACHE_FILE}" > "${tmp}" \
+        && mv "${tmp}" "${CACHE_FILE}" || true
 }

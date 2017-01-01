@@ -1,1 +1,2 @@
-unset -f _d_print _d_info _d_success _d_error _d_contains_element _d_use_module _d_source_files
+unset -f _d_print _d_info _d_success _d_error _d_contains_element _d_get_symlink_target _d_use_module _d_source_files \
+    _d_link_file _d_remove_line_in_cache

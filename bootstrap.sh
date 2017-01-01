@@ -5,86 +5,54 @@ set -e
 source "$(dirname "$0")/util/dotfiles-variables.symlink"
 source "${DOTFILES_ROOT}/util/script-functions"
 
+BACKUP_SUFFIX=".backup"
 declare -A links
 
 if [[ -r "${CACHE_FILE}" ]]; then
     while read -r line; do
-        links["${line%:*}"]="${line##*:}"
+        linkname="${line##*:}"
+        target="${line%:*}"
+        if [[ $(_d_get_symlink_target "${linkname}") == "${target}" ]]; then
+            links["${linkname}"]="${target}"
+        else
+            _d_remove_line_in_cache "${linkname}"
+        fi
     done < "${CACHE_FILE}"
 fi
 
-_d_link_file() {
-    local src="${1}"
-    local dst="${2}"
-
-    if [[ "${links["${src}"]}" == "${dst}" ]]; then
-        unset links["${src}"]
-        return
-    fi
-
-    if [[ -e "${dst}" && ! -L "${dst}" ]]; then
-        mv "${dst}" "${dst}.backup"
-        _d_info "Moved %s to %s" "${dst}" "${dst}.backup"
-    fi
-
-    if $(ln -snf "${src}" "${dst}"); then
-        _d_success "Linked %s to %s" "${src}" "${dst}"
-        echo "${src}:${dst}" >> "${CACHE_FILE}"
-    else
-        _d_error "Failed linking %s to %s" "${src}" "${dst}"
-        FAIL=true
-    fi
-}
-
-_d_remove_line_in_cache() {
-    local option=''
-    if is_osx; then
-       option='-t'
-    fi
-
-    local tmp="$(mktemp ${option} "dotfiles-cache.XXXXXX")"
-
-    egrep -v ".*:${1}$" "${CACHE_FILE}" > "${tmp}" \
-        && mv "${tmp}" "${CACHE_FILE}"
-}
-
 # link files with symlink suffix
-for src in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name '*.symlink'); do
-    if _d_use_module "${src}"; then
-        dst="${HOME}/.$(basename "${src%.*}")"
-        _d_link_file "${src}" "${dst}"
+for target in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name '*.symlink'); do
+    if _d_use_module "${target}"; then
+        linkname="${HOME}/.$(basename "${target%.*}")"
+        _d_link_file "${target}" "${linkname}"
     fi
 done
 
 # source symlinker
-for symlink in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name 'symlinker'); do
-    if _d_use_module "${symlink}"; then
-        source "${symlink}"
-    fi
-done
+_d_source_files -name "symlinker"
 
 # remove old links
-for old_link in "${links[@]}"; do
-    if [[ -L "${old_link}" ]]; then
-        if $(rm "${old_link}"); then
-            _d_remove_line_in_cache "${old_link}"
-            _d_success "Removed link %s" "${old_link}"
+for old_linkname in "${!links[@]}"; do
+    if [[ $(_d_get_symlink_target "${old_linkname}") == "${links["${old_linkname}"]}" ]]; then
+        if $(rm "${old_linkname}"); then
+            _d_remove_line_in_cache "${old_linkname}"
+            _d_success "Removed link %s" "${old_linkname}"
 
-            if [[ -e "${old_link}.backup" ]]; then
-                if $(mv "${old_link}.backup" "${old_link}"); then
-                    _d_success "Restored backup %s" "${old_link}.backup"
+            if [[ -e "${old_linkname}${BACKUP_SUFFIX}" ]]; then
+                if $(mv "${old_linkname}${BACKUP_SUFFIX}" "${old_linkname}"); then
+                    _d_success "Restored backup %s" "${old_linkname}${BACKUP_SUFFIX}"
                 else
-                    _d_error "Backup could not be moved: %s" "${old_link}.backup"
+                    _d_error "Backup could not be moved: %s" "${old_linkname}${BACKUP_SUFFIX}"
                     FAIL=true
                 fi
             fi
         else
-            _d_error "Link could not be deleted: %s" "${old_link}"
+            _d_error "Link could not be deleted: %s" "${old_linkname}"
             FAIL=true
         fi
     else
-        _d_remove_line_in_cache "${old_link}"
-        _d_info "%s is not a link, updating cache" "${old_link}"
+        _d_remove_line_in_cache "${old_linkname}"
+        _d_info "%s is not a link to %s, updating cache" "${old_linkname}" "${links["${old_linkname}"]}"
     fi
 done
 
