@@ -1,5 +1,6 @@
 if available php; then
     alias composer='./bin/composer'
+    alias com='composer'
     alias cinstall='composer --prefer-source --optimize-autoloader install'
     alias cupdate='composer --prefer-source --optimize-autoloader update'
     alias csupdate='composer self-update'
