@@ -2,5 +2,6 @@
   "git_binary": {
     "default": "/usr/bin/git",
     "osx": "/usr/local/bin/git"
-  }
+  },
+  "show_markers_on_untracked_file": true,
 }
