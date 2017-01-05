@@ -1,3 +1,4 @@
+config/*.sublime-workspace
 User/oscrypto-ca-bundle.crt
 User/Package Control.*
 !User/Package Control.sublime-settings

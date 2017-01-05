@@ -6,4 +6,8 @@ fi
 
 _d_link_file "${DOTFILES_ROOT}/sublime/User" "${SUBLIME}/Packages/User"
 
+if [[ -d "${PROJECTS}" ]]; then
+    _d_link_file "${DOTFILES_ROOT}/sublime/config" "${PROJECTS}/sublime-config"
+fi
+
 unset SUBLIME
