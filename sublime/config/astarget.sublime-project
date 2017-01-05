@@ -1,0 +1,20 @@
+{
+    "folders":
+    [
+        {
+            "path": "../astarget"
+        }
+    ],
+    "settings":
+    {
+        "phpcs_executable_path": "/home/tobias/projects/astarget/bin/phpcs",
+        "phpcs_additional_args": {
+            "--standard": "/home/tobias/projects/astarget/phpcs.xml"
+        },
+        "phpmd_run": true,
+        "phpmd_executable_path": "/home/tobias/projects/astarget/bin/phpmd",
+        "phpmd_additional_args": {
+            "/home/tobias/projects/astarget/phpmd.xml": ""
+        }
+    }
+}
