@@ -7,7 +7,7 @@ if available php; then
     alias ut='./bin/phpunit'
 
     cdownload() {
-        if [ ! -e "bin/composer" ]; then
+        if [ ! -x "bin/composer" ]; then
             php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 
             local EXPECTED_SIGNATURE=$(wget https://composer.github.io/installer.sig -O - -q)
