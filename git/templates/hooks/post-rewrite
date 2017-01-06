@@ -1,0 +1,7 @@
+#!/bin/bash
+
+case "${1}" in
+    rebase)
+        "${GIT_DIR}"/hooks/post-merge
+        ;;
+esac
