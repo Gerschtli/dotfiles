@@ -2,4 +2,4 @@
 
 HOOKS_DIR="${PWD}"/.git/hooks
 
-"${HOOKS_DIR}"/php/check.sh post-checkout
+"${HOOKS_DIR}"/scripts/composer.sh post-checkout

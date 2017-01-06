@@ -3,6 +3,7 @@
 HOOKS_DIR="${PWD}"/.git/hooks
 RESULT=0
 
-"${HOOKS_DIR}"/check/ant.sh; RESULT=$((${RESULT} + $?))
+"${HOOKS_DIR}"/scripts/ant.sh; RESULT=$((${RESULT} + $?))
+"${HOOKS_DIR}"/scripts/composer.sh pre-push; RESULT=$((${RESULT} + $?))
 
 exit ${RESULT}

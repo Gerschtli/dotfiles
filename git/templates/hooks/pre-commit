@@ -3,6 +3,6 @@
 HOOKS_DIR="${PWD}"/.git/hooks
 RESULT=0
 
-"${HOOKS_DIR}"/check/file.sh; RESULT=$((${RESULT} + $?))
+"${HOOKS_DIR}"/scripts/file.sh; RESULT=$((${RESULT} + $?))
 
 exit ${RESULT}
