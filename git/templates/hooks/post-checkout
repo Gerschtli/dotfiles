@@ -1,3 +1,5 @@
 #!/bin/bash
 
-"${GIT_DIR}"/hooks/php/check.sh post-checkout
+HOOKS_DIR="${PWD}"/.git/hooks
+
+"${HOOKS_DIR}"/php/check.sh post-checkout
