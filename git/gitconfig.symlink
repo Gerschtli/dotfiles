@@ -146,6 +146,9 @@
 [i18n]
     logOutputEncoding = utf8
 
+[init]
+    templatedir = ~/.git-templates
+
 [interactive]
     singlekey = false
 
