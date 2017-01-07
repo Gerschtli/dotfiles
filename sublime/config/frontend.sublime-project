@@ -2,7 +2,8 @@
     "folders":
     [
         {
-            "path": "../frontend",
+            "name": "cbn-frontend",
+            "path": "../cbn/frontend",
             "file_exclude_patterns": [
                 "cache.properties",
                 "rsync.conf",

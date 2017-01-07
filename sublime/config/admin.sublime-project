@@ -2,7 +2,8 @@
     "folders":
     [
         {
-            "path": "../admin",
+            "name": "cbn-admin",
+            "path": "../cbn/admin",
             "file_exclude_patterns": [
                 "cache.properties",
                 "rsync.conf",

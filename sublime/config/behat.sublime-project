@@ -2,7 +2,8 @@
     "folders":
     [
         {
-            "path": "../behat",
+            "name": "cbn-behat",
+            "path": "../cbn/behat",
             "folder_exclude_patterns": ["nbproject"]
         }
     ]
