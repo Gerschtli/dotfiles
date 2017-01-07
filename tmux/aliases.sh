@@ -4,4 +4,4 @@ if available tmux; then
     if is_osx; then
         alias reattach-to-user-namespace="exec reattach-to-user-namespace -l zsh"
     fi
-if
+fi
