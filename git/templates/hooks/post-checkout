@@ -2,4 +2,6 @@
 
 HOOKS_DIR="${PWD}"/.git/hooks
 
-"${HOOKS_DIR}"/scripts/composer.sh post-checkout
+if [ "${3}" = 1 ]; then # is branch checkout
+    "${HOOKS_DIR}"/scripts/composer.sh post-checkout
+fi
