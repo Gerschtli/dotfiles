@@ -1,1 +1,1 @@
-available git && ga="git aliases | grep"
+available git && alias ga="git aliases | grep"
