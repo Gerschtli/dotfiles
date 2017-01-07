@@ -1,20 +1,39 @@
 {
     "type": "sftp",
 
+    "save_before_upload": true,
     "upload_on_save": true,
+    "sync_down_on_open": false,
+    "sync_skip_deletes": false,
+    "sync_same_age": true,
+    "confirm_downloads": false,
+    "confirm_sync": true,
+    "confirm_overwrite_newer": false,
 
     "host": "<host>",
-    "user": "<user>",
-    "password": "<password>",
-    "port": "22",
+    "user": "vagrant",
 
-    "remote_path": "<remote_path>",
-    "file_permissions": "664",
-    "dir_permissions": "775",
+    "remote_path": "/var/www/htdocs/",
+    "ignore_regexes": [
+        ".*\\.min\\..*",
+        "\\.DS_Store",
+        "\\.git/",
+        "node_modules/",
+        "rsync\\.conf",
+        "sftp-config\\.json",
+        "tests/"
+    ],
 
-    "connect_timeout": 10,
+    "file_permissions": "644",
+    "dir_permissions": "755",
+
+    "connect_timeout": 30,
     "keepalive": 120,
+    "ssh_key_file": "~/.ssh/id_rsa",
+
+    "preserve_modification_times": true,
+    "remote_time_offset_in_hours": 0,
     "remote_encoding": "utf-8",
-    "remote_locale": "de_DE",
-    "allow_config_upload": false
+    "remote_locale": "en_US",
+    "allow_config_upload": false,
 }
