@@ -13,17 +13,17 @@
     statusHints = false
 
 [alias]
-    ac = commit --all --branch --status
+    ac = commit --all --branch --status --verbose
     ad = add --all --ignore-errors --
     ba = branch -a --verbose
     bc = checkout -b
     bd = branch --verbose --delete
     bdd = branch --verbose -D
     br = branch --verbose
-    ca = commit -q --branch --status --amend
+    ca = commit -q --branch --status --verbose --amend
     cf = checkout --quiet --force
     cl = clone --progress
-    cm = commit --branch --status
+    cm = commit --branch --status --verbose
     cn = !"git reflog expire --all && git fsck --unreachable --full && git prune && git gc --aggressive --quiet && git repack -Adq && git prune-packed --quiet"
     co = checkout
     cp = cherry-pick
