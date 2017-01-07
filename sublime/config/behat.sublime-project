@@ -2,7 +2,8 @@
     "folders":
     [
         {
-            "path": "../behat"
+            "path": "../behat",
+            "folder_exclude_patterns": ["nbproject"]
         }
     ]
 }
