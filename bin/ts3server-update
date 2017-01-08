@@ -8,19 +8,29 @@ VERSION="${1}"
 BACKUP="${INSTALL_DIR}/backup"
 DOWNLOAD_FILE="/tmp/teamspeak3-server.tar.bz2"
 
-if [ -z "${VERSION}" ]; then
-    echo "no version number provided"
-    exit 1
-fi
-
-if [ ! -d "${DIRECTORY}" ]; then
-    echo "${DIRECTORY} does not exist"
-    exit 1
-fi
+_is_version_installed() {
+    [ $(grep "Server Release ${VERSION}" "${INSTALL_DIR}/CHANGELOG" | wc -l) -gt 0 ]
+}
 
 _log() {
     echo "=> ${1}"
 }
+
+
+if [ -z "${VERSION}" ]; then
+    _log "no version number provided"
+    exit 1
+fi
+
+if [ ! -d "${DIRECTORY}" ]; then
+    _log "${DIRECTORY} does not exist"
+    exit 1
+fi
+
+if _is_version_installed; then
+    _log "${VERSION} already installed"
+    exit 1
+fi
 
 _log "stop service"
 sudo service "${SERVICE}" stop
@@ -42,10 +52,11 @@ _log "start service"
 sudo service "${SERVICE}" start
 
 _log "test update"
-if [ $(grep "Server Release ${VERSION}" "${INSTALL_DIR}/CHANGELOG" | wc -l) -gt 0 ]; then
+if _is_version_installed; then
     _log "update successful"
 else
     _log "update failed"
+    exit 2
 fi
 
 exit 0
