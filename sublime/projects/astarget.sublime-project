@@ -3,7 +3,10 @@
     [
         {
             "path": "~/projects/astarget",
-            "follow_symlinks": true
+            "follow_symlinks": true,
+            "folder_exclude_patterns": [
+                ".phpintel"
+            ]
         }
     ]
 }

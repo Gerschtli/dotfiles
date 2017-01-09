@@ -8,6 +8,9 @@
                 "cache.properties",
                 "rsync.conf",
                 "sftp-config.json"
+            ],
+            "folder_exclude_patterns": [
+                ".phpintel"
             ]
         }
     ]

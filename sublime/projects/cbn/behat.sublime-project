@@ -4,7 +4,10 @@
         {
             "name": "cbn-behat",
             "path": "~/projects/cbn/behat",
-            "folder_exclude_patterns": ["nbproject"]
+            "folder_exclude_patterns": [
+                ".phpintel",
+                "nbproject"
+            ]
         }
     ]
 }
