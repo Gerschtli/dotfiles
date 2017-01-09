@@ -2,7 +2,7 @@
     "folders":
     [
         {
-            "path": "../astarget",
+            "path": "~/projects/astarget",
             "follow_symlinks": true
         }
     ]
