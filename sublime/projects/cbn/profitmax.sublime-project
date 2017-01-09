@@ -1,0 +1,18 @@
+{
+    "folders":
+    [
+        {
+            "name": "cbn-profitmax",
+            "path": "~/projects/cbn/profitmax",
+            "file_exclude_patterns": [
+                "cache.properties",
+                "rsync.conf",
+                "sftp-config.json"
+            ],
+            "folder_exclude_patterns": [
+                "nbproject",
+                "node_modules"
+            ]
+        }
+    ]
+}
