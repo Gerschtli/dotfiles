@@ -22,11 +22,12 @@
     br = branch --verbose
     ca = commit -q --branch --status --verbose --amend
     cf = checkout --quiet --force
-    cl = clone --progress
+    cl = clone --progress --template="~/.git-templates"
     cm = commit --branch --status --verbose
     cn = !"git reflog expire --all && git fsck --unreachable --full && git prune && git gc --aggressive --quiet && git repack -Adq && git prune-packed --quiet"
     co = checkout
     cp = cherry-pick
+    cs = clone --progress
     dt = difftool
     fe = fetch --prune --progress
     fm = !"git fe --all && git fe --all --tags"
@@ -145,9 +146,6 @@
 
 [i18n]
     logOutputEncoding = utf8
-
-[init]
-    templatedir = ~/.git-templates
 
 [interactive]
     singlekey = false

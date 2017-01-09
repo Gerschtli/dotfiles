@@ -6,6 +6,6 @@ if available git; then
             return 1
         fi
         rm -r "${hooks_dir}"
-        git init
+        git init --template="${DOTFILES_ROOT}/git/templates"
     }
 fi
