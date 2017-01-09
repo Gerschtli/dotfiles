@@ -18,6 +18,10 @@ if [[ -z "${1}" ]]; then
     fi
 fi
 
+echo
+_d_info "===== SUBMOUDLE UPDATE ====="
+_d_indent git submodule update
+
 if available termux-fix-shebang; then
     echo
     _d_info "==== TERMUX FIX SHEBANG ===="
