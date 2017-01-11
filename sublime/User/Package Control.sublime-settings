@@ -29,6 +29,7 @@
 		"php-grammar",
 		"php-snippets",
 		"Phpcs",
+		"PHPUnit",
 		"PHPUnit Completions",
 		"phpunitkit",
 		"Pretty JSON",
