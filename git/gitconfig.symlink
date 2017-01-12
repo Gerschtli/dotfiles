@@ -13,47 +13,34 @@
     statusHints = false
 
 [alias]
-    ac = commit --all --branch --status --verbose
     ad = add --all --ignore-errors --
     ba = branch -a --verbose
     bc = checkout -b
     bd = branch --verbose --delete
     bdd = branch --verbose -D
-    br = branch --verbose
     ca = commit -q --branch --status --verbose --amend
     cf = checkout --quiet --force
     cl = !"git clone --progress --template=${HOME}/.git-templates"
     cm = commit --branch --status --verbose
     cn = !"git reflog expire --all && git fsck --unreachable --full && git prune && git gc --aggressive --quiet && git repack -Adq && git prune-packed --quiet"
     co = checkout
-    cp = cherry-pick
-    dt = difftool
     fe = fetch --prune --progress
     fm = !"git fe --all && git fe --all --tags"
     gr = grep --ignore-case --line-number --break --heading
-    l1 = !"GIT_PAGER=less git log -10 --pretty=short --notes --date=short"
-    la = !"GIT_PAGER=less git log --all --pretty=graph --date=short --abbrev-commit --graph"
     lg = log --stat
     lm = log --merges --stat
-    lo = !"GIT_PAGER=less git log --pretty=graph --date=short --abbrev-commit --graph"
     lp = log -10 --patch-with-stat
-    ls = ls-files -cdkmosu --no-empty-directory --exclude-standard --full-name --
     ma = merge --abort
     me = merge --stat --summary
     mm = !"git me origin/$(git branch-name)"
     mt = mergetool --no-prompt
-    pa = !"for i in $(git remote); do git push --all --progress ${i}; done"
-    pd = push --delete --progress origin
-    pf = !"git push --force --progress --tags origin $(git branch-name)"
-    pg = !"git ph --force bitbucket $(git branch-name)"
-    pg = !"git ph --force github $(git branch-name)"
+    pd = push --no-verify --delete --progress origin
     ph = push --progress --tags
     pu = !"for i in $(git remote); do git ph ${i} $(git branch-name); done"
     ra = rebase --abort
     rc = rebase --continue
     re = reset
     rh = reset --hard
-    ri = !"(git sa || true) && git rh --quiet $(git rev-list --reverse HEAD | head -n 1) && git merge --quiet origin/$(git for-each-ref --format='%(refname:short)' $(git symbolic-ref HEAD)); (git so || true)"
     rp = rebase --skip
     rs = reset --soft
     rv = remote --verbose
@@ -67,17 +54,14 @@
     sm = submodule
     so = stash pop
     sr = !"git sf --recursive"
-    ss = !"git st && git sf \"git st -s; echo\" && git sm status --recursive"
     st = status
-    su = !"git upre && echo && git sr \"git upre\" && git sm -q sync && git ss"
     sw = stash show
-    tg = !"git tag -s -m $(date '+%F') $(date '+%F')"
 
     clo = !"git co development && git rebase -n origin/development"
     cma = !"git co master && git rebase -n origin/master"
 
     rlo = rebase origin/development
-    rma = rebase master
+    rma = rebase origin/master
 
     mlo = merge origin/development
     mma = merge origin/master
@@ -88,8 +72,6 @@
 
     branch-name = !"git for-each-ref --format='%(refname:short)' $(git symbolic-ref HEAD)"
     total-clean = "!git co -f && git clean -dfx && git clean -dfX"
-    upre = !"git fm && git ri && while ! $(git cn >| /dev/null); do true; done"
-    uppush = !"git update && git pu"
 
     set-upstream = "!git branch --set-upstream-to=origin/$(git branch-name) $(git branch-name)"
 
