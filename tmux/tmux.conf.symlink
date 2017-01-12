@@ -75,6 +75,16 @@ bind r source-file ~/.tmux.conf
 bind E select-pane -l \; send-keys C-c C-m up C-m \; select-pane -l
 bind e select-pane -l \; send-keys up C-m \; select-pane -l
 
+unbind Up
+unbind Down
+unbind Left
+unbind Right
+
+unbind C-Up
+unbind C-Down
+unbind C-Left
+unbind C-Right
+
 # open new pane in same directory
 if-shell 'tmux-version \>= 1.9' ' \
     bind-key '"'\"'"' split-window -c "#{pane_current_path}"; \
