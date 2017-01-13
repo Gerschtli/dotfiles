@@ -1,0 +1,17 @@
+{
+    "folders":
+    [
+        {
+            "name": "cbn-backend",
+            "path": "~/projects/cbn/backend",
+            "file_exclude_patterns": [
+                "cache.properties",
+                "rsync.conf",
+                "sftp-config.json"
+            ],
+            "folder_exclude_patterns": [
+                ".phpintel"
+            ]
+        }
+    ]
+}
