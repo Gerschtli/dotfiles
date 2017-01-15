@@ -12,6 +12,3 @@
 
 ## explicitly enable modules
 # MODULES=()
-
-## folder of projects
-# PROJECTS="${HOME}/projects"

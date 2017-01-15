@@ -1,5 +1,8 @@
 unhash -dm "*"
 
+DROPBOX="${HOME}/Dropbox/Studium"
+PROJECTS="${HOME}/projects"
+
 if [[ -d "${DOTFILES_ROOT}" ]]; then
     hash -d dotfiles="${DOTFILES_ROOT}"
 fi
@@ -16,8 +19,6 @@ if [[ -d "${PROJECTS}" ]]; then
     fi
 fi
 
-DROPBOX="${HOME}/Dropbox/Studium"
-
 if [[ -d "${DROPBOX}" ]]; then
     for i in "${DROPBOX}"/*(/); do
         # to lowercase, replace spaces with dashes and remove plus symbols
@@ -25,4 +26,4 @@ if [[ -d "${DROPBOX}" ]]; then
     done
 fi
 
-unset DROPBOX
+unset DROPBOX PROJECTS
