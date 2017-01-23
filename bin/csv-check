@@ -5,27 +5,27 @@ NAME="${2:-test}.csv"
 
 rm -f "${NAME}"
 
-echo $'\n'
+echo
 curl -L "$URL" -o "$NAME"
-echo $'\n'
+echo
 
 if file "$NAME" | grep "Zip archive data" > /dev/null; then
     rm -rf csv
     unzip -d "csv" "$NAME"
-    echo $'\n'
+    echo
     NAME=csv/*
 fi;
 
 file $NAME
-echo $'\n'
+echo
 
 wc -l $NAME
-echo $'\n'
+echo
 
 head -n5 $NAME
-echo $'\n'
+echo
 
 tail -n5 $NAME
-echo $'\n'
+echo
 
 exit 0
