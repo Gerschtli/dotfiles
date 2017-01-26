@@ -1,0 +1,36 @@
+#!/bin/sh
+
+CONF="${HOME}/.tmux-profiles/${1}.sh"
+
+if ! hash tmux > /dev/null 2>&1; then
+    echo "tmux not installed"
+    exit 1
+fi
+
+if [ ! -r "${CONF}" ]; then
+    echo "${CONF} does not exists"
+    exit 1
+fi
+
+. "${CONF}"
+
+ROOT="${ROOT:-${HOME}}"
+
+if [ ! -d "${ROOT}" ]; then
+    echo "directory does not exists"
+    exit 1
+fi
+
+if [ ! -z "${SPLIT}" ]; then
+    tmux split-window "${SPLIT}"
+    tmux select-layout "${LAYOUT}"
+    tmux send-keys "cd ${ROOT} && clear" C-m
+    tmux send-keys "${SECOND_PANE_CMD}" C-m
+    tmux select-pane -l
+fi
+
+tmux send-keys "cd ${ROOT} && clear" C-m
+tmux send-keys "${MAIN_PANE_CMD}" C-m
+tmux rename-window "${TITLE}"
+
+exit 0

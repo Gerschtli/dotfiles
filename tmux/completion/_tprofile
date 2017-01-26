@@ -1,0 +1,13 @@
+#compdef tprofile
+
+LIST=()
+
+prefix="${DOTFILES_ROOT}/tmux/profiles/"
+suffix=".sh"
+
+for file in "${prefix}"*"${suffix}"; do
+    tmp="${file#${prefix}}"
+    LIST=("${tmp//${suffix}}" "${LIST}")
+done
+
+_arguments "1:profiles:(${LIST})"
