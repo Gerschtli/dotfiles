@@ -1,6 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
-CONF="${HOME}/.tmux-profiles/${1}.sh"
+source "${HOME}/.dotfiles-variables"
+
+CONF="${DOTFILES_ROOT}/tmux/profiles/${1}.sh"
 
 if ! hash tmux > /dev/null 2>&1; then
     echo "tmux not installed"
