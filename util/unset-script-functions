@@ -7,6 +7,7 @@ unset -f \
     _d_link_file \
     _d_print \
     _d_pull \
+    _d_register_fpath \
     _d_remove_line_in_cache \
     _d_source_files \
     _d_success \

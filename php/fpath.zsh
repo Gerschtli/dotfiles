@@ -1,1 +1,1 @@
-fpath=("${DOTFILES_ROOT}/php/completion" $fpath)
+_d_register_fpath "${DOTFILES_ROOT}/php/completion"

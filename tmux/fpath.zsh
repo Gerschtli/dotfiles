@@ -1,1 +1,1 @@
-fpath=("${DOTFILES_ROOT}/tmux/completion" $fpath)
+_d_register_fpath "${DOTFILES_ROOT}/tmux/completion"

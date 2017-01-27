@@ -96,6 +96,10 @@ _d_pull() {
     fi
 }
 
+_d_register_fpath() {
+    [[ "$(whoami)" != "root" ]] && fpath=("${1}" $fpath)
+}
+
 _d_remove_line_in_cache() {
     local tmp="$(mktemp -t "dotfiles-cache.XXXXXX")"
 
