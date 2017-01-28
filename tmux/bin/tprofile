@@ -39,6 +39,8 @@ if [[ -r "${LOCAL_CONF}" ]]; then
     source "${LOCAL_CONF}"
 fi
 
+[ $(tmux list-panes | wc -l) != 1 ] && tmux kill-pane -a -t $TMUX_PANE
+
 for cmd_index in "${!PANE_CMDS[@]}"; do
     [[ $cmd_index != 0 ]] && tmux split-window
     tmux send-keys -t :.$(($cmd_index + 1)) "cd ${ROOT} && clear" C-m
