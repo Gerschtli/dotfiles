@@ -1,0 +1,14 @@
+## root directory
+# ROOT=
+
+## window title (required)
+# TITLE=
+
+## layout
+# LAYOUT=
+
+## list of commands, where each element represents a new pane
+# PANE_CMDS=()
+
+## preset, e.g. git-single or git-vagrant
+# PRESET=
