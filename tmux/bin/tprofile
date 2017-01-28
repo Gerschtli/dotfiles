@@ -23,14 +23,14 @@ if [ ! -d "${ROOT}" ]; then
     exit 1
 fi
 
-if [ ! -z "${SPLIT}" ]; then
-    tmux split-window "${SPLIT}"
-    tmux select-layout "${LAYOUT}"
-    tmux send-keys -t :.2 "cd ${ROOT} && clear" C-m "${SECOND_PANE_CMD}" C-m
-    tmux select-pane -t :.1
-fi
+for cmd_index in "${!PANE_CMDS[@]}"; do
+    [[ $cmd_index != 0 ]] && tmux split-window
+    tmux send-keys -t :.$(($cmd_index + 1)) "cd ${ROOT} && clear" C-m
+    [[ ! -z "${PANE_CMDS[$cmd_index]}" ]] && tmux send-keys -t :.$(($cmd_index + 1)) "${PANE_CMDS[$cmd_index]}" C-m
+done
 
-tmux send-keys -t :.1 "cd ${ROOT} && clear" C-m "${MAIN_PANE_CMD}" C-m
+[ ! -z "${LAYOUT}" ] && tmux select-layout "${LAYOUT}"
+tmux select-pane -t :.1
 tmux rename-window "${TITLE}"
 
 exit 0
