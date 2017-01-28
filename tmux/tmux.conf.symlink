@@ -13,7 +13,7 @@ set-option -g allow-rename off
 # will grow taller to make the other panes the specified height, but will never
 # shrink to do so.
 set-window-option -g other-pane-height 10
-set-window-option -g other-pane-width 30
+set-window-option -g other-pane-width 100
 
 # Bind key to command. By default (without -t) the primary key bindings are
 # modified (those normally activated with the prefix key); in this case, if -n
