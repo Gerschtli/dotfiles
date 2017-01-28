@@ -5,24 +5,16 @@ source "${HOME}/.dotfiles-variables"
 CONF="${DOTFILES_ROOT}/tmux/profiles/${1}.sh"
 LOCAL_CONF="${DOTFILES_ROOT}/tmux/tprofile.conf"
 
-if ! hash tmux > /dev/null 2>&1; then
-    echo "tmux not installed"
-    exit 1
-fi
-
-if [ ! -r "${CONF}" ]; then
-    echo "${CONF} does not exists"
-    exit 1
-fi
+! hash tmux > /dev/null 2>&1 && echo "tmux not installed"                           && exit 1
+[ -z "${TMUX}" ]             && echo "command needs to be executed in tmux session" && exit 1
+[ ! -r "${CONF}" ]           && echo "${CONF} does not exists"                      && exit 1
 
 . "${CONF}"
 
 ROOT="${ROOT:-${HOME}}"
 
-if [ ! -d "${ROOT}" ]; then
-    echo "directory does not exists"
-    exit 1
-fi
+[ ! -d "${ROOT}" ] && echo "directory does not exists" && exit 1
+
 
 case "${PRESET}" in
     git-single )
@@ -35,9 +27,7 @@ case "${PRESET}" in
         ;;
 esac
 
-if [[ -r "${LOCAL_CONF}" ]]; then
-    source "${LOCAL_CONF}"
-fi
+[[ -r "${LOCAL_CONF}" ]] && source "${LOCAL_CONF}"
 
 [ $(tmux list-panes | wc -l) != 1 ] && tmux kill-pane -a -t $TMUX_PANE
 
