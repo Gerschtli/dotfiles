@@ -6,6 +6,7 @@ set-window-option -g pane-base-index 1
 
 set-option -g default-terminal "screen-256color"
 set-option -g allow-rename off
+set-option -g renumber-windows on
 
 # Set the height of the other panes (not the main pane) in the main-horizontal
 # layout. If this option is set to 0 (the default), it will have no effect. If
@@ -67,13 +68,13 @@ bind -r J resize-pane -D
 bind -r K resize-pane -U
 bind -r L resize-pane -R
 
-bind-key x run-shell "tmux new-window -t :10 -n Root 'sudo -i' || tmux new-window -a -t :10 -n Root 'sudo -i'"
-bind-key X split-window "sudo -i"
+bind r source-file ~/.tmux.conf \; display-message "Reloaded ~/.tmux.conf"
 
-bind r source-file ~/.tmux.conf
+bind E send-keys -t :.- C-c C-m up C-m
+bind e send-keys -t :.- up C-m
 
-bind E select-pane -l \; send-keys C-c C-m up C-m \; select-pane -l
-bind e select-pane -l \; send-keys up C-m \; select-pane -l
+bind M-Left swap-window -t :-
+bind M-Right swap-window -t :+
 
 unbind Up
 unbind Down
