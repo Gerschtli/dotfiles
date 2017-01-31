@@ -1,7 +1,9 @@
 #!/bin/bash
 
+echo -e "\nRunning git hook post-checkout with [$@]\n"
+
 HOOKS_DIR="${PWD}"/.git/hooks
 
-if [ "${3}" = 1 ]; then # is branch checkout
+if [ "${1}" != "${2}" ] && [ "${3}" = 1 ]; then # has new commits and is branch checkout
     "${HOOKS_DIR}"/scripts/composer.sh post-checkout
 fi

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo -e "\nRunning git hook pre-push with [$@]\n"
+
 HOOKS_DIR="${PWD}"/.git/hooks
 RESULT=0
 
