@@ -1,3 +1,4 @@
 mkdir -p "${HOME}/.config"
 
 _d_link_file "${DOTFILES_ROOT}/nvim/nvim" "${HOME}/.config/nvim"
+_d_link_file "${DOTFILES_ROOT}/nvim/nvim/init.vim" "${HOME}/.vimrc"
