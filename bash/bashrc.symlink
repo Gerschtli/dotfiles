@@ -7,8 +7,7 @@ source "${HOME}/.dotfiles-variables"
 source "${DOTFILES_ROOT}/util/script-functions"
 
 _d_source_files \( -name "*.sh" -o -name "*.bash" \) \
-    ! -name "path.sh" ! -name "path.bash" \
-    ! -name "completion.sh" ! -name "completion.bash"
+    ! -name "env.*sh" ! -name "completion.*sh"
 
 _d_source_files \( -name "completion.sh" -o -name "completion.bash" \)
 
