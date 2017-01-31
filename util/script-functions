@@ -97,7 +97,7 @@ _d_pull() {
 }
 
 _d_register_fpath() {
-    [[ "$(whoami)" != "root" ]] && fpath=("${1}" $fpath)
+    fpath=("${1}" $fpath)
 }
 
 _d_remove_line_in_cache() {
