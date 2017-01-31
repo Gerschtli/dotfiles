@@ -1,5 +1,7 @@
 autoload -Uz zkbd
 
+bindkey -e
+
 bindkey '\e[A' up-line-or-search
 bindkey '\e[B' down-line-or-search
 
