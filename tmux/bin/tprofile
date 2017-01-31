@@ -9,7 +9,7 @@ LOCAL_CONF="${DOTFILES_ROOT}/tmux/tprofile.conf"
 [ -z "${TMUX}" ]             && echo "command needs to be executed in tmux session" && exit 1
 [ ! -r "${CONF}" ]           && echo "${CONF} does not exists"                      && exit 1
 
-. "${CONF}"
+source "${CONF}"
 
 ROOT="${ROOT:-${HOME}}"
 
@@ -34,7 +34,12 @@ esac
 for cmd_index in "${!PANE_CMDS[@]}"; do
     [[ $cmd_index != 0 ]] && tmux split-window
     tmux send-keys -t :.$(($cmd_index + 1)) "cd ${ROOT} && clear" C-m
-    [[ ! -z "${PANE_CMDS[$cmd_index]}" ]] && tmux send-keys -t :.$(($cmd_index + 1)) "${PANE_CMDS[$cmd_index]}" C-m
+    if [[ ! -z "${PANE_CMDS[$cmd_index]}" ]]; then
+        IFS="\:"; list=(${PANE_CMDS[$cmd_index]})
+        for cmd in "${list[@]}"; do
+            tmux send-keys -t :.$(($cmd_index + 1)) "${cmd}" C-m
+        done
+    fi
 done
 
 [ ! -z "${LAYOUT}" ] && tmux select-layout "${LAYOUT}"

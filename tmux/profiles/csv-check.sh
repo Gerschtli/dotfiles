@@ -3,4 +3,4 @@ TITLE="csv-check"
 
 LAYOUT="main-vertical"
 
-PANE_CMDS=("" "ssh cbn.db02" "ssh cbn.tools01")
+PANE_CMDS=("" "ssh cbn.db02:mysql soap" "ssh cbn.tools01")
