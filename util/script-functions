@@ -103,6 +103,8 @@ _d_register_fpath() {
 _d_remove_line_in_cache() {
     local tmp="$(mktemp -t "dotfiles-cache.XXXXXX")"
 
+    [ ! -r "${CACHE_FILE}" ] && touch "${CACHE_FILE}"
+
     egrep -v ".*:${1}$" "${CACHE_FILE}" > "${tmp}" \
         && mv "${tmp}" "${CACHE_FILE}" || true
 }
