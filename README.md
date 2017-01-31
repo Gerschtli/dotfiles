@@ -22,6 +22,12 @@
 
 ## Installation
 
+### Clone repo
+
+```bash
+$ git clone --recursive "https://github.com/Gerschtli/dotfiles.git" ~/.dotfiles
+```
+
 ### Create .localrc (optional)
 
 ```bash
