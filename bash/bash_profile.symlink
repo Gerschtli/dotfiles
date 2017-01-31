@@ -1,7 +1,9 @@
 source "${HOME}/.dotfiles-variables"
 source "${DOTFILES_ROOT}/util/script-functions"
 
-_d_source_files \( -name "env.sh" -o -name "env.bash" \)
+[[ -f "${HOME}/.bashrc" ]] && source "${HOME}/.bashrc"
+
+source "${DOTFILES_ROOT}/shell/source/profile.sh"
 
 source "${DOTFILES_ROOT}/util/unset-script-functions"
 source "${DOTFILES_ROOT}/util/unset-variables"
