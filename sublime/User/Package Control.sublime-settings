@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"Alignment",
 		"All Autocomplete",
 		"ApacheConf.tmLanguage",
@@ -42,7 +43,6 @@
 		"Tmux",
 		"TrailingSpaces",
 		"Twig",
-		"VimL",
-		"zz File Icons"
+		"VimL"
 	]
 }
