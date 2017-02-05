@@ -1,13 +1,20 @@
 #compdef tprofile
 
+_directory_exists() {
+    unset ROOT
+    source "${1}"
+    [[ -z "${ROOT}" || -d "${ROOT}" ]]
+}
+
 LIST=()
 
 prefix="${DOTFILES_ROOT}/tmux/profiles/"
 suffix=".sh"
 
 for file in "${prefix}"*"${suffix}"; do
-    tmp="${file#${prefix}}"
-    LIST=("${tmp//${suffix}}" "${LIST}")
+    if _directory_exists "${file}"; then
+        LIST=("${${file#${prefix}}//${suffix}}" "${LIST}")
+    fi
 done
 
 _arguments "1:profiles:(${LIST})"
