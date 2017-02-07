@@ -25,7 +25,7 @@ _d_indent git submodule update
 if available termux-fix-shebang; then
     echo
     _d_info "==== TERMUX FIX SHEBANG ===="
-    _d_indent termux-fix-shebang bootstrap.sh bin/*
+    _d_indent termux-fix-shebang bootstrap.sh */bin/* git/templates/hooks/{pre-,post-,scripts/}*
 fi
 
 echo
