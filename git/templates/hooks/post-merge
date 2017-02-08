@@ -5,3 +5,4 @@ echo -e "\nRunning git hook post-merge with [$@]\n"
 HOOKS_DIR="${PWD}"/.git/hooks
 
 "${HOOKS_DIR}"/scripts/composer.sh post-merge
+"${HOOKS_DIR}"/scripts/npm.sh post-merge

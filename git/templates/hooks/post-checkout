@@ -6,4 +6,5 @@ HOOKS_DIR="${PWD}"/.git/hooks
 
 if [ "${1}" != "${2}" ] && [ "${3}" = 1 ]; then # has new commits and is branch checkout
     "${HOOKS_DIR}"/scripts/composer.sh post-checkout
+    "${HOOKS_DIR}"/scripts/npm.sh post-checkout
 fi
