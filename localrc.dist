@@ -12,3 +12,6 @@
 
 ## explicitly enable modules
 # MODULES=()
+
+## options
+# OPTIONS=()

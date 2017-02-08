@@ -16,6 +16,10 @@ _d_get_symlink_target() {
     [ -e "${1}" ] && ls -l "${1}" | sed -e 's/.* -> //'
 }
 
+_d_has_option() {
+    _d_contains_element "${1}" "${OPTIONS[@]}"
+}
+
 _d_indent() {
     local cmd="$1"
     if [[ "${cmd}" == "git" && "$(git --version)" != *1.7.* ]]; then
