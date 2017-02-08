@@ -19,6 +19,12 @@
 | vagrant      | Aliases for vagrant                                               |
 | zsh          | Configuration for zsh                                             |
 
+### Options
+
+| Name              | Description                     |
+|-------------------|---------------------------------|
+| nvim:enable-vim   | Enables configuration for vim   |
+| nvim:disable-nvim | Disables configuration for nvim |
 
 ## Installation
 

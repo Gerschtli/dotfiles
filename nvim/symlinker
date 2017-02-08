@@ -1,9 +1,14 @@
-mkdir -p "${HOME}/.config"
+if _d_has_option "nvim:enable-vim"; then
+    # vim config
+    mkdir -p "${HOME}/.vim"
 
-_d_link_file "${DOTFILES_ROOT}/nvim/nvim" "${HOME}/.config/nvim"
+    _d_link_file "${DOTFILES_ROOT}/nvim/nvim/init.vim" "${HOME}/.vimrc"
+    _d_link_file "${DOTFILES_ROOT}/nvim/nvim/autoload" "${HOME}/.vim/autoload"
+fi
 
-# vim config
-mkdir -p "${HOME}/.vim"
+if ! _d_has_option "nvim:disable-nvim"; then
+    # nvim config
+    mkdir -p "${HOME}/.config"
 
-_d_link_file "${DOTFILES_ROOT}/nvim/nvim/init.vim" "${HOME}/.vimrc"
-_d_link_file "${DOTFILES_ROOT}/nvim/nvim/autoload" "${HOME}/.vim/autoload"
+    _d_link_file "${DOTFILES_ROOT}/nvim/nvim" "${HOME}/.config/nvim"
+fi
