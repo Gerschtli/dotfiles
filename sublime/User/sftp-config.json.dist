@@ -18,6 +18,7 @@
         ".*\\.min\\..*",
         "\\.DS_Store",
         "\\.git/",
+        "cache\\.properties",
         "node_modules/",
         "rsync\\.conf",
         "sftp-config\\.json",

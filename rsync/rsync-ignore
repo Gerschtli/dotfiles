@@ -5,6 +5,7 @@
 app/cache/
 app/logs/
 build/
+cache.properties
 node_modules/
 rsync.conf
 sftp-config.json
