@@ -1,3 +1,6 @@
+#!/bin/bash
+# only for syntax highlighting
+
 source "${HOME}/.dotfiles-variables"
 
 source "${DOTFILES_ROOT}/shell/source/logout.sh"

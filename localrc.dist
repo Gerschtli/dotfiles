@@ -1,3 +1,6 @@
+#!/bin/bash
+# only for syntax highlighting
+
 ## path to cache file for current symlinks
 # CACHE_FILE="${HOME}/.dotfiles-cache"
 

@@ -1,3 +1,6 @@
+#!/bin/bash
+# only for syntax highlighting
+
 ## Override profile configurations
 ## Example usage for wide sreens:
 #
