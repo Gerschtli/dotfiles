@@ -8,4 +8,20 @@ if available git; then
         rm -r "${hooks_dir}"
         git init --template="${DOTFILES_ROOT}/git/templates"
     }
+
+    git-hooks-reload-all() {
+        local list=("${DOTFILES_ROOT}")
+        [[ -d "${DOTFILES_ROOT}/ssh" ]] && list+=("${DOTFILES_ROOT}/ssh")
+        [[ -d "${HOME}/projects" ]]     && list+=("${HOME}/projects/"*(/))
+        [[ -d "${HOME}/projects/cbn" ]] && list+=("${HOME}/projects/cbn/"*(/))
+
+        local dir
+        for dir in "${list[@]}"; do
+            if [[ -d "${dir}/.git" ]]; then
+                pushd "${dir}" 1> /dev/null
+                git-hooks-reload
+                popd 1> /dev/null
+            fi
+        done
+    }
 fi
