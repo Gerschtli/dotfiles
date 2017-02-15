@@ -1,7 +1,7 @@
 if available vagrant; then
     alias cdv="cd vagrant"
 
-    alias vdes="vagrant destroy"
+    alias vdes="vagrant destroy && rm -rf .vagrant"
     alias vhalt="vagrant halt"
     alias vpro="vagrant provision"
     alias vrel="vagrant reload"
