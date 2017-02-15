@@ -7,15 +7,17 @@ fi
 alias la="ls -AFv"
 alias ll="ls -AFhlv"
 
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
 
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
+alias sort-vn="sort -t. -k 1,1n -k 2,2n -k 3,3n -k 4,4n"
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
 
 available xdg-open && alias open="xdg-open"
 
