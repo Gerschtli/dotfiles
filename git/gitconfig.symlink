@@ -37,6 +37,7 @@
     pd = push --no-verify --delete --progress origin
     ph = push --progress --tags
     pu = !"for i in $(git remote); do git ph ${i} $(git branch-name); done"
+    punv = !"for i in $(git remote); do git ph --no-verify ${i} $(git branch-name); done"
     ra = rebase --abort
     rc = rebase --continue
     re = reset
