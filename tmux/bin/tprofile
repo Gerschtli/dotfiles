@@ -15,6 +15,9 @@ ROOT="${ROOT:-${HOME}}"
 
 [ ! -d "${ROOT}" ] && echo "directory does not exists" && exit 1
 
+if [[ "${2}" == "--no-vagrant" && "${PRESET}" == "git-vagrant" ]]; then
+    PRESET="git-single"
+fi
 
 case "${PRESET}" in
     git-single )
