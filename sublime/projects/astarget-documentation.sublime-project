@@ -1,8 +1,14 @@
 {
-	"folders":
-	[
-		{
-			"path": "~/projects/astarget-documentation"
-		}
-	]
+    "folders":
+    [
+        {
+            "path": "~/projects/astarget-documentation",
+            "file_exclude_patterns": [
+                "*.aux",
+                "*.log",
+                "*.out",
+                "*.toc"
+            ]
+        }
+    ]
 }
