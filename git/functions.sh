@@ -13,8 +13,8 @@ if available git; then
         local list
         list=("${DOTFILES_ROOT}")
         [[ -d "${DOTFILES_ROOT}/ssh" ]] && list+=("${DOTFILES_ROOT}/ssh")
-        [[ -d "${HOME}/projects" ]]     && list+=("${HOME}/projects/"*(/))
-        [[ -d "${HOME}/projects/cbn" ]] && list+=("${HOME}/projects/cbn/"*(/))
+        [[ -d "${HOME}/projects" ]]     && list+=("${HOME}/projects/"*/)
+        [[ -d "${HOME}/projects/cbn" ]] && list+=("${HOME}/projects/cbn/"*/)
 
         local dir
         for dir in "${list[@]}"; do
