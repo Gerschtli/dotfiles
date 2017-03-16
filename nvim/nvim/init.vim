@@ -128,3 +128,6 @@ nmap <leader>q :bp <BAR> bd #<CR>
 
 " Show all open buffers and their status
 nmap <leader>l :ls<CR>
+
+" Disables formatting in paste mode
+set pastetoggle=<F3>
