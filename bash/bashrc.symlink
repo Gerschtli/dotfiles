@@ -9,10 +9,7 @@ fi
 source "${HOME}/.dotfiles-variables"
 source "${DOTFILES_ROOT}/util/script-functions"
 
-_d_source_files \( -name "env.sh" -o -name "env.bash" \)
-
-_d_source_files \( -name "*.sh" -o -name "*.bash" \) \
-    ! -name "env.*sh" ! -name "completion.*sh"
+_d_source_files \( -name "*.sh" -o -name "*.bash" \) ! -name "completion.*sh" ! -name "logout.*sh"
 
 _d_source_files \( -name "completion.sh" -o -name "completion.bash" \)
 
