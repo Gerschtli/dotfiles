@@ -1,10 +1,3 @@
-for dir in "${EXTENDED_PATH[@]}"; do
-    if [[ -d "${dir}" && ! "${PATH}" =~ (^|:)"${dir}"(:|$) ]]; then
-        export PATH="${dir}:${PATH}"
-    fi
-done
-unset dir
-
 export TZ="Europe/Berlin"
 
 export LC_CTYPE=en_US.UTF-8
@@ -23,5 +16,3 @@ export LC_ALL=
 
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
-
-export EDITOR="nvim"
