@@ -7,15 +7,22 @@ class ${1:Class}Test extends PHPUnit_Framework_TestCase
      */
     private \$_object;
 
+    /**
+     * @var Pimple
+     */
+    private \$_pimple;
+
     public function setUp()
     {
         parent::setUp();
 
-        \$this->_object = new ${1:Class}();
+        \$this->_pimple = new Pimple();
+
+        \$this->_object = new ${1:Class}(\$this->_pimple);
     }
 }
 
 ]]></content>
-    <tabTrigger>testclass</tabTrigger>
+    <tabTrigger>testclasspimple</tabTrigger>
     <scope>text.plain, source.php</scope>
 </snippet>

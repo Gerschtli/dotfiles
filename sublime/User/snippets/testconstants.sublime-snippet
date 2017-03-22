@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[
+public function testConstants()
+{
+    $object = new ReflectionClass($this->_object);
+
+    $this->assertEquals(
+        [
+            $1
+        ],
+        $object->getConstants()
+    );
+}
+]]></content>
+    <tabTrigger>testconstants</tabTrigger>
+    <scope>text.plain, source.php</scope>
+</snippet>

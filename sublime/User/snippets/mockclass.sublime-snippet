@@ -1,7 +1,7 @@
 <snippet>
     <content><![CDATA[
 ${1:var} = \$this
-    ->getMockBuilder('${2:Class}')
+    ->getMockBuilder(${2:Class}::class)
     ->disableOriginalConstructor()
     ->getMock();
 ]]></content>
