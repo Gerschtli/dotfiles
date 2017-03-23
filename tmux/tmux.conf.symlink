@@ -8,6 +8,10 @@ set-option -g default-terminal "screen-256color"
 set-option -g allow-rename off
 set-option -g renumber-windows on
 
+set-option -g history-limit 51200
+set-option -g set-titles on
+set-option -g set-titles-string "#{pane_title}"
+
 # Set the height of the other panes (not the main pane) in the main-horizontal
 # layout. If this option is set to 0 (the default), it will have no effect. If
 # both the main-pane-height and other-pane-height options are set, the main pane
