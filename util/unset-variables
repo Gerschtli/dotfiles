@@ -2,4 +2,4 @@
 # only for syntax highlighting
 
 # do not unset DOTFILES_ROOT, is used in shell functions
-unset CACHE_FILE DISABLE_TITLE EXTENDED_PATH MODULES OPTIONS
+unset CACHE_FILE EXTENDED_PATH MODULES OPTIONS

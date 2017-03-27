@@ -6,7 +6,6 @@ if [[ -r "${HOME}/.localrc" ]]; then
 fi
 
 CACHE_FILE="${CACHE_FILE:-${HOME}/.dotfiles-cache}"
-DISABLE_TITLE=${DISABLE_TITLE:-0}
 DOTFILES_ROOT="${DOTFILES_ROOT:-${HOME}/.dotfiles}"
 EXTENDED_PATH=("${EXTENDED_PATH[@]}")
 MODULES=("${MODULES[@]}")

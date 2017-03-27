@@ -4,9 +4,6 @@
 ## path to cache file for current symlinks
 # CACHE_FILE="${HOME}/.dotfiles-cache"
 
-## disable title for terminal
-# DISABLE_TITLE=0
-
 ## folder of dotfiles installation
 # DOTFILES_ROOT="${HOME}/.dotfiles"
 
