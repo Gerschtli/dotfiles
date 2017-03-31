@@ -2,13 +2,13 @@
     <content><![CDATA[
 public function testConstants()
 {
-    $object = new ReflectionClass($this->_object);
+    \$object = new ReflectionClass(\$this->_object);
 
-    $this->assertEquals(
+    \$this->assertEquals(
         [
             $1
         ],
-        $object->getConstants()
+        \$object->getConstants()
     );
 }
 ]]></content>
