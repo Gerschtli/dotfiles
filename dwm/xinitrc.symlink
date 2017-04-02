@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Redirect errors to a file in user's home directory if we can
+exec > "${HOME}/.wm-errors" 2>&1
+
+
+# Load extended-path.sh
+source "${HOME}/.dotfiles-variables"
+source "${DOTFILES_ROOT}/util/source/extended-path.sh"
+source "${DOTFILES_ROOT}/util/unset-variables"
+
+
+# Load what is available
+userresources="${HOME}/.Xresources"
+if [[ -f "${userresources}" ]]; then
+    xrdb -load "${userresources}"
+fi
+
+
+# Show screen saver after 20 min
+xset s 1200
+
+
+# Set xsetroot
+while true; do
+    xsetroot -name "$(dwm-status)"
+    sleep 1
+done &
+
+
+# Set screen locker
+xss-lock -v -- xtrlock -b &
+# Start NetworkManager Tray Icon
+nm-applet &
+# Start dropbox
+dropbox &
+
+
+# Use while loop for safely restarting dwm
+while true; do
+    dwm
+done

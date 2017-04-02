@@ -1,0 +1,62 @@
+#!/bin/bash
+
+LOG_FILE="${HOME}/.dwm-status-errors"
+
+function _log {
+    echo "${1}" >> "${LOG_FILE}"
+}
+
+function backlight {
+    printf "L: %.0f%%" "$(xbacklight)"
+}
+
+function battery {
+    local battery_output="$(acpi --battery)"
+    local adapter_output="$(acpi --ac-adapter)"
+
+    local regex="^[^:]+: (Charging|Discharging), ([0-9]+)%, ([0-9]+:[0-9]+)"
+
+    if [[ "${battery_output}" =~ ${regex} ]]; then
+        local state="${BASH_REMATCH[1]}"
+        local percent="${BASH_REMATCH[2]}"
+        local time="${BASH_REMATCH[3]}"
+
+        local icon="↑"
+        if [[ "${state}" == "Discharging" ]]; then
+            icon="↓"
+        fi
+
+        printf "%s %d%% (%s)" "${icon}" "${percent}" "${time}"
+    elif [[ "${battery_output}" =~ "100%" ]]; then
+        echo "= 100%"
+    elif [[ "${adapter_output}" == "Adapter 0: on-line" ]]; then
+        echo "NO BATT"
+    else
+        _log "battery: ${battery_output}"
+    fi
+}
+
+function datetime {
+    echo "$(date "+%EY-%m-%d %H:%M")"
+}
+
+function sound {
+    local amixer_output="$(amixer get Master | grep "Front Left: Playback")"
+
+    local regex="\[([0-9]+)%\] \[(on|off)\]$"
+
+    if [[ "${amixer_output}" =~ ${regex} ]]; then
+        local percent="${BASH_REMATCH[1]}"
+        local state="${BASH_REMATCH[2]}"
+
+        if [[ "${state}" == "on" ]]; then
+            printf "S: ${percent}%%"
+        else
+            printf "S: MUTE"
+        fi
+    else
+        _log "sound: ${amixer_output}"
+    fi
+}
+
+echo "$(backlight) | $(sound) | $(battery) | $(datetime)"

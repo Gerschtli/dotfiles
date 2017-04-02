@@ -5,6 +5,7 @@
 | Name         | Description                                                       |
 |--------------|-------------------------------------------------------------------|
 | bash         | Configuration for bash                                            |
+| dwm          | Configuration for dwm sessions                                    |
 | git          | Configuration for git with git hooks                              |
 | git-minimal  | Minimal gitconfig                                                 |
 | liquidprompt | Configuration for liquidprompt                                    |

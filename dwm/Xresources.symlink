@@ -1,0 +1,5 @@
+xterm*background: black
+xterm*faceName: Fira Code:size=8:antialias=true
+xterm*foreground: white
+xterm*selectToClipboard: true
+xterm*utf8: 1
