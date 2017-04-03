@@ -20,6 +20,10 @@ fi
 # Show screen saver after 20 min
 xset s 1200
 
+# Fix java problem
+wmname LG3D
+export AWT_TOOLKIT=MToolkit
+
 
 # Set xsetroot
 while true; do
