@@ -19,6 +19,11 @@ fi
 
 # Show screen saver after 20 min
 xset s 1200
+# Disable screen power saving settings
+xset -dpms
+# Increase key repeat speed
+xset r rate 400 30
+
 
 # Fix java problem
 wmname LG3D
@@ -26,6 +31,7 @@ export AWT_TOOLKIT=MToolkit
 
 
 # Set xsetroot
+xsetroot -solid "#1A0303"
 while true; do
     xsetroot -name "$(dwm-status)"
     sleep 1
