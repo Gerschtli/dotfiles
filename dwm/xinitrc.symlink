@@ -39,7 +39,7 @@ done &
 
 
 # Set screen locker
-xss-lock -v -- xtrlock -b &
+xss-lock -v -- slock &
 # Start NetworkManager Tray Icon
 nm-applet &
 # Start dropbox
