@@ -1,0 +1,5 @@
+#!/bin/sh
+
+file="${HOME}/Documents/screenshot.png"
+
+import -window root "${file}" && xdg-open "${file}"
