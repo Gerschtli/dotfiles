@@ -9,7 +9,7 @@ call plug#end()
 "" Encoding
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8
+set fileencodings=utf-8,iso-8859-1
 
 
 "" Tabs. May be overriten by autocmd rules
@@ -29,6 +29,7 @@ filetype indent on
 autocmd Filetype make set noexpandtab
 autocmd Filetype c set expandtab
 autocmd Filetype cpp set expandtab
+autocmd Filetype tex set tabstop=2 shiftwidth=2
 
 
 "" Directories for swp files
