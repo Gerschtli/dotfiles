@@ -26,7 +26,7 @@ function battery {
             icon="↓"
         fi
 
-        if (( "${percent}" <= 100 )) && (( $(date "+%s") % 4 < 1 )); then
+        if (( "${percent}" <= 10 )) && (( $(date "+%s") % 4 < 1 )); then
             echo "LOW BATT"
         else
             printf "%s %d%% (%s)" "${icon}" "${percent}" "${time}"
