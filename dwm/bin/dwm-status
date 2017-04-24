@@ -26,13 +26,17 @@ function battery {
             icon="↓"
         fi
 
-        printf "%s %d%% (%s)" "${icon}" "${percent}" "${time}"
+        if (( "${percent}" <= 100 )) && (( $(date "+%s") % 4 < 1 )); then
+            echo "LOW BATT"
+        else
+            printf "%s %d%% (%s)" "${icon}" "${percent}" "${time}"
+        fi
     elif [[ "${battery_output}" =~ "100%" ]]; then
         echo "= 100%"
     elif [[ "${adapter_output}" == "Adapter 0: on-line" ]]; then
         echo "NO BATT"
     else
-        _log "battery: ${battery_output}"
+        _log "battery: ${battery_output} -- ${adapter_output}"
     fi
 }
 
