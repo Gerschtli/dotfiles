@@ -1,0 +1,4 @@
+{
+    "cmd": ["pdflatex", "$file"],
+    "selector": "text.tex.latex"
+}
