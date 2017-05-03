@@ -2,7 +2,7 @@ bin/*
 !bin/.gitkeep
 nodejs/completion.sh
 nvim/nvim/.netrwhist
-nvim/nvim/autoload/plug.vim
+nvim/nvim/autoload/plug.vim*
 nvim/nvim/plugins
 ssh/
 sublime/projects/**/*.sublime-workspace
