@@ -1,0 +1,4 @@
+{
+    "cmd": ["octave", "$file"],
+    "selector": "source.m"
+}
