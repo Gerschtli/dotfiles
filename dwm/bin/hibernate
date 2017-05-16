@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if $(zenity --question --text="Are you sure you want to suspend to disk?" 2> /dev/null); then
+    sudo /usr/sbin/pm-hibernate &
+    slock
+fi
