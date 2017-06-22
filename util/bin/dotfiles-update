@@ -20,7 +20,7 @@ fi
 
 echo
 _d_info "===== SUBMOUDLE UPDATE ====="
-_d_indent git submodule update
+_d_indent git submodule update --init
 
 if available termux-fix-shebang; then
     echo
