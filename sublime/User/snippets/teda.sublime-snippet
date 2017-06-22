@@ -5,7 +5,7 @@
  */
 public function test$1($2)
 {
-    $3
+    $0
 }
 
 public function dataProviderForTest$1()
@@ -15,6 +15,7 @@ public function dataProviderForTest$1()
     ];
 }
 ]]></content>
-    <tabTrigger>testdata</tabTrigger>
+    <tabTrigger>teda</tabTrigger>
     <scope>text.plain, source.php</scope>
+    <description>PHPUnit Test DataProvider</description>
 </snippet>

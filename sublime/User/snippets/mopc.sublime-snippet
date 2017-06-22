@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+\$this->_pimple['${1:var}'] = \$this
+    ->getMockBuilder(${2:Class}::class)
+    ->disableOriginalConstructor()
+    ->getMock();
+]]></content>
+    <tabTrigger>mopc</tabTrigger>
+    <scope>text.plain, source.php</scope>
+    <description>PHPUnit Class Mock with Pimple</description>
+</snippet>
