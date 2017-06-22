@@ -5,6 +5,7 @@ ${1:var} = \$this
     ->disableOriginalConstructor()
     ->getMock();
 ]]></content>
-    <tabTrigger>mockclass</tabTrigger>
+    <tabTrigger>mocl</tabTrigger>
     <scope>text.plain, source.php</scope>
+    <description>PHPUnit Class Mock</description>
 </snippet>

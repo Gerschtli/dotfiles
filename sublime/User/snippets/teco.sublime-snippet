@@ -6,12 +6,13 @@ public function testConstants()
 
     \$this->assertEquals(
         [
-            $1
+            $0
         ],
         \$object->getConstants()
     );
 }
 ]]></content>
-    <tabTrigger>testconstants</tabTrigger>
+    <tabTrigger>teco</tabTrigger>
     <scope>text.plain, source.php</scope>
+    <description>PHPUnit Test Constants</description>
 </snippet>
