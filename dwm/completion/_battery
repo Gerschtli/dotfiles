@@ -1,0 +1,3 @@
+#compdef battery
+
+_arguments "1:actions:(estimation percentage state)"
