@@ -1,0 +1,77 @@
+#!/bin/bash
+
+usage_text="
+$(basename "$0") <action> -- offers simple interface to battery infos
+
+where action is one of:
+    estimation    (e.g. 03:06)
+    percentage    (e.g. 15)
+    state         (charging|discharging|full|no battery)
+"
+
+upower_battery() {
+    upower -i $(upower -e | grep battery)
+}
+
+return_value() {
+    sed -E 's/^.*:\s+(.*)$/\1/g'
+}
+
+format_time() {
+    local hours="${1}"
+    local minutes="${2}"
+
+    printf "%02d:%02d\n" "${hours}" "${minutes}"
+}
+
+has_battery() {
+    [[ $(upower_battery | wc -l) != 0 ]]
+}
+
+estimation() {
+    local value=$(upower_battery \
+        | grep -E "time to (empty|full):" \
+        | return_value)
+
+    if [[ "${value}" =~ ([0-9]+)\.([0-9])\ hours ]]; then
+        format_time "${BASH_REMATCH[1]}" "$((${BASH_REMATCH[2]} * 6))"
+    elif [[ "${value}" =~ ([0-9]+)\.[0-9]\ minutes ]]; then
+        format_time 0 "${BASH_REMATCH[1]}"
+    fi
+}
+
+percentage() {
+    upower_battery \
+        | grep "percentage:" \
+        | return_value \
+        | sed -e 's/%//g'
+}
+
+state() {
+    if has_battery; then
+        local value=$(upower_battery \
+            | grep "state:" \
+            | return_value)
+
+        if [[ "$(percentage)" == 100 && "${value}" == "charging" ]]; then
+            echo "full"
+        else
+            echo "${value}"
+        fi
+    else
+        echo "no battery"
+    fi
+}
+
+usage() {
+    echo "${usage_text}"
+}
+
+case "${1}" in
+    estimation) estimation      ;;
+    percentage) percentage      ;;
+    state)      state           ;;
+    *)          usage && exit 1 ;;
+esac
+
+exit 0
