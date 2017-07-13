@@ -1,6 +1,3 @@
-#!/bin/bash
-# only for syntax highlighting
-
 # test for interactive shell
 if [[ $- != *i* ]]; then
     return

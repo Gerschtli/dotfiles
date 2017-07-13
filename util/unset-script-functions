@@ -1,6 +1,3 @@
-#!/bin/bash
-# only for syntax highlighting
-
 unset -f \
     _d_contains_element \
     _d_error \

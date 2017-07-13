@@ -1,4 +1,1 @@
-#!/bin/bash
-# only for syntax highlighting
-
 [[ -f "${HOME}/.bashrc" ]] && source "${HOME}/.bashrc"

@@ -1,6 +1,3 @@
-#!/bin/bash
-# only for syntax highlighting
-
 source "${DOTFILES_ROOT}/shell/functions.sh"
 
 _d_contains_element() {
