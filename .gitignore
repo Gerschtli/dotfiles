@@ -1,13 +1,18 @@
 bin/*
 !bin/.gitkeep
+
 nodejs/completion.sh
+
 nvim/nvim/.netrwhist
 nvim/nvim/autoload/plug.vim*
 nvim/nvim/plugins
+
 ssh/
+
 sublime/projects/**/*.sublime-workspace
 sublime/User/oscrypto-ca-bundle.crt
 sublime/User/Package Control.*
 !sublime/User/Package Control.sublime-settings
 sublime/User/phpcs.sublime-settings
+
 tmux/tprofile.conf

@@ -61,7 +61,6 @@ $ ./bootstrap.sh
 $ chsh -s /bin/zsh
 ```
 
-
 ## Update
 
 ```bash
