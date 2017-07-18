@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo -e "\nRunning git hook post-rewrite with [$@]\n"
-
 HOOKS_DIR="${PWD}"/.git/hooks
 
 case "${1}" in
