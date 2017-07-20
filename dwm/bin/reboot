@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if $(zenity --question --text="Are you sure you want to reboot?" 2> /dev/null); then
     echo $(sudo /sbin/shutdown -r now)

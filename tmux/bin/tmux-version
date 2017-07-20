@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 VERSION=$(tmux -V | cut -d " " -f 2)
 

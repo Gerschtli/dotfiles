@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 HOOKS_DIR="${PWD}"/.git/hooks
 

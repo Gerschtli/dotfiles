@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 usage_text="
 $(basename "$0") <action> -- offers simple interface to battery infos
