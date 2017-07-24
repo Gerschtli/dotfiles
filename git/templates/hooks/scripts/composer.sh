@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 COMPOSER_DIR="${PWD}"/bin
 COMPOSER_JSON="${PWD}"/composer.json

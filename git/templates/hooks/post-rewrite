@@ -1,6 +1,4 @@
-#!/bin/bash
-
-echo -e "\nRunning git hook post-rewrite with [$@]\n"
+#!/usr/bin/env bash
 
 HOOKS_DIR="${PWD}"/.git/hooks
 

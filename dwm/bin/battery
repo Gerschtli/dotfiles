@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # check requirements
 if ! $(hash "upower" > /dev/null 2>&1); then

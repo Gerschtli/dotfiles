@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 DIRECTORY="${HOME}/teamspeak/"
 INSTALL_DIR="${DIRECTORY}/teamspeak3-server_linux_amd64"
