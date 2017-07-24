@@ -34,7 +34,7 @@ function _battery {
             ;;
         *)
             _log $'\n=========================\n'
-            _log "$(upower -d)"
+            _log "$(upower -i $(upower -e | grep battery))"
             ;;
     esac
 }

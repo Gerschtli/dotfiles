@@ -53,7 +53,7 @@ state() {
             | grep "state:" \
             | return_value)
 
-        if [[ "$(percentage)" == 100 && "${value}" == "charging" ]]; then
+        if [[ "${value}" == "fully-charged" ]]; then
             echo "full"
         else
             echo "${value}"
