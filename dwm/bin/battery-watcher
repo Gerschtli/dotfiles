@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 BATTERY_BIN="battery"
 LOCK_FILE_TEMPLATE="/tmp/battery-watcher-%02d.lock"
