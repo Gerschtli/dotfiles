@@ -1,6 +1,13 @@
 #!/bin/bash
 
-usage_text="
+# check requirements
+if ! $(hash "upower" > /dev/null 2>&1); then
+    echo "upower is not in PATH" >&2
+    exit 2
+fi
+
+
+USAGE_TEXT="
 $(basename "$0") <action> -- offers simple interface to battery infos
 
 where action is one of:
@@ -9,49 +16,50 @@ where action is one of:
     state         (charging|discharging|full|no battery)
 "
 
-upower_battery() {
+
+_upower_battery() {
     upower -i $(upower -e | grep battery)
 }
 
-return_value() {
+_return_value() {
     sed -E 's/^.*:\s+(.*)$/\1/g'
 }
 
-format_time() {
+_format_time() {
     local hours="${1}"
     local minutes="${2}"
 
     printf "%02d:%02d\n" "${hours}" "${minutes}"
 }
 
-has_battery() {
-    [[ $(upower_battery | wc -l) != 0 ]]
+_has_battery() {
+    [[ $(_upower_battery | wc -l) != 0 ]]
 }
 
-estimation() {
-    local value=$(upower_battery \
+_estimation() {
+    local value=$(_upower_battery \
         | grep -E "time to (empty|full):" \
-        | return_value)
+        | _return_value)
 
     if [[ "${value}" =~ ([0-9]+)\.([0-9])\ hours ]]; then
-        format_time "${BASH_REMATCH[1]}" "$((${BASH_REMATCH[2]} * 6))"
+        _format_time "${BASH_REMATCH[1]}" "$((${BASH_REMATCH[2]} * 6))"
     elif [[ "${value}" =~ ([0-9]+)\.[0-9]\ minutes ]]; then
-        format_time 0 "${BASH_REMATCH[1]}"
+        _format_time 0 "${BASH_REMATCH[1]}"
     fi
 }
 
-percentage() {
-    upower_battery \
+_percentage() {
+    _upower_battery \
         | grep "percentage:" \
-        | return_value \
+        | _return_value \
         | sed -e 's/%//g'
 }
 
-state() {
-    if has_battery; then
-        local value=$(upower_battery \
+_state() {
+    if _has_battery; then
+        local value=$(_upower_battery \
             | grep "state:" \
-            | return_value)
+            | _return_value)
 
         if [[ "${value}" == "fully-charged" ]]; then
             echo "full"
@@ -63,15 +71,15 @@ state() {
     fi
 }
 
-usage() {
-    echo "${usage_text}"
+_usage() {
+    echo "${USAGE_TEXT}"
 }
 
 case "${1}" in
-    estimation) estimation      ;;
-    percentage) percentage      ;;
-    state)      state           ;;
-    *)          usage && exit 1 ;;
+    estimation) _estimation      ;;
+    percentage) _percentage      ;;
+    state)      _state           ;;
+    *)          _usage && exit 1 ;;
 esac
 
 exit 0
