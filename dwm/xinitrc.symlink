@@ -34,12 +34,13 @@ export AWT_TOOLKIT=MToolkit
 xsetroot -solid "#1A0303"
 while true; do
     xsetroot -name "$(dwm-status)"
+    battery-watcher default
     sleep 1
 done &
 
 
 # Set screen locker
-xss-lock -v -- slock &
+xss-lock -v -- lock-screen &
 # Start NetworkManager Tray Icon
 nm-applet &
 # Start dropbox
