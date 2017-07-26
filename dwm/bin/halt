@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+shutdown="/sbin/shutdown"
+if [[ ! -x "${shutdown}" ]]; then
+    shutdown="/run/current-system/sw/sbin/shutdown"
+fi
+
+if [[ ! -x "${shutdown}" ]]; then
+    echo "no shutdown executable found." >&2
+    exit 1
+fi
+
 if $(zenity --question --text="Are you sure you want to halt the system?" 2> /dev/null); then
-    echo $(sudo /sbin/shutdown -h -P now)
+    echo $(sudo $shutdown -h -P now)
 fi
