@@ -7,6 +7,7 @@ exec > "${HOME}/.wm-errors" 2>&1
 # Load extended-path.sh
 source "${HOME}/.dotfiles-variables"
 source "${DOTFILES_ROOT}/util/source/extended-path.sh"
+source "${DOTFILES_ROOT}/shell/functions.sh"
 source "${DOTFILES_ROOT}/util/unset-variables"
 
 
@@ -26,16 +27,22 @@ xset r rate 400 30
 
 
 # Fix java problem
-wmname LG3D
-export AWT_TOOLKIT=MToolkit
+available wmname && {
+    wmname LG3D
+    export AWT_TOOLKIT=MToolkit
+}
+
+
+# Fix multi monitor setup
+available xrandr && xrandr --output DVI-I-1 --auto --right-of DVI-D-1
 
 
 # Set xsetroot and manages battery-watcher
 xsetroot -solid "#1A0303"
-battery-watcher reset
+battery-watcher reset 2> /dev/null
 while true; do
     xsetroot -name "$(dwm-status)"
-    battery-watcher default
+    battery-watcher default 2> /dev/null
     sleep 1
 done &
 
@@ -43,7 +50,7 @@ done &
 # Set screen locker
 xss-lock -v -- lock-screen &
 # Start NetworkManager Tray Icon
-nm-applet &
+available nm-applet && nm-applet &
 # Start dropbox
 dropbox &
 
