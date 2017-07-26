@@ -30,8 +30,9 @@ wmname LG3D
 export AWT_TOOLKIT=MToolkit
 
 
-# Set xsetroot
+# Set xsetroot and manages battery-watcher
 xsetroot -solid "#1A0303"
+battery-watcher reset
 while true; do
     xsetroot -name "$(dwm-status)"
     battery-watcher default
