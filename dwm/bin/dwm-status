@@ -21,7 +21,7 @@ _backlight() {
 }
 
 _battery() {
-    local state="$($BATTERY_BIN state)"
+    local state="$($BATTERY_BIN state 2> /dev/null)"
     if [[ $? == 2 ]]; then
         return
     fi
