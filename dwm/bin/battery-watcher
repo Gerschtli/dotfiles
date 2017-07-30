@@ -5,6 +5,7 @@ LOCK_FILE_TEMPLATE="/tmp/battery-watcher-%02d.lock"
 
 # sort levels ascending
 LEVELS=(2 5 10 15)
+CRITICAL=5
 
 
 # check requirements
@@ -53,7 +54,13 @@ _notify() {
 
     local text="Battery under ${level}%, ${estimation} remaining"
 
-    zenity --notification --text="${text}"
+    if (( $level <= $CRITICAL )); then
+        local type="--warning"
+    else
+        local type="--notification"
+    fi
+
+    zenity "${type}" --text="${text}"
 }
 
 
