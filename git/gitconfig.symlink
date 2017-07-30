@@ -1,6 +1,6 @@
 [core]
     compression = 9
-    editor = vim
+    editor = nvim
     excludesfile = ~/.gitignore
     loosecompression = 9
     preloadindex = true
