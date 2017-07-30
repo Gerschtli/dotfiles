@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-DIR=$( cd "$(dirname "$0")" && pwd -P )
-EXECS=$(which -a nvim; which -a vim)
-NVIM=$( echo "$EXECS" | grep -v "${DIR}" | head -n 1 )
+DIR=$( cd "$(dirname "${0}")" && pwd -P )
+EXECS=$(which -a nvim 2> /dev/null; which -a vim 2> /dev/null)
+NVIM=$( echo "${EXECS}" | grep -v "${DIR}" | head -n 1 )
 
 if [[ -z "${NVIM}" ]]; then
     echo "ERROR: which -a (nvim|vim) ->"
-    echo "$EXECS"
+    echo "${EXECS}"
 	exit 1
 else
-    "${NVIM}" "$@"
+    "${NVIM}" "${@}"
 fi
