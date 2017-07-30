@@ -2,17 +2,29 @@
 
 BATTERY_BIN="battery"
 LOG_FILE="${HOME}/.dwm-status-errors"
+SEPARATOR="|"
 
-function _log {
+_log() {
     echo "${1}" >> "${LOG_FILE}"
 }
 
-function _backlight {
-    printf "L: %.0f%%" "$(xbacklight)"
+_build_element() {
+    if [[ ! -z "${1}" ]]; then
+        echo "${1} ${SEPARATOR} "
+    fi
 }
 
-function _battery {
+_backlight() {
+    if $(hash xbacklight > /dev/null 2>&1); then
+        printf "L: %.0f%%" "$(xbacklight)"
+    fi
+}
+
+_battery() {
     local state="$($BATTERY_BIN state)"
+    if [[ $? == 2 ]]; then
+        return
+    fi
 
     case "${state}" in
         full)
@@ -39,11 +51,11 @@ function _battery {
     esac
 }
 
-function _datetime {
+_datetime() {
     echo "$(date "+%EY-%m-%d %H:%M")"
 }
 
-function _sound {
+_sound() {
     local amixer_output="$(amixer get Master | grep "Front Left: Playback")"
 
     local regex="\[([0-9]+)%\] \[(on|off)\]$"
@@ -58,8 +70,12 @@ function _sound {
             printf "S: MUTE"
         fi
     else
-        _log "sound: ${amixer_output}"
+        _log $'\n=========================\n'
+        _log "$(amixer)"
     fi
 }
 
-echo "$(_backlight) | $(_sound) | $(_battery) | $(_datetime)"
+echo -n "$(_build_element "$(_backlight)")"
+echo -n "$(_build_element "$(_sound)")"
+echo -n "$(_build_element "$(_battery)")"
+echo -n "$(_datetime)"
