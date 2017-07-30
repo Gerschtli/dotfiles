@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/plugins')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'LnL7/vim-nix'
 call plug#end()
 
 
@@ -17,8 +18,8 @@ set tabstop=4
 set softtabstop=0
 set shiftwidth=4
 set expandtab
-set ai " Auto indent
-set si " Smart indent
+set autoindent
+set smartindent
 
 
 "" Enable filetype detection:
