@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+ARGS="$@"
+
+_test_and_exec() {
+    if $(hash "${1}" > /dev/null 2>&1); then
+        "${1}" "${ARGS}"
+    else
+        _test_and_exec "${@:2}"
+    fi
+}
+
+_test_and_exec "google-chrome-stable" "chromium"
