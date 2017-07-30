@@ -45,7 +45,7 @@ xss-lock -v -- lock-screen &
 # Start NetworkManager Tray Icon
 available nm-applet && nm-applet &
 # Start dropbox
-dropbox &
+dropbox start &
 
 
 # Use while loop for safely restarting dwm
