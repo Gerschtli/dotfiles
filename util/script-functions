@@ -13,7 +13,7 @@ _d_error() {
 }
 
 _d_get_symlink_target() {
-    [ -e "${1}" ] && ls -l "${1}" | sed -e 's/.* -> //'
+    ls -l "${1}" | sed -e 's/.* -> //'
 }
 
 _d_has_option() {
