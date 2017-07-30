@@ -21,10 +21,12 @@ _backlight() {
 }
 
 _battery() {
-    local state="$($BATTERY_BIN state 2> /dev/null)"
+    $BATTERY_BIN 2> /dev/null
     if [[ $? == 2 ]]; then
         return
     fi
+
+    local state="$($BATTERY_BIN state 2> /dev/null)"
 
     case "${state}" in
         full)
@@ -45,7 +47,7 @@ _battery() {
             printf "%s %d%% (%s)" "${icon}" "${percentage}" "${estimation}"
             ;;
         *)
-            _log $'\n=========================\n'
+            _log $"\n=========================\n"
             _log "$(upower -i $(upower -e | grep battery))"
             ;;
     esac
@@ -70,7 +72,7 @@ _sound() {
             printf "S: MUTE"
         fi
     else
-        _log $'\n=========================\n'
+        _log $"\n=========================\n"
         _log "$(amixer)"
     fi
 }
