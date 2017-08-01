@@ -1,0 +1,13 @@
+#compdef nshell
+
+LIST=()
+
+prefix="${DOTFILES_ROOT}/nix/profiles/"
+suffix=".nix"
+
+for file in "${prefix}"*"${suffix}"; do
+    tmp="${file#${prefix}}"
+    LIST=("${tmp//${suffix}}" "${LIST}")
+done
+
+_arguments "*:nix-shell profiles:(${LIST})"
