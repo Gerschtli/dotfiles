@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Redirect errors to a file in user's home directory if we can
-exec > "${HOME}/.wm-errors" 2>&1
+exec > "${HOME}/.xsession-errors" 2>&1
 
 
 # Load extended-path.sh
@@ -14,7 +14,7 @@ source "${DOTFILES_ROOT}/util/unset-variables"
 # Load what is available
 userresources="${HOME}/.Xresources"
 if [[ -f "${userresources}" ]]; then
-    xrdb -load "${userresources}"
+    xrdb -merge "${userresources}"
 fi
 
 

@@ -33,6 +33,10 @@ autocmd Filetype cpp set expandtab
 autocmd Filetype tex set tabstop=2 shiftwidth=2
 
 
+"" Remove trailing whitespaces on save
+autocmd BufWritePre * %s/\s\+$//e
+
+
 "" Directories for swp files
 set nobackup
 set noswapfile
