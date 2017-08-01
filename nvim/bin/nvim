@@ -9,5 +9,5 @@ if [[ -z "${NVIM}" ]]; then
     echo "${EXECS}"
 	exit 1
 else
-    "${NVIM}" "${@}"
+    exec "${NVIM}" "${@}"
 fi
