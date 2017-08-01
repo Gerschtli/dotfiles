@@ -19,6 +19,11 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
+if available nvim || available vim; then
+    export EDITOR="nvim"
+    alias e="${EDITOR}"
+fi
+
 available xdg-open && alias open="xdg-open"
 
 available dircolors && eval "$(dircolors -b)"
