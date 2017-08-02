@@ -21,7 +21,7 @@ _backlight() {
 }
 
 _battery() {
-    $BATTERY_BIN 2> /dev/null
+    $BATTERY_BIN > /dev/nul 2>&1
     if [[ $? == 2 ]]; then
         return
     fi
