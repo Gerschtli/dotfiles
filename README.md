@@ -25,6 +25,7 @@
 
 | Name              | Description                     |
 |-------------------|---------------------------------|
+| nix:source-nix-sh | Enables loading of nix.sh       |
 | nvim:enable-vim   | Enables configuration for vim   |
 | nvim:disable-nvim | Disables configuration for nvim |
 
