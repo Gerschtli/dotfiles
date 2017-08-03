@@ -5,7 +5,7 @@ LOG_FILE="${HOME}/.dwm-status-errors"
 SEPARATOR="|"
 
 _log() {
-    echo "${1}" >> "${LOG_FILE}"
+    echo -e $"======== ${1} ========\n\n${2}\n\n" >> "${LOG_FILE}"
 }
 
 _build_element() {
@@ -47,8 +47,7 @@ _battery() {
             printf "%s %d%% (%s)" "${icon}" "${percentage}" "${estimation}"
             ;;
         *)
-            _log $"\n=========================\n"
-            _log "$(upower -i $(upower -e | grep battery))"
+            _log "BATTERY" "$(upower -i $(upower -e | grep battery))"
             ;;
     esac
 }
@@ -72,8 +71,7 @@ _sound() {
             printf "S: MUTE"
         fi
     else
-        _log $"\n=========================\n"
-        _log "$(amixer)"
+        _log "SOUND" "$(amixer)"
     fi
 }
 
