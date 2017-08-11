@@ -10,6 +10,14 @@ if [[ -z "${1}" ]]; then
     _d_info "========= DOTFILES ========="
     _d_pull
 
+    if [[ -d "gpg" ]]; then
+        pushd "gpg" 1> /dev/null
+        echo
+        _d_info "============ GPG ==========="
+        _d_pull
+        popd 1> /dev/null
+    fi
+
     if [[ -d "ssh" ]]; then
         pushd "ssh" 1> /dev/null
         echo

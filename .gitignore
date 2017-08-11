@@ -1,6 +1,8 @@
 bin/*
 !bin/.gitkeep
 
+gpg/
+
 nodejs/completion.sh
 
 nvim/nvim/.netrwhist
