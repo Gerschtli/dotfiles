@@ -39,9 +39,9 @@ _battery() {
             local estimation="$($BATTERY_BIN estimation)"
             local percentage="$($BATTERY_BIN percentage)"
 
-            local icon="↑"
+            local icon="+"
             if [[ "${state}" == "discharging" ]]; then
-                icon="↓"
+                icon="-"
             fi
 
             printf "%s %d%% (%s)" "${icon}" "${percentage}" "${estimation}"
