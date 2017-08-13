@@ -1,7 +1,3 @@
 { nixpkgs }:
 
-{
-  packages = with nixpkgs; [
-    vagrant
-  ];
-}
+{ packages = [ nixpkgs.vagrant ]; }

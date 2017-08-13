@@ -1,11 +1,26 @@
-{ stdenv, name, packages }:
+{ stdenv, name
+, packages ? [ ]
+, modules ? { }
+, environmentVariables ? { }
+}:
 
-stdenv.mkDerivation {
+let
 
-  inherit name;
+  options = {
 
-  buildInputs = packages;
+    inherit name;
 
-  NIX_SHELL = name;
+    buildInputs = with builtins;
+      concatLists
+        (map
+          (module: modules.${module}.packages)
+          (attrNames modules))
+      ++ packages;
 
-}
+    NIX_SHELL = name;
+
+  } // environmentVariables;
+
+in
+
+stdenv.mkDerivation options

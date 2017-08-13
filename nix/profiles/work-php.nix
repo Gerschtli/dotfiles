@@ -1,22 +1,25 @@
+{ nixpkgs ? import <nixpkgs> { } }:
+
+with nixpkgs;
+
 let
-
-  nixpkgs = import <nixpkgs> {};
-
-in
-
-with nixpkgs; let
-
-  modules = {
-    vagrant = import modules/vagrant.nix { inherit nixpkgs; };
-  };
-
 
   name = "work-php";
 
-  packages = with modules; [
-    php56
-  ] ++ vagrant.packages;
+  modules = {
+    php55 = import modules/php55.nix { inherit nixpkgs; extensions = phpExtensions; };
+    vagrant = import modules/vagrant.nix { inherit nixpkgs; };
+  };
+
+  phpExtensions = [
+    "apcu"
+    "memcache"
+    "memcached"
+  ];
 
 in
 
-import util/mkDerivation.nix { inherit stdenv name packages; }
+import util/mkDerivation.nix {
+  inherit stdenv name modules;
+  environmentVariables = { inherit (modules.php55) PHPRC; };
+}
