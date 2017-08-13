@@ -119,6 +119,9 @@
     renames = copies
     tool = vimdiff
 
+[diff "gpg"]
+    textconv = gpg --use-agent -q --batch --decrypt
+
 [format]
     thread = deep
 
