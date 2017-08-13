@@ -1,52 +1,72 @@
 #!/usr/bin/env bash
 
 source "${HOME}/.dotfiles-variables"
+source "${DOTFILES_ROOT}/shell/functions.sh"
+source "${DOTFILES_ROOT}/nix/functions.zsh"
 
 CONF="${DOTFILES_ROOT}/tmux/profiles/${1}.sh"
 LOCAL_CONF="${DOTFILES_ROOT}/tmux/tprofile.conf"
 
-! hash tmux > /dev/null 2>&1 && echo "tmux not installed"                           && exit 1
-[ -z "${TMUX}" ]             && echo "command needs to be executed in tmux session" && exit 1
-[ ! -r "${CONF}" ]           && echo "${CONF} does not exists"                      && exit 1
+_check_requirements() {
+    ! available tmux     && echo "tmux not installed"                           && exit 1
+    [[ -z "${TMUX}" ]]   && echo "command needs to be executed in tmux session" && exit 1
+    [[ ! -r "${CONF}" ]] && echo "${CONF} does not exists"                      && exit 1
+}
 
-source "${CONF}"
+_process_profile() {
+    source "${CONF}"
 
-ROOT="${ROOT:-${HOME}}"
+    ROOT="${ROOT:-${HOME}}"
 
-[ ! -d "${ROOT}" ] && echo "directory does not exists" && exit 1
+    [ ! -d "${ROOT}" ] && echo "directory does not exists" && exit 1
 
-if [[ "${2}" == "--no-vagrant" && "${PRESET}" == "git-vagrant" ]]; then
-    PRESET="git-single"
-fi
-
-case "${PRESET}" in
-    git-single )
-        LAYOUT=
-        PANE_CMDS=("git fm")
-        ;;
-    git-vagrant )
-        LAYOUT="main-horizontal"
-        PANE_CMDS=("git fm" "cd vagrant && vagrant up")
-        ;;
-esac
-
-[[ -r "${LOCAL_CONF}" ]] && source "${LOCAL_CONF}"
-
-[ $(tmux list-panes | wc -l) != 1 ] && tmux kill-pane -a -t $TMUX_PANE
-
-for cmd_index in "${!PANE_CMDS[@]}"; do
-    [[ $cmd_index != 0 ]] && tmux split-window
-    tmux send-keys -t :.$(($cmd_index + 1)) "cd ${ROOT} && clear" C-m
-    if [[ ! -z "${PANE_CMDS[$cmd_index]}" ]]; then
-        IFS="\:"; list=(${PANE_CMDS[$cmd_index]})
-        for cmd in "${list[@]}"; do
-            tmux send-keys -t :.$(($cmd_index + 1)) "${cmd}" C-m
-        done
+    if [[ "${2}" == "--no-vagrant" && "${PRESET}" == "git-vagrant" ]]; then
+        PRESET="git-single"
     fi
-done
 
-[ ! -z "${LAYOUT}" ] && tmux select-layout "${LAYOUT}"
-tmux select-pane -t :.1
-tmux rename-window "${TITLE}"
+    case "${PRESET}" in
+        git-single )
+            LAYOUT=
+            PANE_CMDS=("git fm")
+            ;;
+        git-vagrant )
+            LAYOUT="main-horizontal"
+            PANE_CMDS=("git fm" "cd vagrant && vagrant up")
+            ;;
+    esac
+
+    if available nshell \
+        && [[ ! -z "${NIX_PROFILE}" && -e "$(nshell-path "${NIX_PROFILE}")" ]]; then
+        NIX_CMD="nshell ${NIX_PROFILE}"
+    fi
+
+    echo "${NIX_PROFILE}"
+    echo "$(nshell-path "${NIX_PROFILE}")"
+
+    [[ -r "${LOCAL_CONF}" ]] && source "${LOCAL_CONF}"
+}
+
+_arrange_panes() {
+    [ $(tmux list-panes | wc -l) != 1 ] && tmux kill-pane -a -t $TMUX_PANE
+
+    for cmd_index in "${!PANE_CMDS[@]}"; do
+        [[ $cmd_index != 0 ]] && tmux split-window
+        tmux send-keys -t :.$(($cmd_index + 1)) "${NIX_CMD}" C-m "cd ${ROOT} && clear" C-m
+        if [[ ! -z "${PANE_CMDS[$cmd_index]}" ]]; then
+            IFS="\:"; list=(${PANE_CMDS[$cmd_index]})
+            for cmd in "${list[@]}"; do
+                tmux send-keys -t :.$(($cmd_index + 1)) "${cmd}" C-m
+            done
+        fi
+    done
+
+    [ ! -z "${LAYOUT}" ] && tmux select-layout "${LAYOUT}"
+    tmux select-pane -t :.1
+    tmux rename-window "${TITLE}"
+}
+
+_check_requirements
+_process_profile
+_arrange_panes
 
 exit 0
