@@ -7,6 +7,7 @@ source "${DOTFILES_ROOT}/nix/functions.zsh"
 
 CONF="${DOTFILES_ROOT}/tmux/profiles/${1}.sh"
 LOCAL_CONF="${DOTFILES_ROOT}/tmux/tprofile.conf"
+ARG_OPTION="${2}"
 
 _check_requirements() {
     ! available tmux     && echo "tmux not installed"                           && exit 1
@@ -21,7 +22,7 @@ _process_profile() {
 
     [ ! -d "${ROOT}" ] && echo "directory does not exists" && exit 1
 
-    if [[ "${2}" == "--no-vagrant" && "${PRESET}" == "git-vagrant" ]]; then
+    if [[ "${ARG_OPTION}" == "--no-vagrant" && "${PRESET}" == "git-vagrant" ]]; then
         PRESET="git-single"
     fi
 
