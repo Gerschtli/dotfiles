@@ -1,17 +1,19 @@
 let
 
-  nixpkgs = import <nixpkgs> {};
+  nixpkgs = import ./overrides { nixpkgs = import <nixpkgs> { }; };
+
+  self = rec {
+    name = "latex";
+
+    callPackage = nixpkgs.lib.callPackageWith (nixpkgs // self);
+
+    modules = {
+      latex = callPackage modules/latex.nix { };
+    };
+
+    drv = callPackage util/mkDerivation.nix { };
+  };
 
 in
 
-with nixpkgs; let
-
-  name = "latex";
-
-  packages = [
-    texlive.combined.scheme-full
-  ];
-
-in
-
-import util/mkDerivation.nix { inherit stdenv name packages; }
+self.drv
