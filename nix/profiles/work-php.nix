@@ -7,6 +7,7 @@ let
   name = "work-php";
 
   modules = {
+    nodejs = import modules/nodejs.nix { inherit nixpkgs; };
     php55 = import modules/php55.nix { inherit nixpkgs; extensions = phpExtensions; };
     vagrant = import modules/vagrant.nix { inherit nixpkgs; };
   };
