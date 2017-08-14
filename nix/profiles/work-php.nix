@@ -1,27 +1,30 @@
-{ nixpkgs ? import <nixpkgs> { } }:
-
-with nixpkgs;
-
 let
 
-  name = "work-php";
+  nixpkgs = import ./overrides { nixpkgs = import <nixpkgs> { }; };
 
-  modules = {
-    ant = import modules/ant.nix { inherit nixpkgs; };
-    nodejs = import modules/nodejs.nix { inherit nixpkgs; };
-    php55 = import modules/php55.nix { inherit nixpkgs; extensions = phpExtensions; };
-    vagrant = import modules/vagrant.nix { inherit nixpkgs; };
+  self = rec {
+    name = "work-php";
+
+    callPackage = nixpkgs.lib.callPackageWith (nixpkgs // self);
+
+    modules = {
+      ant     = callPackage modules/ant.nix { };
+      nodejs  = callPackage modules/nodejs.nix { };
+      php55   = callPackage modules/php55.nix { extensions = phpExtensions; };
+      vagrant = callPackage modules/vagrant.nix { };
+    };
+
+    phpExtensions = [
+      "apcu"
+      "memcache"
+      "memcached"
+    ];
+
+    drv = callPackage util/mkDerivation.nix {
+      environmentVariables = { inherit (modules.php55) PHPRC; };
+    };
   };
-
-  phpExtensions = [
-    "apcu"
-    "memcache"
-    "memcached"
-  ];
 
 in
 
-import util/mkDerivation.nix {
-  inherit stdenv name modules;
-  environmentVariables = { inherit (modules.php55) PHPRC; };
-}
+self.drv

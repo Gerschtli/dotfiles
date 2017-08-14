@@ -9,7 +9,9 @@
 , zendExtensions ? []
 , extraConfig    ? ""
 }:
+
 let
+
   includePackage = directive: packageName: "${directive} = ${phpPackages.${packageName}}/lib/php/extensions/${packageName}.so";
 
   defaultPhpIni = builtins.readFile "${phpPackage}/etc/php.ini";
@@ -32,5 +34,7 @@ let
 
     ${extraConfig}
   '';
+
 in
+
 pkgs.writeTextDir "php.ini" phpIni

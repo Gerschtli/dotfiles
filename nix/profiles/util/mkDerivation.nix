@@ -1,4 +1,5 @@
-{ stdenv, name
+{ stdenv
+, name
 , packages ? [ ]
 , modules ? { }
 , environmentVariables ? { }

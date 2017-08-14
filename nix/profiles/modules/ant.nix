@@ -1,16 +1,3 @@
-{ nixpkgs }:
+{ ant, oraclejdk8 }:
 
-let
-
-  overrides = rec {
-    oraclejdk8 = import ../overrides/oraclejdk8.nix { inherit nixpkgs; };
-  };
-
-  packages = [
-    nixpkgs.ant
-    overrides.oraclejdk8
-  ];
-
-in
-
-{ inherit packages; }
+{ packages = [ ant oraclejdk8 ]; }

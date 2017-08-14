@@ -1,14 +1,12 @@
-{ nixpkgs, php55 }:
-
-with nixpkgs;
+{ callPackage, lib, php55 }:
 
 let
 
-  php55Packages = (callPackage "${path}/pkgs/top-level/php-packages.nix" {
+  php55Packages = (callPackage <nixpkgs/pkgs/top-level/php-packages.nix> {
     php = php55;
   }) // { recurseForDerivations = true; };
 
-  memcache = pkgs.lib.overrideDerivation php55Packages.memcache (old: {
+  memcache = lib.overrideDerivation php55Packages.memcache (old: {
     makeFlags = old.makeFlags ++ [ "CFLAGS=-fgnu89-inline" ];
   });
 

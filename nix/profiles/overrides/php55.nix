@@ -1,18 +1,15 @@
-{ nixpkgs }:
-
-with nixpkgs;
+{ callPackage, fetchFromGitHub }:
 
 let
 
-  php55 = pkgs.lib.overrideDerivation pkgs.php56 (old: rec {
-    version = "5.5.38";
-    name = "php-${version}";
-    src = fetchurl {
-      url = "http://www.php.net/distributions/php-${version}.tar.bz2";
-      sha256 = "473c81ebb2e48ca468caee031762266651843d7227c18a824add9b07b9393e38";
-    };
-  });
+  # commit before php55 was removed
+  customNixpkgs = callPackage (fetchFromGitHub {
+    owner  = "NixOS";
+    repo   = "nixpkgs";
+    rev    = "ddcf70482c60cb12fcf7c5924f7ccee776fa70b7";
+    sha256 = "0s2rj4dlmaz9f1ny3jvsb0iz4p9la2iwf140b14z76k8bla6imky";
+  }) { };
 
 in
 
-php55
+customNixpkgs.php55

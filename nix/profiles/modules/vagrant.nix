@@ -1,3 +1,3 @@
-{ nixpkgs }:
+{ vagrant }:
 
-{ packages = [ nixpkgs.vagrant ]; }
+{ packages = [ vagrant ]; }

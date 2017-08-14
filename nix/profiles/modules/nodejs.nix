@@ -1,3 +1,3 @@
-{ nixpkgs }:
+{ nodejs-6_x }:
 
-{ packages = [ nixpkgs.nodejs-6_x ]; }
+{ packages = [ nodejs-6_x ]; }
