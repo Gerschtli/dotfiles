@@ -59,7 +59,7 @@ EOF
         clean=1
         ;;
       *)
-        if [[ -v shellfile ]]; then
+        if [[ ! -z $shellfile ]]; then
           echo "Shell desciption specified more than once" >&2
           return 1
         fi
@@ -101,7 +101,7 @@ EOF
 
   # Use prebuilt shell if it exists
   if [[ -a "$drvfile" ]]; then
-    nix-shell "$drvfile"
+    nix-shell "$drvfile" --command zsh
   else
     _shellexists || return 1
     mkdir -p "$depsdir"
@@ -118,6 +118,6 @@ EOF
       -r $(nix-store --query --references "$drvfile") \
       --add-root "$depsdir/dep" --indirect \
     || { echo "nix-store failed" >&2; return 1; }
-    nix-shell "$drvfile"
+    nix-shell "$drvfile" --command zsh
   fi
 }

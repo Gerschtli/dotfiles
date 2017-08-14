@@ -12,6 +12,11 @@ if available nix-shell; then
 
         local profile="${1}"
         local args="${@:2}"
-        nix-shell "$(nshell-path "${profile}")" --command zsh "${args}"
+
+        if [[ -z "${args}" ]]; then
+            pnix-shell "$(nshell-path "${profile}")"
+        else
+            nix-shell "$(nshell-path "${profile}")" --command zsh "${args}"
+        fi
     }
 fi
