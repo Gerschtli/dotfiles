@@ -10,4 +10,6 @@ for file in "${prefix}"*"${suffix}"; do
     LIST=("${tmp//${suffix}}" "${LIST}")
 done
 
-_arguments "1:nix-shell profiles:(${LIST})"
+_arguments \
+    "1:nix-shell profiles:(${LIST})" \
+    "2:options:(--clean)"

@@ -11,10 +11,15 @@ if available nix-shell; then
         fi
 
         local profile="${1}"
+        local clean
+        if [[ "${2}" == "--clean" ]]; then
+            clean="--clean"
+            shift
+        fi
         local args="${@:2}"
 
         if [[ -z "${args}" ]]; then
-            pnix-shell "$(nshell-path "${profile}")"
+            pnix-shell "$(nshell-path "${profile}")" ${clean}
         else
             nix-shell "$(nshell-path "${profile}")" --command zsh "${args}"
         fi
