@@ -1,13 +1,14 @@
-{ php55, php55Packages, extensions }:
+{ callPackage, extensions, php55, php55Packages }:
 
 let
 
-  PHPRC = import ../util/phpIni.nix {
-    phpPackage  = php55;
-    phpPackages = php55Packages;
-    opCache     = true;
-    showErrors  = true;
-    extensions  = extensions;
+  environmentVariables = {
+    PHPRC = callPackage ../util/phpIni.nix {
+      phpPackage  = php55;
+      phpPackages = php55Packages;
+      opCache     = true;
+      extensions  = extensions;
+    };
   };
 
   packages = [
@@ -16,4 +17,4 @@ let
 
 in
 
-{ inherit packages PHPRC; }
+{ inherit packages environmentVariables; }

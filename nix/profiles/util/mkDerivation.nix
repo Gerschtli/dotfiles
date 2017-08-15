@@ -1,27 +1,44 @@
-{ stdenv
-, name
-, packages ? [ ]
-, modules ? { }
-, environmentVariables ? { }
-}:
+{ name, configuration ? { } }:
 
 let
 
-  options = {
+  nixpkgs = import ../overrides {
+    nixpkgs = import <nixpkgs> { };
+  };
 
-    inherit name;
+  inherit (builtins) attrNames concatLists foldl' listToAttrs;
+  inherit (nixpkgs.lib) callPackageWith concatMap nameValuePair;
+  inherit (nixpkgs.stdenv) mkDerivation;
 
-    buildInputs = with builtins;
-      concatLists
-        (map
-          (module: modules.${module}.packages)
-          (attrNames modules))
-      ++ packages;
+  callPackage = callPackageWith (nixpkgs // { inherit callPackage; });
 
-    NIX_SHELL = name;
+  modules = listToAttrs
+    (concatMap
+      (module:
+        [
+          (nameValuePair
+            module
+            (callPackage (../modules + "/${module}.nix") (configuration.${module}))
+          )
+        ]
+      )
+      (attrNames configuration));
 
-  } // environmentVariables;
+  buildInputs = concatMap
+    (module: modules.${module}.packages)
+    (attrNames modules);
+
+  environmentVariables = (foldl'
+      (last: module:
+        if   modules.${module} ? environmentVariables
+        then last // modules.${module}.environmentVariables
+        else last)
+      { NIX_SHELL = name; }
+      (attrNames modules)
+    );
 
 in
 
-stdenv.mkDerivation options
+mkDerivation (
+  { inherit name buildInputs; } // environmentVariables
+)
