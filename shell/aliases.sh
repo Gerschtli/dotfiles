@@ -30,7 +30,10 @@ available dircolors && eval "$(dircolors -b)"
 
 available bc && alias bc="bc -l"
 
-available tree && alias tree="tree -aF --dirsfirst"
+if available tree; then
+    alias tree="tree -F --dirsfirst"
+    alias treea="tree -a"
+fi
 
 if available pwgen; then
     alias pwgen="pwgen -cny"
