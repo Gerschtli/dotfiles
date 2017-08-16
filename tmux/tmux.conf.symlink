@@ -4,11 +4,9 @@ set-option -g prefix C-a
 set-option -g base-index 1
 set-window-option -g pane-base-index 1
 
-set-option -g default-terminal "screen-256color"
 set-option -g allow-rename off
 set-option -g renumber-windows on
 
-set-option -g history-limit 51200
 set-option -g set-titles on
 set-option -g set-titles-string "#{pane_title}"
 
@@ -28,13 +26,10 @@ set-window-option -g other-pane-width 100
 # If -t is present, key is bound in key-table: the binding for command mode with
 # -c or for normal mode without. To view the default bindings and possible
 # commands, see the list-keys command
-bind-key a send-prefix
-
 bind-key Escape copy-mode
 
 bind-key C-a last-window
 bind-key A   last-pane
-bind-key C-l refresh
 
 bind-key \; select-layout main-horizontal
 bind-key _ select-layout even-vertical
@@ -71,8 +66,6 @@ bind -r H resize-pane -L
 bind -r J resize-pane -D
 bind -r K resize-pane -U
 bind -r L resize-pane -R
-
-bind r source-file ~/.tmux.conf \; display-message "Reloaded ~/.tmux.conf"
 
 bind E send-keys -t :.- C-c C-m up C-m
 bind e send-keys -t :.- up C-m
@@ -183,3 +176,16 @@ setw -g window-status-bell-bg colour1
 set -g message-attr bold
 set -g message-fg colour232
 set -g message-bg colour166
+
+
+
+######################
+###    PLUGINS     ###
+######################
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
