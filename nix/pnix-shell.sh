@@ -63,7 +63,7 @@ EOF
           echo "Shell desciption specified more than once" >&2
           return 1
         fi
-        shellfile=$(realpath -m "$1")
+        shellfile="$1"
         ;;
     esac
     shift
