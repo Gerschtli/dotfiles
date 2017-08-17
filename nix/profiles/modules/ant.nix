@@ -1,3 +1,5 @@
+# if supportsJDK is false, the jdk must be installed globally by the default package manager
+
 { ant, oraclejdk8, supportsJDK }:
 
 let
