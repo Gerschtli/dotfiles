@@ -23,7 +23,7 @@ xset s 1200
 # Disable screen power saving settings
 xset -dpms
 # Increase key repeat speed
-xset r rate 400 30
+xset r rate 250 30
 
 
 # Fix multi monitor setup
