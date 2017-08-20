@@ -26,6 +26,16 @@ set-window-option -g other-pane-width 100
 # If -t is present, key is bound in key-table: the binding for command mode with
 # -c or for normal mode without. To view the default bindings and possible
 # commands, see the list-keys command
+unbind Up
+unbind Down
+unbind Left
+unbind Right
+
+unbind C-Up
+unbind C-Down
+unbind C-Left
+unbind C-Right
+
 bind-key Escape copy-mode
 
 bind-key C-a last-window
@@ -75,16 +85,6 @@ bind e send-keys -t :.- up C-m
 
 bind Left swap-window -t :-
 bind Right swap-window -t :+
-
-unbind Up
-unbind Down
-unbind Left
-unbind Right
-
-unbind C-Up
-unbind C-Down
-unbind C-Left
-unbind C-Right
 
 # open new pane in same directory
 if-shell 'tmux-version \>= 1.9' ' \
