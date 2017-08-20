@@ -33,6 +33,9 @@ bind-key A   last-pane
 
 bind-key \; select-layout main-horizontal
 bind-key _ select-layout even-vertical
+bind-key M select-layout main-vertical
+bind-key N select-layout even-horizontal
+bind-key B select-layout tiled
 
 bind-key o select-pane -t :.+
 bind-key O select-pane -t :.-
@@ -70,8 +73,8 @@ bind -r L resize-pane -R
 bind E send-keys -t :.- C-c C-m up C-m
 bind e send-keys -t :.- up C-m
 
-bind M-Left swap-window -t :-
-bind M-Right swap-window -t :+
+bind Left swap-window -t :-
+bind Right swap-window -t :+
 
 unbind Up
 unbind Down
