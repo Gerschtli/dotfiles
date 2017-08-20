@@ -7,6 +7,7 @@ import util/mkDerivation.nix {
     php55   = {
       extensions = [
         "apcu"
+        "couchbase"
         "memcache"
         "memcached"
       ];
