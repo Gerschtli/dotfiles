@@ -16,3 +16,13 @@ export LC_ALL=
 
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
+
+if available less; then
+    export PAGER="less -F -X"
+fi
+
+if available nvim; then
+    export EDITOR=nvim
+elif available vim; then
+    export EDITOR=vim
+fi

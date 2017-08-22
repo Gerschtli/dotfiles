@@ -19,10 +19,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
-if available nvim || available vim; then
-    export EDITOR="nvim"
-    alias e="${EDITOR}"
-fi
+alias e="${EDITOR}"
 
 available xdg-open && alias open="xdg-open"
 
