@@ -1,12 +1,7 @@
 # originally taken from https://gist.github.com/3noch/79255f8c5ec3c287b91b7484265a89a8
 
-{ lib
-, writeTextDir
-, phpPackage
-, phpPackages
-, opCache        ? false
-, showErrors     ? true
-, extensions     ? []
+{ lib, writeTextDir, phpPackage, phpPackages
+, opCache ? true, showErrors ? true, extensions ? []
 }:
 
 let
