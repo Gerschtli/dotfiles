@@ -26,11 +26,6 @@ xset -dpms
 xset r rate 250 30
 
 
-# Fix java problem
-wmname LG3D
-export AWT_TOOLKIT=MToolkit
-
-
 # Fix multi monitor setup
 available xrandr && xrandr --output DVI-I-1 --auto --right-of DVI-D-1
 
