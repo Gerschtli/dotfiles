@@ -4,7 +4,6 @@
 
 let
 
-  # use 8u144
   customNixpkgs = callPackage (fetchFromGitHub {
     inherit rev sha256;
     owner = "NixOS";

@@ -1,21 +1,6 @@
-{ fetchFromGitHub, lib, libcouchbase }:
-
-let
-
-  inherit (lib) overrideDerivation;
-
-  new-libcouchbase = overrideDerivation libcouchbase (old: rec {
-    name    = "libcouchbase-${version}";
-    version = "2.7.6";
-
-    src = fetchFromGitHub {
-      owner  = "couchbase";
-      repo   = "libcouchbase";
-      rev    = version;
-      sha256 = "13g7r0mcmrj37mihj6g1x1ckpaps659c4qwnw3ixrg7p5mb3p41f";
-    };
-  });
-
-in
-
-new-libcouchbase
+# use 2.7.6
+import ../util/getPkgFromRev.nix {
+    package = "libcouchbase";
+    rev     = "5aefcd22a5514400ccaedb50ddc664c0d13eee1e";
+    sha256  = "060jjhfl33458nw60g6srgjb3pv3nd69lzi9g5xrcdkd8fcdi60x";
+}
