@@ -10,11 +10,11 @@ if [[ "$@" == "--get-executable" ]]; then
 fi
 
 if [[ -z "${SUBL}" ]]; then
-	echo "ERROR: which -a subl -> "
-	which -a subl
-	exit 1
+    echo "ERROR: which -a subl -> "
+    which -a subl
+    exit 1
 else
-	nohup "${SUBL}" "$@" > /dev/null 2>&1 &
+    nohup "${SUBL}" "$@" > /dev/null 2>&1 &
 fi
 
 exit 0

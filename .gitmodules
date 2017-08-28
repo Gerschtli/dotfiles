@@ -1,6 +1,7 @@
 [submodule "liquidprompt/liquidprompt"]
-	path = liquidprompt/liquidprompt
-	url = https://github.com/nojhan/liquidprompt.git
+    path = liquidprompt/liquidprompt
+    url = https://github.com/nojhan/liquidprompt.git
+
 [submodule "tmux/tpm"]
-	path = tmux/tpm
-	url = https://github.com/tmux-plugins/tpm
+    path = tmux/tpm
+    url = https://github.com/tmux-plugins/tpm

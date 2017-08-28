@@ -7,7 +7,7 @@ NVIM=$( echo "${EXECS}" | grep -v "${DIR}" | head -n 1 )
 if [[ -z "${NVIM}" ]]; then
     echo "ERROR: which -a (nvim|vim) ->"
     echo "${EXECS}"
-	exit 1
+    exit 1
 else
     exec "${NVIM}" "${@}"
 fi
