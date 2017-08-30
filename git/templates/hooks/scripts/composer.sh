@@ -33,7 +33,7 @@ if hash php > /dev/null 2>&1 && [ -e "${COMPOSER_JSON}" ]; then
 
     case "${1}" in
         post-checkout | post-merge)
-            APPLICATION_ENV=test php "${COMPOSER}" install --optimize-autoloader --prefer-source
+            APPLICATION_ENV=testing php "${COMPOSER}" install --optimize-autoloader --prefer-source
             ;;
         pre-push)
             composer_check
