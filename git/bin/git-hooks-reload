@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+source "${HOME}/.dotfiles-variables"
+
+hooks_dir="${PWD}/.git/hooks"
+
+if [[ ! -d "${hooks_dir}" ]]; then
+    echo "folder ${hooks_dir} does not exist."
+    exit 1
+fi
+
+rm -r "${hooks_dir}"
+git init --template="${DOTFILES_ROOT}/git/templates"
+
+exit 0
