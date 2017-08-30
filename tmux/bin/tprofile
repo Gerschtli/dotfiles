@@ -42,9 +42,6 @@ _process_profile() {
         NIX_CMD="nshell ${NIX_PROFILE}"
     fi
 
-    echo "${NIX_PROFILE}"
-    echo "$(nshell-path "${NIX_PROFILE}")"
-
     [[ -r "${LOCAL_CONF}" ]] && source "${LOCAL_CONF}"
 }
 
