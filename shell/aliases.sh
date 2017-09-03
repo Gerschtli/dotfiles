@@ -7,6 +7,10 @@ fi
 alias la="ls -AFv"
 alias ll="ls -AFhlv"
 
+alias cp="cp -av"
+alias mv="mv -v"
+alias rm="rm -v"
+
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
