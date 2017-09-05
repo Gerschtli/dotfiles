@@ -1,0 +1,3 @@
+mkdir -p "${HOME}/.config"
+
+_d_link_file "${DOTFILES_ROOT}/htop/htop" "${HOME}/.config/htop"
