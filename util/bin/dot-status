@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+source "${HOME}/.dotfiles-variables"
+source "${DOTFILES_ROOT}/util/script-functions"
+
+git_status() {
+    local title="${1}"
+    local directory="${2}"
+    local submodule="${3:- 0}"
+
+    if [[ ! -d "${directory}" ]]; then
+        return
+    fi
+
+    _d_info "${title}"
+    cd "${directory}"
+    if [[ "${submodule}" == 1 ]]; then
+        _d_indent git submodule foreach git status
+    else
+        _d_indent git status
+        echo -n $'\n\n'
+    fi
+}
+
+git_status "========= DOTFILES =========" "${DOTFILES_ROOT}"
+git_status "=========== GPG ============" "${DOTFILES_ROOT}/gpg"
+git_status "=========== SSH ============" "${DOTFILES_ROOT}/ssh"
+git_status "======== SUBMODULES=========" "${DOTFILES_ROOT}" 1
