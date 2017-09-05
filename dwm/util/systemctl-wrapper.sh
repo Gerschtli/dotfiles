@@ -3,6 +3,6 @@ systemctl_wrapper() {
     local string="${2}"
 
     if $(zenity --question --text="Are you sure you want ${string}?" 2> /dev/null); then
-        echo $(/run/current-system/sw/bin/systemctl $action)
+        echo $(systemctl $action)
     fi
 }

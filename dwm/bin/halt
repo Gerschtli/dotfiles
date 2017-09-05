@@ -3,4 +3,4 @@
 source "${HOME}/.dotfiles-variables"
 source "${DOTFILES_ROOT}/dwm/util/systemctl-wrapper.sh"
 
-systemctl_wrapper halt "to halt the system"
+systemctl_wrapper poweroff "to halt the system"
