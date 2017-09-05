@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
 
-shutdown="/sbin/shutdown"
-if [[ ! -x "${shutdown}" ]]; then
-    shutdown="/run/current-system/sw/sbin/shutdown"
-fi
+source "${HOME}/.dotfiles-variables"
+source "${DOTFILES_ROOT}/dwm/util/systemctl-wrapper.sh"
 
-if [[ ! -x "${shutdown}" ]]; then
-    echo "no shutdown executable found." >&2
-    exit 1
-fi
-
-if $(zenity --question --text="Are you sure you want to reboot?" 2> /dev/null); then
-    echo $(sudo $shutdown -r now)
-fi
+systemctl_wrapper reboot "to reboot"

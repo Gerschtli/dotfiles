@@ -3,4 +3,4 @@
 source "${HOME}/.dotfiles-variables"
 source "${DOTFILES_ROOT}/dwm/util/systemctl-wrapper.sh"
 
-systemctl_wrapper hibernate "to suspend to disk"
+systemctl_wrapper hybrid-sleep "to suspend to disk and ram"
