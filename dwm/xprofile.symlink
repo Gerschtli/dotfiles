@@ -18,7 +18,7 @@ available xrandr && xrandr --output DVI-I-1 --auto --right-of DVI-D-1
 
 
 # Set xsetroot and manages battery-watcher
-xsetroot -solid "#1A0303"
+sleep 0.1 && xsetroot -solid "#1A0303" &
 battery-watcher reset 2> /dev/null
 while true; do
     xsetroot -name "$(dwm-status)"
