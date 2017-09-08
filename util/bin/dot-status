@@ -6,7 +6,7 @@ source "${DOTFILES_ROOT}/util/script-functions"
 git_status() {
     local title="${1}"
     local directory="${2}"
-    local submodule="${3:- 0}"
+    local submodule="${3:-0}"
 
     if [[ ! -d "${directory}" ]]; then
         return
@@ -15,9 +15,9 @@ git_status() {
     _d_info "${title}"
     cd "${directory}"
     if [[ "${submodule}" == 1 ]]; then
-        _d_indent git submodule foreach git status
+        git submodule foreach git status
     else
-        _d_indent git status
+        git status
         echo -n $'\n\n'
     fi
 }
