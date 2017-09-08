@@ -1,21 +1,8 @@
-#!/usr/bin/env bash
-
-# Redirect errors to a file in user's home directory if we can
-exec > "${HOME}/.xsession-errors" 2>&1
-
-
 # Load extended-path.sh
 source "${HOME}/.dotfiles-variables"
 source "${DOTFILES_ROOT}/util/source/extended-path.sh"
 source "${DOTFILES_ROOT}/shell/functions.sh"
 source "${DOTFILES_ROOT}/util/unset-variables"
-
-
-# Load what is available
-userresources="${HOME}/.Xresources"
-if [[ -f "${userresources}" ]]; then
-    xrdb -merge "${userresources}"
-fi
 
 
 # Show screen saver after 20 min
@@ -46,9 +33,3 @@ xss-lock -v -- lock-screen &
 available nm-applet && nm-applet &
 # Start dropbox
 dropbox start &
-
-
-# Use while loop for safely restarting dwm
-while true; do
-    dwm
-done
