@@ -2,7 +2,7 @@ import util/mkDerivation.nix {
   name = "home-php";
 
   configuration = {
-    nodejs  = { };
+    nodejs  = { version = 6; };
     php71   = { };
     vagrant = { };
   };

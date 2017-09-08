@@ -3,7 +3,7 @@ import util/mkDerivation.nix {
 
   configuration = {
     ant     = { };
-    nodejs  = { };
+    nodejs  = { version = 6; };
     php55   = {
       extensions = [
         "apcu"
