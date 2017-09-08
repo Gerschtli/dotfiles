@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
 DIR=$( cd "$(dirname "${0}")" && pwd -P )
-EXECS=$(which -a nvim 2> /dev/null; which -a vim 2> /dev/null)
+EXECS=$(
+    which -a nvim 2> /dev/null
+    which -a vim 2> /dev/null
+)
 NVIM=$( echo "${EXECS}" | grep -v "${DIR}" | head -n 1 )
 
 if [[ -z "${NVIM}" ]]; then
