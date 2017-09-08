@@ -5,6 +5,7 @@
 | Name         | Description                                                       |
 |--------------|-------------------------------------------------------------------|
 | bash         | Configuration for bash                                            |
+| dunst        | Configuration for dunst (libnotiy daemon)                         |
 | dwm          | Configuration for dwm sessions                                    |
 | git          | Configuration for git with git hooks                              |
 | htop         | Configuration for htop                                            |
