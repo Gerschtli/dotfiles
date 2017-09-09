@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-slock && battery-watcher reset 2> /dev/null
+BACKLIGHT=$(xbacklight)
+xbacklight "=5"
+slock
+xbacklight "=${BACKLIGHT}"
+battery-watcher reset 2> /dev/null
