@@ -5,6 +5,10 @@ source "${DOTFILES_ROOT}/shell/functions.sh"
 source "${DOTFILES_ROOT}/util/unset-variables"
 
 
+# used for .desktop files
+export XDG_DATA_DIRS="${HOME}/.nix-profile/share:/run/current-system/sw/share:${XDG_DATA_DIRS}"
+
+
 # Show screen saver after 20 min
 xset s 1200
 # Disable screen power saving settings
