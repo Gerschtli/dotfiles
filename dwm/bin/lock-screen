@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
 
-BACKLIGHT=$(xbacklight)
-xbacklight "=5"
-slock
-xbacklight "=${BACKLIGHT}"
-battery-watcher reset 2> /dev/null
+has_xbacklight() {
+    hash xbacklight > /dev/null 2>&1
+}
+
+main() {
+    local backlight=
+    has_xbacklight && backlight=$(xbacklight)
+    has_xbacklight && xbacklight "=5" &
+    slock
+    has_xbacklight && xbacklight "=${backlight}"
+    battery-watcher reset 2> /dev/null
+}
+
+main
