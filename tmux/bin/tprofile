@@ -50,7 +50,7 @@ _arrange_panes() {
 
     for cmd_index in "${!PANE_CMDS[@]}"; do
         [[ $cmd_index != 0 ]] && tmux split-window
-        tmux send-keys -t :.$(($cmd_index + 1)) "${NIX_CMD}" C-m "cd ${ROOT} && clear" C-m
+        tmux send-keys -t :.$(($cmd_index + 1)) "cd ${ROOT}" C-m "${NIX_CMD}" C-m "clear" C-m
         if [[ ! -z "${PANE_CMDS[$cmd_index]}" ]]; then
             IFS="\:"; list=(${PANE_CMDS[$cmd_index]})
             for cmd in "${list[@]}"; do
