@@ -52,15 +52,13 @@ _notify() {
     local level="${1}"
     local estimation="$( ${BATTERY_BIN} estimation )"
 
-    local text="Battery under ${level}%, ${estimation} remaining"
-
     if (( $level <= $CRITICAL )); then
-        local type="--warning"
+        local type="critical"
     else
-        local type="--notification"
+        local type="normal"
     fi
 
-    zenity "${type}" --text="${text}"
+    notify-send --urgency="${type}" "Battery under ${level}%" "${estimation} remaining"
 }
 
 
