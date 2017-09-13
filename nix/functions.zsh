@@ -1,5 +1,10 @@
 if available nix-shell; then
     nshell-path() {
+        if [[ "${1}" == "./shell" ]]; then
+            echo "$(pwd)/shell.nix"
+            return
+        fi
+
         local profile="${1}"
         local pattern="${DOTFILES_ROOT}/nix/profiles/%s.nix"
         printf "${pattern}" "${profile}"
@@ -10,7 +15,7 @@ if available nix-shell; then
             echo "Already in nix-shell! [${NIX_SHELL}]" >&2 && return 1
         fi
 
-        local profile="${1}"
+        local profile="${1:-./shell}"
         local clean
         if [[ "${2}" == "--clean" ]]; then
             clean="--clean"

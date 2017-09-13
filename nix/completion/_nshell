@@ -10,6 +10,10 @@ for file in "${prefix}"*"${suffix}"; do
     LIST=("${tmp//${suffix}}" "${LIST}")
 done
 
+if [[ -e shell.nix ]]; then
+    LIST+=("./shell")
+fi
+
 _arguments \
     "1:nix-shell profiles:(${LIST})" \
     "2:options:(--clean --show-trace)"
