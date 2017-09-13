@@ -4,8 +4,8 @@ BATTERY_BIN="battery"
 LOCK_FILE_TEMPLATE="/tmp/battery-watcher-%02d.lock"
 
 # sort levels ascending
-LEVELS=(2 5 10 15)
-CRITICAL=5
+LEVELS=(2 5 10 15 20)
+CRITICAL=10
 
 
 # check requirements
