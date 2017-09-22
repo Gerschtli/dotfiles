@@ -17,6 +17,8 @@ export LC_ALL=
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
+export TERM="screen-256color"
+
 if available less; then
     export PAGER="less -F -X"
 fi
