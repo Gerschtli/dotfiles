@@ -46,12 +46,6 @@ $ cp local.dist ~/.localrc
 
 Change options if needed.
 
-### Initialize submodule
-
-```bash
-$ git submodule update --init
-```
-
 ### Execute bootstrap.sh
 
 ```bash
