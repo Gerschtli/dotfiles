@@ -20,7 +20,7 @@
 | sublime      | Configuration for sublime text 3                                  |
 | tmux         | Configuration for tmux, adds tmux profiles                        |
 | vagrant      | Aliases for vagrant                                               |
-| zsh          | Configuration for zsh                                             |
+| zsh          | Configuration for zsh and zsh-autosuggestions                     |
 
 ### Options
 
