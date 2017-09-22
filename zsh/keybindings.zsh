@@ -114,3 +114,5 @@ zmodload -i zsh/complist
 # In a menu completion, insert the current completion into the buffer, and
 # advance to the next possible completion.
 bindkey -M menuselect '\e^M' accept-and-menu-complete
+
+bindkey '^ ' forward-word
