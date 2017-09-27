@@ -16,17 +16,39 @@ if available nix-shell; then
         fi
 
         local profile="${1:-./shell}"
-        local clean
-        if [[ "${2}" == "--clean" ]]; then
-            clean="--clean"
-            shift
-        fi
-        local args="${@:2}"
+        local args=()
+        local cmd_set=false
+        local nix_shell_command="pnix-shell"
+        shift
 
-        if [[ -z "${args}" ]]; then
-            pnix-shell "$(nshell-path "${profile}")" ${clean}
-        else
-            nix-shell "$(nshell-path "${profile}")" --command zsh "${args}"
+        while [[ $# -gt 0 ]]; do
+            key=$1
+            case $key in
+                --clean)
+                    clean=1
+                    args+=(--clean)
+                    ;;
+                --command)
+                    shift
+                    if [[ -z $1 ]]; then
+                        echo "Command has to be specified" >&2
+                        return 1
+                    fi
+                    args+=(--command "$1")
+                    cmd_set=true
+                    ;;
+                *)
+                    args+=($key)
+                    nix_shell_command="nix-shell"
+                    ;;
+            esac
+            shift
+        done
+
+        if ! $cmd_set; then
+            args+=(--command zsh)
         fi
+
+        ${nix_shell_command} "$(nshell-path "${profile}")" ${args}
     }
 fi

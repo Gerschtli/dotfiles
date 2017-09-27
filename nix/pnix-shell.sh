@@ -30,24 +30,25 @@ pnix-shell() {
     cat >&2 <<EOF
 pnix-shell generates and opens a persistent nix-shell
 
-Usage: pnix-shell [-h|--help] [-c|--clean] [<shellfile>]
+Usage: pnix-shell [-h|--help] [-c|--clean] [--command <command>] [<shellfile>]
 
   Use the given \`<shellfile>' or \`./shell.nix'.  Generate a persistent
   nix-shell in \`<shellfile>'s directory under \`.<shellfile>.deps/',
   or use an existing one.  Then enter the nix-shell.
 
 Options:
-  -h|--help    display this help message
-  -c|--clean   delete any preexisting \`.shell.drv'
-  <shellfile>  nix-shell description file [default: shell.nix]
+  -h|--help             display this help message
+  -c|--clean            delete any preexisting \`.shell.drv'
+  --command <command>   command executed in nix-shell [default: zsh]
+  <shellfile>           nix-shell description file [default: shell.nix]
 
 EOF
   }
 
-  local key clean shellfile
+  local key clean cmd shellfile
 
   # Parse arguments
-  # TODO: --arg --argstr --command --run
+  # TODO: --arg --argstr --run
   while [[ $# -gt 0 ]]; do
     key=$1
     case $key in
@@ -57,6 +58,14 @@ EOF
         ;;
       -c|--clean)
         clean=1
+        ;;
+      --command)
+        shift
+        if [[ -z $1 ]]; then
+          echo "Command has to be specified" >&2
+          return 1
+        fi
+        cmd="$1"
         ;;
       *)
         if [[ ! -z $shellfile ]]; then
@@ -70,6 +79,7 @@ EOF
   done
 
   # Set defaults if not set by arguments
+  : ${cmd=zsh}
   : ${shellfile=$PWD/shell.nix}
 
   # Shell dependencies directory
@@ -101,7 +111,7 @@ EOF
 
   # Use prebuilt shell if it exists
   if [[ -a "$drvfile" ]]; then
-    nix-shell "$drvfile" --command zsh
+    nix-shell "$drvfile" --command "$cmd"
   else
     _shellexists || return 1
     mkdir -p "$depsdir"
@@ -118,6 +128,6 @@ EOF
       -r $(nix-store --query --references "$drvfile") \
       --add-root "$depsdir/dep" --indirect \
     || { echo "nix-store failed" >&2; return 1; }
-    nix-shell "$drvfile" --command zsh
+    nix-shell "$drvfile" --command "$cmd"
   fi
 }

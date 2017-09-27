@@ -16,4 +16,4 @@ fi
 
 _arguments \
     "1:nix-shell profiles:(${LIST})" \
-    "2:options:(--clean --show-trace)"
+    "*:options:(--clean --show-trace --command)"
