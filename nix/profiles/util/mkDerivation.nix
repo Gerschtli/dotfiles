@@ -2,9 +2,7 @@
 
 let
 
-  nixpkgs = import ../overrides {
-    nixpkgs = import <nixpkgs> { };
-  };
+  nixpkgs = import <nixpkgs> { };
 
   inherit (builtins) attrNames concatLists foldl' listToAttrs;
   inherit (nixpkgs.lib) callPackageWith concatMap nameValuePair;
