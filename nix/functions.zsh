@@ -19,9 +19,9 @@ if available nix-shell; then
         local args=()
         local cmd_set=false
         local nix_shell_command="pnix-shell"
-        shift
 
-        while [[ $# -gt 0 ]]; do
+        while [[ $# -gt 1 ]]; do
+            shift
             key=$1
             case $key in
                 --clean)
@@ -42,7 +42,6 @@ if available nix-shell; then
                     nix_shell_command="nix-shell"
                     ;;
             esac
-            shift
         done
 
         if ! $cmd_set; then
