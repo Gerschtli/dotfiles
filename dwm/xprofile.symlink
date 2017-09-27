@@ -29,7 +29,7 @@ battery-watcher reset 2> /dev/null
 while true; do
     xsetroot -name "$(dwm-status)"
     battery-watcher default 2> /dev/null
-    sleep 1
+    sleep 30
 done &
 
 
