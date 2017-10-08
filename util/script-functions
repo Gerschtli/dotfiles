@@ -114,7 +114,7 @@ _d_remove_line_in_cache() {
 }
 
 _d_source_files() {
-    for file in $(find "${DOTFILES_ROOT}" -mindepth 2 -maxdepth 2 -type f "$@"); do
+    for file in $(find "${DOTFILES_ROOT}" -mindepth 2 -maxdepth 2 -type f "$@" | sort); do
         if _d_use_module "${file}"; then
             source "${file}"
         fi
