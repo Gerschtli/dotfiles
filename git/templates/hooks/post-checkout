@@ -2,7 +2,12 @@
 
 HOOKS_DIR="${PWD}"/.git/hooks
 
-if [ "${1}" != "${2}" ] && [ "${3}" = 1 ]; then # has new commits and is branch checkout
-    "${HOOKS_DIR}"/scripts/composer.sh post-checkout
-    "${HOOKS_DIR}"/scripts/npm.sh post-checkout
+OLD_REF="${1}"
+NEW_REF="${2}"
+IS_BRANCH="${3}"
+
+if [[ "${OLD_REF}" != "${NEW_REF}" && "${IS_BRANCH}" == 1 ]]; then # has new commits and is branch checkout
+    "${HOOKS_DIR}"/scripts/composer.sh post-checkout "${OLD_REF}" "${NEW_REF}"
+    "${HOOKS_DIR}"/scripts/npm.sh post-checkout "${OLD_REF}" "${NEW_REF}"
+
 fi

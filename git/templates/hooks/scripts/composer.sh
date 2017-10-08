@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+HOOK_TYPE="${1}"
+OLD_REF="${2}"
+NEW_REF="${3}"
+
 COMPOSER_DIR="${PWD}"/bin
 COMPOSER_JSON="${PWD}"/composer.json
 COMPOSER="${COMPOSER_DIR}"/composer
@@ -22,6 +26,17 @@ install_composer() {
     fi
 }
 
+has_changed() {
+    [[ -z "${OLD_REF}" && -z "${NEW_REF}" ]] || \
+        git diff --name-only $OLD_REF..$NEW_REF | grep -e "^composer.lock$" > /dev/null 2>&1
+}
+
+composer_install() {
+    if has_changed; then
+        APPLICATION_ENV=testing php "${COMPOSER}" install --optimize-autoloader --prefer-source
+    fi
+}
+
 composer_check() {
     if [ $("${COMPOSER}" list | egrep "check\s+Run the check script as defined in composer.json." | wc -l) != 0 ]; then
         "${COMPOSER}" check; RESULT=$?
@@ -31,9 +46,9 @@ composer_check() {
 if hash php > /dev/null 2>&1 && [ -e "${COMPOSER_JSON}" ]; then
     install_composer
 
-    case "${1}" in
+    case "${HOOK_TYPE}" in
         post-checkout | post-merge)
-            APPLICATION_ENV=testing php "${COMPOSER}" install --optimize-autoloader --prefer-source
+            composer_install
             ;;
         pre-push)
             composer_check
