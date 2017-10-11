@@ -1,9 +1,9 @@
 #compdef tprofile
 
-_directory_exists() {
+_directory_readable() {
     unset ROOT
     source "${1}"
-    [[ -z "${ROOT}" || -d "${ROOT}" ]]
+    [[ -z "${ROOT}" || -r "${ROOT}" ]]
 }
 
 LIST=()
@@ -12,7 +12,7 @@ prefix="${DOTFILES_ROOT}/tmux/profiles/"
 suffix=".sh"
 
 for file in "${prefix}"*"${suffix}"; do
-    if _directory_exists "${file}"; then
+    if _directory_readable "${file}"; then
         LIST=("${${file#${prefix}}//${suffix}}" "${LIST}")
     fi
 done

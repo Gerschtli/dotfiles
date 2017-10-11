@@ -20,7 +20,7 @@ _process_profile() {
 
     ROOT="${ROOT:-${HOME}}"
 
-    [ ! -d "${ROOT}" ] && echo "directory does not exists" && exit 1
+    [ ! -r "${ROOT}" ] && echo "directory does not readable" && exit 1
 
     if [[ "${ARG_OPTION}" == "--no-vagrant" && "${PRESET}" == "git-vagrant" ]]; then
         PRESET="git-single"
