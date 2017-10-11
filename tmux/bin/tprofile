@@ -20,7 +20,7 @@ _process_profile() {
 
     ROOT="${ROOT:-${HOME}}"
 
-    [ ! -r "${ROOT}" ] && echo "directory does not readable" && exit 1
+    [ ! -w "${ROOT}" ] && echo "directory does not writable" && exit 1
 
     if [[ "${ARG_OPTION}" == "--no-vagrant" && "${PRESET}" == "git-vagrant" ]]; then
         PRESET="git-single"
