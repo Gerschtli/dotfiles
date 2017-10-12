@@ -16,8 +16,8 @@ if available nix-shell; then
         fi
 
         local profile="${1:-./shell}"
-        local args=()
-        local cmd_set=false
+        local -a args
+        local cmd_set=0
         local nix_shell_command="pnix-shell"
 
         while [[ $# -gt 1 ]]; do
@@ -35,7 +35,7 @@ if available nix-shell; then
                         return 1
                     fi
                     args+=(--command "$1")
-                    cmd_set=true
+                    cmd_set=1
                     ;;
                 *)
                     args+=($key)
@@ -44,7 +44,7 @@ if available nix-shell; then
             esac
         done
 
-        if ! $cmd_set; then
+        if [[ "$cmd_set" == 0 ]]; then
             args+=(--command zsh)
         fi
 
