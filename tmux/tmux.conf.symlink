@@ -156,10 +156,10 @@ set -g status-position bottom
 set -g status-bg colour234
 set -g status-fg colour137
 set -g status-attr dim
-set -g status-left '#[fg=colour249,bg=colour236] #(whoami)@#[fg=colour231,bold]#H #[fg=colour137,bg=colour234]  '
+set -g status-left '#[fg=colour249,bg=colour236] #(whoami)@#[fg=colour231,bold]#(hostname | sed -e 's/.fritz.box//') #[fg=colour137,bg=colour234]  '
 set -g status-right '#[fg=colour233,bg=colour245] %d.%m.%Y #[fg=colour233,bg=colour250] %H:%M '
+set -g status-left-length 30
 set -g status-right-length 50
-set -g status-left-length 20
 
 setw -g window-status-current-fg colour81
 setw -g window-status-current-bg colour238
