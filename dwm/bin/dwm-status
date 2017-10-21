@@ -2,7 +2,7 @@
 
 BATTERY_BIN="battery"
 LOG_FILE="${HOME}/.dwm-status-errors"
-SEPARATOR="|"
+SEPARATOR="/"
 
 _log() {
     echo -e $"======== ${1} ========\n\n${2}\n\n" >> "${LOG_FILE}"
@@ -16,7 +16,7 @@ _build_element() {
 
 _backlight() {
     if $(hash xbacklight > /dev/null 2>&1); then
-        printf "L: %.0f%%" "$(xbacklight)"
+        printf "L %.0f%%" "$(xbacklight)"
     fi
 }
 
@@ -66,9 +66,9 @@ _sound() {
         local state="${BASH_REMATCH[2]}"
 
         if [[ "${state}" == "on" ]]; then
-            printf "S: ${percent}%%"
+            printf "S ${percent}%%"
         else
-            printf "S: MUTE"
+            printf "MUTE"
         fi
     else
         _log "SOUND" "$(amixer)"
