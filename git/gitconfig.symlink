@@ -158,10 +158,14 @@
 [pretty]
     graph = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset
 
+[pull]
+    rebase = true
+
 [push]
     default = tracking
 
 [rebase]
+    autoStash = true
     autosquash = true
     stat = true
 
