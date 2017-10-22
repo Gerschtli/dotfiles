@@ -1,18 +1,24 @@
-{ callPackage, extensions, php, phpPackages }:
+{ callPackage, extensions, lib, php, phpPackages }:
 
 let
+
+  # igbinary must be loaded before couchbase
+  extensions_ = lib.unique (
+    if lib.elem "couchbase" extensions
+    then [ "igbinary" ] ++ extensions
+    else extensions);
 
   environmentVariables = {
     PHPRC = callPackage ../../util/phpIni.nix {
       phpPackage  = php;
       phpPackages = phpPackages;
-      extensions  = extensions;
+      extensions  = extensions_;
     };
   };
 
   packages = [
     php
-  ] ++ (map (ext: phpPackages.${ext}) extensions);
+  ] ++ (map (ext: phpPackages.${ext}) extensions_);
 
 in
 

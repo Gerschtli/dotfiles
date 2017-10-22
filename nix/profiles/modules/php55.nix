@@ -1,8 +1,7 @@
 { callPackage, extensions ? [], php55, php55Packages }:
 
-import util/php.nix {
-  inherit callPackage extensions;
-
+callPackage util/php.nix {
+  inherit extensions;
   php         = php55;
   phpPackages = php55Packages;
 }
