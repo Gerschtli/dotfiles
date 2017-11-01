@@ -11,10 +11,6 @@ if available nix-shell; then
     }
 
     nshell() {
-        if [[ ! -z "${NIX_SHELL}" ]]; then
-            echo "Already in nix-shell! [${NIX_SHELL}]" >&2 && return 1
-        fi
-
         local profile="${1:-./shell}"
         local -a args
         local cmd_set=0

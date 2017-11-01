@@ -31,7 +31,7 @@ let
       if   modules.${module} ? environmentVariables
       then last // modules.${module}.environmentVariables
       else last)
-    { NIX_SHELL = name; }
+    { }
     (attrNames modules);
 
 in

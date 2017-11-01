@@ -1,6 +1,6 @@
 _d_rprompt() {
-    if [[ ! -z "${NIX_SHELL}" ]]; then
-        echo " %B[%F{green}${NIX_SHELL}%f]%b"
+    if [[ ! -z "${IN_NIX_SHELL}" && ! -z "${name}" ]]; then
+        echo " %B[%F{green}${name}%f]%b"
     fi
 }
 
