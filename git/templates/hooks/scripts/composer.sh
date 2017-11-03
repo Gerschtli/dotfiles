@@ -33,7 +33,7 @@ has_changed() {
 
 composer_install() {
     if has_changed; then
-        APPLICATION_ENV=testing php "${COMPOSER}" install --optimize-autoloader --prefer-source
+        php "${COMPOSER}" install --optimize-autoloader --prefer-source
     fi
 }
 
