@@ -24,7 +24,7 @@
     cm = commit --branch --status --verbose
     cn = !"git reflog expire --all && git fsck --unreachable --full && git prune && git gc --aggressive --quiet && git repack -Adq && git prune-packed --quiet"
     co = checkout
-    fe = fetch --prune --progress
+    fe = fetch --progress
     fm = !"git fe --all && git fe --all --tags"
     ge = grep --line-number --break --heading
     gr = !"git ge --ignore-case"
@@ -76,8 +76,8 @@
     whitespace = nowarn
 
 [branch]
-    autosetuprebase = always
-    autosetupmerge = true
+    autoSetupMerge = always
+    autoSetupRebase = always
 
 [clean]
     requireForce = true
@@ -117,8 +117,14 @@
 [diff "gpg"]
     textconv = gpg --use-agent -q --batch --decrypt
 
+[fetch]
+    prune = true
+
 [format]
     thread = deep
+
+[grep]
+    lineNumber = true
 
 [help]
     autocorrect = 0
@@ -132,7 +138,7 @@
 
 [log]
     date = iso
-    showroot = true
+    showRoot = true
 
 [merge]
     log = true
@@ -142,6 +148,7 @@
 
 [mergetool]
     keepBackup = false
+    writeToTemp = true
 
 [mergetool "subl"]
     cmd = $(subl --get-executable) -w $MERGED
@@ -160,14 +167,9 @@
     default = tracking
 
 [rebase]
+    autoSquash = true
     autoStash = true
-    autosquash = true
     stat = true
-
-[receive]
-    autogc = true
-    fsckObjects = true
-    updateserverinfo = true
 
 [rerere]
     enabled = 1
