@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 
-HOOK_TYPE="${1}"
-OLD_REF="${2}"
-NEW_REF="${3}"
+source "${PWD}"/.git/hooks/scripts/util.sh
 
 COMPOSER_DIR="${PWD}"/bin
 COMPOSER_JSON="${PWD}"/composer.json
+COMPOSER_LOCK="${PWD}"/composer.lock
 COMPOSER="${COMPOSER_DIR}"/composer
 
-RESULT=0
-
-install_composer() {
+download() {
     if [ ! -x "${COMPOSER}" ]; then
         test ! -d "${COMPOSER_DIR}" && mkdir "${COMPOSER_DIR}"
         php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -26,33 +23,24 @@ install_composer() {
     fi
 }
 
-has_changed() {
-    [[ -z "${OLD_REF}" && -z "${NEW_REF}" ]] || \
-        git diff --name-only $OLD_REF..$NEW_REF | grep -e "^composer.lock$" > /dev/null 2>&1
-}
-
-composer_install() {
-    if has_changed; then
+install() {
+    if has_changed "${COMPOSER_LOCK}"; then
         php "${COMPOSER}" install --optimize-autoloader --prefer-source
     fi
 }
 
-composer_check() {
-    if [ $("${COMPOSER}" list | egrep "check\s+Run the check script as defined in composer.json." | wc -l) != 0 ]; then
+check() {
+    if "${COMPOSER}" list | has_match "check\s+Run the check script as defined in composer.json."; then
         "${COMPOSER}" check; RESULT=$?
     fi
 }
 
-if hash php > /dev/null 2>&1 && [ -e "${COMPOSER_JSON}" ]; then
-    install_composer
+if has_command_and_file php "${COMPOSER_JSON}"; then
+    download
 
     case "${HOOK_TYPE}" in
-        post-checkout | post-merge)
-            composer_install
-            ;;
-        pre-push)
-            composer_check
-            ;;
+        post-checkout | post-merge) install ;;
+        pre-push)                   check   ;;
     esac
 fi
 
