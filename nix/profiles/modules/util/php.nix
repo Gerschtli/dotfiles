@@ -6,19 +6,18 @@ let
   extensions_ = lib.unique (
     if lib.elem "couchbase" extensions
     then [ "igbinary" ] ++ extensions
-    else extensions);
+    else extensions
+  );
 
   environmentVariables = {
-    PHPRC = callPackage ../../util/phpIni.nix {
+    PHPRC = callPackage ./phpIni.nix {
       phpPackage  = php;
       phpPackages = phpPackages;
       extensions  = extensions_;
     };
   };
 
-  packages = [
-    php
-  ] ++ (map (ext: phpPackages.${ext}) extensions_);
+  packages = [ php ] ++ (map (ext: phpPackages.${ext}) extensions_);
 
 in
 
