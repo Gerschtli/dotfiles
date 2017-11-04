@@ -26,7 +26,8 @@
     co = checkout
     fe = fetch --prune --progress
     fm = !"git fe --all && git fe --all --tags"
-    gr = grep --ignore-case --line-number --break --heading
+    ge = grep --line-number --break --heading
+    gr = !"git ge --ignore-case"
     lg = log --stat
     lm = log --merges --stat
     lp = log -10 --patch-with-stat
@@ -47,14 +48,10 @@
     rv = remote --verbose
     sa = stash save
     saa = stash save --all
-    sb = !"git br && git sr \"git br\""
     sc = stash clear
-    se = !"git rebase --interactive $(git rev-list --reverse HEAD | head -n 1)"
-    sf = !"git sm foreach"
     sl = stash list
     sm = submodule
     so = stash pop
-    sr = !"git sf --recursive"
     st = status
     sw = stash show
 
@@ -68,8 +65,6 @@
     mma = merge origin/master
 
     aliases = config --get-regexp "^alias"
-    brup = !"git fm && git branch --column=never --list --no-color | \
-        xargs -I {} bash -c 'i=\"{}\" && git co ${i//\\*/} && git ri >> /dev/null' && git cma"
 
     branch-name = !"git for-each-ref --format='%(refname:short)' $(git symbolic-ref HEAD)"
     total-clean = "!git co -f && git clean -dfx && git clean -dfX"
