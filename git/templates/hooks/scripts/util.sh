@@ -14,7 +14,7 @@ has_changed() {
 
     case $HOOK_TYPE in
         post-commit)
-            git rev-parse --verify HEAD^ >/dev/null 2>&1 && against=HEAD^
+            git rev-parse --verify HEAD^ > /dev/null 2>&1 && against=HEAD^
             changed="$(git diff-tree $against 'HEAD' --stat -- ${monitored_paths[*]} | wc -l)"
             ;;
         post-checkout | post-merge )
@@ -38,5 +38,6 @@ has_command_and_file() {
 has_match() {
     local expression="${1}"
     local input="${2:-/dev/stdin}"
-    [[ $(grep "${expression}" "${input}" | wc -l) != 0 ]]
+
+    cat "${input}" | grep "${expression}" > /dev/null 2>&1
 }
