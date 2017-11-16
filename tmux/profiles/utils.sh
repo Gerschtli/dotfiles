@@ -1,4 +1,4 @@
-ROOT="${HOME}/projects/cbn/utils"
+ROOT="${HOME}/projects/profitmax/utils"
 TITLE="utils"
 
 PRESET="git-single"

@@ -2,8 +2,8 @@
     "folders":
     [
         {
-            "name": "cbn-library",
-            "path": "~/projects/cbn/library",
+            "name": "profitmax-library",
+            "path": "~/projects/profitmax/library",
             "file_exclude_patterns": [
                 "cache.properties"
             ],

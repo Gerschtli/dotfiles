@@ -2,8 +2,8 @@
     "folders":
     [
         {
-            "name": "cbn-behat",
-            "path": "~/projects/cbn/behat",
+            "name": "profitmax-behat",
+            "path": "~/projects/profitmax/behat",
             "folder_exclude_patterns": [
                 ".phpintel",
                 "nbproject"

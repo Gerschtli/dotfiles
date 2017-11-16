@@ -1,4 +1,4 @@
-ROOT="${HOME}/projects/cbn/frontend"
+ROOT="${HOME}/projects/profitmax/frontend"
 TITLE="frontend"
 
 PRESET="git-vagrant"

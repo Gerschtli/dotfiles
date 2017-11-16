@@ -2,15 +2,17 @@
     "folders":
     [
         {
-            "name": "cbn-backend",
-            "path": "~/projects/cbn/backend",
+            "name": "profitmax-profitmax",
+            "path": "~/projects/profitmax/profitmax",
             "file_exclude_patterns": [
                 "cache.properties",
                 "rsync.conf",
                 "sftp-config.json"
             ],
             "folder_exclude_patterns": [
-                ".phpintel"
+                ".phpintel",
+                "nbproject",
+                "node_modules"
             ]
         }
     ]

@@ -6,7 +6,7 @@ list=("${DOTFILES_ROOT}")
 [[ -d "${DOTFILES_ROOT}/gpg" ]] && list+=("${DOTFILES_ROOT}/gpg")
 [[ -d "${DOTFILES_ROOT}/ssh" ]] && list+=("${DOTFILES_ROOT}/ssh")
 [[ -d "${HOME}/projects" ]]     && list+=("${HOME}/projects/"*/)
-[[ -d "${HOME}/projects/cbn" ]] && list+=("${HOME}/projects/cbn/"*/)
+[[ -d "${HOME}/projects/profitmax" ]] && list+=("${HOME}/projects/profitmax/"*/)
 
 for dir in "${list[@]}"; do
     if [[ -d "${dir}/.git" ]]; then
