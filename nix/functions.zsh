@@ -1,7 +1,7 @@
 if available nix-shell; then
     nshell-path() {
-        if [[ "${1}" == "./shell" ]]; then
-            echo "$(pwd)/shell.nix"
+        if [[ "${1}" == "." ]]; then
+            pwd
             return
         fi
 
@@ -11,7 +11,7 @@ if available nix-shell; then
     }
 
     nshell() {
-        local profile="${1:-./shell}"
+        local profile="${1:-.}"
         local -a args
         local cmd_set=0
         local nix_shell_command="pnix-shell"

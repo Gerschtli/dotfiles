@@ -97,7 +97,7 @@ EOF
   || { return 1; }
 
   _shellexists () {
-    if [[ ! -f "$shellfile" ]]; then
+    if [[ ! -f "$shellfile" && ! -d "$shellfile" ]]; then
       echo "No shell description found in \`$shellfile'." >&2
       return 1
     fi

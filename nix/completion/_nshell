@@ -10,8 +10,8 @@ for file in "${prefix}"*"${suffix}"; do
     LIST=("${tmp//${suffix}}" "${LIST}")
 done
 
-if [[ -e shell.nix ]]; then
-    LIST+=("./shell")
+if [[ -e shell.nix || -e default.nix ]]; then
+    LIST+=(".")
 fi
 
 _arguments \
