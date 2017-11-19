@@ -77,27 +77,13 @@ _d_print() {
 }
 
 _d_pull() {
-    _d_info "git fetch --prune ..."
-    git fetch --prune
-
     if [[ $(git rev-parse --abbrev-ref HEAD) != "master" ]]; then
         _d_info "git checkout master ..."
         git checkout master
     fi
 
-    if [[ $(git diff --name-only) != "" ]]; then
-        local stash=true
-        _d_info "git stash ..."
-        git stash
-    fi
-
-    _d_info "git rebase origin/master ..."
-    git rebase origin/master
-
-    if [[ ! -z "${stash}" ]]; then
-        _d_info "git stash pop ..."
-        git stash pop
-    fi
+    _d_info "git pull ..."
+    git pull
 }
 
 _d_register_fpath() {
