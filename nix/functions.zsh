@@ -1,8 +1,8 @@
 if available nix-shell; then
     nshell-path() {
         if [[ "${1}" == "." ]]; then
-            pwd
-            return
+            [[ -r shell.nix ]] && echo "${PWD}/shell.nix" && return
+            [[ -r default.nix ]] && echo "${PWD}/default.nix" && return
         fi
 
         local profile="${1}"

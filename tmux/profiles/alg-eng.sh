@@ -5,4 +5,4 @@ LAYOUT="even-horizontal"
 
 PANE_CMDS=("git fm" "cd ../programs")
 
-NIX_PROFILE="./shell"
+NIX_PROFILE="."
