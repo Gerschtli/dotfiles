@@ -4,6 +4,7 @@
 
 | Name         | Description                                                       |
 |--------------|-------------------------------------------------------------------|
+| atom         | Configuration for atom                                            |
 | bash         | Configuration for bash                                            |
 | dunst        | Configuration for dunst (libnotiy daemon)                         |
 | dwm          | Configuration for dwm sessions                                    |

@@ -21,7 +21,7 @@ if [[ -r "${CACHE_FILE}" ]]; then
 fi
 
 # link files with symlink suffix
-for target in $(find "${DOTFILES_ROOT}" -maxdepth 2 -type f -name '*.symlink'); do
+for target in $(find "${DOTFILES_ROOT}" -maxdepth 2 -name '*.symlink'); do
     if _d_use_module "${target}"; then
         linkname="${HOME}/.$(basename "${target%.*}")"
         _d_link_file "${target}" "${linkname}"

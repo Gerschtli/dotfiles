@@ -1,3 +1,10 @@
+atom/atom.symlink/.apm
+atom/atom.symlink/blob-store
+atom/atom.symlink/compile-cache
+atom/atom.symlink/github.cson
+atom/atom.symlink/nohup.out
+atom/atom.symlink/storage
+
 bin/*
 !bin/.gitkeep
 
