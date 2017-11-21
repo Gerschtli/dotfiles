@@ -28,6 +28,15 @@ for target in $(find "${DOTFILES_ROOT}" -maxdepth 2 -name '*.symlink'); do
     fi
 done
 
+# link files with symlink.config suffix
+for target in $(find "${DOTFILES_ROOT}" -maxdepth 2 -name '*.symlink.config'); do
+    if _d_use_module "${target}"; then
+        mkdir -p "${HOME}/.config"
+        linkname="${HOME}/.config/$(basename "${target%.*.*}")"
+        _d_link_file "${target}" "${linkname}"
+    fi
+done
+
 # link bin files
 for target in "${DOTFILES_ROOT}"/*/bin/*; do
     if _d_use_module "${target%/*}"; then
