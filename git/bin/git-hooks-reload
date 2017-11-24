@@ -2,14 +2,15 @@
 
 source "${HOME}/.dotfiles-variables"
 
-hooks_dir="${PWD}/.git/hooks"
+git_dir="${PWD}/.git"
+hooks_dir="${git_dir}/hooks"
 
-if [[ ! -d "${hooks_dir}" ]]; then
-    echo "folder ${hooks_dir} does not exist."
+if [[ ! -d "${git_dir}" ]]; then
+    echo "folder ${git_dir} does not exist."
     exit 1
 fi
 
-rm -r "${hooks_dir}"
-git init --template="${DOTFILES_ROOT}/git/templates"
+rm -rf "${hooks_dir}"
+git init --template="${DOTFILES_ROOT}/git/git-templates.symlink"
 
 exit 0
