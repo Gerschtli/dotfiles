@@ -17,8 +17,9 @@
     cm = commit --branch --status --verbose
     cn = !"git reflog expire --all && git fsck --unreachable --full && git prune && git gc --aggressive --quiet && git repack -Adq && git prune-packed --quiet"
     co = checkout
+    fa = !"git fe --all && git fe --all --tags"
     fe = fetch --progress
-    fm = !"git fe --all && git fe --all --tags"
+    fm = !"git fe && git fe --tags"
     ge = grep --line-number --break --heading
     gr = !"git ge --ignore-case"
     lg = log --stat
