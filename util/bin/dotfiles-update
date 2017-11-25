@@ -35,7 +35,7 @@ fi
 if available termux-fix-shebang; then
     echo
     _d_info "==== TERMUX FIX SHEBANG ===="
-    _d_indent termux-fix-shebang bootstrap.sh */bin/* git/templates/hooks/{pre-,post-,scripts/}*
+    _d_indent termux-fix-shebang bootstrap.sh */bin/* git/git-templates.symlink/hooks/{pre-,post-,scripts/}*
 fi
 
 echo
