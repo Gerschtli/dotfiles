@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -e
+
+source "$(dirname "$0")/../util/dotfiles-variables.symlink"
+source "${DOTFILES_ROOT}/util/script-functions"
+
+ALL_MODULES=$(
+    find "${DOTFILES_ROOT}" -mindepth 1 -maxdepth 1 -type d \
+        ! -wholename "${DOTFILES_ROOT}/.git" -a ! -wholename "${DOTFILES_ROOT}/bin" \
+        | sed "s,${DOTFILES_ROOT}/,," | sort
+)
+
+DISABLED_MODULES=$(echo ${ALL_MODULES[@]} ${MODULES[@]} | tr ' ' '\n' | sort | uniq -u)
+
+if [[ -z "${DISABLED_MODULES}" ]]; then
+    _d_success "All modules enabled"
+else
+    _d_info "All modules:"
+    _d_indent echo ${ALL_MODULES[@]}
+
+    _d_info "Following modules can additionally be enabled:"
+    _d_indent echo ${DISABLED_MODULES[@]}
+fi
+
+exit 0

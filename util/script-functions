@@ -117,3 +117,5 @@ _d_use_module() {
     local module="${directory##*/}"
     _d_contains_element "${module}" "${MODULES[@]}"
 }
+
+# vim: ft=sh
