@@ -32,7 +32,7 @@
     pd = push --no-verify --delete --progress origin
     ph = push --progress --tags
     pu = !"for i in $(git remote); do git ph ${i} $(git branch-name); done"
-    punv = !"for i in $(git remote); do git ph --no-verify ${i} $(git branch-name); done"
+    pn = !"for i in $(git remote); do git ph --no-verify ${i} $(git branch-name); done"
     ra = rebase --abort
     rc = rebase --continue
     re = reset
@@ -59,6 +59,9 @@
     mma = merge origin/master
 
     aliases = config --get-regexp "^alias"
+
+    bclean = !"git for-each-ref --format '%(refname:short)' refs/heads " \
+        "| grep -Ev \"master|development|$(git branch-name)\" | xargs git bd"
 
     branch-name = !"git for-each-ref --format='%(refname:short)' $(git symbolic-ref HEAD)"
     total-clean = "!git co -f && git clean -dfx && git clean -dfX"
