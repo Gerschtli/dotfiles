@@ -7,6 +7,7 @@ Plug 'kristijanhusak/vim-hybrid-material'
 
 Plug 'chrisbra/csv.vim'
 Plug 'LnL7/vim-nix'
+Plug 'elzr/vim-json'
 
 call plug#end()
 
