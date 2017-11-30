@@ -1,4 +1,4 @@
-TITLE="profitmax-app"
+TITLE="profitmax-soap"
 
 LAYOUT="even-vertical"
 
