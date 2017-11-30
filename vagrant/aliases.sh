@@ -7,7 +7,7 @@ if available vagrant; then
     alias vrel="vagrant reload"
     alias vssh="vagrant ssh"
     alias vst="vagrant status"
-    alias vup="vagrant up"
+    alias vup="vagrant up --provision"
 
     alias cdvpro="cdv && vpro && cd -"
 fi
