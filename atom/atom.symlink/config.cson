@@ -1,6 +1,22 @@
 "*":
+  "atom-material-ui":
+    colors: {}
+    fonts:
+      fontSize: 14
+    tabs:
+      compactTabs: true
+      noTabMinWidth: true
+    ui:
+      panelContrast: true
+      panelShadows: true
+  "atom-package-deps":
+    ignored: []
   core:
     telemetryConsent: "limited"
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax"
+    ]
   editor:
     fontFamily: "Fira Mono"
     fontSize: 10
