@@ -1,0 +1,16 @@
+[
+  {
+    title: "frontend"
+    group: "profitmax"
+    paths: [
+      "~/projects/profitmax/frontend"
+    ]
+  }
+  {
+    title: "backend"
+    group: "profitmax"
+    paths: [
+      "~/projects/profitmax/backend"
+    ]
+  }
+]
