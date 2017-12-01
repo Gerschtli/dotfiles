@@ -1,9 +1,8 @@
 [
   {
-    title: "frontend"
-    group: "profitmax"
+    title: "dotfiles"
     paths: [
-      "~/projects/profitmax/frontend"
+      "~/.dotfiles"
     ]
   }
   {
@@ -11,6 +10,13 @@
     group: "profitmax"
     paths: [
       "~/projects/profitmax/backend"
+    ]
+  }
+  {
+    title: "frontend"
+    group: "profitmax"
+    paths: [
+      "~/projects/profitmax/frontend"
     ]
   }
 ]
