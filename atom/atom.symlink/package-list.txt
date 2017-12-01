@@ -1,3 +1,4 @@
 atom-material-syntax@1.0.7
 atom-material-ui@2.0.6
+git-plus@7.10.0
 project-manager@3.3.5

@@ -23,10 +23,12 @@
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
-    tabLength: 4
     tabType: "soft"
   "exception-reporting":
     userId: "0e594558-5f6f-463c-aa6a-093b570dedde"
+  "git-plus":
+    commits:
+      verboseCommits: true
   "project-manager":
     alwaysOpenInSameWindow: true
     savePathsRelativeToHome: true
