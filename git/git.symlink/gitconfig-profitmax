@@ -1,0 +1,5 @@
+[commit]
+    template = ~/.git/commit-profitmax.msg
+
+[user]
+    email = th@profitmax.de

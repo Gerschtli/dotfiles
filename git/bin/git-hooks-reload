@@ -11,6 +11,6 @@ if [[ ! -d "${git_dir}" ]]; then
 fi
 
 rm -rf "${hooks_dir}"
-git init --template="${DOTFILES_ROOT}/git/git-templates.symlink"
+git init --template="${DOTFILES_ROOT}/git/git.symlink/template"
 
 exit 0

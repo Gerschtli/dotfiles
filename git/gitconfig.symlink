@@ -13,7 +13,7 @@
     bdd = branch --verbose -D
     ca = commit -q --branch --status --verbose --amend
     cf = checkout --quiet --force
-    cl = !"git clone --progress --template=${HOME}/.git-templates"
+    cl = !"git clone --progress --template=${HOME}/.git/template"
     cm = commit --branch --status --verbose
     cn = !"git reflog expire --all && git fsck --unreachable --full && git prune && git gc --aggressive --quiet && git repack -Adq && git prune-packed --quiet"
     co = checkout
@@ -209,5 +209,8 @@
     cursor = white blue bold
     title-blur = blue default
     title-focus = blue default bold
+
+[includeIf "gitdir:~/projects/profitmax/*"]
+    path = ~/.git/gitconfig-profitmax
 
 # vim: filetype=gitconfig foldmethod=indent foldminlines=0
