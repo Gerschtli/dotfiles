@@ -29,7 +29,7 @@ if [[ -z "${1}" ]]; then
     echo
     _d_info "===== SUBMOUDLE UPDATE ====="
     _d_indent git submodule foreach git checkout master
-    # _d_indent git submodule foreach git pull
+    _d_indent git submodule foreach git pull
 fi
 
 if available termux-fix-shebang; then
