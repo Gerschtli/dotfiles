@@ -19,4 +19,10 @@
       "~/projects/profitmax/frontend"
     ]
   }
+  {
+    title: "plc-hack"
+    paths: [
+      "~/projects/plc-web-hack"
+    ]
+  }
 ]
