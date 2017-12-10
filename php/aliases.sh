@@ -1,13 +1,16 @@
-if available php; then
-    alias composer='./bin/composer'
-    alias com='composer'
+if available php || available hhvm; then
+    alias composer="./bin/composer"
+    if available hhvm; then
+        alias composer="hhvm bin/composer"
+    fi
+    alias com="composer"
 
-    alias cinstall='composer --prefer-source --optimize-autoloader install'
-    alias cupdate='composer --prefer-source --optimize-autoloader update'
-    alias csupdate='composer self-update'
+    alias cinstall="composer --prefer-source --optimize-autoloader install"
+    alias cupdate="composer --prefer-source --optimize-autoloader update"
+    alias csupdate="composer self-update"
 
-    alias behat='./bin/behat -vvv'
-    alias ut='./bin/phpunit'
+    alias behat="./bin/behat -vvv"
+    alias ut="./bin/phpunit"
 
     cdownload() {
         if [ ! -x "bin/composer" ]; then
@@ -26,7 +29,7 @@ if available php; then
     }
 
     if available phpenmod && available phpdismod; then
-        alias phpenxdebug='sudo phpenmod -s cli xdebug'
-        alias phpdisxdebug='sudo phpdismod -s cli xdebug'
+        alias phpenxdebug="sudo phpenmod -s cli xdebug"
+        alias phpdisxdebug="sudo phpdismod -s cli xdebug"
     fi
 fi
