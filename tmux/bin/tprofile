@@ -33,7 +33,7 @@ _process_profile() {
             ;;
         git-vagrant )
             LAYOUT="main-horizontal"
-            PANE_CMDS=("git fm" "cd vagrant && vagrant up")
+            PANE_CMDS=("git fm" "cd vagrant && vup")
             ;;
     esac
 
