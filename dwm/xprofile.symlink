@@ -5,10 +5,6 @@ source "${DOTFILES_ROOT}/shell/functions.sh"
 source "${DOTFILES_ROOT}/util/unset-variables"
 
 
-# used for .desktop files
-export XDG_DATA_DIRS="${HOME}/.nix-profile/share:/run/current-system/sw/share:${XDG_DATA_DIRS}"
-
-
 # Show screen saver after 20 min
 xset s 1200
 # Disable screen power saving settings
@@ -32,4 +28,11 @@ xss-lock -v -- lock-screen &
 # Start NetworkManager Tray Icon
 available nm-applet && nm-applet &
 # Start dropbox
-dropbox start &
+while true; do
+    if [[ "$(dropbox status)" == "Dropbox isn't running!" ]]; then
+        dropbox start
+    fi
+    sleep 60
+done &
+
+# vim: ft=sh
