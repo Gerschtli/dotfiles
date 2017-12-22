@@ -4,7 +4,7 @@ source "${DOTFILES_ROOT}/util/script-functions"
 _d_source_files \( -name "*.sh" -o -name "*.zsh" \) \
     ! -name "logout.*sh" ! -name "completion.*sh"
 
-autoload -Uz +X compinit && compinit
+autoload -Uz +X compinit && compinit $(is_osx && echo "-u")
 
 _d_source_files \( -name "completion.sh" -o -name "completion.zsh" \)
 
