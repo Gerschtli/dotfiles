@@ -14,7 +14,6 @@ xset r rate 250 30
 
 
 # Set xsetroot and manages battery-watcher
-sleep 0.1 && xsetroot -solid "#1A0303" &
 battery-watcher reset 2> /dev/null
 while true; do
     xsetroot -name "$(dwm-status)"
