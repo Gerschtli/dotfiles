@@ -1,6 +1,8 @@
 ROOT="${HOME}/projects/plc-web-presentation"
 TITLE="plc-presentation"
 
-PRESET="git-single"
+LAYOUT="main-vertical"
+
+PANE_CMDS=("git fm" "make")
 
 NIX_PROFILE="."
