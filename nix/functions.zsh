@@ -46,4 +46,10 @@ if available nix-shell; then
 
         ${nix_shell_command} "$(nshell-path "${profile}")" ${args}
     }
+
+    nshell-update() {
+        find ~/.nix-shell -name "shell.drv" \
+            | sed -e "s,${HOME}/.nix-shell,,g" -e "s,\(.*\)/.*/shell.drv$,\1,g" \
+            | xargs -I {} zsh --interactive -c "cd {} && echo '===== {} =====' && nshell . --clean"
+    }
 fi
