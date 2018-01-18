@@ -3,9 +3,10 @@
 source "${HOME}/.dotfiles-variables"
 
 list=("${DOTFILES_ROOT}")
-[[ -d "${DOTFILES_ROOT}/gpg" ]] && list+=("${DOTFILES_ROOT}/gpg")
-[[ -d "${DOTFILES_ROOT}/ssh" ]] && list+=("${DOTFILES_ROOT}/ssh")
-[[ -d "${HOME}/projects" ]]     && list+=("${HOME}/projects/"*/)
+[[ -d "${DOTFILES_ROOT}/gpg" ]]       && list+=("${DOTFILES_ROOT}/gpg")
+[[ -d "${DOTFILES_ROOT}/ssh" ]]       && list+=("${DOTFILES_ROOT}/ssh")
+[[ -d "${HOME}/git/profitmax" ]]      && list+=("${HOME}/git/profitmax/"*/)
+[[ -d "${HOME}/projects" ]]           && list+=("${HOME}/projects/"*/)
 [[ -d "${HOME}/projects/profitmax" ]] && list+=("${HOME}/projects/profitmax/"*/)
 
 for dir in "${list[@]}"; do
@@ -15,5 +16,3 @@ for dir in "${list[@]}"; do
         popd 1> /dev/null
     fi
 done
-
-exit 0

@@ -210,6 +210,9 @@
     title-blur = blue default
     title-focus = blue default bold
 
+[includeIf "gitdir:~/git/profitmax/*"]
+    path = ~/.git/gitconfig-profitmax
+
 [includeIf "gitdir:~/projects/profitmax/*"]
     path = ~/.git/gitconfig-profitmax
 
