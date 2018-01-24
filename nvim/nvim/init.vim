@@ -1,15 +1,20 @@
 "" Plugins
 call plug#begin('~/.config/nvim/plugins')
 
+" themes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kristijanhusak/vim-hybrid-material'
 
+" plugins
+Plug 'scrooloose/nerdtree'
+
+" syntax highlighting
 Plug 'chrisbra/csv.vim'
 Plug 'LnL7/vim-nix'
 Plug 'elzr/vim-json'
 Plug 'lervag/vimtex'
-Plug 'scrooloose/nerdtree'
+Plug 'tmux-plugins/vim-tmux'
 
 call plug#end()
 
