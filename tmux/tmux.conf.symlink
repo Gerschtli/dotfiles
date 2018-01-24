@@ -80,8 +80,9 @@ bind -r J resize-pane -D
 bind -r K resize-pane -U
 bind -r L resize-pane -R
 
-bind E send-keys -t :.- C-c C-m up C-m
 bind e send-keys -t :.- up C-m
+bind E send-keys -t :.- C-c C-m up C-m
+bind C-E send-keys -t :.- X C-m up C-m
 
 bind Left swap-window -t :-
 bind Right swap-window -t :+
@@ -192,3 +193,5 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
+
+# vim: ft=tmux
