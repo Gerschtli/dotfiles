@@ -3,6 +3,6 @@ TITLE="alg-eng"
 
 LAYOUT="even-horizontal"
 
-PANE_CMDS=("git fm" "cd ../programs")
+PANE_CMDS=("git fm" "")
 
 NIX_PROFILE="."
