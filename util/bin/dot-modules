@@ -18,6 +18,9 @@ else
     _d_info "All modules:"
     _d_indent echo ${ALL_MODULES[@]}
 
+    _d_info "Following modules are enabled:"
+    _d_indent echo ${MODULES[@]}
+
     _d_info "Following modules can additionally be enabled:"
     _d_indent echo ${DISABLED_MODULES[@]}
 fi
