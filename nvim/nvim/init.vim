@@ -10,10 +10,12 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'scrooloose/nerdtree'
 
 " syntax highlighting
-Plug 'chrisbra/csv.vim'
 Plug 'LnL7/vim-nix'
+Plug 'cespare/vim-toml'
+Plug 'chrisbra/csv.vim'
 Plug 'elzr/vim-json'
 Plug 'lervag/vimtex'
+Plug 'rust-lang/rust.vim'
 Plug 'tmux-plugins/vim-tmux'
 
 call plug#end()
