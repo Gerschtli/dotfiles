@@ -1,4 +1,4 @@
-ROOT="${HOME}/projects/serversetup/ansible"
+ROOT="${HOME}/projects/serversetup"
 TITLE="serversetup"
 
 if [[ "${ARG_OPTION}" == "--no-vagrant" ]]; then
