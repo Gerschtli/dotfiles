@@ -12,6 +12,8 @@ bin/*
 
 gpg/
 
+nix/nixpkgs.symlink.config/overlays/rust-overlay.nix
+
 nodejs/completion.sh
 
 nvim/nvim/.netrwhist
