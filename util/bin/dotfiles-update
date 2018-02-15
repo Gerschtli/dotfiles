@@ -28,6 +28,7 @@ if [[ -z "${1}" ]]; then
 
     echo
     _d_info "===== SUBMOUDLE UPDATE ====="
+    _d_indent git submodule update --init
     _d_indent git submodule foreach git checkout master
     _d_indent git submodule foreach git pull
 fi
