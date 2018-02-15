@@ -2,13 +2,14 @@
     path = liquidprompt/liquidprompt
     url = https://github.com/nojhan/liquidprompt.git
 
+[submodule "nix/nixpkgs-mozilla"]
+    path = nix/nixpkgs-mozilla
+    url = https://github.com/mozilla/nixpkgs-mozilla.git
+
 [submodule "tmux/tpm"]
     path = tmux/tpm
-    url = https://github.com/tmux-plugins/tpm
+    url = https://github.com/tmux-plugins/tpm.git
 
 [submodule "zsh/autosuggestions"]
     path = zsh/autosuggestions
     url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "nix/nixpkgs-mozilla"]
-	path = nix/nixpkgs-mozilla
-	url = git@github.com:mozilla/nixpkgs-mozilla.git
