@@ -57,13 +57,13 @@ _datetime() {
 }
 
 _sound() {
-    local amixer_output="$(amixer get Master | grep "Front Left: Playback")"
+    local amixer_output="$(amixer get Master | egrep "(Front Left|Mono): Playback")"
 
-    local regex="\[([0-9]+)%\] \[(on|off)\]$"
+    local regex="\[([0-9]+)%\]( \[[^\]+\])? \[(on|off)\]$"
 
     if [[ "${amixer_output}" =~ ${regex} ]]; then
         local percent="${BASH_REMATCH[1]}"
-        local state="${BASH_REMATCH[2]}"
+        local state="${BASH_REMATCH[3]}"
 
         if [[ "${state}" == "on" ]]; then
             printf "S ${percent}%%"
