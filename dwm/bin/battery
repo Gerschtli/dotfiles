@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # check requirements
-if ! $(hash "upower" > /dev/null 2>&1); then
+if ! $(hash "upower" > /dev/null 2>&1 && upower > /dev/null 2>&1); then
     echo "upower is not in PATH" >&2
     exit 2
 fi
