@@ -18,7 +18,11 @@ has_changed() {
             changed="$(git diff-tree $against 'HEAD' --stat -- ${monitored_paths[*]} | wc -l)"
             ;;
         post-checkout | post-merge )
-            changed="$(git diff 'HEAD@{1}' --stat -- ${monitored_paths[*]} | wc -l)"
+            if [[ "$(git reflog | wc -l)" == 1 ]]; then
+                changed=1
+            else
+                changed="$(git diff 'HEAD@{1}' --stat -- ${monitored_paths[*]} | wc -l)"
+            fi
             ;;
         pre-commit)
             git rev-parse --verify HEAD >/dev/null 2>&1 && against=HEAD
