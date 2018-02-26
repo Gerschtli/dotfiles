@@ -12,6 +12,12 @@
   "atom-package-deps":
     ignored: []
   core:
+    autoHideMenuBar: true
+    disabledPackages: [
+      "Atom-Hack"
+      "autocomplete-hack"
+      "language-hack"
+    ]
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
@@ -19,15 +25,14 @@
     ]
   editor:
     fontFamily: "Fira Mono"
-    fontSize: 10
+    fontSize: 9
     preferredLineLength: 120
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
-    tabLength: 4
-    tabType: "soft"
   "exception-reporting":
     userId: "0e594558-5f6f-463c-aa6a-093b570dedde"
+  "fuzzy-finder": {}
   "git-plus":
     commits:
       verboseCommits: true
@@ -38,3 +43,7 @@
   welcome:
     showOnStartup: false
   whitespace: {}
+".html.php.text":
+  editor:
+    tabLength: 4
+    tabType: "soft"

@@ -27,6 +27,13 @@
     ]
   }
   {
+    title: "profitmax"
+    group: "profitmax"
+    paths: [
+      "~/projects/profitmax/profitmax"
+    ]
+  }
+  {
     title: "plc-hack"
     paths: [
       "~/projects/plc-web-hack"

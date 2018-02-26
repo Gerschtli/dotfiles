@@ -1,0 +1,142 @@
+'.text.html.php':
+  'new class':
+    'prefix': 'cl'
+    'body': """
+      class ${1:Class}${2:
+          extends ${3:Parent}}${4:
+          implements ${5:Interface}}
+      {
+          $0
+      }
+    """
+  'PHPUnit Mock':
+    'prefix': 'mocl'
+    'body': """
+      ${1:var} = \$this
+          ->getMockBuilder(${2:Class}::class)
+          ->disableOriginalConstructor()
+          ->getMock();$0
+    """
+  'PHPUnit Mock with Pimple':
+    'prefix': 'mopc'
+    'body': """
+      \$this->_pimple['${1:var}'] = \$this
+          ->getMockBuilder(${2:Class}::class)
+          ->disableOriginalConstructor()
+          ->getMock();$0
+    """
+  'PHPUnit Mock Method':
+    'prefix': 'mome'
+    'body': """
+      $1
+          ->expects(\$this->${2:once()})
+          ->method('${3:method}')${4:
+          ->with(\$this->equalTo($5))}${6:
+          ->will(\$this->returnValue($7))};$0
+    """
+  'PHPUnit Mock Method with Pimple':
+    'prefix': 'mopm'
+    'body': """
+      \$this->_pimple['$1']
+          ->expects(\$this->${2:once()})
+          ->method('${3:method}')${4:
+          ->with(\$this->equalTo($5))}${6:
+          ->will(\$this->returnValue($7))};$0
+    """
+  'PHPUnit Test Class':
+    'prefix': 'tecl'
+    'body': """
+      class ${1:Class}Test extends PHPUnit_Framework_TestCase
+      {
+          /**
+           * @var ${1:Class}
+           */
+          private \$_object;
+
+          public function setUp()
+          {
+              parent::setUp();
+
+              \$this->_object = new ${1:Class}();
+          }
+
+          $0
+      }
+    """
+  'PHPUnit Test Class with Pimple':
+    'prefix': 'tepi'
+    'body': """
+      class ${1:Class}Test extends PHPUnit_Framework_TestCase
+      {
+          /**
+           * @var ${1:Class}
+           */
+          private \$_object;
+
+          /**
+           * @var Pimple
+           */
+          private \$_pimple;
+
+          public function setUp()
+          {
+              parent::setUp();
+
+              \$this->_pimple = new Pimple();
+
+              \$this->_object = new ${1:Class}(\$this->_pimple);
+          }
+
+          $0
+      }
+    """
+  'PHPUnit Test Instance':
+    'prefix': 'tein'
+    'body': """
+      public function testInstance()
+      {
+          \$this->assertInstanceOf(${1:Class}::class, \$this->_object);${2:
+          \$this->assertInstanceOf(${3:Class}::class, \$this->_object);}
+      }$0
+    """
+  'PHPUnit Test Constants':
+    'prefix': 'teco'
+    'body': """
+      public function testConstants()
+      {
+          \$object = new ReflectionClass(\$this->_object);
+
+          \$this->assertEquals(
+              [
+                  $0
+              ],
+              \$object->getConstants()
+          );
+      }
+    """
+  'PHPUnit Test Method':
+    'preifx': 'teme'
+    'body': """
+      public function test$1()
+      {
+          $0
+      }
+    """
+  'PHPUnit Test with DataProvider':
+    'prefix': 'teda'
+    'body': """
+      /**
+       * @dataProvider dataProviderForTest$1
+       */
+      public function test$1($2)
+      {
+          $0
+      }
+
+      public function dataProviderForTest$1()
+      {
+          return [
+              [],
+          ];
+      }
+    """
