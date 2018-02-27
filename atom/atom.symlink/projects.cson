@@ -6,6 +6,18 @@
     ]
   }
   {
+    title: "dwm-status"
+    paths: [
+      "~/projects/dwm-status"
+    ]
+  }
+  {
+    title: "plc-hack"
+    paths: [
+      "~/projects/plc-web-hack"
+    ]
+  }
+  {
     title: "backend"
     group: "profitmax"
     paths: [
@@ -31,12 +43,6 @@
     group: "profitmax"
     paths: [
       "~/projects/profitmax/profitmax"
-    ]
-  }
-  {
-    title: "plc-hack"
-    paths: [
-      "~/projects/plc-web-hack"
     ]
   }
 ]

@@ -18,6 +18,7 @@
       "autocomplete-hack"
       "language-hack"
     ]
+    excludeVcsIgnoredPaths: false
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
@@ -40,9 +41,15 @@
   "project-manager":
     alwaysOpenInSameWindow: true
     savePathsRelativeToHome: true
+  "tree-view":
+    hideIgnoredNames: true
+    squashDirectoryNames: true
   welcome:
     showOnStartup: false
   whitespace: {}
+".css.less.source":
+  editor:
+    tabLength: 4
 ".html.php.text":
   editor:
     tabLength: 4

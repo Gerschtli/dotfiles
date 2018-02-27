@@ -1,5 +1,7 @@
 Atom-Hack@7.0.0
 atom-alignment@0.13.0
+atom-beautify@0.30.9
+atom-language-rust@0.13.0
 atom-material-syntax@1.0.8
 atom-material-ui@2.1.3
 autocomplete@0.47.0
@@ -12,8 +14,12 @@ hyperclick@0.1.5
 intentions@1.1.5
 language-hack@0.1.1
 language-puppet@0.23.0
+language-rust@0.4.12
 linter@2.2.0
+linter-php@1.5.1
+linter-rust@0.8.4
 linter-ui-default@1.6.10
+nix@2.1.0
 php-composer-completion@0.3.4
 php-integrator-autocomplete-plus-legacy-php56@1.0.1
 php-integrator-base-legacy-php56@1.0.1
@@ -25,4 +31,5 @@ php-integrator-tooltips-legacy-php56@1.1.6
 phpunit-snippets@0.1.0
 project-manager@3.3.5
 selection-highlight@0.1.6
+simple-align@0.2.0
 sort-lines@0.18.0
