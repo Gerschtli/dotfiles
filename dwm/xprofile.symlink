@@ -26,13 +26,5 @@ done &
 xss-lock -v -- lock-screen &
 # Start NetworkManager Tray Icon
 available nm-applet && nm-applet &
-# Start dropbox
-# while true; do
-#     if [[ "$(dropbox status)" == "Dropbox isn't running!" ]]; then
-#         rm -rf "${HOME}/.dropbox-dist-old-"*
-#         dropbox start
-#     fi
-#     sleep 60
-# done &
 
 # vim: ft=sh
