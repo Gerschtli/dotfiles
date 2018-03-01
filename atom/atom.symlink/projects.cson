@@ -25,6 +25,13 @@
     ]
   }
   {
+    title: "behat"
+    group: "profitmax"
+    paths: [
+      "~/projects/profitmax/behat"
+    ]
+  }
+  {
     title: "frontend"
     group: "profitmax"
     paths: [

@@ -1,6 +1,5 @@
 "*":
   "atom-material-ui":
-    colors: {}
     fonts:
       fontSize: 14
     tabs:
@@ -33,11 +32,9 @@
     showInvisibles: true
   "exception-reporting":
     userId: "0e594558-5f6f-463c-aa6a-093b570dedde"
-  "fuzzy-finder": {}
   "git-plus":
     commits:
       verboseCommits: true
-  "goto-definition": {}
   "project-manager":
     alwaysOpenInSameWindow: true
     savePathsRelativeToHome: true
@@ -46,11 +43,21 @@
     squashDirectoryNames: true
   welcome:
     showOnStartup: false
-  whitespace: {}
+".basic.html.text":
+  editor:
+    tabLength: 4
 ".css.less.source":
+  editor:
+    tabLength: 4
+".feature.source":
   editor:
     tabLength: 4
 ".html.php.text":
   editor:
     tabLength: 4
-    tabType: "soft"
+".js.source":
+  editor:
+    tabLength: 4
+".shell.source":
+  editor:
+    tabLength: 4
