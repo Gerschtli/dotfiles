@@ -9,6 +9,15 @@
           $0
       }
     """
+  'var_dump':
+    'prefix': 'vd'
+    'body': 'var_dump($0);'
+  'var_dump + exit':
+    'prefix': 'vde'
+    'body': """
+      var_dump($0);
+      exit();
+    """
   'PHPUnit Mock':
     'prefix': 'mocl'
     'body': """
