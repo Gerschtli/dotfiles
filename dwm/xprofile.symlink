@@ -13,8 +13,8 @@ xset -dpms
 xset r rate 250 30
 
 # Start dwm-status
-if [[ -x "${HOME}/projects/dwm-status/target/release/dwm-status" ]]; then
-    "${HOME}/projects/dwm-status/target/release/dwm-status" &
+if [[ -x "${HOME}/.cargo/bin/dwm-status" && -r "${HOME}/.dwm-status" ]]; then
+    "${HOME}/.cargo/bin/dwm-status" "${HOME}/.dwm-status" &
 fi
 
 # Manages battery-watcher
@@ -23,7 +23,6 @@ while true; do
     battery-watcher default 2> /dev/null
     sleep 30
 done &
-
 
 # Set screen locker
 xss-lock -v -- lock-screen &
