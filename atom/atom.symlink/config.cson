@@ -18,10 +18,18 @@
       "language-hack"
     ]
     excludeVcsIgnoredPaths: false
+    packagesWithKeymapsDisabled: []
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
       "atom-material-syntax"
+    ]
+  "disable-keybindings":
+    communityPackages: [
+      "emmet"
+    ]
+    prefixKeys: [
+      "tab"
     ]
   editor:
     fontFamily: "Fira Mono"
