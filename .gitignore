@@ -10,6 +10,8 @@ atom/atom.symlink/storage
 bin/*
 !bin/.gitkeep
 
+dwm/dwm-status.conf.symlink
+
 gpg/
 
 nix/nixpkgs.symlink.config/overlays/rust-overlay.nix
