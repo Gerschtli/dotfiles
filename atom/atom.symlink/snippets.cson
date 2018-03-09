@@ -149,3 +149,91 @@
           ];
       }
     """
+
+'.source.js':
+  'Module':
+    'prefix': 'mod'
+    'body': """
+      /** $1 */
+      (
+          function( $ ) {
+              "use strict";
+
+              var selectors = {
+              };
+
+              var dataNames = {
+              };
+
+              var states = {
+              };
+
+              activate();
+
+              function activate() {
+                  $.subscribe( "$1.$2", function() {
+                      $0
+                  } );
+              }
+          }
+      )( jQuery );
+    """
+  'QUnit Test':
+    'prefix': 'test'
+    'body': """
+      (
+          function( $ ) {
+              "use strict";
+
+              QUnit.module( "$1", {
+                  afterEach: function() {
+                      $.test.afterEach();
+                  }
+              } );
+
+              QUnit.test( "activate", function( assert ) {
+                  assert.deepEqual( $.subscriptions, [ "$1.$2" ] );
+                  assert.deepEqual( $.publishings, [] );
+              } );
+
+              QUnit.test( "$2", function( assert ) {
+                  $.test.publish( "$1.$2" );
+
+                  assert.deepEqual( $.publishings, [ ] );
+              } );
+          }
+      )( jQuery );
+    """
+
+'.text.html.basic':
+  'QUnit Test':
+    'prefix': 'test'
+    'body': """
+      <!DOCTYPE html>
+      <html>
+          <head>
+              <meta charset="utf-8">
+              <meta name="viewport" content="width=device-width">
+              <title>QUnit Unit Testing Framework for JavaScript</title>
+              <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-2.1.1.css">
+          </head>
+          <body>
+              <div id="qunit"></div>
+              <div id="qunit-fixture">$0</div>
+
+              <script src="http://code.jquery.com/qunit/qunit-2.2.1.js"></script>
+              <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+              <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+              <script src="http://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.3/js.cookie.min.js"></script>
+              <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mockjax/1.6.2/jquery.mockjax.min.js"></script>
+              <script src="${1:../}../../../../public/javascript/modules/pub-sub.js"></script>
+              <script src="${1:../}../../../../public/javascript/modules/lib/data.js"></script>
+              <script src="${1:../}../../test-util.js"></script>
+
+              <script src="${1:../}../../../../public/javascript/modules/${2:path/to/file}.js"></script>
+
+              <script src="${3:test}.js"></script>
+          </body>
+      </html>
+
+    """
