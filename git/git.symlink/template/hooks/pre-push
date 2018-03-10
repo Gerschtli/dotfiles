@@ -4,6 +4,7 @@ HOOKS_DIR="${PWD}"/.git/hooks
 RESULT=0
 
 "${HOOKS_DIR}"/scripts/ant.sh pre-push; RESULT=$((${RESULT} + $?))
+"${HOOKS_DIR}"/scripts/cargo.sh pre-push; RESULT=$((${RESULT} + $?))
 "${HOOKS_DIR}"/scripts/composer.sh pre-push; RESULT=$((${RESULT} + $?))
 "${HOOKS_DIR}"/scripts/npm.sh pre-push; RESULT=$((${RESULT} + $?))
 
