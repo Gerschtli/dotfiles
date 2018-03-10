@@ -13,8 +13,8 @@ xset -dpms
 xset r rate 250 30
 
 # Start dwm-status
-if [[ -x "${HOME}/.cargo/bin/dwm-status" && -r "${HOME}/.dwm-status.conf" ]]; then
-    "${HOME}/.cargo/bin/dwm-status" "${HOME}/.dwm-status.conf" &
+if available dwm-status && [[ -r "${HOME}/.dwm-status.conf" ]]; then
+    dwm-status "${HOME}/.dwm-status.conf" &
 fi
 
 # Manages battery-watcher

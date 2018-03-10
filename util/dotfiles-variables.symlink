@@ -8,5 +8,5 @@ EXTENDED_PATH=("${EXTENDED_PATH[@]}")
 MODULES=("${MODULES[@]}")
 OPTIONS=("${OPTIONS[@]}")
 
-EXTENDED_PATH+=("${HOME}/bin" "${DOTFILES_ROOT}/bin")
+EXTENDED_PATH+=("${HOME}/bin" "${DOTFILES_ROOT}/bin" "${HOME}/.cargo/bin")
 MODULES+=(util)
