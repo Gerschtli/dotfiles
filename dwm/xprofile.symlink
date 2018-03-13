@@ -17,13 +17,6 @@ if available dwm-status && [[ -r "${HOME}/.dwm-status.conf" ]]; then
     dwm-status "${HOME}/.dwm-status.conf" &
 fi
 
-# Manages battery-watcher
-battery-watcher reset 2> /dev/null
-while true; do
-    battery-watcher default 2> /dev/null
-    sleep 30
-done &
-
 # Set screen locker
 xss-lock -v -- lock-screen &
 # Start NetworkManager Tray Icon
