@@ -1,6 +1,6 @@
 Atom-Hack@7.0.0
 atom-alignment@0.13.0
-atom-beautify@0.32.0
+atom-beautify@0.32.2
 atom-language-rust@0.13.0
 atom-material-syntax@1.0.8
 atom-material-ui@2.1.3
