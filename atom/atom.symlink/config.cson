@@ -1,4 +1,9 @@
 "*":
+  "atom-ide-ui":
+    "atom-ide-diagnostics-ui":
+      autoVisibility: true
+      showDirectoryColumn: true
+    use: {}
   "atom-material-ui":
     fonts:
       fontSize: 14
@@ -16,6 +21,7 @@
       "Atom-Hack"
       "autocomplete-hack"
       "language-hack"
+      "linter"
     ]
     excludeVcsIgnoredPaths: false
     packagesWithKeymapsDisabled: []
@@ -40,9 +46,11 @@
     showInvisibles: true
   "exception-reporting":
     userId: "0e594558-5f6f-463c-aa6a-093b570dedde"
-  "git-plus":
-    commits:
-      verboseCommits: true
+  "php-integrator-base":
+    linting:
+      showMissingDocs: false
+      showUnknownClasses: false
+      validateDocblockCorrectness: false
   "project-manager":
     alwaysOpenInSameWindow: true
     savePathsRelativeToHome: true
