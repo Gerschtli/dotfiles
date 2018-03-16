@@ -74,6 +74,9 @@
 ".js.source":
   editor:
     tabLength: 4
+".rust.source":
+  editor:
+    preferredLineLength: 100
 ".shell.source":
   editor:
     tabLength: 4
