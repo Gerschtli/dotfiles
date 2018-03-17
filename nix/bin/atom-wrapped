@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+source "${DOTFILES_ROOT}/nix/pnix-shell.sh"
+source "${DOTFILES_ROOT}/nix/functions.zsh"
+
+nshell atom-php --command atom
