@@ -3,7 +3,7 @@
 source "${HOME}/.dotfiles-variables"
 source "${DOTFILES_ROOT}/shell/functions.sh"
 source "${DOTFILES_ROOT}/nix/pnix-shell.sh"
-source "${DOTFILES_ROOT}/nix/functions.zsh"
+source "${DOTFILES_ROOT}/nix/functions.sh"
 
 CONF="${DOTFILES_ROOT}/tmux/profiles/${1}.sh"
 LOCAL_CONF="${DOTFILES_ROOT}/tmux/tprofile.conf"
