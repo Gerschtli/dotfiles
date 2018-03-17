@@ -12,3 +12,6 @@
 
 ## options
 # OPTIONS=()
+
+## optional binaries
+# OPT_BINS=()

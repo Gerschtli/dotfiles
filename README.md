@@ -31,6 +31,14 @@
 | nvim:enable-vim   | Enables configuration for vim   |
 | nvim:disable-nvim | Disables configuration for nvim |
 
+### Optional binaries
+
+List binaries from `util/opt-bin` in `.localrc` like
+```sh
+## optional binaries
+OPT_BINS=(atom-wrapped csv-check soapui)
+```
+
 ## Installation
 
 ### Clone repo

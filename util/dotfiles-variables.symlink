@@ -7,6 +7,7 @@ DOTFILES_ROOT="${DOTFILES_ROOT:-${HOME}/.dotfiles}"
 EXTENDED_PATH=("${EXTENDED_PATH[@]}")
 MODULES=("${MODULES[@]}")
 OPTIONS=("${OPTIONS[@]}")
+OPT_BINS=("${OPT_BINS[@]}")
 
 EXTENDED_PATH+=("${HOME}/bin" "${DOTFILES_ROOT}/bin" "${HOME}/.cargo/bin")
 MODULES+=(util)
