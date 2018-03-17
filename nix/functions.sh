@@ -44,7 +44,7 @@ if available nix-shell; then
             args+=(--command zsh)
         fi
 
-        ${nix_shell_command} "$(nshell-path "${profile}")" ${args}
+        ${nix_shell_command} "$(nshell-path "${profile}")" "${args[@]}"
     }
 
     nshell-update() {
