@@ -94,24 +94,3 @@
     squashDirectoryNames: true
   welcome:
     showOnStartup: false
-".basic.html.text":
-  editor:
-    tabLength: 4
-".css.less.source":
-  editor:
-    tabLength: 4
-".feature.source":
-  editor:
-    tabLength: 4
-".html.php.text":
-  editor:
-    tabLength: 4
-".js.source":
-  editor:
-    tabLength: 4
-".rust.source":
-  editor:
-    preferredLineLength: 100
-".shell.source":
-  editor:
-    tabLength: 4
