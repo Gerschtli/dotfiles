@@ -88,6 +88,7 @@
   "project-manager":
     alwaysOpenInSameWindow: true
     savePathsRelativeToHome: true
+    sortBy: "last modified"
   "tree-view":
     hideIgnoredNames: true
     squashDirectoryNames: true
