@@ -10,18 +10,45 @@
     paths: [
       "~/projects/dwm-status"
     ]
+    enable_packages: [
+      "atom-language-rust"
+      "autocomplete-racer"
+      "language-rust"
+      "linter-rust"
+      "rustfmt"
+    ]
+  }
+  {
+    title: "enable-packages"
+    paths: [
+      "~/projects/enable-packages"
+    ]
   }
   {
     title: "plc-hack"
     paths: [
       "~/projects/plc-web-hack"
     ]
+    enable_packages: [
+      "Atom-Hack"
+      "autocomplete-hack"
+      "language-hack"
+    ]
   }
+
   {
     title: "backend"
     group: "profitmax"
     paths: [
       "~/projects/profitmax/backend"
+    ]
+    enable_packages: [
+      "language-puppet"
+      "linter-php"
+      "php-integrator-annotations"
+      "php-integrator-base"
+      "php-integrator-refactoring"
+      "phpunit-snippets"
     ]
     php:
       enabled: true
@@ -39,12 +66,39 @@
     paths: [
       "~/projects/profitmax/behat"
     ]
+    enable_packages: [
+      "language-gherkin"
+      "linter-php"
+      "php-integrator-annotations"
+      "php-integrator-base"
+      "php-integrator-refactoring"
+      "phpunit-snippets"
+    ]
+    php:
+      enabled: true
+      php_integrator:
+        enabled: true
+        phpVersion: 5.5
+        excludedPaths: []
+        fileExtensions: [
+          "php"
+        ]
   }
   {
     title: "frontend"
     group: "profitmax"
     paths: [
       "~/projects/profitmax/frontend"
+    ]
+    enable_packages: [
+      "disable-keybindings"
+      "emmet"
+      "language-puppet"
+      "linter-php"
+      "php-integrator-annotations"
+      "php-integrator-base"
+      "php-integrator-refactoring"
+      "phpunit-snippets"
     ]
     php:
       enabled: true
@@ -62,6 +116,13 @@
     paths: [
       "~/projects/profitmax/library"
     ]
+    enable_packages: [
+      "linter-php"
+      "php-integrator-annotations"
+      "php-integrator-base"
+      "php-integrator-refactoring"
+      "phpunit-snippets"
+    ]
     php:
       enabled: true
       php_integrator:
@@ -78,5 +139,24 @@
     paths: [
       "~/projects/profitmax/profitmax"
     ]
+    enable_packages: [
+      "disable-keybindings"
+      "emmet"
+      "language-puppet"
+      "linter-php"
+      "php-integrator-annotations"
+      "php-integrator-base"
+      "php-integrator-refactoring"
+      "phpunit-snippets"
+    ]
+    php:
+      enabled: true
+      php_integrator:
+        enabled: true
+        phpVersion: 5.5
+        excludedPaths: []
+        fileExtensions: [
+          "php"
+        ]
   }
 ]
