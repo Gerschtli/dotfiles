@@ -37,6 +37,32 @@
   }
 
   {
+    title: "admin"
+    group: "profitmax"
+    paths: [
+      "~/projects/profitmax/admin"
+    ]
+    enable_packages: [
+      "disable-keybindings"
+      "emmet"
+      "language-puppet"
+      "linter-php"
+      "php-integrator-annotations"
+      "php-integrator-base"
+      "php-integrator-refactoring"
+      "phpunit-snippets"
+    ]
+    php:
+      enabled: true
+      php_integrator:
+        enabled: true
+        phpVersion: 5.5
+        excludedPaths: []
+        fileExtensions: [
+          "php"
+        ]
+   }
+   {
     title: "backend"
     group: "profitmax"
     paths: [
