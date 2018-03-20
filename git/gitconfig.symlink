@@ -20,7 +20,7 @@
     fa = !"git fe --all && git fe --all --tags"
     fe = fetch --progress
     fm = !"git fe && git fe --tags"
-    gi = gr --ignore-case
+    gi = !"git gr --ignore-case"
     gr = grep --line-number --break --heading
     lg = log --stat
     lm = log --merges --stat
