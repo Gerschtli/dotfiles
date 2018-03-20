@@ -18,7 +18,6 @@
   core:
     autoHideMenuBar: true
     disabledPackages: [
-      "linter"
       "Atom-Hack"
       "atom-language-rust"
       "autocomplete-hack"
@@ -29,6 +28,7 @@
       "language-hack"
       "language-puppet"
       "language-rust"
+      "linter"
       "linter-php"
       "linter-rust"
       "php-integrator-annotations"
