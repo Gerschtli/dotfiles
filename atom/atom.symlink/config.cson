@@ -18,10 +18,24 @@
   core:
     autoHideMenuBar: true
     disabledPackages: [
-      "Atom-Hack"
-      "autocomplete-hack"
-      "language-hack"
       "linter"
+      "Atom-Hack"
+      "atom-language-rust"
+      "autocomplete-hack"
+      "autocomplete-racer"
+      "disable-keybindings"
+      "emmet"
+      "language-gherkin"
+      "language-hack"
+      "language-puppet"
+      "language-rust"
+      "linter-php"
+      "linter-rust"
+      "php-integrator-annotations"
+      "php-integrator-base"
+      "php-integrator-refactoring"
+      "phpunit-snippets"
+      "rustfmt"
     ]
     excludeVcsIgnoredPaths: false
     packagesWithKeymapsDisabled: []
@@ -44,6 +58,26 @@
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
+  "enable-packages":
+    optionalPackages: [
+      "Atom-Hack"
+      "atom-language-rust"
+      "autocomplete-hack"
+      "autocomplete-racer"
+      "disable-keybindings"
+      "emmet"
+      "language-gherkin"
+      "language-hack"
+      "language-puppet"
+      "language-rust"
+      "linter-php"
+      "linter-rust"
+      "php-integrator-annotations"
+      "php-integrator-base"
+      "php-integrator-refactoring"
+      "phpunit-snippets"
+      "rustfmt"
+    ]
   "exception-reporting":
     userId: "0e594558-5f6f-463c-aa6a-093b570dedde"
   "php-integrator-base":
@@ -54,29 +88,9 @@
   "project-manager":
     alwaysOpenInSameWindow: true
     savePathsRelativeToHome: true
+    sortBy: "last modified"
   "tree-view":
     hideIgnoredNames: true
     squashDirectoryNames: true
   welcome:
     showOnStartup: false
-".basic.html.text":
-  editor:
-    tabLength: 4
-".css.less.source":
-  editor:
-    tabLength: 4
-".feature.source":
-  editor:
-    tabLength: 4
-".html.php.text":
-  editor:
-    tabLength: 4
-".js.source":
-  editor:
-    tabLength: 4
-".rust.source":
-  editor:
-    preferredLineLength: 100
-".shell.source":
-  editor:
-    tabLength: 4
