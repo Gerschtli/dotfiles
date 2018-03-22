@@ -9,6 +9,7 @@ packages: [
   "autocomplete"
   "autocomplete-hack"
   "autocomplete-racer"
+  "badges"
   "busy-signal"
   "disable-keybindings"
   "docblockr"
