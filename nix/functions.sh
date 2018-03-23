@@ -1,4 +1,12 @@
 if available nix-shell; then
+    bash-wrapped() {
+        if [[ ! -z "${IN_NIX_SHELL}" ]]; then
+            nix-shell -p bashInteractive --command bash
+        else
+            bash
+        fi
+    }
+
     nshell-path() {
         if [[ "${1}" == "." ]]; then
             [[ -r shell.nix ]] && echo "${PWD}/shell.nix" && return
