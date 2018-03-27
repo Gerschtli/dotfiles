@@ -19,6 +19,7 @@ packages: [
   "git-blame"
   "goto-definition"
   "hyperclick"
+  "ide-php"
   "intentions"
   "language-gherkin"
   "language-hack"

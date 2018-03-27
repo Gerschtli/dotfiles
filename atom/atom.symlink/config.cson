@@ -19,11 +19,13 @@
     autoHideMenuBar: true
     disabledPackages: [
       "Atom-Hack"
+      "atom-ide-ui"
       "atom-language-rust"
       "autocomplete-hack"
       "autocomplete-racer"
       "disable-keybindings"
       "emmet"
+      "ide-php"
       "language-gherkin"
       "language-hack"
       "language-puppet"
@@ -62,11 +64,13 @@
   "enable-packages":
     optionalPackages: [
       "Atom-Hack"
+      "atom-ide-ui"
       "atom-language-rust"
       "autocomplete-hack"
       "autocomplete-racer"
       "disable-keybindings"
       "emmet"
+      "ide-php"
       "language-gherkin"
       "language-hack"
       "language-puppet"

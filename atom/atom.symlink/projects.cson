@@ -43,14 +43,11 @@
       "~/projects/profitmax/admin"
     ]
     enable_packages: [
+      "atom-ide-ui"
       "disable-keybindings"
       "emmet"
+      "ide-php"
       "language-puppet"
-      "linter-php"
-      "php-integrator-annotations"
-      "php-integrator-base"
-      "php-integrator-refactoring"
-      "phpunit-snippets"
     ]
     php:
       enabled: true
@@ -69,12 +66,9 @@
       "~/projects/profitmax/backend"
     ]
     enable_packages: [
+      "atom-ide-ui"
+      "ide-php"
       "language-puppet"
-      "linter-php"
-      "php-integrator-annotations"
-      "php-integrator-base"
-      "php-integrator-refactoring"
-      "phpunit-snippets"
     ]
     php:
       enabled: true
@@ -93,12 +87,9 @@
       "~/projects/profitmax/behat"
     ]
     enable_packages: [
+      "atom-ide-ui"
+      "ide-php"
       "language-gherkin"
-      "linter-php"
-      "php-integrator-annotations"
-      "php-integrator-base"
-      "php-integrator-refactoring"
-      "phpunit-snippets"
     ]
     php:
       enabled: true
@@ -117,14 +108,11 @@
       "~/projects/profitmax/frontend"
     ]
     enable_packages: [
+      "atom-ide-ui"
       "disable-keybindings"
       "emmet"
+      "ide-php"
       "language-puppet"
-      "linter-php"
-      "php-integrator-annotations"
-      "php-integrator-base"
-      "php-integrator-refactoring"
-      "phpunit-snippets"
     ]
     php:
       enabled: true
@@ -143,11 +131,8 @@
       "~/projects/profitmax/library"
     ]
     enable_packages: [
-      "linter-php"
-      "php-integrator-annotations"
-      "php-integrator-base"
-      "php-integrator-refactoring"
-      "phpunit-snippets"
+      "atom-ide-ui"
+      "ide-php"
     ]
     php:
       enabled: true
@@ -166,14 +151,11 @@
       "~/projects/profitmax/profitmax"
     ]
     enable_packages: [
+      "atom-ide-ui"
       "disable-keybindings"
       "emmet"
+      "ide-php"
       "language-puppet"
-      "linter-php"
-      "php-integrator-annotations"
-      "php-integrator-base"
-      "php-integrator-refactoring"
-      "phpunit-snippets"
     ]
     php:
       enabled: true
