@@ -25,7 +25,6 @@
     autoHideMenuBar: true
     disabledPackages: [
       "Atom-Hack"
-      "atom-ide-ui"
       "atom-language-rust"
       "autocomplete-hack"
       "autocomplete-racer"
@@ -70,7 +69,6 @@
   "enable-packages":
     optionalPackages: [
       "Atom-Hack"
-      "atom-ide-ui"
       "atom-language-rust"
       "autocomplete-hack"
       "autocomplete-racer"
@@ -97,6 +95,8 @@
     prefillFromSelection: true
     preserveLastSearch: true
     searchAllPanes: true
+  "linter-ui-default":
+    panelHeight: 165
   "package-sync":
     createOnChange: true
     forceOverwrite: true

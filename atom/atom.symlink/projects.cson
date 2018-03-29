@@ -43,7 +43,6 @@
       "~/projects/profitmax/admin"
     ]
     enable_packages: [
-      "atom-ide-ui"
       "disable-keybindings"
       "emmet"
       "ide-php"
@@ -66,7 +65,6 @@
       "~/projects/profitmax/backend"
     ]
     enable_packages: [
-      "atom-ide-ui"
       "ide-php"
       "language-puppet"
     ]
@@ -87,7 +85,6 @@
       "~/projects/profitmax/behat"
     ]
     enable_packages: [
-      "atom-ide-ui"
       "ide-php"
       "language-gherkin"
     ]
@@ -108,7 +105,6 @@
       "~/projects/profitmax/frontend"
     ]
     enable_packages: [
-      "atom-ide-ui"
       "disable-keybindings"
       "emmet"
       "ide-php"
@@ -131,7 +127,6 @@
       "~/projects/profitmax/library"
     ]
     enable_packages: [
-      "atom-ide-ui"
       "ide-php"
     ]
     php:
@@ -151,7 +146,6 @@
       "~/projects/profitmax/profitmax"
     ]
     enable_packages: [
-      "atom-ide-ui"
       "disable-keybindings"
       "emmet"
       "ide-php"
