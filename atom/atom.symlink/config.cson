@@ -36,6 +36,7 @@
       "language-puppet"
       "language-rust"
       "linter"
+      "linter-eslint"
       "linter-php"
       "linter-rust"
       "php-integrator-annotations"
@@ -79,6 +80,7 @@
       "language-hack"
       "language-puppet"
       "language-rust"
+      "linter-eslint"
       "linter-php"
       "linter-rust"
       "php-integrator-annotations"
@@ -95,6 +97,8 @@
     prefillFromSelection: true
     preserveLastSearch: true
     searchAllPanes: true
+  "linter-eslint":
+    fixOnSave: true
   "linter-ui-default":
     panelHeight: 165
   "package-sync":

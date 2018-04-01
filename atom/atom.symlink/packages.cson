@@ -29,6 +29,7 @@ packages: [
   "language-rust"
   "latex"
   "linter"
+  "linter-eslint"
   "linter-php"
   "linter-rust"
   "linter-ui-default"

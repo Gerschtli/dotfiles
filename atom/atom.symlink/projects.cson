@@ -22,6 +22,18 @@
     title: "enable-packages"
     paths: [
       "~/projects/enable-packages"
+    ],
+    enable_packages: [
+      "linter-eslint"
+    ]
+  }
+  {
+    title: "manage-packages"
+    paths: [
+      "~/projects/manage-packages"
+    ],
+    enable_packages: [
+      "linter-eslint"
     ]
   }
   {
