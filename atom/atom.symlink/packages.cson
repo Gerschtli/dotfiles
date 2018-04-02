@@ -33,6 +33,7 @@ packages: [
   "linter-php"
   "linter-rust"
   "linter-ui-default"
+  "manage-packages"
   "nix"
   "package-sync"
   "php-integrator-annotations"
