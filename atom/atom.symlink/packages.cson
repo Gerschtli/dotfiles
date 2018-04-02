@@ -35,7 +35,6 @@ packages: [
   "linter-ui-default"
   "manage-packages"
   "nix"
-  "package-sync"
   "php-integrator-annotations"
   "php-integrator-base"
   "php-integrator-refactoring"

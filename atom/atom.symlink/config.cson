@@ -101,9 +101,6 @@
     fixOnSave: true
   "linter-ui-default":
     panelHeight: 165
-  "package-sync":
-    createOnChange: true
-    forceOverwrite: true
   "php-integrator-base":
     linting:
       showMissingDocs: false
