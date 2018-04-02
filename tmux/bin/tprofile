@@ -5,9 +5,11 @@ source "${DOTFILES_ROOT}/shell/functions.sh"
 source "${DOTFILES_ROOT}/nix/pnix-shell.sh"
 source "${DOTFILES_ROOT}/nix/functions.sh"
 
-CONF="${DOTFILES_ROOT}/tmux/profiles/${1}.sh"
-LOCAL_CONF="${DOTFILES_ROOT}/tmux/tprofile.conf"
+CONF_NAME="${1}"
 ARG_OPTION="${2}"
+
+CONF="${DOTFILES_ROOT}/tmux/profiles/${CONF_NAME}.sh"
+LOCAL_CONF="${DOTFILES_ROOT}/tmux/tprofile.conf"
 
 _check_requirements() {
     ! available tmux     && echo "tmux not installed"                           && exit 1
@@ -19,6 +21,8 @@ _process_profile() {
     source "${CONF}"
 
     ROOT="${ROOT:-${HOME}}"
+    TITLE="${TITLE:-${CONF_NAME}}"
+    NIX_PROFILE="${NIX_PROFILE:-.}"
 
     [ ! -w "${ROOT}" ] && echo "directory is not writable" && exit 1
 

@@ -1,5 +1,4 @@
 ROOT="${HOME}/projects/profitmax/admin"
-TITLE="admin"
 
 PRESET="git-vagrant"
 

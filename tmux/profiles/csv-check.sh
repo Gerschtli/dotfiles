@@ -1,5 +1,4 @@
 ROOT="${HOME}/Downloads"
-TITLE="csv-check"
 
 LAYOUT="main-vertical"
 
