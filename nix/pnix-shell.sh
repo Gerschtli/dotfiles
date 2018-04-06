@@ -111,7 +111,7 @@ EOF
 
   # Use prebuilt shell if it exists
   if [[ -a "$drvfile" ]]; then
-    nix-shell "$drvfile" --command "$cmd"
+    nix-shell $(realpath "$drvfile") --command "$cmd"
   else
     _shellexists || return 1
     mkdir -p "$depsdir"
@@ -128,6 +128,6 @@ EOF
       -r $(nix-store --query --references "$drvfile") \
       --add-root "$depsdir/dep" --indirect \
     || { echo "nix-store failed" >&2; return 1; }
-    nix-shell "$drvfile" --command "$cmd"
+    nix-shell $(realpath "$drvfile") --command "$cmd"
   fi
 }
