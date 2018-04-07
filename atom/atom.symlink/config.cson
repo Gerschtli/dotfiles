@@ -39,6 +39,7 @@
       "linter-eslint"
       "linter-php"
       "linter-rust"
+      "linter-ui-default"
       "rustfmt"
       "whitespace"
     ]
@@ -92,8 +93,6 @@
     searchAllPanes: true
   "linter-eslint":
     fixOnSave: true
-  "linter-ui-default":
-    panelHeight: 165
   "project-manager":
     alwaysOpenInSameWindow: true
     savePathsRelativeToHome: true
