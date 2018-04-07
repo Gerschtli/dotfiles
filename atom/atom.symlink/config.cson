@@ -39,10 +39,6 @@
       "linter-eslint"
       "linter-php"
       "linter-rust"
-      "php-integrator-annotations"
-      "php-integrator-base"
-      "php-integrator-refactoring"
-      "phpunit-snippets"
       "rustfmt"
       "whitespace"
     ]
@@ -83,10 +79,6 @@
       "linter-eslint"
       "linter-php"
       "linter-rust"
-      "php-integrator-annotations"
-      "php-integrator-base"
-      "php-integrator-refactoring"
-      "phpunit-snippets"
       "rustfmt"
     ]
     resetOnStart: false
@@ -102,11 +94,6 @@
     fixOnSave: true
   "linter-ui-default":
     panelHeight: 165
-  "php-integrator-base":
-    linting:
-      showMissingDocs: false
-      showUnknownClasses: false
-      validateDocblockCorrectness: false
   "project-manager":
     alwaysOpenInSameWindow: true
     savePathsRelativeToHome: true

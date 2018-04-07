@@ -60,15 +60,6 @@
       "ide-php"
       "language-puppet"
     ]
-    php:
-      enabled: true
-      php_integrator:
-        enabled: true
-        phpVersion: 5.5
-        excludedPaths: []
-        fileExtensions: [
-          "php"
-        ]
    }
    {
     title: "backend"
@@ -80,15 +71,6 @@
       "ide-php"
       "language-puppet"
     ]
-    php:
-      enabled: true
-      php_integrator:
-        enabled: true
-        phpVersion: 5.5
-        excludedPaths: []
-        fileExtensions: [
-          "php"
-        ]
   }
   {
     title: "behat"
@@ -100,15 +82,6 @@
       "ide-php"
       "language-gherkin"
     ]
-    php:
-      enabled: true
-      php_integrator:
-        enabled: true
-        phpVersion: 5.5
-        excludedPaths: []
-        fileExtensions: [
-          "php"
-        ]
   }
   {
     title: "frontend"
@@ -122,15 +95,6 @@
       "ide-php"
       "language-puppet"
     ]
-    php:
-      enabled: true
-      php_integrator:
-        enabled: true
-        phpVersion: 5.5
-        excludedPaths: []
-        fileExtensions: [
-          "php"
-        ]
   }
   {
     title: "library"
@@ -141,15 +105,6 @@
     enable_packages: [
       "ide-php"
     ]
-    php:
-      enabled: true
-      php_integrator:
-        enabled: true
-        phpVersion: 5.5
-        excludedPaths: []
-        fileExtensions: [
-          "php"
-        ]
   }
   {
     title: "profitmax"
@@ -163,14 +118,5 @@
       "ide-php"
       "language-puppet"
     ]
-    php:
-      enabled: true
-      php_integrator:
-        enabled: true
-        phpVersion: 5.5
-        excludedPaths: []
-        fileExtensions: [
-          "php"
-        ]
   }
 ]
