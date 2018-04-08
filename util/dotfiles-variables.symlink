@@ -11,3 +11,5 @@ OPT_BINS=("${OPT_BINS[@]}")
 
 EXTENDED_PATH+=("${HOME}/bin" "${DOTFILES_ROOT}/bin" "${HOME}/.cargo/bin")
 MODULES+=(util)
+
+# vim: ft=sh

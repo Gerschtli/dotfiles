@@ -5,3 +5,5 @@ _d_source_files \( -name "profile.sh" -o -name "profile.zsh" \)
 
 source "${DOTFILES_ROOT}/util/unset-script-functions"
 source "${DOTFILES_ROOT}/util/unset-variables"
+
+# vim: ft=sh

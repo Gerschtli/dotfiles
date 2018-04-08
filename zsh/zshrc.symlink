@@ -10,3 +10,5 @@ _d_source_files \( -name "completion.sh" -o -name "completion.zsh" \)
 
 source "${DOTFILES_ROOT}/util/unset-script-functions"
 source "${DOTFILES_ROOT}/util/unset-variables"
+
+# vim: ft=sh

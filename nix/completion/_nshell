@@ -17,3 +17,5 @@ fi
 _arguments \
     "1:nix-shell profiles:(${LIST})" \
     "*:options:(--clean --show-trace --command)"
+
+# vim: ft=sh

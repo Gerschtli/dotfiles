@@ -5,3 +5,5 @@ _d_source_files \( -name "logout.sh" -o -name "logout.bash" \)
 
 source "${DOTFILES_ROOT}/util/unset-script-functions"
 source "${DOTFILES_ROOT}/util/unset-variables"
+
+# vim: ft=sh

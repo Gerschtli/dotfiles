@@ -20,3 +20,5 @@ done
 _arguments \
     "1:profiles:(${LIST})" \
     "2:options:(--no-vagrant)"
+
+# vim: ft=sh

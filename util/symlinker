@@ -4,3 +4,5 @@ for bin in "${OPT_BINS[@]}"; do
         _d_link_file "${PATH_BIN}" "${DOTFILES_ROOT}/bin/${bin}"
     fi
 done
+
+# vim: ft=sh

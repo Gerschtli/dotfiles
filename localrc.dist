@@ -15,3 +15,5 @@
 
 ## optional binaries
 # OPT_BINS=()
+
+# vim: ft=sh

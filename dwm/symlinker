@@ -3,3 +3,5 @@ _d_link_file "${DOTFILES_ROOT}/dwm/mimeapps.list" "${HOME}/.config/mimeapps.list
 
 mkdir -p "${HOME}/.local/share/applications"
 _d_link_file "${DOTFILES_ROOT}/dwm/mimeapps.list" "${HOME}/.local/share/applications/mimeapps.list"
+
+# vim: ft=sh

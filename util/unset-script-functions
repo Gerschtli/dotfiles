@@ -13,3 +13,5 @@ unset -f \
     _d_source_files \
     _d_success \
     _d_use_module
+
+# vim: ft=sh

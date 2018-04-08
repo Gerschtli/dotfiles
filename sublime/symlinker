@@ -7,3 +7,5 @@ fi
 _d_link_file "${DOTFILES_ROOT}/sublime/User" "${SUBLIME}/Packages/User"
 
 unset SUBLIME
+
+# vim: ft=sh

@@ -12,3 +12,5 @@ if ! _d_has_option "nvim:disable-nvim"; then
 
     _d_link_file "${DOTFILES_ROOT}/nvim/nvim" "${HOME}/.config/nvim"
 fi
+
+# vim: ft=sh
