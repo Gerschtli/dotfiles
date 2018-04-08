@@ -4,6 +4,10 @@
     paths: [
       "~/.dotfiles"
     ]
+    enable_packages: [
+      "language-tmux"
+      "ssh-config"
+    ]
   }
   {
     title: "dwm-status"
@@ -69,6 +73,7 @@
     ]
     enable_packages: [
       "ide-php"
+      "language-ini"
       "language-puppet"
     ]
   }
@@ -93,6 +98,7 @@
       "disable-keybindings"
       "emmet"
       "ide-php"
+      "language-ini"
       "language-puppet"
     ]
   }
@@ -116,6 +122,7 @@
       "disable-keybindings"
       "emmet"
       "ide-php"
+      "language-ini"
       "language-puppet"
     ]
   }

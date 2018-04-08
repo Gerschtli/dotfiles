@@ -1,6 +1,5 @@
 packages: [
   "atom-alignment"
-  "atom-beautify"
   "Atom-Hack"
   "atom-ide-ui"
   "atom-language-rust"
@@ -16,6 +15,7 @@ packages: [
   "editorconfig"
   "emmet"
   "enable-packages"
+  "file-icons"
   "git-blame"
   "goto-definition"
   "hyperclick"
@@ -27,6 +27,7 @@ packages: [
   "language-latex"
   "language-puppet"
   "language-rust"
+  "language-tmux"
   "latex"
   "linter"
   "linter-eslint"
@@ -41,4 +42,5 @@ packages: [
   "simple-align"
   "sort-lines"
   "ssh-config"
+  "vim-modeline"
 ]

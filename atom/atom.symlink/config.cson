@@ -33,14 +33,17 @@
       "ide-php"
       "language-gherkin"
       "language-hack"
+      "language-ini"
       "language-puppet"
       "language-rust"
+      "language-tmux"
       "linter"
       "linter-eslint"
       "linter-php"
       "linter-rust"
       "linter-ui-default"
       "rustfmt"
+      "ssh-config"
       "whitespace"
     ]
     excludeVcsIgnoredPaths: false
@@ -75,16 +78,21 @@
       "ide-php"
       "language-gherkin"
       "language-hack"
+      "language-ini"
       "language-puppet"
       "language-rust"
+      "language-tmux"
       "linter-eslint"
       "linter-php"
       "linter-rust"
       "rustfmt"
+      "ssh-config"
     ]
     resetOnStart: false
   "exception-reporting":
     userId: "0e594558-5f6f-463c-aa6a-093b570dedde"
+  "file-icons":
+    defaultIconClass: "icon-file-text"
   "find-and-replace":
     scrollToResultOnLiveSearch: true
   "fuzzy-finder":
@@ -100,5 +108,9 @@
   "tree-view":
     hideIgnoredNames: true
     squashDirectoryNames: true
+  "vim-modeline-filetypes":
+    sh: "source.shell"
+    sshconfig: "source.ssh-config"
+    tmux: "source.tmux"
   welcome:
     showOnStartup: false
