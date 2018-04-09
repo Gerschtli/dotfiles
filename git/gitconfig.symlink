@@ -19,10 +19,7 @@
     cn = !"git reflog expire --all && git fsck --unreachable --full && git prune && git gc --aggressive --quiet && git repack -Adq && git prune-packed --quiet"
     co = checkout
     fa = !"git fe --all && git fe --all --tags"
-    # filter messages like:
-    #   mux_client_request_session: session request failed: Session open refused by peer
-    #   ControlSocket /path/to//sockets/git@bitbucket.org-22 already exists, disabling multiplexing
-    fe = !"_() { git fetch --progress $@ 2>&1 | grep -Ev '(mux_client_request_session|git@bitbucket.org-22)'; return ${PIPESTATUS[0]}; }; _"
+    fe = fetch --progress
     fm = !"git fe && git fe --tags"
     gi = !"git gr --ignore-case"
     gr = grep --line-number --break --heading
