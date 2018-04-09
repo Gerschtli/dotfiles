@@ -2,7 +2,7 @@ source "${HOME}/.dotfiles-variables"
 source "${DOTFILES_ROOT}/util/script-functions"
 
 _d_source_files \( -name "*.sh" -o -name "*.zsh" \) \
-    ! -name "logout.*sh" ! -name "completion.*sh"
+    ! -name "env.*sh" ! -name "logout.*sh" ! -name "completion.*sh"
 
 autoload -Uz +X compinit && compinit $(is_osx && echo "-u")
 
