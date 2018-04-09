@@ -28,6 +28,7 @@ packages: [
   "language-puppet"
   "language-rust"
   "language-tmux"
+  "language-viml"
   "latex"
   "linter"
   "linter-eslint"

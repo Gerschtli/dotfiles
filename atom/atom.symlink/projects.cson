@@ -6,6 +6,7 @@
     ]
     enable_packages: [
       "language-tmux"
+      "language-viml"
       "ssh-config"
     ]
   }
