@@ -26,8 +26,8 @@
 # For more information, please refer to <http://unlicense.org>
 
 pnix-shell() {
-  _usage() {
-    cat >&2 <<EOF
+    _usage() {
+        cat >&2 <<EOF
 pnix-shell generates and opens a persistent nix-shell
 
 Usage: pnix-shell [-h|--help] [-c|--clean] [--command <command>] [<shellfile>]
@@ -43,91 +43,91 @@ Options:
   <shellfile>           nix-shell description file [default: shell.nix]
 
 EOF
-  }
+    }
 
-  local key clean cmd shellfile
+    local key clean cmd shellfile
 
-  # Parse arguments
-  # TODO: --arg --argstr --run
-  while [[ $# -gt 0 ]]; do
-    key=$1
-    case $key in
-      -h|--help)
-        _usage
-        return
-        ;;
-      -c|--clean)
-        clean=1
-        ;;
-      --command)
+    # Parse arguments
+    # TODO: --arg --argstr --run
+    while [[ $# -gt 0 ]]; do
+        key=$1
+        case $key in
+            -h|--help)
+                _usage
+                return
+                ;;
+            -c|--clean)
+                clean=1
+                ;;
+            --command)
+                shift
+                if [[ -z $1 ]]; then
+                    echo "Command has to be specified" >&2
+                    return 1
+                fi
+                cmd="$1"
+                ;;
+            *)
+                if [[ ! -z $shellfile ]]; then
+                    echo "Shell desciption specified more than once" >&2
+                    return 1
+                fi
+                shellfile="$1"
+                ;;
+        esac
         shift
-        if [[ -z $1 ]]; then
-          echo "Command has to be specified" >&2
-          return 1
+    done
+
+    # Set defaults if not set by arguments
+    : ${cmd=zsh}
+    : ${shellfile=$PWD/shell.nix}
+
+    # Shell dependencies directory
+    local depsdir="$HOME/.nix-shell/$shellfile"
+    local drvfile="$depsdir/shell.drv"
+
+    # Check for command
+    _hascmd() {
+        hash "$1" 2>/dev/null \
+        || { echo "command not found: $1" >&2; return 1; }
+    }
+
+    # Require nix-shell, nix-store, nix-instantiate
+    { _hascmd nix-shell && _hascmd nix-instantiate && _hascmd nix-store; } \
+    || { return 1; }
+
+    _shellexists () {
+        if [[ ! -f "$shellfile" && ! -d "$shellfile" ]]; then
+            echo "No shell description found in \`$shellfile'." >&2
+            return 1
         fi
-        cmd="$1"
-        ;;
-      *)
-        if [[ ! -z $shellfile ]]; then
-          echo "Shell desciption specified more than once" >&2
-          return 1
-        fi
-        shellfile="$1"
-        ;;
-    esac
-    shift
-  done
+    }
 
-  # Set defaults if not set by arguments
-  : ${cmd=zsh}
-  : ${shellfile=$PWD/shell.nix}
-
-  # Shell dependencies directory
-  local depsdir="$HOME/.nix-shell/$shellfile"
-  local drvfile="$depsdir/shell.drv"
-
-  # Check for command
-  _hascmd() {
-    hash "$1" 2>/dev/null \
-    || { echo "command not found: $1" >&2; return 1; }
-  }
-
-  # Require nix-shell, nix-store, nix-instantiate
-  { _hascmd nix-shell && _hascmd nix-instantiate && _hascmd nix-store; } \
-  || { return 1; }
-
-  _shellexists () {
-    if [[ ! -f "$shellfile" && ! -d "$shellfile" ]]; then
-      echo "No shell description found in \`$shellfile'." >&2
-      return 1
+    # Clean
+    if [[ "$clean" -eq 1 ]]; then
+        _shellexists || return 1
+        rm -rf "$depsdir"
     fi
-  }
 
-  # Clean
-  if [[ "$clean" -eq 1 ]]; then
-    _shellexists || return 1
-    rm -rf "$depsdir"
-  fi
-
-  # Use prebuilt shell if it exists
-  if [[ -a "$drvfile" ]]; then
-    nix-shell $(realpath "$drvfile") --command "$cmd"
-  else
-    _shellexists || return 1
-    mkdir -p "$depsdir"
-    # HACK: Set \`IN_NIX_SHELL=1'.
-    #       Make nix believe that the instantiation happens in a nix-shell.
-    #       This will trigger `pkgs.lib.inNixShell' to return true, which
-    #       will automatically select the `env' attribute in cabal2nix
-    #       generated shell descriptions.
-    IN_NIX_SHELL=1 nix-instantiate \
-      --add-root "$drvfile" --indirect \
-      "$shellfile" \
-    || { echo "nix-instantiate failed" >&2; return 1; }
-    nix-store \
-      -r $(nix-store --query --references "$drvfile") \
-      --add-root "$depsdir/dep" --indirect \
-    || { echo "nix-store failed" >&2; return 1; }
-    nix-shell $(realpath "$drvfile") --command "$cmd"
-  fi
+    # Use prebuilt shell if it exists
+    if [[ -a "$drvfile" ]]; then
+        nix-shell $(realpath "$drvfile") --command "$cmd"
+    else
+        _shellexists || return 1
+        mkdir -p "$depsdir"
+        # HACK: Set \`IN_NIX_SHELL=1'.
+        #       Make nix believe that the instantiation happens in a nix-shell.
+        #       This will trigger `pkgs.lib.inNixShell' to return true, which
+        #       will automatically select the `env' attribute in cabal2nix
+        #       generated shell descriptions.
+        IN_NIX_SHELL=1 nix-instantiate \
+            --add-root "$drvfile" --indirect \
+            "$shellfile" \
+        || { echo "nix-instantiate failed" >&2; return 1; }
+        nix-store \
+            -r $(nix-store --query --references "$drvfile") \
+            --add-root "$depsdir/dep" --indirect \
+        || { echo "nix-store failed" >&2; return 1; }
+        nix-shell $(realpath "$drvfile") --command "$cmd"
+    fi
 }
