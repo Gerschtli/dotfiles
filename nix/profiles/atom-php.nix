@@ -1,5 +1,5 @@
 import util/mkDerivation.nix {
-  name = "home-php";
+  name = "atom-php";
 
   configuration = {
     php = { };
