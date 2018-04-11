@@ -1,5 +1,11 @@
 [
   {
+    title: "default"
+    paths: [
+      "~/projects"
+    ]
+  }
+  {
     title: "dotfiles"
     paths: [
       "~/.dotfiles"
