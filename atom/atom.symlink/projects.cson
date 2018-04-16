@@ -1,5 +1,15 @@
 [
   {
+    title: "bachelor-paper"
+    paths: [
+      "~/projects/bachelor-paper"
+    ]
+    enable_packages: [
+      "language-latex"
+      "latex"
+    ]
+  }
+  {
     title: "default"
     paths: [
       "~/projects"
