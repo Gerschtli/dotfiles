@@ -62,6 +62,10 @@ local.properties
 .worksheet
 
 
+### LibreOffice locks
+.~lock.*#
+
+
 ### Sublime Text
 .phpintel
 sftp-config.json
