@@ -37,6 +37,7 @@ packages: [
   "linter-ui-default"
   "manage-packages"
   "nix"
+  "nuclide"
   "pdf-view"
   "project-manager"
   "rustfmt"

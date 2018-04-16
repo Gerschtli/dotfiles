@@ -23,8 +23,20 @@
     preserveLastSearch: true
   core:
     autoHideMenuBar: true
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+      ]
+      "source.json": [
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     disabledPackages: [
       "Atom-Hack"
+      "atom-ide-ui"
       "atom-language-rust"
       "autocomplete-hack"
       "autocomplete-racer"
@@ -47,6 +59,7 @@
       "linter-ui-default"
       "rustfmt"
       "ssh-config"
+      "tree-view"
       "whitespace"
     ]
     excludeVcsIgnoredPaths: false
@@ -107,6 +120,14 @@
     searchAllPanes: true
   "linter-eslint":
     fixOnSave: true
+  nuclide:
+    "atom-ide-code-format":
+      formatOnSave: true
+    "atom-ide-diagnostics-ui":
+      autoVisibility: true
+    "nuclide-home":
+      showHome: false
+    use: {}
   "project-manager":
     alwaysOpenInSameWindow: true
     savePathsRelativeToHome: true
