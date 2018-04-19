@@ -3,8 +3,6 @@ source "${DOTFILES_ROOT}/util/script-functions"
 
 _d_source_files \( -name "env.sh" -o -name "env.zsh" \)
 
-hash -f
-
 skip_global_compinit=1
 
 source "${DOTFILES_ROOT}/util/unset-script-functions"
