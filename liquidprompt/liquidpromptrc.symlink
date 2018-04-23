@@ -167,7 +167,7 @@ LP_DISABLED_VCS_PATH=""
 # PS1 Modifications #
 #####################
 LP_PS1_SHELL_SYMBOL="\$"
-if [[ -n "${BASH_VERSION-}" ]]; then
+if is_bash; then
     LP_PS1_SHELL_SYMBOL="B"
 fi
 

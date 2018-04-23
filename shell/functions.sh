@@ -6,6 +6,10 @@ dotupdate() {
     dotfiles-update "$1" && shell-reload
 }
 
+is_bash() {
+    [[ -n "${BASH_VERSION-}" ]]
+}
+
 is_osx() {
     [[ "$(uname -s)" == "Darwin" ]]
 }
