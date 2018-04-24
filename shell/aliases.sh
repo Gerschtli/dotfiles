@@ -10,6 +10,7 @@ alias ll="ls -AFhlv"
 alias cp="cp -av"
 alias mv="mv -v"
 alias rm="rm -v"
+alias ln="ln -v"
 
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
@@ -25,18 +26,20 @@ alias ......="cd ../../../../.."
 
 alias e="${EDITOR}"
 
-available xdg-open && alias open="xdg-open"
+available bc && alias bc="bc -l"
+
+available df && alias df="df -h"
 
 available dircolors && eval "$(dircolors -b)"
 
-available bc && alias bc="bc -l"
-
-if available tree; then
-    alias tree="tree -F --dirsfirst"
-    alias treea="tree -a"
-fi
+available xdg-open && alias open="xdg-open"
 
 if available pwgen; then
     alias pwgen="pwgen -cny"
     alias pwgens="pwgen -s"
+fi
+
+if available tree; then
+    alias tree="tree -F --dirsfirst"
+    alias treea="tree -a"
 fi
