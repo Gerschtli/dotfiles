@@ -111,6 +111,7 @@
       "ide-php"
       "language-ini"
       "language-puppet"
+      "linter-eslint"
     ]
   }
   {
