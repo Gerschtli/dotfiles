@@ -3,7 +3,7 @@
 GIT="git"
 
 # workaround for messed up PATH, don't use atom's git
-if ! $(git --version); then
+if ! $(git --version > /dev/null 2>&1); then
     GIT=$(which -a git | head -n 2 | tail -n 1)
 fi
 
