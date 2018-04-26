@@ -1,2 +1,3 @@
 "atom-text-editor":
   "ctrl-shift-l": "editor:split-selections-into-lines"
+  "ctrl-alt-a": "simple-align:align"

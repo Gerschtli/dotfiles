@@ -1,5 +1,4 @@
 packages: [
-  "atom-alignment"
   "Atom-Hack"
   "atom-ide-ui"
   "atom-language-rust"
