@@ -1,6 +1,5 @@
 packages: [
   "Atom-Hack"
-  "atom-ide-ui"
   "atom-language-rust"
   "atom-material-syntax"
   "atom-material-ui"
