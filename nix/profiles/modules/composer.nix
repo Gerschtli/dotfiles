@@ -1,0 +1,3 @@
+{ phpPackages }:
+
+{ packages = [ phpPackages.composer ]; }

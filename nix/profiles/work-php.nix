@@ -2,9 +2,10 @@ import util/mkDerivation.nix {
   name = "work-php";
 
   configuration = {
-    ant     = { };
-    nodejs  = { };
-    php55   = {
+    ant      = { };
+    composer = { };
+    nodejs   = { };
+    php55    = {
       extensions = [
         "apcu"
         "couchbase"
@@ -12,6 +13,6 @@ import util/mkDerivation.nix {
         "memcached"
       ];
     };
-    vagrant = { };
+    vagrant  = { };
   };
 }
