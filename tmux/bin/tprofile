@@ -42,7 +42,7 @@ _process_profile() {
     esac
 
     if available nshell \
-        && [[ ! -z "${NIX_PROFILE}" && -e "$(cd "${ROOT}" && nshell-path "${NIX_PROFILE}")" ]]; then
+        && [[ "${NIX_PROFILE}" != 0 && -e "$(cd "${ROOT}" && nshell-path "${NIX_PROFILE}")" ]]; then
         NIX_CMD="nshell ${NIX_PROFILE}"
     fi
 
