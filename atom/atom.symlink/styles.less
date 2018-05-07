@@ -40,3 +40,31 @@
 atom-notifications atom-notification .detail {
   background-color: initial; // rgba(255, 255, 255, 0.3)
 }
+
+
+// customize material dark syntax theme
+
+@import "packages/atom-material-syntax/styles/syntax-variables.less";
+
+@syntax-comment-color: lighten(@very-dark-gray, 30%); // lighten(@very-dark-gray, 20%)
+
+@syntax-gutter-text-color: fade(@syntax-text-color, 40%); // fade(@syntax-text-color, 20%)
+
+// styles blindly copied from https://github.com/atom-material/atom-material-syntax-dark/blob/1.0/styles/base.less
+.syntax--comment,
+.syntax--punctuation.syntax--definition.syntax--comment {
+  color: @syntax-comment-color;
+}
+
+atom-text-editor {
+  .gutter {
+    color: @syntax-gutter-text-color;
+
+    .line-number {
+      &.cursor-line,
+      &.cursor-line-no-selection {
+        color: @syntax-gutter-text-color-selected;
+      }
+    }
+  }
+}
