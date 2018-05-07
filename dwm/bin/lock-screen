@@ -3,4 +3,4 @@
 slock
 
 # fix for bug in slock-dpms patch
-xset -dpms
+#xset -dpms
