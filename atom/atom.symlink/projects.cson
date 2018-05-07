@@ -10,6 +10,17 @@
     ]
   }
   {
+    title: "bachelor-project"
+    paths: [
+      "~/projects/bachelor-project"
+    ]
+    enable_packages: [
+      "autocomplete-python"
+      "language-pipfile"
+      "python-tools"
+    ]
+  }
+  {
     title: "dotfiles"
     paths: [
       "~/.dotfiles"
