@@ -6,7 +6,6 @@ rsync.conf
 ### Eclipse
 
 .metadata
-bin/
 tmp/
 *.tmp
 *.bak
