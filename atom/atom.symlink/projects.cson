@@ -62,6 +62,12 @@
       "language-hack"
     ]
   }
+  {
+    title: "serversetup"
+    paths: [
+      "~/projects/serversetup"
+    ]
+  }
 
   {
     title: "admin"
