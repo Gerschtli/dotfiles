@@ -15,7 +15,6 @@
 | nodejs       | Completion for npm, adds nvm-init function                        |
 | nvim         | Configuration for nvim                                            |
 | php          | Aliases for composer                                              |
-| rsync        | Adds rsc function                                                 |
 | ruby         | Adds ruby gem bin directory to PATH                               |
 | shell        | General configuration for shells (aliases, environment variables) |
 | sublime      | Configuration for sublime text 3                                  |
