@@ -1,7 +1,5 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 VERSION=$(tmux -V | cut -d " " -f 2)
 
-[ $(echo "${VERSION} $@" | bc) = 1 ]
-
-exit $?
+[[ $(echo "${VERSION} $@" | bc) == 1 ]]
