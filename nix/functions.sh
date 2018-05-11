@@ -57,13 +57,13 @@ if available nix-shell; then
 
     nshell-update() {
         find ~/.nix-shell -name "shell.drv" \
-            | grep -v "\.dotfiles/nix/profiles" \
+            | grep -v "${DOTFILES_ROOT}/nix/profiles" \
             | sed -e "s,${HOME}/.nix-shell,,g" -e "s,\(.*\)/.*/shell.drv$,\1,g" \
             | xargs -I {} zsh --interactive -c "cd {} && echo '===== {} =====' && nshell . --clean --command exit"
 
         find ~/.nix-shell -name "shell.drv" \
-            | grep "\.dotfiles/nix/profiles" \
-            | sed -e "s,.*/\.dotfiles/nix/profiles/,,g" -e "s,\.nix/shell\.drv,,g" \
+            | grep "${DOTFILES_ROOT}/nix/profiles" \
+            | sed -e "s,.*${DOTFILES_ROOT}/nix/profiles/,,g" -e "s,\.nix/shell\.drv,,g" \
             | xargs -I {} zsh --interactive -c "echo '===== {} =====' && nshell {} --clean --command exit"
     }
 fi
