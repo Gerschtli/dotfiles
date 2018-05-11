@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-HOOKS_DIR="${PWD}"/.git/hooks
-RESULT=0
+source "${PWD}/.git/hooks/helpers/util.sh"
 
-"${HOOKS_DIR}"/scripts/ant.sh pre-push; RESULT=$((${RESULT} + $?))
-"${HOOKS_DIR}"/scripts/cargo.sh pre-push; RESULT=$((${RESULT} + $?))
-"${HOOKS_DIR}"/scripts/composer.sh pre-push; RESULT=$((${RESULT} + $?))
-"${HOOKS_DIR}"/scripts/maven.sh pre-push; RESULT=$((${RESULT} + $?))
-"${HOOKS_DIR}"/scripts/npm.sh pre-push; RESULT=$((${RESULT} + $?))
-
-exit ${RESULT}
+run_scripts pre-push

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-source "${PWD}"/.git/hooks/scripts/util.sh
+source "${PWD}/.git/hooks/helpers/util.sh"
 
-PACKAGE_JSON="${PWD}"/package.json
+PACKAGE_JSON="${PWD}/package.json"
 
 install() {
     if has_changed "${PACKAGE_JSON}"; then
@@ -12,7 +12,7 @@ install() {
 
 check() {
     if npm run | has_match "  test"; then
-        npm test; RESULT=$?
+        npm test; track_result
     fi
 }
 

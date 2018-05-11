@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-source "${PWD}"/.git/hooks/scripts/util.sh
+source "${PWD}/.git/hooks/helpers/util.sh"
 
-BUILD_FILE="${PWD}"/build.xml
+BUILD_FILE="${PWD}/build.xml"
 
 check() {
     if has_match '<target name="check"' "${BUILD_FILE}"; then
-        ant check; RESULT=$?
+        ant check; track_result
     fi
 }
 

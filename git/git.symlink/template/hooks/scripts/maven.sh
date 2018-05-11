@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-source "${PWD}"/.git/hooks/scripts/util.sh
+source "${PWD}/.git/hooks/helpers/util.sh"
 
-BUILD_FILE="${PWD}"/pom.xml
+BUILD_FILE="${PWD}/pom.xml"
 
 check() {
-    mvn test integration-test; RESULT=$?
+    mvn test integration-test; track_result
 }
 
 if has_command_and_file mvn "${BUILD_FILE}"; then

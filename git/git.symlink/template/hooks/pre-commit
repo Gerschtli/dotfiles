@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-HOOKS_DIR="${PWD}"/.git/hooks
-RESULT=0
+source "${PWD}/.git/hooks/helpers/util.sh"
 
-"${HOOKS_DIR}"/scripts/file.sh; RESULT=$((${RESULT} + $?))
-
-exit ${RESULT}
+run_scripts pre-commit

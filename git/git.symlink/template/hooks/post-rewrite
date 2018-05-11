@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-HOOKS_DIR="${PWD}"/.git/hooks
-
 case "${1}" in
     rebase)
-        "${HOOKS_DIR}"/post-merge
+        "${PWD}/.git/hooks/post-merge"
         ;;
 esac

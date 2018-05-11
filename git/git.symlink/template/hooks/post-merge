@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-HOOKS_DIR="${PWD}"/.git/hooks
+source "${PWD}/.git/hooks/helpers/util.sh"
 
-"${HOOKS_DIR}"/scripts/composer.sh post-merge
-"${HOOKS_DIR}"/scripts/npm.sh post-merge
+run_scripts post-merge

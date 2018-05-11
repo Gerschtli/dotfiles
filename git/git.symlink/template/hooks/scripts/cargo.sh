@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-source "${PWD}"/.git/hooks/scripts/util.sh
+source "${PWD}/.git/hooks/helpers/util.sh"
 
-CONFIG_FILE="${PWD}"/Cargo.toml
+CONFIG_FILE="${PWD}/Cargo.toml"
 
 check() {
-    cargo fmt -- --write-mode=diff; RESULT=$((${RESULT} + $?))
-    cargo build --features dev; RESULT=$((${RESULT} + $?))
-    cargo test; RESULT=$((${RESULT} + $?))
+    cargo fmt -- --write-mode=diff; track_result
+    cargo build --features dev; track_result
+    cargo test; track_result
 }
 
 if has_command_and_file cargo "${CONFIG_FILE}"; then

@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 HOOK_TYPE="${1}"
-
 RESULT=0
 
 # credits to
@@ -12,7 +11,7 @@ has_changed() {
     local against=4b825dc642cb6eb9a060e54bf8d69288fbee4904
     local changed=0
 
-    case $HOOK_TYPE in
+    case "${HOOK_TYPE}" in
         post-commit)
             git rev-parse --verify HEAD^ > /dev/null 2>&1 && against=HEAD^
             changed="$(git diff-tree $against 'HEAD' --stat -- ${monitored_paths[*]} | wc -l)"
@@ -36,6 +35,7 @@ has_changed() {
 has_command_and_file() {
     local command="${1}"
     local file="${2}"
+
     hash "${command}" > /dev/null 2>&1 && [[ -r "${file}" ]]
 }
 
@@ -44,4 +44,21 @@ has_match() {
     local input="${2:-/dev/stdin}"
 
     cat "${input}" | grep "${expression}" > /dev/null 2>&1
+}
+
+run_scripts() {
+    HOOK_TYPE="${1}"
+    local scripts_dir="${PWD}/.git/hooks/scripts"
+
+    for script in "${scripts_dir}"/*; do
+        if [[ -x "${script}" ]]; then
+            "${script}" "${HOOK_TYPE}"; track_result
+        fi
+    done
+
+    return ${RESULT}
+}
+
+track_result() {
+    RESULT=$((${RESULT} + $?))
 }

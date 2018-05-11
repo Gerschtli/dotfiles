@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-HOOKS_DIR="${PWD}"/.git/hooks
+source "${PWD}/.git/hooks/helpers/util.sh"
 
 if [[ "${1}" != "${2}" && "${3}" == 1 ]]; then # has new commits and is branch checkout
-    "${HOOKS_DIR}"/scripts/composer.sh post-checkout
-    "${HOOKS_DIR}"/scripts/npm.sh post-checkout
+    run_scripts post-checkout
 fi
