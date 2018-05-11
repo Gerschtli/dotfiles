@@ -14,6 +14,10 @@ is_osx() {
     [[ "$(uname -s)" == "Darwin" ]]
 }
 
+is_zsh() {
+    [[ -n "${ZSH_VERSION-}" ]]
+}
+
 # to open a new tab in the current directory on osx
 if is_osx; then
     precmd() {
