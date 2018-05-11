@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-BRANCH_NAME=$(git symbolic-ref --short --quiet HEAD | sed -e "s;\([A-Z]\{1,\}\)-\([0-9]\{1,\}\)-.*;[\1-\2];g")
+BRANCH_NAME=$(git symbolic-ref --short --quiet HEAD | sed -e "s#\([A-Z]\{1,\}\)-\([0-9]\{1,\}\)-.*#[\1-\2]#g")
 
-sed -ie "s/BRANCHNAME/${BRANCH_NAME}/g" $1
+sed -ie "s#BRANCHNAME#${BRANCH_NAME}#g" "${1}"
