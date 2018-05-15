@@ -50,19 +50,13 @@
     st = status
     sw = stash show
 
-    clo = !"git co development && git rebase -n origin/development"
     cma = !"git co master && git rebase -n origin/master"
-
-    rlo = rebase origin/development
-    rma = rebase origin/master
-
-    mlo = merge origin/development
     mma = merge origin/master
 
     aliases = config --get-regexp "^alias"
 
     bclean = !"git for-each-ref --format '%(refname:short)' refs/heads " \
-        "| grep -Ev \"master|development|$(git branch-name)\" | xargs git bd"
+        "| grep -Ev \"master|$(git branch-name)\" | xargs git bd"
 
     branch-name = !"git for-each-ref --format='%(refname:short)' $(git symbolic-ref HEAD)"
     total-clean = "!git co -f && git clean -dfx && git clean -dfX"
@@ -210,9 +204,6 @@
     cursor = white blue bold
     title-blur = blue default
     title-focus = blue default bold
-
-[includeIf "gitdir:~/git/profitmax/*"]
-    path = ~/.git/gitconfig-profitmax
 
 [includeIf "gitdir:~/projects/profitmax/*"]
     path = ~/.git/gitconfig-profitmax
