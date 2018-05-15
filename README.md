@@ -8,6 +8,7 @@
 | bash         | Configuration for bash                                            |
 | dunst        | Configuration for dunst (libnotiy daemon)                         |
 | dwm          | Configuration for dwm sessions                                    |
+| eclipse      | Configuration for eclipse                                         |
 | git          | Configuration for git with git hooks                              |
 | htop         | Configuration for htop                                            |
 | liquidprompt | Configuration for liquidprompt                                    |
