@@ -10,19 +10,21 @@ ALL_MODULES=$(
         | sed "s,${DOTFILES_ROOT}/,," | sort
 )
 
+SORTED_MODULES=$(echo ${MODULES[@]} | tr ' ' '\n' | sort)
+
 DISABLED_MODULES=$(echo ${ALL_MODULES[@]} ${MODULES[@]} | tr ' ' '\n' | sort | uniq -u)
 
 if [[ -z "${DISABLED_MODULES}" ]]; then
     _d_success "All modules enabled"
 else
     _d_info "All modules:"
-    _d_indent echo ${ALL_MODULES[@]}
+    _d_indent echo "${ALL_MODULES[@]}"
 
     _d_info "Following modules are enabled:"
-    _d_indent echo ${MODULES[@]}
+    _d_indent echo "${SORTED_MODULES[@]}"
 
     _d_info "Following modules can additionally be enabled:"
-    _d_indent echo ${DISABLED_MODULES[@]}
+    _d_indent echo "${DISABLED_MODULES[@]}"
 fi
 
 exit 0
