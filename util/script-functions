@@ -77,13 +77,15 @@ _d_print() {
 }
 
 _d_pull() {
+    local path="${1}"
+
     if [[ $(git rev-parse --abbrev-ref HEAD) != "master" ]]; then
         _d_info "git checkout master ..."
-        git checkout master
+        git -C "${path}" checkout master
     fi
 
     _d_info "git pull ..."
-    git pull
+    git -C "${path}" pull
 }
 
 _d_register_fpath() {

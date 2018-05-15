@@ -13,11 +13,10 @@ git_status() {
     fi
 
     _d_info "${title}"
-    cd "${directory}"
     if [[ "${submodule}" == 1 ]]; then
-        git submodule foreach git status
+        git -C "${directory}" submodule foreach git status
     else
-        git status
+        git -C "${directory}" status
         echo -n $'\n\n'
     fi
 }
