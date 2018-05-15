@@ -6,7 +6,10 @@ CONFIG_FILE="${PWD}/Cargo.toml"
 
 check() {
     cargo fmt -- --write-mode=diff; track_result
-    cargo build --features dev; track_result
+    cargo build; track_result
+    if $(cargo --list | grep clippy > /dev/null 2>&1); then
+        cargo clippy; track_result
+    fi
     cargo test; track_result
 }
 
