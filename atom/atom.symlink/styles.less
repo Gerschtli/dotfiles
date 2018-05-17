@@ -50,6 +50,8 @@ atom-notifications atom-notification .detail {
 
 @syntax-gutter-text-color: fade(@syntax-text-color, 40%); // fade(@syntax-text-color, 20%)
 
+@syntax-indent-guide-color: lighten(@dark-gray, 10%); // @dark-gray
+
 // styles blindly copied from https://github.com/atom-material/atom-material-syntax-dark/blob/1.0/styles/base.less
 .syntax--comment,
 .syntax--punctuation.syntax--definition.syntax--comment {
@@ -66,5 +68,9 @@ atom-text-editor {
         color: @syntax-gutter-text-color-selected;
       }
     }
+  }
+
+  .wrap-guide {
+    background-color: @syntax-indent-guide-color;
   }
 }
