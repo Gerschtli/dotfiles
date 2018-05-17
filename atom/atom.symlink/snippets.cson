@@ -124,7 +124,7 @@
       }
     """
   'PHPUnit Test Method':
-    'preifx': 'teme'
+    'prefix': 'teme'
     'body': """
       public function test$1()
       {
