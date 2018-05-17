@@ -1,3 +1,3 @@
-{ phpPackages }:
+{ php55Packages }:
 
-{ packages = [ phpPackages.composer ]; }
+{ packages = [ php55Packages.composer ]; }
