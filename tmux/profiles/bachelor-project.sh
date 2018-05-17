@@ -1,5 +1,3 @@
 ROOT="${HOME}/projects/bachelor-project"
 
-PANE_CMDS=("git fm:./result/bin/mark-analyser-env:pipenv shell")
-
-NIX_PROFILE="0"
+PANE_CMDS=("zsh:clear:git fm")
