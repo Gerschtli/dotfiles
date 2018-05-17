@@ -11,7 +11,7 @@ install() {
 }
 
 check() {
-    if npm run | has_match "  test"; then
+    if npm run | has_match "  test$"; then
         npm test; track_result
     fi
 }

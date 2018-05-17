@@ -11,8 +11,8 @@ install() {
 }
 
 check() {
-    if composer list | has_match "check\s+Run the check script as defined in composer.json."; then
-        composer check; track_result
+    if composer list | has_match "^  test\s+"; then
+        composer test; track_result
     fi
 }
 
