@@ -8,13 +8,13 @@ if [[ -z "${1}" ]]; then
     _d_info "========= DOTFILES ========="
     _d_pull "${DOTFILES_ROOT}"
 
-    if [[ -d "gpg" ]]; then
+    if [[ -d "${DOTFILES_ROOT}/gpg" ]]; then
         echo
         _d_info "============ GPG ==========="
         _d_pull "${DOTFILES_ROOT}/gpg"
     fi
 
-    if [[ -d "ssh" ]]; then
+    if [[ -d "${DOTFILES_ROOT}/ssh" ]]; then
         echo
         _d_info "============ SSH ==========="
         _d_pull "${DOTFILES_ROOT}/ssh"
