@@ -79,7 +79,7 @@ _d_print() {
 _d_pull() {
     local path="${1}"
 
-    if [[ $(git rev-parse --abbrev-ref HEAD) != "master" ]]; then
+    if [[ $(git -C "${path}" rev-parse --abbrev-ref HEAD) != "master" ]]; then
         _d_info "git checkout master ..."
         git -C "${path}" checkout master
     fi
