@@ -1,7 +1,9 @@
-import util/mkDerivation.nix {
+with import <nixpkgs> { };
+
+stdenv.mkDerivation {
   name = "atom-python";
 
-  configuration = {
-    python = { };
-  };
+  buildInputs = [
+    python3
+  ];
 }

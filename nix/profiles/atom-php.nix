@@ -1,7 +1,9 @@
-import util/mkDerivation.nix {
+with import <nixpkgs> { };
+
+stdenv.mkDerivation {
   name = "atom-php";
 
-  configuration = {
-    php = { };
-  };
+  buildInputs = [
+    php
+  ];
 }
