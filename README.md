@@ -11,6 +11,7 @@
 | eclipse      | Configuration for eclipse                                         |
 | git          | Configuration for git with git hooks                              |
 | htop         | Configuration for htop                                            |
+| i3           | Configuration for i3                                              |
 | liquidprompt | Configuration for liquidprompt                                    |
 | nix          | Collection of nix-shell profiles, nshell function and completion  |
 | nodejs       | Completion for npm, adds nvm-init function                        |
