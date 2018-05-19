@@ -11,6 +11,7 @@ Plug 'scrooloose/nerdtree'
 
 " syntax highlighting
 Plug 'LnL7/vim-nix'
+Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'cespare/vim-toml'
 Plug 'chrisbra/csv.vim'
 Plug 'elzr/vim-json'
