@@ -1,0 +1,16 @@
+theme = "modern"
+icons = "awesome"
+
+[[block]]
+block = "backlight"
+
+[[block]]
+block = "sound"
+
+#[[block]]
+#block = "battery"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%Y-%m-%d %R"
