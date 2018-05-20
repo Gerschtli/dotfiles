@@ -64,6 +64,12 @@
     ]
   }
   {
+    title: "nixpkgs"
+    paths: [
+      "~/projects/nixpkgs"
+    ]
+  }
+  {
     title: "plc-hack"
     paths: [
       "~/projects/plc-web-hack"
