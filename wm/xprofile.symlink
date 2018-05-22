@@ -13,7 +13,7 @@ xset -dpms
 xset r rate 250 30
 
 # Start dwm-status
-if available dwm-status && [[ -r "${HOME}/.dwm-status.conf" ]]; then
+if available dwm-status && [[ -r "${HOME}/.dwm-status.conf" && "${sessionType##*+}" != "i3" ]]; then
     dwm-status "${HOME}/.dwm-status.conf" &
 fi
 
