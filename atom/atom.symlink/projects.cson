@@ -98,6 +98,8 @@
       "emmet"
       "ide-php"
       "language-puppet"
+      "linter-php"
+      "linter-phpcs"
     ]
    }
    {
@@ -110,6 +112,8 @@
       "ide-php"
       "language-ini"
       "language-puppet"
+      "linter-php"
+      "linter-phpcs"
     ]
   }
   {
@@ -121,6 +125,8 @@
     enable_packages: [
       "ide-php"
       "language-gherkin"
+      "linter-php"
+      "linter-phpcs"
     ]
   }
   {
@@ -136,6 +142,8 @@
       "language-ini"
       "language-puppet"
       "linter-eslint"
+      "linter-php"
+      "linter-phpcs"
     ]
   }
   {
@@ -146,6 +154,8 @@
     ]
     enable_packages: [
       "ide-php"
+      "linter-php"
+      "linter-phpcs"
     ]
   }
   {
@@ -160,6 +170,8 @@
       "ide-php"
       "language-ini"
       "language-puppet"
+      "linter-php"
+      "linter-phpcs"
     ]
   }
 ]

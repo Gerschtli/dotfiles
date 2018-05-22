@@ -33,6 +33,7 @@ packages: [
   "linter"
   "linter-eslint"
   "linter-php"
+  "linter-phpcs"
   "linter-rust"
   "linter-ui-default"
   "manage-packages"
