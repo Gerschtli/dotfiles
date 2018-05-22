@@ -1,4 +1,4 @@
-theme = "modern"
+theme = "plain"
 icons = "awesome"
 
 [[block]]
@@ -7,8 +7,9 @@ block = "backlight"
 [[block]]
 block = "sound"
 
-#[[block]]
-#block = "battery"
+[[block]]
+block = "battery"
+device = "BAT1"
 
 [[block]]
 block = "time"
