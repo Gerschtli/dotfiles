@@ -18,8 +18,9 @@
 | nvim         | Configuration for nvim                                            |
 | php          | Aliases for composer                                              |
 | shell        | General configuration for shells (aliases, environment variables) |
+| ssh          | General configuration for ssh, keychain and modules               |
 | sublime      | Configuration for sublime text 3                                  |
-| tmux         | Configuration for tmux, adds tmux profiles                        |
+| tmux         | Configuration for tmux and tmux profiles                          |
 | vagrant      | Aliases for vagrant                                               |
 | wm           | Base configuration for window manager                             |
 | zsh          | Configuration for zsh and zsh-{autosuggestions,completions}       |

@@ -1,0 +1,23 @@
+# include first so you can override the default options set below
+Include modules/*/config.d/*
+
+Host *
+    CheckHostIP yes
+    Compression yes
+    ConnectTimeout 60
+    ControlMaster auto
+    ControlPath ~/.ssh/sockets/%r@%h-%p
+    ControlPersist 600
+    EnableSSHKeysign yes
+    ExitOnForwardFailure yes
+    ForwardX11Trusted yes
+    HashKnownHosts yes
+    IdentitiesOnly yes
+    NoHostAuthenticationForLocalhost yes
+    Protocol 2
+    PubKeyAuthentication yes
+    SendEnv LANG LC_*
+    ServerAliveCountMax 30
+    ServerAliveInterval 30
+
+# vim: ft=sshconfig

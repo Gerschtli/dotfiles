@@ -1,0 +1,17 @@
+#compdef kadd
+
+LIST=()
+
+for module in "${DOTFILES_ROOT}/ssh/modules/"*; do
+    prefix="${module}/keys/id_rsa."
+    suffix=".pub"
+
+    for keyfile in "${prefix}"*"${suffix}"; do
+        tmp="${keyfile#${prefix}}"
+        LIST=("${tmp//${suffix}}" "${LIST}")
+    done
+done
+
+_arguments "*:ssh keys:(${LIST})"
+
+# vim: ft=sh
