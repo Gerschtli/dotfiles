@@ -23,5 +23,9 @@ git_status() {
 
 git_status "========= DOTFILES =========" "${DOTFILES_ROOT}"
 git_status "=========== GPG ============" "${DOTFILES_ROOT}/gpg"
-git_status "=========== SSH ============" "${DOTFILES_ROOT}/ssh"
-git_status "======== SUBMODULES=========" "${DOTFILES_ROOT}" 1
+
+for ssh_module in "${DOTFILES_ROOT}/ssh/modules/"*; do
+    git_status "======== SSH $(basename "${ssh_module}") ========" "${ssh_module}"
+done
+
+git_status "======== SUBMODULES ========" "${DOTFILES_ROOT}" 1

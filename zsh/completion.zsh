@@ -92,8 +92,8 @@ zstyle ':completion:*:urls' local 'www' '/var/www/' 'public_html'
 
 # host completion
 [[ -r ~/.ssh/config ]] && _ssh_config_hosts=(${${(s: :)${(ps:\t:)${${(@M)${(f)"$(<$HOME/.ssh/config)"}:#Host *}#Host }}}:#*[*?]*}) || _ssh_config_hosts=()
-if [[ -d ~/.ssh/config.d ]]; then
-    for file in ~/.ssh/config.d/*; do
+if [[ -d ~/.ssh/modules ]]; then
+    for file in ~/.ssh/modules/*/config.d/*; do
         [[ -r $file ]] && _ssh_config_hosts+=(${${(s: :)${(ps:\t:)${${(@M)${(f)"$(<$file)"}:#Host *}#Host }}}:#*[*?]*})
     done
 fi

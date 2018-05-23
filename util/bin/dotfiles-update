@@ -14,11 +14,11 @@ if [[ -z "${1}" ]]; then
         _d_pull "${DOTFILES_ROOT}/gpg"
     fi
 
-    if [[ -d "${DOTFILES_ROOT}/ssh" ]]; then
+    for ssh_module in "${DOTFILES_ROOT}/ssh/modules/"*; do
         echo
-        _d_info "============ SSH ==========="
-        _d_pull "${DOTFILES_ROOT}/ssh"
-    fi
+        _d_info "======== SSH $(basename "${ssh_module}") ========"
+        _d_pull "${ssh_module}"
+    done
 
     echo
     _d_info "===== SUBMOUDLE UPDATE ====="
