@@ -5,6 +5,5 @@ stdenv.mkDerivation {
 
   buildInputs = [
     php
-    phpPackages.phpcs
   ];
 }

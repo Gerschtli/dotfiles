@@ -39,6 +39,7 @@
       "disable-keybindings"
       "emmet"
       "ide-php"
+      "image-view"
       "language-gherkin"
       "language-hack"
       "language-ini"
@@ -52,7 +53,6 @@
       "linter"
       "linter-eslint"
       "linter-php"
-      "linter-phpcs"
       "linter-rust"
       "linter-ui-default"
       "python-tools"
@@ -104,7 +104,6 @@
       "latex"
       "linter-eslint"
       "linter-php"
-      "linter-phpcs"
       "linter-rust"
       "python-tools"
       "rustfmt"
@@ -123,8 +122,6 @@
     searchAllPanes: true
   "linter-eslint":
     fixOnSave: true
-  "linter-phpcs":
-    codeStandardOrConfigFile: "bin/phpcs.xml"
   nuclide:
     "atom-ide-code-format":
       formatOnSave: true
