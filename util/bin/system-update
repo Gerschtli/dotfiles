@@ -18,7 +18,7 @@ get_sudo_prefix() {
 }
 
 has_unit_enabled() {
-    systemctl is-enabled "${1}" > /dev/null 2>&1
+    [[ "$(systemctl is-enabled "${1}" 2> /dev/null)" == "enabled" ]]
 }
 
 is_root() {
@@ -111,7 +111,7 @@ update_pass() {
 }
 
 update_snap() {
-    if ! available snap; then
+    if ! available snap || ! $(snap list > /dev/null 2>&1); then
         return
     fi
 
