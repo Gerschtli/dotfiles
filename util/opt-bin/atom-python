@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-source "${HOME}/.dotfiles-variables"
-source "${DOTFILES_ROOT}/shell/functions.sh"
-source "${DOTFILES_ROOT}/nix/pnix-shell.sh"
-source "${DOTFILES_ROOT}/nix/functions.sh"
-
-nshell atom-python --command atom
