@@ -64,7 +64,7 @@ update_nix() {
         return
     fi
 
-    if [[ -r "${HOME}/.nix-channels" ]]; then
+    if [[ -r "${HOME}/.nix-channels" ]] && ! has_unit_enabled "nixos-upgrade.timer"; then
         log "nix" "update nix-channel"
         nix-channel --update
     fi
