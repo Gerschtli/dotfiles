@@ -27,12 +27,6 @@ if [[ -z "${1}" ]]; then
     _d_indent git -C "${DOTFILES_ROOT}" submodule foreach git pull
 fi
 
-if available termux-fix-shebang; then
-    echo
-    _d_info "==== TERMUX FIX SHEBANG ===="
-    _d_indent termux-fix-shebang "${DOTFILES_ROOT}"/{bootstrap.sh,*/bin/*,git/git-templates.symlink/hooks/{pre,post-,scripts/}*}
-fi
-
 echo
 _d_info "========= BOOTSTRAP ========"
 _d_indent "${DOTFILES_ROOT}/bootstrap.sh"
