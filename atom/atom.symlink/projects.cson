@@ -16,7 +16,9 @@
     ]
     enable_packages: [
       "autocomplete-python"
-      "language-pipfile"
+      "awesome-python-snippets"
+      "docblock-python"
+      "ide-python"
       "python-tools"
     ]
   }

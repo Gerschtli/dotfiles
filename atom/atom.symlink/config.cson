@@ -36,15 +36,17 @@
       "autocomplete-hack"
       "autocomplete-python"
       "autocomplete-racer"
+      "awesome-python-snippets"
       "disable-keybindings"
+      "docblock-python"
       "emmet"
       "ide-php"
+      "ide-python"
       "image-view"
       "language-gherkin"
       "language-hack"
       "language-ini"
       "language-latex"
-      "language-pipfile"
       "language-puppet"
       "language-rust"
       "language-tmux"
@@ -89,9 +91,12 @@
       "autocomplete-hack"
       "autocomplete-python"
       "autocomplete-racer"
+      "awesome-python-snippets"
       "disable-keybindings"
+      "docblock-python"
       "emmet"
       "ide-php"
+      "ide-python"
       "language-gherkin"
       "language-hack"
       "language-ini"
@@ -120,6 +125,10 @@
     prefillFromSelection: true
     preserveLastSearch: true
     searchAllPanes: true
+  "ide-python":
+    pylsPlugins:
+      pycodestyle:
+        maxLineLength: 120
   "linter-eslint":
     fixOnSave: true
   nuclide:
