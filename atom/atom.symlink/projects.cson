@@ -51,7 +51,8 @@
     title: "enable-packages"
     paths: [
       "~/projects/enable-packages"
-    ],
+    ]
+    devMode: true
     enable_packages: [
       "linter-eslint"
     ]
@@ -60,7 +61,8 @@
     title: "manage-packages"
     paths: [
       "~/projects/manage-packages"
-    ],
+    ]
+    devMode: true
     enable_packages: [
       "linter-eslint"
     ]
@@ -103,8 +105,8 @@
       "linter-php"
       "linter-phpcs"
     ]
-   }
-   {
+  }
+  {
     title: "backend"
     group: "profitmax"
     paths: [
