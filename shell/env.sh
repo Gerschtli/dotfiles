@@ -20,7 +20,7 @@ export LANGUAGE=en_US.UTF-8
 export TERM="screen-256color"
 
 if available less; then
-    export PAGER="less -F -X"
+    export PAGER="less -FRX"
 fi
 
 if available nvim; then
