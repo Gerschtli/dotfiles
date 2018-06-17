@@ -69,8 +69,10 @@ update_nix() {
         nix-channel --update
     fi
 
-    log "nix" "update packages installed via nix-env"
-    nix-env -u --always
+    if [[ "$(nix-env -q | wc -l)" != "0" ]]; then
+        log "nix" "update packages installed via nix-env"
+        nix-env -u --always
+    fi
 
     if [[ -d "${HOME}/.nix-shell" ]]; then
         log "nix" "updates nshell profiles"
