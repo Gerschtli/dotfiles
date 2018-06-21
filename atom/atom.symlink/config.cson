@@ -140,6 +140,8 @@
         maxLineLength: 120
   "linter-eslint":
     fixOnSave: true
+  "linter-less":
+    strictUnits: true
   nuclide:
     "atom-ide-code-format":
       formatOnSave: true
