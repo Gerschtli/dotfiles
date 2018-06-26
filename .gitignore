@@ -12,7 +12,7 @@ atom/atom.symlink/storage
 bin/*
 !bin/.gitkeep
 
-dwm/dwm-status.conf.symlink
+dwm/dwm-status.toml.symlink
 
 gpg/
 

@@ -1,0 +1,3 @@
+order = ["cpu_load", "audio", "time"]
+
+# vim: ft=toml
