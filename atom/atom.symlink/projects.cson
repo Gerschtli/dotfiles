@@ -42,6 +42,7 @@
     enable_packages: [
       "atom-language-rust"
       "autocomplete-racer"
+      "language-hjson"
       "language-rust"
       "linter-rust"
       "rustfmt"

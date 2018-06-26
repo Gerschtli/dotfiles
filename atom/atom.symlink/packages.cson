@@ -25,6 +25,7 @@ packages: [
   "intentions"
   "language-gherkin"
   "language-hack"
+  "language-hjson"
   "language-ini"
   "language-latex"
   "language-puppet"
