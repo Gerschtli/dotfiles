@@ -7,6 +7,7 @@ fi
 
 source "${HOME}/.dotfiles-variables"
 source "${DOTFILES_ROOT}/shell/functions.sh"
+source "${DOTFILES_ROOT}/util/script-functions"
 source "${DOTFILES_ROOT}/nix/functions.sh"
 source "${DOTFILES_ROOT}/nix/pnix-shell.sh"
 source "${DOTFILES_ROOT}/ssh/keychain.sh"
@@ -57,6 +58,29 @@ update_dotfiles() {
 
     log "dotfiles" "update"
     dotfiles-update
+
+    if _d_has_module "git"; then
+        log "dotfiles" "git hooks reload"
+        git-hooks-reload-all
+    fi
+
+    if _d_has_module "nvim"; then
+        log "dotfiles" "nvim update plugins"
+
+        if available vim && _d_has_option "nvim:enable-vim"; then
+            vim +PlugUpgrade +PlugInstall +PlugUpdate +qall
+        fi
+
+        if available nvim && ! _d_has_option "nvim:disable-nvim"; then
+            nvim +PlugUpgrade +PlugInstall +PlugUpdate +qall
+        fi
+    fi
+
+    if _d_has_module "tmux"; then
+        log "dotfiles" "tmux update plugins"
+        "${DOTFILES_ROOT}/tmux/tpm/bin/install_plugins"
+        "${DOTFILES_ROOT}/tmux/tpm/bin/update_plugins" all
+    fi
 }
 
 update_nix() {
