@@ -16,6 +16,10 @@ _d_get_symlink_target() {
     ls -l "${1}" 2> /dev/null | sed -e 's/.* -> //'
 }
 
+_d_has_module() {
+    _d_contains_element "${1}" "${MODULES[@]}"
+}
+
 _d_has_option() {
     _d_contains_element "${1}" "${OPTIONS[@]}"
 }
@@ -117,7 +121,7 @@ _d_use_module() {
     local file="${1}"
     local directory="${file%/*}"
     local module="${directory##*/}"
-    _d_contains_element "${module}" "${MODULES[@]}"
+    _d_has_module "${module}"
 }
 
 # vim: ft=sh
