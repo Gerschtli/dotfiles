@@ -1,4 +1,5 @@
 packages: [
+  "atom-beautify"
   "Atom-Hack"
   "atom-language-rust"
   "atom-material-syntax"
@@ -47,7 +48,6 @@ packages: [
   "pdf-view"
   "project-manager"
   "python-tools"
-  "rustfmt"
   "selection-highlight"
   "simple-align"
   "sort-lines"

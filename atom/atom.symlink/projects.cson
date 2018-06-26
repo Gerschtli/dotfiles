@@ -40,12 +40,12 @@
       "~/projects/dwm-status"
     ]
     enable_packages: [
+      "atom-beautify"
       "atom-language-rust"
       "autocomplete-racer"
       "language-hjson"
       "language-rust"
       "linter-rust"
-      "rustfmt"
     ]
   }
   {

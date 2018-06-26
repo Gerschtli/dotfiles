@@ -1,4 +1,9 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "3d709da5-1bc8-4b43-bfcf-e36e5a2d6ea9"
+    rust:
+      beautify_on_save: true
   "atom-material-ui":
     fonts:
       fontSize: 14
@@ -59,7 +64,6 @@
       "linter-rust"
       "linter-ui-default"
       "python-tools"
-      "rustfmt"
       "ssh-config"
       "tree-view"
       "whitespace"
@@ -97,6 +101,7 @@
     showInvisibles: true
   "enable-packages":
     optionalPackages: [
+      "atom-beautify"
       "Atom-Hack"
       "atom-language-rust"
       "autocomplete-hack"
@@ -122,7 +127,6 @@
       "linter-php"
       "linter-rust"
       "python-tools"
-      "rustfmt"
       "ssh-config"
     ]
     resetOnStart: false
