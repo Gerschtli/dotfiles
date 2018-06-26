@@ -13,8 +13,8 @@ xset -dpms
 xset r rate 250 30
 
 # Start dwm-status
-if available dwm-status && [[ -r "${HOME}/.dwm-status.conf" && "${sessionType##*+}" != "i3" ]]; then
-    dwm-status "${HOME}/.dwm-status.conf" &
+if available dwm-status && [[ -r "${HOME}/.dwm-status.toml" && "${sessionType##*+}" != "i3" ]]; then
+    dwm-status "${HOME}/.dwm-status.toml" &
 fi
 
 # Set screen locker
