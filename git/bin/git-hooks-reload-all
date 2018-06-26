@@ -7,6 +7,8 @@ list=("${DOTFILES_ROOT}")
 [[ -d "${DOTFILES_ROOT}/ssh/modules" ]] && list+=("${DOTFILES_ROOT}/ssh/modules/"*/)
 [[ -d "${HOME}/projects" ]]             && list+=("${HOME}/projects/"*/)
 [[ -d "${HOME}/projects/profitmax" ]]   && list+=("${HOME}/projects/profitmax/"*/)
+[[ -d "/etc/nixos" ]]                   && list+=("/etc/nixos")
+[[ -d "/etc/nixos/patches" ]]           && list+=("/etc/nixos/patches/"*/)
 
 for dir in "${list[@]}"; do
     if [[ -d "${dir}/.git" ]]; then
