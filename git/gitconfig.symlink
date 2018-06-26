@@ -31,7 +31,7 @@
     mm = !"git me origin/$(git branch-name)"
     mt = mergetool --no-prompt
     pd = push --no-verify --delete --progress origin
-    ph = push --progress --tags
+    ph = push --progress --tags --set-upstream
     pu = !"for i in $(git remote); do git ph ${i} $(git branch-name); done"
     pn = !"for i in $(git remote); do git ph --no-verify ${i} $(git branch-name); done"
     ra = rebase --abort
@@ -208,4 +208,4 @@
 [includeIf "gitdir:~/projects/profitmax/*"]
     path = ~/.git/gitconfig-profitmax
 
-# vim: filetype=gitconfig foldmethod=indent foldminlines=0
+# vim: ft=gitconfig
