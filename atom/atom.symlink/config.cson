@@ -37,6 +37,7 @@
       ]
     disabledPackages: [
       "Atom-Hack"
+      "atom-beautify"
       "atom-language-rust"
       "autocomplete-hack"
       "autocomplete-python"
