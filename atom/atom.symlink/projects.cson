@@ -47,6 +47,10 @@
       "language-rust"
       "linter-rust"
     ]
+    settings:
+      "atom-beautify":
+        rust:
+          beautify_on_save: true
   }
   {
     title: "enable-packages"
@@ -162,6 +166,22 @@
       "linter-php"
       "linter-phpcs"
     ]
+  }
+  {
+    title: "liquibase"
+    group: "profitmax"
+    paths: [
+      "~/projects/profitmax/liquibase"
+    ]
+    enable_packages: [
+      "atom-beautify"
+    ]
+    settings:
+      "atom-beautify":
+        xml:
+          default_beautifier: "JS Beautify"
+          indent_size: 4
+          wrap_attributes_indent_size: 4
   }
   {
     title: "profitmax"
