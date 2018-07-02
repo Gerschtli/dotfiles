@@ -60,5 +60,6 @@ run_scripts() {
 }
 
 track_result() {
-    RESULT=$((${RESULT} + $?))
+    local last_result="${1:-$?}"
+    RESULT=$((${RESULT} + ${last_result}))
 }
