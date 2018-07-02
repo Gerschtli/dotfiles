@@ -24,6 +24,7 @@ packages: [
   "ide-php"
   "ide-python"
   "intentions"
+  "language-dot"
   "language-gherkin"
   "language-hack"
   "language-hjson"

@@ -5,6 +5,7 @@
       "~/projects/bachelor-paper"
     ]
     enable_packages: [
+      "language-dot"
       "language-latex"
       "latex"
     ]
