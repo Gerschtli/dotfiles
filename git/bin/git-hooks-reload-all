@@ -3,14 +3,14 @@
 source "${HOME}/.dotfiles-variables"
 
 list=("${DOTFILES_ROOT}")
-[[ -d "${DOTFILES_ROOT}/gpg" ]]         && list+=("${DOTFILES_ROOT}/gpg")
-[[ -d "${DOTFILES_ROOT}/ssh/modules" ]] && list+=("${DOTFILES_ROOT}/ssh/modules/"*/)
-[[ -d "${HOME}/projects" ]]             && list+=("${HOME}/projects/"*/)
-[[ -d "${HOME}/projects/profitmax" ]]   && list+=("${HOME}/projects/profitmax/"*/)
-[[ -d "/etc/nixos" ]]                   && list+=("/etc/nixos")
+[[ -w "${DOTFILES_ROOT}/gpg" ]]         && list+=("${DOTFILES_ROOT}/gpg")
+[[ -w "${DOTFILES_ROOT}/ssh/modules" ]] && list+=("${DOTFILES_ROOT}/ssh/modules/"*/)
+[[ -w "${HOME}/projects" ]]             && list+=("${HOME}/projects/"*/)
+[[ -w "${HOME}/projects/profitmax" ]]   && list+=("${HOME}/projects/profitmax/"*/)
+[[ -w "/etc/nixos" ]]                   && list+=("/etc/nixos")
 
 for dir in "${list[@]}"; do
-    if [[ -d "${dir}/.git" ]]; then
+    if [[ -w "${dir}/.git" ]]; then
         rm -rf "${dir}/.git/hooks"
         git -C "${dir}" init --template="${DOTFILES_ROOT}/git/git.symlink/template"
     fi
