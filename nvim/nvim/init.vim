@@ -18,6 +18,7 @@ Plug 'elzr/vim-json'
 Plug 'lervag/vimtex'
 Plug 'rust-lang/rust.vim'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'vim-scripts/gitignore.vim'
 
 call plug#end()
 
