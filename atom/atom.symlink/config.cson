@@ -145,6 +145,8 @@
     pylsPlugins:
       pycodestyle:
         maxLineLength: 120
+  latex:
+    enableShellEscape: true
   "linter-eslint":
     fixOnSave: true
   "linter-less":
