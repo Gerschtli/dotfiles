@@ -72,7 +72,7 @@ set ruler
 set number
 set cursorline
 set cursorcolumn
-set colorcolumn=100
+set colorcolumn=120
 
 "" Enable modelines
 set modeline
