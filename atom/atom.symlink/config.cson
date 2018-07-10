@@ -94,7 +94,7 @@
     ]
   editor:
     fontFamily: "Fira Mono"
-    fontSize: 9
+    fontSize: 10
     preferredLineLength: 120
     scrollPastEnd: true
     showIndentGuide: true
