@@ -32,7 +32,7 @@ check() {
         echo "Max line length of ${GIT_HOOKS_MAX_LINE_LENGTH} is exeeded!"
         echo
         printf '=%.0s' $(seq 2 ${GIT_HOOKS_MAX_LINE_LENGTH}) && echo "|"
-        $git diff --cached | grep -C 2 "^\+.\{${GIT_HOOKS_MAX_LINE_LENGTH},\}" | sed -e 's,^\+,,'
+        $git diff --cached | grep -C 2 "^\+.\{$((${GIT_HOOKS_MAX_LINE_LENGTH} + 1)),\}" | sed -e 's,^[+-],,'
         printf '=%.0s' $(seq 2 ${GIT_HOOKS_MAX_LINE_LENGTH}) && echo "|"
     fi
 }
