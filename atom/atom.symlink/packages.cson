@@ -42,6 +42,8 @@ packages: [
   "linter-lesshint"
   "linter-php"
   "linter-rust"
+  "linter-spell"
+  "linter-spell-latex"
   "linter-ui-default"
   "manage-packages"
   "nix"

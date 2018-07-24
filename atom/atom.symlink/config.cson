@@ -46,7 +46,6 @@
       "emmet"
       "ide-php"
       "ide-python"
-      "image-view"
       "language-dot"
       "language-gherkin"
       "language-hack"
@@ -62,8 +61,11 @@
       "linter-eslint"
       "linter-php"
       "linter-rust"
+      "linter-spell"
+      "linter-spell-latex"
       "linter-ui-default"
       "python-tools"
+      "spell-check"
       "ssh-config"
       "tree-view"
       "whitespace"
@@ -127,6 +129,8 @@
       "linter-eslint"
       "linter-php"
       "linter-rust"
+      "linter-spell-latex"
+      "linter-spell"
       "python-tools"
       "ssh-config"
     ]
@@ -151,6 +155,10 @@
     fixOnSave: true
   "linter-less":
     strictUnits: true
+  "linter-spell":
+    defaultLanguages: [
+      "de_DE"
+    ]
   nuclide:
     "atom-ide-code-format":
       formatOnSave: true

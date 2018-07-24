@@ -8,6 +8,8 @@
       "language-dot"
       "language-latex"
       "latex"
+      "linter-spell-latex"
+      "linter-spell"
     ]
   }
   {
