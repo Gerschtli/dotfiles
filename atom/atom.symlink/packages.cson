@@ -55,5 +55,6 @@ packages: [
   "simple-align"
   "sort-lines"
   "ssh-config"
+  "Sublime-Style-Column-Selection"
   "vim-modeline"
 ]
