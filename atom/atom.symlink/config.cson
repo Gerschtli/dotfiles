@@ -150,7 +150,38 @@
       pycodestyle:
         maxLineLength: 120
   latex:
+    cleanPatterns: [
+      "**/*.aux.bak"
+      "**/*.aux"
+      "**/*.bcf"
+      "**/*.blg"
+      "**/*.dvi"
+      "**/*.fdb_latexmk"
+      "**/*.fls"
+      "**/*.idx.bak"
+      "**/*.idx"
+      "**/*.ilg"
+      "**/*.ind"
+      "**/*.lof"
+      "**/*.log"
+      "**/*.lol"
+      "**/*.lot"
+      "**/*.nav"
+      "**/*.out"
+      "**/*.ps"
+      "**/*.pyg"
+      "**/*.snm"
+      "**/*.toc"
+      "/{output_dir}/sage-plots-for-{jobname}.tex"
+      "/**/_minted-{jobname}"
+      "/**/{jobname}.pdf"
+      "/**/{jobname}.synctex.gz"
+      "/missfont.log"
+      "/texput.aux"
+      "/texput.log"
+    ]
     enableShellEscape: true
+    outputDirectory: "build"
   "linter-eslint":
     fixOnSave: true
   "linter-less":
