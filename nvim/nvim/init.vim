@@ -46,7 +46,7 @@ filetype indent on
 autocmd Filetype make set noexpandtab
 autocmd Filetype c set expandtab
 autocmd Filetype cpp set expandtab
-autocmd Filetype tex set tabstop=2 shiftwidth=2 textwidth=99
+autocmd Filetype tex set tabstop=2 shiftwidth=2 textwidth=119
 
 
 "" Remove trailing whitespaces on save
