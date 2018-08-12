@@ -2,12 +2,11 @@
     "extensions": [
         "EditorConfig.EditorConfig",
         "Equinusocio.vsc-material-theme",
-        "HvyIndustries.crane",
         "PKief.material-icon-theme",
         "Tyriar.sort-lines",
         "alefragnani.project-manager",
         "bbenoist.Nix",
-        "bmewburn.vscode-intelephense-client",
+        "bungcip.better-toml",
         "chrislajoie.vscode-modelines",
         "christian-kohler.path-intellisense",
         "felixfbecker.php-debug",
@@ -17,7 +16,6 @@
         "jasonterando.vscode-php-tdd",
         "rust-lang.rust",
         "sadesyllas.vscode-workspace-switcher",
-        "saviorisdead.RustyCode",
         "wmaurer.change-case",
         "wwm.better-align"
     ]

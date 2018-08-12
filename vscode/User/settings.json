@@ -1,9 +1,23 @@
 {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.dragAndDrop": false,
     "editor.fontFamily": "'Fira Mono'",
     "editor.fontSize": 13,
+    "editor.formatOnSave": true,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.renderWhitespace": "boundary",
+    "editor.rulers": [
+        120
+    ],
+    "explorer.confirmDelete": false,
+    "files.autoSave": "onFocusChange",
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "php.suggest.basic": false,
+    "search.useIgnoreFiles": false,
+    "update.channel": "none",
+    "window.menuBarVisibility": "toggle",
     "window.zoomLevel": -1,
     "workbench.iconTheme": "eq-material-theme-icons",
     "workbench.startupEditor": "newUntitledFile"
