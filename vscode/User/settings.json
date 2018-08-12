@@ -1,0 +1,10 @@
+{
+    "editor.fontFamily": "'Fira Mono'",
+    "editor.fontSize": 13,
+    "editor.minimap.enabled": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderWhitespace": "boundary",
+    "window.zoomLevel": -1,
+    "workbench.iconTheme": "eq-material-theme-icons",
+    "workbench.startupEditor": "newUntitledFile"
+}

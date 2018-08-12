@@ -1,0 +1,5 @@
+mkdir -p "${HOME}/.config/Code"
+
+_d_link_file "${DOTFILES_ROOT}/vscode/User" "${HOME}/.config/Code/User"
+
+# vim: ft=sh

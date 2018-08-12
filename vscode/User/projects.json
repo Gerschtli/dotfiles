@@ -1,0 +1,20 @@
+[
+	{
+		"name": "dotfiles",
+		"rootPath": "$home/.dotfiles",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "dwm-status",
+		"rootPath": "$home/projects/dwm-status",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "frontend",
+		"rootPath": "$home/projects/profitmax/frontend",
+		"paths": [],
+		"group": "profitmax"
+	}
+]

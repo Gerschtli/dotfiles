@@ -22,6 +22,7 @@
 | sublime      | Configuration for sublime text 3                                  |
 | tmux         | Configuration for tmux and tmux profiles                          |
 | vagrant      | Aliases for vagrant                                               |
+| vscode       | Configuration for vscode                                          |
 | wm           | Base configuration for window manager                             |
 | zsh          | Configuration for zsh and zsh-{autosuggestions,completions}       |
 

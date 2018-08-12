@@ -36,3 +36,5 @@ sublime/User/Package Control.*
 sublime/User/phpcs.sublime-settings
 
 tmux/tprofile.conf
+
+vscode/User/workspaceStorage/
