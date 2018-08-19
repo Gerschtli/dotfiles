@@ -98,6 +98,15 @@
       "~/projects/serversetup"
     ]
   }
+  {
+    title: "teamspeak-update-notifier"
+    paths: [
+      "~/projects/teamspeak-update-notifier"
+    ]
+    enable_packages: [
+      "language-ini"
+    ]
+  }
 
   {
     title: "admin"
