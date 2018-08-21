@@ -104,7 +104,12 @@
       "~/projects/teamspeak-update-notifier"
     ]
     enable_packages: [
+      "autocomplete-python"
+      "awesome-python-snippets"
+      "docblock-python"
+      "ide-python"
       "language-ini"
+      "python-tools"
     ]
   }
 
