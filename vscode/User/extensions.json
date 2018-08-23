@@ -1,21 +1,21 @@
 {
     "extensions": [
-        "EditorConfig.EditorConfig",
-        "Equinusocio.vsc-material-theme",
-        "PKief.material-icon-theme",
-        "Tyriar.sort-lines",
         "alefragnani.project-manager",
         "bbenoist.Nix",
         "bungcip.better-toml",
         "chrislajoie.vscode-modelines",
         "christian-kohler.path-intellisense",
+        "EditorConfig.EditorConfig",
+        "Equinusocio.vsc-material-theme",
         "felixfbecker.php-debug",
         "felixfbecker.php-intellisense",
         "felixfbecker.php-pack",
         "golf1052.code-sync",
         "jasonterando.vscode-php-tdd",
+        "PKief.material-icon-theme",
         "rust-lang.rust",
         "sadesyllas.vscode-workspace-switcher",
+        "Tyriar.sort-lines",
         "wmaurer.change-case",
         "wwm.better-align"
     ]
