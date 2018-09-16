@@ -26,6 +26,31 @@
     ]
   }
   {
+    title: "dont-fall-crew-backend"
+    paths: [
+      "~/projects/dont-fall-crew-backend"
+    ]
+    enable_packages: [
+      "autocomplete-python"
+      "awesome-python-snippets"
+      "docblock-python"
+      "ide-python"
+      "python-tools"
+    ]
+  }
+  {
+    title: "dont-fall-crew-frontend"
+    paths: [
+      "~/projects/dont-fall-crew-frontend"
+    ]
+    enable_packages: [
+      "ide-vue"
+      "language-pug"
+      "language-vue"
+      "linter-eslint"
+    ]
+  }
+  {
     title: "dotfiles"
     paths: [
       "~/.dotfiles"
@@ -112,7 +137,6 @@
       "python-tools"
     ]
   }
-
   {
     title: "admin"
     group: "profitmax"
