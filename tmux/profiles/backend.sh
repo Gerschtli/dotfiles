@@ -2,4 +2,4 @@ ROOT="${HOME}/projects/profitmax/backend"
 
 PRESET="git-vagrant"
 
-NIX_PROFILE="work-php"
+NIX_PROFILE="work-php7"
