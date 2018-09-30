@@ -18,6 +18,7 @@
 | nvim         | Configuration for nvim                                            |
 | php          | Aliases for composer                                              |
 | shell        | General configuration for shells (aliases, environment variables) |
+| sqlite       | Configuration for sqlite cli                                      |
 | ssh          | General configuration for ssh, keychain and modules               |
 | sublime      | Configuration for sublime text 3                                  |
 | tmux         | Configuration for tmux and tmux profiles                          |
