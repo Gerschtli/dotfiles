@@ -16,8 +16,6 @@ dwm/dwm-status.toml.symlink
 
 gpg/
 
-nix/nixpkgs.symlink.config/overlays/rust-overlay.nix
-
 nodejs/completion.sh
 
 nvim/nvim/.netrwhist

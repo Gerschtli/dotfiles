@@ -1,3 +1,0 @@
-_d_link_file "${DOTFILES_ROOT}/nix/nixpkgs-mozilla/rust-overlay.nix" "${DOTFILES_ROOT}/nix/nixpkgs.symlink.config/overlays/rust-overlay.nix"
-
-# vim: ft=sh
