@@ -1,0 +1,7 @@
+[commit]
+    template = ~/.git/commit-pveu.msg
+
+[user]
+    email = th@preisvergleich.eu
+
+# vim: filetype=gitconfig

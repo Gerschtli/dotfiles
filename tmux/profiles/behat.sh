@@ -1,4 +1,4 @@
-ROOT="${HOME}/projects/profitmax/behat"
+ROOT="${HOME}/projects/pveu/behat"
 
 PRESET="git-single"
 

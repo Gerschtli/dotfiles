@@ -13,8 +13,8 @@
 	},
 	{
 		"name": "frontend",
-		"rootPath": "$home/projects/profitmax/frontend",
+		"rootPath": "$home/projects/pveu/frontend",
 		"paths": [],
-		"group": "profitmax"
+		"group": "pveu"
 	}
 ]

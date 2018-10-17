@@ -6,7 +6,7 @@ list=("${DOTFILES_ROOT}")
 [[ -w "${DOTFILES_ROOT}/gpg" ]]         && list+=("${DOTFILES_ROOT}/gpg")
 [[ -w "${DOTFILES_ROOT}/ssh/modules" ]] && list+=("${DOTFILES_ROOT}/ssh/modules/"*/)
 [[ -w "${HOME}/projects" ]]             && list+=("${HOME}/projects/"*/)
-[[ -w "${HOME}/projects/profitmax" ]]   && list+=("${HOME}/projects/profitmax/"*/)
+[[ -w "${HOME}/projects/pveu" ]]        && list+=("${HOME}/projects/pveu/"*/)
 [[ -w "/etc/nixos" ]]                   && list+=("/etc/nixos")
 
 for dir in "${list[@]}"; do

@@ -2,8 +2,8 @@
     "folders":
     [
         {
-            "name": "profitmax-behat",
-            "path": "~/projects/profitmax/behat",
+            "name": "pveu-behat",
+            "path": "~/projects/pveu/behat",
             "folder_exclude_patterns": [
                 ".phpintel",
                 "nbproject"

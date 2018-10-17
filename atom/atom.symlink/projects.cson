@@ -140,9 +140,9 @@
   }
   {
     title: "admin"
-    group: "profitmax"
+    group: "pveu"
     paths: [
-      "~/projects/profitmax/admin"
+      "~/projects/pveu/admin"
     ]
     enable_packages: [
       "disable-keybindings"
@@ -155,9 +155,9 @@
   }
   {
     title: "backend"
-    group: "profitmax"
+    group: "pveu"
     paths: [
-      "~/projects/profitmax/backend"
+      "~/projects/pveu/backend"
     ]
     enable_packages: [
       "ide-php"
@@ -169,9 +169,9 @@
   }
   {
     title: "behat"
-    group: "profitmax"
+    group: "pveu"
     paths: [
-      "~/projects/profitmax/behat"
+      "~/projects/pveu/behat"
     ]
     enable_packages: [
       "ide-php"
@@ -182,9 +182,9 @@
   }
   {
     title: "frontend"
-    group: "profitmax"
+    group: "pveu"
     paths: [
-      "~/projects/profitmax/frontend"
+      "~/projects/pveu/frontend"
     ]
     enable_packages: [
       "disable-keybindings"
@@ -199,9 +199,9 @@
   }
   {
     title: "library"
-    group: "profitmax"
+    group: "pveu"
     paths: [
-      "~/projects/profitmax/library"
+      "~/projects/pveu/library"
     ]
     enable_packages: [
       "ide-php"
@@ -211,9 +211,9 @@
   }
   {
     title: "liquibase"
-    group: "profitmax"
+    group: "pveu"
     paths: [
-      "~/projects/profitmax/liquibase"
+      "~/projects/pveu/liquibase"
     ]
     settings:
       "atom-beautify":
@@ -227,9 +227,9 @@
   }
   {
     title: "profitmax"
-    group: "profitmax"
+    group: "pveu"
     paths: [
-      "~/projects/profitmax/profitmax"
+      "~/projects/pveu/profitmax"
     ]
     enable_packages: [
       "disable-keybindings"

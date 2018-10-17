@@ -205,7 +205,7 @@
     title-blur = blue default
     title-focus = blue default bold
 
-[includeIf "gitdir:~/projects/profitmax/*"]
-    path = ~/.git/gitconfig-profitmax
+[includeIf "gitdir:~/projects/pveu/*"]
+    path = ~/.git/gitconfig-pveu
 
 # vim: ft=gitconfig

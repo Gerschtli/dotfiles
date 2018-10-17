@@ -12,9 +12,9 @@ if [[ -d "${PROJECTS}" ]]; then
         hash -d "p-$(basename ${i})"="${i}"
     done
 
-    if [[ -d "${PROJECTS}/profitmax" ]]; then
-        for i in "${PROJECTS}/profitmax"/*(/); do
-            hash -d "c-$(basename ${i})"="${i}"
+    if [[ -d "${PROJECTS}/pveu" ]]; then
+        for i in "${PROJECTS}/pveu"/*(/); do
+            hash -d "w-$(basename ${i})"="${i}"
         done
     fi
 fi

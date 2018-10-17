@@ -2,15 +2,16 @@
     "folders":
     [
         {
-            "name": "profitmax-backend",
-            "path": "~/projects/profitmax/backend",
+            "name": "pveu-admin",
+            "path": "~/projects/pveu/admin",
             "file_exclude_patterns": [
                 "cache.properties",
                 "rsync.conf",
                 "sftp-config.json"
             ],
             "folder_exclude_patterns": [
-                ".phpintel"
+                ".phpintel",
+                "node_modules"
             ]
         }
     ]

@@ -1,3 +1,3 @@
-ROOT="${HOME}/projects/profitmax/liquibase"
+ROOT="${HOME}/projects/pveu/liquibase"
 
 PRESET="git-single"

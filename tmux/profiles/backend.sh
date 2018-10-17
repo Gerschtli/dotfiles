@@ -1,4 +1,4 @@
-ROOT="${HOME}/projects/profitmax/backend"
+ROOT="${HOME}/projects/pveu/backend"
 
 PRESET="git-vagrant"
 

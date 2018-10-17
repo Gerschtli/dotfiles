@@ -1,3 +1,3 @@
-ROOT="${HOME}/projects/profitmax/utils"
+ROOT="${HOME}/projects/pveu/utils"
 
 PRESET="git-single"
