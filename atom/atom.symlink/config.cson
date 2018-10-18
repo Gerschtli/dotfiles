@@ -35,7 +35,6 @@
       ]
     disabledPackages: [
       "Atom-Hack"
-      "atom-beautify"
       "atom-language-rust"
       "autocomplete-hack"
       "autocomplete-python"
@@ -107,7 +106,6 @@
     showInvisibles: true
   "enable-packages":
     optionalPackages: [
-      "atom-beautify"
       "Atom-Hack"
       "atom-language-rust"
       "autocomplete-hack"
