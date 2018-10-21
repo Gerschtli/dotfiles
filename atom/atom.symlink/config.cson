@@ -1,4 +1,6 @@
 "*":
+  "atom-autocomplete-php":
+    binComposer: "composer"
   "atom-beautify":
     general:
       _analyticsUserId: "3d709da5-1bc8-4b43-bfcf-e36e5a2d6ea9"
@@ -35,6 +37,8 @@
       ]
     disabledPackages: [
       "Atom-Hack"
+      "atom-autocomplete-php"
+      "atom-beautify"
       "atom-language-rust"
       "autocomplete-hack"
       "autocomplete-python"

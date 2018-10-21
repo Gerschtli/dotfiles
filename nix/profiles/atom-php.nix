@@ -5,5 +5,6 @@ stdenv.mkDerivation {
 
   buildInputs = [
     php
+    phpPackages.composer
   ];
 }
