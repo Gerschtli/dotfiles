@@ -21,6 +21,8 @@ fi
 xss-lock -v -- lock-screen &
 # Start NetworkManager Tray Icon
 available nm-applet && nm-applet &
+# Start dropbox
+available dropbox && dropbox start
 
 # Send notification if last nix-channel --update is more than a week ago
 if [[ $(find /nix/var/nix/profiles/per-user -type l -iname "channels-*" -mtime -7 | wc -l) == 0 ]]; then
