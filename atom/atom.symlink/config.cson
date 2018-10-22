@@ -38,7 +38,6 @@
     disabledPackages: [
       "Atom-Hack"
       "atom-autocomplete-php"
-      "atom-beautify"
       "atom-language-rust"
       "autocomplete-hack"
       "autocomplete-python"
