@@ -6,7 +6,6 @@
 
 # Provide links or keys to any relevant tickets, articles or other resources
 # Example: Github issue #23
-BRANCHNAME
 
 
 # --- COMMIT END ---

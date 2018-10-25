@@ -97,6 +97,7 @@
 
 [commit]
     status = true
+    template = ~/.git/commit.msg
 
 [core]
     compression = 9
