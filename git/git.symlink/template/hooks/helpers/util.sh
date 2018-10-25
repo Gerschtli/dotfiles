@@ -43,7 +43,7 @@ has_match() {
     local expression="${1}"
     local input="${2:-/dev/stdin}"
 
-    cat "${input}" | grep -E "${expression}" > /dev/null 2>&1
+    grep -E "${expression}" "${input}" > /dev/null 2>&1
 }
 
 run_scripts() {
