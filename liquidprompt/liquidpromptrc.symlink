@@ -70,7 +70,7 @@ LP_ENABLE_PERM=1
 
 # Enable the proxy detection feature.
 # Recommended value is 1
-LP_ENABLE_PROXY=1
+LP_ENABLE_PROXY=0
 
 # Enable the jobs feature.
 # Recommended value is 1
@@ -99,19 +99,19 @@ LP_ENABLE_GIT=1
 
 # Enable the Subversion special features.
 # Recommended value is 1
-LP_ENABLE_SVN=1
+LP_ENABLE_SVN=0
 
 # Enable the Mercurial special features.
 # Recommended value is 1
-LP_ENABLE_HG=1
+LP_ENABLE_HG=0
 
 # Enable the Fossil special features.
 # Recommended value is 1
-LP_ENABLE_FOSSIL=1
+LP_ENABLE_FOSSIL=0
 
 # Enable the Bazaar special features.
 # Recommanded value is 1
-LP_ENABLE_BZR=1
+LP_ENABLE_BZR=0
 
 # Show time of when the current prompt was displayed. (Must be enabled and
 # disabled in the config file and not after liquidprompt has already been
@@ -132,10 +132,10 @@ LP_ENABLE_VIRTUALENV=0
 
 # Display the enabled software collections, if any
 # Recommended value is 1
-LP_ENABLE_SCLS=1
+LP_ENABLE_SCLS=0
 
 # Show average system temperature
-LP_ENABLE_TEMP=1
+LP_ENABLE_TEMP=0
 
 # When showing the time, use an analog clock instead of numeric values.
 # The analog clock is "accurate" to the nearest half hour.
