@@ -68,10 +68,6 @@
     paths: [
       "~/projects/dwm-status"
     ]
-    settings:
-      "atom-beautify":
-        rust:
-          beautify_on_save: true
     enable_packages: [
       "atom-language-rust"
       "autocomplete-racer"
@@ -214,12 +210,6 @@
     paths: [
       "~/projects/pveu/liquibase"
     ]
-    settings:
-      "atom-beautify":
-        xml:
-          default_beautifier: "JS Beautify"
-          indent_size: 4
-          wrap_attributes_indent_size: 4
   }
   {
     title: "profitmax"
