@@ -43,6 +43,7 @@
       ]
     disabledPackages: [
       "Atom-Hack"
+      "atom-autocomplete-php"
       "atom-language-rust"
       "autocomplete-hack"
       "autocomplete-python"
@@ -114,6 +115,7 @@
     showInvisibles: true
   "enable-packages":
     optionalPackages: [
+      "atom-autocomplete-php"
       "Atom-Hack"
       "atom-language-rust"
       "autocomplete-hack"
