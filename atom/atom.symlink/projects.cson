@@ -233,4 +233,18 @@
       "linter-phpcs"
     ]
   }
+  {
+    title: "zendframework1"
+    group: "pveu"
+    paths: [
+      "~/projects/pveu/zendframework1"
+    ]
+    enable_packages: [
+      "atom-autocomplete-php"
+      "ide-php"
+      "language-ini"
+      "linter-php"
+      "linter-phpcs"
+    ]
+  }
 ]
