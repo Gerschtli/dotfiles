@@ -11,8 +11,8 @@ install() {
 }
 
 check() {
-    if composer list | has_match "^  test\s+"; then
-        composer test; track_result
+    if composer list --raw | has_match "^verify\s+"; then
+        composer verify; track_result
     fi
 }
 
