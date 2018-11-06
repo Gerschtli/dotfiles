@@ -4,6 +4,12 @@
   "atom-beautify":
     general:
       _analyticsUserId: "3d709da5-1bc8-4b43-bfcf-e36e5a2d6ea9"
+    rust:
+      beautify_on_save: true
+    xml:
+      default_beautifier: "JS Beautify"
+      indent_size: 4
+      wrap_attributes_indent_size: 4
   "atom-material-ui":
     fonts:
       fontSize: 14
@@ -37,6 +43,7 @@
       ]
     disabledPackages: [
       "Atom-Hack"
+      "atom-autocomplete-php"
       "atom-language-rust"
       "autocomplete-hack"
       "autocomplete-python"
@@ -108,6 +115,7 @@
     showInvisibles: true
   "enable-packages":
     optionalPackages: [
+      "atom-autocomplete-php"
       "Atom-Hack"
       "atom-language-rust"
       "autocomplete-hack"

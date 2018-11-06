@@ -9,7 +9,10 @@ let
   inherit (lib.versions) majorMinor;
 
   includePackage = directive: packageName:
-    "${directive} = ${phpPackages.${packageName}}/lib/php/extensions/${packageName}.so";
+    let
+      soName = if packageName == "apcu_bc" then "apc" else packageName;
+    in
+      "${directive} = ${phpPackages.${packageName}}/lib/php/extensions/${soName}.so";
 
   defaultPhpIni = readFile "${phpPackage}/etc/php.ini";
 
@@ -25,6 +28,8 @@ let
 
     error_reporting = E_ALL
     display_errors  = On
+
+    memory_limit=512M
   '';
 
 in

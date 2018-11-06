@@ -24,7 +24,7 @@ rec {
     };
   });
 
-  php55Packages = (super.callPackage "${pkgs.path}/pkgs/top-level/php-packages.nix" {
+  php55Packages = (super.callPackage (pkgs.path + "/pkgs/top-level/php-packages.nix") {
     pkgs = self;
     php  = php55;
   }) // { recurseForDerivations = true; };
