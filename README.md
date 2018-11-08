@@ -17,6 +17,7 @@
 | nodejs       | Completion for npm, adds nvm-init function                        |
 | nvim         | Configuration for nvim                                            |
 | php          | Aliases for composer                                              |
+| pure         | Configuration for pure                                            |
 | shell        | General configuration for shells (aliases, environment variables) |
 | sqlite       | Configuration for sqlite cli                                      |
 | ssh          | General configuration for ssh, keychain and modules               |
