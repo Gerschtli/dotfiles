@@ -1,10 +1,32 @@
-xterm*background: black
-xterm*faceName: Fira Code:size=7:antialias=true
-xterm*foreground: white
-xterm*metaSendsEscape: true
-xterm*selectToClipboard: true
-xterm*utf8: 1
-
 #define _color_blue #6d68ff
-xterm*color4: _color_blue
-xterm*color12: _color_blue
+
+
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
+
+URxvt*background:           black
+URxvt*boldFont:             xft:Ubuntu Mono Nerd Font:bold:pixelsize=11
+URxvt*boldItalicFont:       xft:Ubuntu Mono Nerd Font:bold:italic:pixelsize=11
+URxvt*font:                 xft:Ubuntu Mono Nerd Font:pixelsize=11
+URxvt*foreground:           white
+URxvt*italicFont:           xft:Ubuntu Mono Nerd Font:italic:pixelsize=11
+URxvt*scrollBar:            false
+URxvt*underlineURLs:        true
+
+URxvt*color4:               _color_blue
+URxvt*color12:              _color_blue
+
+
+xterm*background:           black
+xterm*faceName:             Fira Code:size=7:antialias=true
+xterm*foreground:           white
+xterm*metaSendsEscape:      true
+xterm*selectToClipboard:    true
+xterm*utf8:                 1
+
+xterm*color4:               _color_blue
+xterm*color12:              _color_blue
