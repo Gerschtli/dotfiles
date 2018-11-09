@@ -107,8 +107,8 @@
       "tab"
     ]
   editor:
-    fontFamily: "Fira Mono"
-    fontSize: 10
+    fontFamily: "Ubuntu Mono"
+    fontSize: 12
     preferredLineLength: 120
     scrollPastEnd: true
     showIndentGuide: true
