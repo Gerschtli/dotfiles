@@ -1,8 +1,7 @@
 {
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.dragAndDrop": false,
-    "editor.fontFamily": "'Fira Mono'",
-    "editor.fontSize": 13,
+    "editor.fontFamily": "'Ubuntu Mono'",
     "editor.formatOnSave": true,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
@@ -19,6 +18,7 @@
     "update.channel": "none",
     "window.menuBarVisibility": "toggle",
     "window.zoomLevel": -1,
+    "workbench.colorTheme": "Material Theme High Contrast",
     "workbench.iconTheme": "eq-material-theme-icons",
     "workbench.startupEditor": "newUntitledFile"
 }
