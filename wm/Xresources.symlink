@@ -15,8 +15,22 @@ URxvt*font:                 xft:UbuntuMono Nerd Font:pixelsize=11
 URxvt*foreground:           white
 URxvt*italicFont:           xft:UbuntuMono Nerd Font:italic:pixelsize=11
 URxvt*letterSpace:          -1
+URxvt*modifier:             alt
 URxvt*scrollBar:            false
-URxvt*underlineURLs:        true
+
+URxvt*perl-ext-common:      default,font-size,keyboard-select,selection-to-clipboard,url-select
+
+URxvt.keysym.C-minus:       perl:font-size:decrease
+URxvt.keysym.C-plus:        perl:font-size:increase
+URxvt.keysym.C-equal:       perl:font-size:reset
+URxvt.font-size.step:       2
+
+URxvt.keysym.M-s:           perl:keyboard-select:activate
+URxvt.keysym.M-r:           perl:keyboard-select:search
+
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.url-select.underline: true
+URxvt.url-select.launcher:  chrome
 
 URxvt*color4:               _color_blue
 URxvt*color12:              _color_blue
