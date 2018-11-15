@@ -28,7 +28,6 @@ URxvt.keysym.M-s:           perl:keyboard-select:activate
 URxvt.keysym.M-r:           perl:keyboard-select:search
 
 URxvt.keysym.M-u:           perl:url-select:select_next
-URxvt.url-select.underline: true
 URxvt.url-select.launcher:  chrome
 
 URxvt*color4:               _color_blue
