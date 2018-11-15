@@ -234,6 +234,13 @@
     ]
   }
   {
+    title: "utils"
+    group: "pveu"
+    paths: [
+      "~/projects/pveu/utils"
+    ]
+  }
+  {
     title: "zendframework1"
     group: "pveu"
     paths: [
