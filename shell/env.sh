@@ -1,5 +1,3 @@
-export TZ="Europe/Berlin"
-
 export LC_CTYPE=en_US.UTF-8
 export LC_NUMERIC=en_US.UTF-8
 export LC_TIME=de_DE.UTF-8
