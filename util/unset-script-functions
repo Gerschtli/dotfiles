@@ -5,6 +5,7 @@ unset -f \
     _d_has_option \
     _d_indent \
     _d_info \
+    _d_is_addable_to_path \
     _d_link_file \
     _d_print \
     _d_pull \

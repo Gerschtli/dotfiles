@@ -39,6 +39,11 @@ _d_info() {
     _d_print "34" "INFO" "$@"
 }
 
+_d_is_addable_to_path() {
+    local dir="${1}"
+    [[ -d "${dir}" && ! "${PATH}" =~ (^|:)"${dir}"(:|$) ]]
+}
+
 _d_link_file() {
     local target="${1}"
     local linkname="${2}"
