@@ -9,6 +9,17 @@
           $0
       }
     """
+  'new method':
+    'prefix': 'me'
+    'body': """
+      ${1:public} function ${2:name}($3)${4: : ${5:void}}
+      {
+          $0
+      }
+    """
+  'declare strict':
+    'prefix': 'decl'
+    'body': 'declare(strict_types=1);'
   'var_dump':
     'prefix': 'vd'
     'body': 'var_dump($0);'
