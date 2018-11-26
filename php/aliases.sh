@@ -1,9 +1,10 @@
 if available php || available hhvm; then
-    alias cinstall="composer --prefer-source --optimize-autoloader install"
-    alias cupdate="composer --prefer-source --optimize-autoloader update"
+    alias com="composer"
+    alias cinstall="composer install"
+    alias cupdate="composer update"
 
     alias behat="./bin/behat -vvv"
-    alias ut="./bin/phpunit"
+    alias ut="./vendor/bin/phpunit"
 
     if available phpenmod && available phpdismod; then
         alias phpenxdebug="sudo phpenmod -s cli xdebug"
