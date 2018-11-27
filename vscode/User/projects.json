@@ -12,6 +12,12 @@
 		"group": ""
 	},
 	{
+		"name": "backend",
+		"rootPath": "$home/projects/pveu/backend",
+		"paths": [],
+		"group": "pveu"
+	},
+	{
 		"name": "frontend",
 		"rootPath": "$home/projects/pveu/frontend",
 		"paths": [],
