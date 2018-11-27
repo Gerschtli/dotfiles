@@ -4,20 +4,66 @@
     "editor.fontFamily": "'Ubuntu Mono'",
     "editor.formatOnSave": true,
     "editor.minimap.enabled": false,
+    "editor.multiCursorMergeOverlapping": false,
     "editor.multiCursorModifier": "ctrlCmd",
+    "editor.parameterHints.cycle": true,
+    "editor.renderLineHighlight": "all",
     "editor.renderWhitespace": "boundary",
     "editor.rulers": [
         120
     ],
+    "editor.showFoldingControls": "always",
+    "editor.tabCompletion": "on",
+    "editor.tokenColorCustomizations": {
+        "[Material Theme High Contrast]": {
+            "textMateRules": [
+                {
+                    "name": "Keyword Control",
+                    "scope": [
+                        "keyword.control"
+                    ],
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#C792EA"
+                    }
+                }
+            ]
+        }
+    },
     "explorer.confirmDelete": false,
     "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
+    "materialTheme.accent": "Teal",
+    "materialTheme.autoApplyIcons": true,
     "php.suggest.basic": false,
     "search.useIgnoreFiles": false,
+    "sortLines.filterBlankLines": true,
     "update.channel": "none",
     "window.menuBarVisibility": "toggle",
     "window.zoomLevel": -1,
+    "workbench.colorCustomizations": {
+        "activityBarBadge.background": "#80CBC4",
+        "list.activeSelectionForeground": "#80CBC4",
+        "list.inactiveSelectionForeground": "#80CBC4",
+        "list.highlightForeground": "#80CBC4",
+        "scrollbarSlider.activeBackground": "#80CBC450",
+        "editorSuggestWidget.highlightForeground": "#80CBC4",
+        "textLink.foreground": "#80CBC4",
+        "progressBar.background": "#80CBC4",
+        "pickerGroup.foreground": "#80CBC4",
+        "tab.activeBorder": "#80CBC4",
+        "notificationLink.foreground": "#80CBC4",
+        "editorWidget.resizeBorder": "#80CBC4",
+        "editorWidget.border": "#80CBC4",
+        "settings.modifiedItemIndicator": "#80CBC4",
+        "settings.headerForeground": "#80CBC4",
+        "panelTitle.activeBorder": "#80CBC4",
+        "breadcrumb.activeSelectionForeground": "#80CBC4",
+        "menu.selectionForeground": "#80CBC4",
+        "menubar.selectionForeground": "#80CBC4"
+    },
     "workbench.colorTheme": "Material Theme High Contrast",
     "workbench.iconTheme": "eq-material-theme-icons",
     "workbench.startupEditor": "newUntitledFile"
