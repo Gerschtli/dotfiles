@@ -4,7 +4,14 @@ if available php || available hhvm; then
     alias cupdate="composer update"
 
     alias behat="./bin/behat -vvv"
-    alias ut="./vendor/bin/phpunit"
+
+    function ut() {
+        if [[ -x "./bin/phpunit" ]]; then
+            ./bin/phpunit
+        else
+            composer phpunit
+        fi
+    }
 
     if available phpenmod && available phpdismod; then
         alias phpenxdebug="sudo phpenmod -s cli xdebug"
