@@ -35,4 +35,4 @@ sublime/User/phpcs.sublime-settings
 
 tmux/tprofile.conf
 
-vscode/User/workspaceStorage/
+vscode/code-sync/local-settings.json

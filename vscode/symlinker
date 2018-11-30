@@ -1,5 +1,10 @@
-mkdir -p "${HOME}/.config/Code"
+LOCAL_SETTINGS="${DOTFILES_ROOT}/vscode/code-sync/local-settings.json"
+EXTENSION_DIR="$(find "${HOME}/.vscode/extensions" -type d -name "golf1052.code-sync-*")"
 
-_d_link_file "${DOTFILES_ROOT}/vscode/User" "${HOME}/.config/Code/User"
+if [[ -r "${LOCAL_SETTINGS}" && -d "${EXTENSION_DIR}" ]]; then
+    _d_link_file "${DOTFILES_ROOT}/vscode/code-sync/local-settings.json" "${EXTENSION_DIR}/local-settings.json"
+fi
+
+unset EXTENSION_DIR LOCAL_SETTINGS
 
 # vim: ft=sh

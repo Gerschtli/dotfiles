@@ -1,0 +1,38 @@
+[
+    {
+        "name": "dotfiles",
+        "rootPath": "$home/.dotfiles",
+        "paths": [],
+        "group": ""
+    },
+    {
+        "name": "dwm-status",
+        "rootPath": "$home/projects/dwm-status",
+        "paths": [],
+        "group": ""
+    },
+    {
+        "name": "behat",
+        "rootPath": "$home/projects/pveu/behat",
+        "paths": [],
+        "group": "pveu"
+    },
+    {
+        "name": "backend",
+        "rootPath": "$home/projects/pveu/backend",
+        "paths": [],
+        "group": "pveu"
+    },
+    {
+        "name": "frontend",
+        "rootPath": "$home/projects/pveu/frontend",
+        "paths": [],
+        "group": "pveu"
+    },
+    {
+        "name": "liquibase",
+        "rootPath": "$home/projects/pveu/liquibase",
+        "paths": [],
+        "group": "pveu"
+    }
+]
