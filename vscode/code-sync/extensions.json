@@ -1,5 +1,6 @@
 {
     "extensions": [
+        "Tyriar.sort-lines",
         "alefragnani.project-manager",
         "alexkrechik.cucumberautocomplete",
         "bbenoist.Nix",
@@ -20,8 +21,8 @@
         "robertohuertasm.vscode-icons",
         "rust-lang.rust",
         "sadesyllas.vscode-workspace-switcher",
+        "saviorisdead.RustyCode",
         "sidneys1.gitconfig",
-        "Tyriar.sort-lines",
         "wmaurer.change-case",
         "wwm.better-align"
     ]
