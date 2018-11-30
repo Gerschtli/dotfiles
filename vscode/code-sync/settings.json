@@ -50,6 +50,6 @@
         "gitDecoration.untrackedResourceForeground": "#f47878"
     },
     "workbench.colorTheme": "Material Theme High Contrast",
-    "workbench.iconTheme": "eq-material-theme-icons",
+    "workbench.iconTheme": "vscode-icons",
     "workbench.startupEditor": "newUntitledFile"
 }
