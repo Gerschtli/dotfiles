@@ -38,6 +38,7 @@
     "materialTheme.accent": "Teal",
     "materialTheme.autoApplyIcons": true,
     "php.suggest.basic": false,
+    "projectManager.sortList": "Recent",
     "search.useIgnoreFiles": false,
     "sortLines.filterBlankLines": true,
     "update.channel": "none",
