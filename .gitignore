@@ -12,8 +12,6 @@ atom/atom.symlink/storage
 bin/*
 !bin/.gitkeep
 
-dwm/dwm-status.toml.symlink
-
 gpg/
 
 nodejs/completion.sh
