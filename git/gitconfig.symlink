@@ -140,7 +140,7 @@
 
 [merge]
     log = true
-    tool = subl
+    tool = vscode
     verbosity = 5
 
 [mergetool]
@@ -150,6 +150,9 @@
 [mergetool "subl"]
     cmd = $(subl --get-executable) -w $MERGED
     trustExitCode = false
+
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
 
 [pack]
     compression = 9
