@@ -39,6 +39,7 @@
     "materialTheme.autoApplyIcons": true,
     "php.suggest.basic": false,
     "projectManager.sortList": "Recent",
+    "rust.rustfmt_path": "rustfmt",
     "search.useIgnoreFiles": false,
     "sortLines.filterBlankLines": true,
     "update.channel": "none",
