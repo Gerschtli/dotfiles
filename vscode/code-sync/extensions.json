@@ -2,7 +2,6 @@
     "extensions": [
         "Tyriar.sort-lines",
         "alefragnani.project-manager",
-        "alexkrechik.cucumberautocomplete",
         "bbenoist.Nix",
         "bungcip.better-toml",
         "chrislajoie.vscode-modelines",
@@ -24,6 +23,7 @@
         "sadesyllas.vscode-workspace-switcher",
         "saviorisdead.RustyCode",
         "sidneys1.gitconfig",
+        "stevejpurves.cucumber",
         "wmaurer.change-case",
         "wwm.better-align"
     ]
