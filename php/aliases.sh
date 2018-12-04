@@ -7,9 +7,9 @@ if available php || available hhvm; then
 
     function ut() {
         if [[ -x "./bin/phpunit" ]]; then
-            ./bin/phpunit
+            ./bin/phpunit "${@}"
         else
-            composer phpunit
+            ./vendor/bin/phpunit "${@}"
         fi
     }
 
