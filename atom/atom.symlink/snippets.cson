@@ -52,7 +52,7 @@
           ->expects(\$this->${2:once()})
           ->method('${3:method}')${4:
           ->with(\$this->equalTo($5))}${6:
-          ->will(\$this->returnValue($7))};$0
+          ->willReturn($7)};$0
     """
   'PHPUnit Mock Method with Pimple':
     'prefix': 'mopm'
@@ -61,7 +61,7 @@
           ->expects(\$this->${2:once()})
           ->method('${3:method}')${4:
           ->with(\$this->equalTo($5))}${6:
-          ->will(\$this->returnValue($7))};$0
+          ->willReturn($7)};$0
     """
   'PHPUnit Test Class':
     'prefix': 'tecl'
