@@ -159,6 +159,7 @@
       "atom-autocomplete-php"
       "ide-php"
       "language-ini"
+      "language-jenkinsfile"
       "language-puppet"
       "linter-php"
       "linter-phpcs"
@@ -205,6 +206,7 @@
     enable_packages: [
       "atom-autocomplete-php"
       "ide-php"
+      "language-jenkinsfile"
       "linter-php"
       "linter-phpcs"
     ]
@@ -214,6 +216,9 @@
     group: "pveu"
     paths: [
       "~/projects/pveu/liquibase"
+    ]
+    enable_packages: [
+      "language-jenkinsfile"
     ]
   }
   {
