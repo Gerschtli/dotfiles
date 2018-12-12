@@ -9,11 +9,11 @@ Xft.hintstyle:              hintslight
 
 
 URxvt*background:           black
-URxvt*boldFont:             xft:UbuntuMono Nerd Font:bold:pixelsize=9
-URxvt*boldItalicFont:       xft:UbuntuMono Nerd Font:bold:italic:pixelsize=9
-URxvt*font:                 xft:UbuntuMono Nerd Font:pixelsize=9
+URxvt*boldFont:             xft:UbuntuMono Nerd Font:bold:pixelsize=11
+URxvt*boldItalicFont:       xft:UbuntuMono Nerd Font:bold:italic:pixelsize=11
+URxvt*font:                 xft:UbuntuMono Nerd Font:pixelsize=11
 URxvt*foreground:           white
-URxvt*italicFont:           xft:UbuntuMono Nerd Font:italic:pixelsize=9
+URxvt*italicFont:           xft:UbuntuMono Nerd Font:italic:pixelsize=11
 URxvt*modifier:             alt
 URxvt*scrollBar:            false
 
