@@ -2,9 +2,17 @@
   'new class':
     'prefix': 'cl'
     'body': """
-      class ${1:Class}${2:
-          extends ${3:Parent}}${4:
-          implements ${5:Interface}}
+      class ${1:Class}${2: extends ${3:Parent}} ${4:implements ${5:Interface}}
+      {
+          $0
+      }
+    """
+  'new classm PHP7':
+    'prefix': 'cl7'
+    'body': """
+      declare(strict_types=1);
+
+      class ${1:Class}${2: extends ${3:Parent}} ${4:implements ${5:Interface}}
       {
           $0
       }
@@ -103,6 +111,57 @@
               parent::setUp();
 
               \$this->_pimple = new Pimple();
+
+              \$this->_object = new ${1:Class}(\$this->_pimple);
+          }
+
+          $0
+      }
+    """
+  'PHPUnit Test Class PHP7':
+    'prefix': 'tecl7'
+    'body': """
+      declare(strict_types=1);
+
+      class ${1:Class}Test extends PHPUnit\\\\Framework\\\\TestCase
+      {
+          /**
+           * @var ${1:Class}
+           */
+          private \$_object;
+
+          public function setUp()
+          {
+              parent::setUp();
+
+              \$this->_object = new ${1:Class}();
+          }
+
+          $0
+      }
+    """
+  'PHPUnit Test Class with Pimple PHP7':
+    'prefix': 'tepi7'
+    'body': """
+      declare(strict_types=1);
+
+      class ${1:Class}Test extends PHPUnit\\\\Framework\\\\TestCase
+      {
+          /**
+           * @var ${1:Class}
+           */
+          private \$_object;
+
+          /**
+           * @var Pimple\\\\Container
+           */
+          private \$_pimple;
+
+          public function setUp()
+          {
+              parent::setUp();
+
+              \$this->_pimple = new Pimple\\\\Container();
 
               \$this->_object = new ${1:Class}(\$this->_pimple);
           }
