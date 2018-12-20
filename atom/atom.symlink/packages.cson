@@ -1,5 +1,4 @@
 packages: [
-  "atom-autocomplete-php"
   "atom-beautify"
   "Atom-Hack"
   "atom-language-rust"
