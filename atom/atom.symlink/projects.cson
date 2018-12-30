@@ -18,11 +18,9 @@
       "~/projects/bachelor-project"
     ]
     enable_packages: [
-      "autocomplete-python"
       "awesome-python-snippets"
       "docblock-python"
       "ide-python"
-      "python-tools"
     ]
   }
   {
@@ -31,12 +29,10 @@
       "~/projects/dont-fall-crew-backend"
     ]
     enable_packages: [
-      "autocomplete-python"
       "awesome-python-snippets"
       "docblock-python"
       "ide-python"
       "language-ini"
-      "python-tools"
     ]
   }
   {
@@ -125,12 +121,11 @@
       "~/projects/teamspeak-update-notifier"
     ]
     enable_packages: [
-      "autocomplete-python"
       "awesome-python-snippets"
       "docblock-python"
       "ide-python"
+      "linter-mypy"
       "language-ini"
-      "python-tools"
     ]
   }
   {
