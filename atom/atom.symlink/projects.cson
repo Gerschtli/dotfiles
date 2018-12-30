@@ -65,11 +65,9 @@
       "~/projects/dwm-status"
     ]
     enable_packages: [
-      "atom-language-rust"
-      "autocomplete-racer"
+      "ide-rust"
       "language-hjson"
       "language-rust"
-      "linter-rust"
     ]
   }
   {
