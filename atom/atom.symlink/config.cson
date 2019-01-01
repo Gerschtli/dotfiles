@@ -70,6 +70,7 @@
       "latex"
       "linter"
       "linter-eslint"
+      "linter-mypy"
       "linter-php"
       "linter-spell"
       "linter-spell-latex"
@@ -138,6 +139,7 @@
       "language-vue"
       "latex"
       "linter-eslint"
+      "linter-mypy"
       "linter-php"
       "linter-spell-latex"
       "linter-spell"
@@ -195,6 +197,11 @@
     fixOnSave: true
   "linter-less":
     strictUnits: true
+  "linter-mypy":
+    disallowAnyDecorated: false
+    disallowAnyExpr: false
+    disallowAnyUnimported: false
+    disallowUntypedDecorators: false
   "linter-spell":
     defaultLanguages: [
       "de_DE"
