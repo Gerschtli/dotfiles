@@ -189,6 +189,7 @@
       "~/projects/pveu/integration-test"
     ]
     enable_packages: [
+      "language-docker"
       "language-jenkinsfile"
       "linter-eslint"
     ]

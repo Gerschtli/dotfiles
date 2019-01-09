@@ -24,6 +24,7 @@ packages: [
   "ide-rust"
   "ide-vue"
   "intentions"
+  "language-docker"
   "language-dot"
   "language-gherkin"
   "language-hack"
