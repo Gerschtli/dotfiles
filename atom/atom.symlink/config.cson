@@ -194,7 +194,8 @@
     enableShellEscape: true
     outputDirectory: "build"
   "linter-eslint":
-    fixOnSave: true
+    autofix:
+      fixOnSave: true
   "linter-less":
     strictUnits: true
   "linter-mypy":
