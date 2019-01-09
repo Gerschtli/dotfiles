@@ -32,11 +32,17 @@ has_changed() {
     [[ ${changed} != 0 ]]
 }
 
+has_command() {
+    local command="${1}"
+
+    hash "${command}" > /dev/null 2>&1
+}
+
 has_command_and_file() {
     local command="${1}"
     local file="${2}"
 
-    hash "${command}" > /dev/null 2>&1 && [[ -r "${file}" ]]
+    has_command "${command}" && [[ -r "${file}" ]]
 }
 
 has_match() {
