@@ -183,6 +183,17 @@
     ]
   }
   {
+    title: "integration-test"
+    group: "pveu"
+    paths: [
+      "~/projects/pveu/integration-test"
+    ]
+    enable_packages: [
+      "language-jenkinsfile"
+      "linter-eslint"
+    ]
+  }
+  {
     title: "library"
     group: "pveu"
     paths: [
