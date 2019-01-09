@@ -58,7 +58,7 @@ run_scripts() {
 
     for script in "${scripts_dir}"/*; do
         if [[ -x "${script}" ]]; then
-            "${script}" "${HOOK_TYPE}"; track_result
+            "${script}" "$@"; track_result
         fi
     done
 

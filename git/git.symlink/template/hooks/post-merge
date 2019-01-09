@@ -2,4 +2,4 @@
 
 source "${PWD}/.git/hooks/helpers/util.sh"
 
-run_scripts post-merge
+run_scripts post-merge "$@"

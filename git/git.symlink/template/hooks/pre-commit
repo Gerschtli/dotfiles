@@ -2,4 +2,4 @@
 
 source "${PWD}/.git/hooks/helpers/util.sh"
 
-run_scripts pre-commit
+run_scripts pre-commit "$@"
