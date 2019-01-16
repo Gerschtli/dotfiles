@@ -167,6 +167,13 @@
     ]
   }
   {
+    title: "documentation"
+    group: "pveu"
+    paths: [
+      "~/projects/pveu/documentation"
+    ]
+  }
+  {
     title: "frontend"
     group: "pveu"
     paths: [
