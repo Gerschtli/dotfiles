@@ -8,6 +8,7 @@ self: super:
       docker-compose
       dwm-status
       fzf
+      gitAndTools.overcommit
       httpie
       jq
       playerctl
