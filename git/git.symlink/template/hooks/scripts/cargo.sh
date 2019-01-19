@@ -6,11 +6,10 @@ CONFIG_FILE="${PWD}/Cargo.toml"
 
 check() {
     cargo fmt -- --check; track_result
-    cargo build; track_result
-    if $(cargo --list | grep clippy > /dev/null 2>&1); then
-        cargo clippy; track_result
-    fi
-    cargo test; track_result
+    cargo check --features "rust-1-31 mocking"; track_result
+    cargo build --features "rust-1-31 mocking"; track_result
+    cargo clippy --features "rust-1-31 mocking"; track_result
+    cargo test --features "rust-1-31 mocking"; track_result
 }
 
 if has_command_and_file cargo "${CONFIG_FILE}"; then
