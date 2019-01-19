@@ -81,6 +81,17 @@
     ]
   }
   {
+    title: "git-hooks"
+    paths: [
+      "~/projects/git-hooks"
+    ]
+    enable_packages: [
+      "ide-rust"
+      "language-hjson"
+      "language-rust"
+    ]
+  }
+  {
     title: "manage-packages"
     paths: [
       "~/projects/manage-packages"
