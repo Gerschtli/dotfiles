@@ -41,7 +41,7 @@
 List binaries from `util/opt-bin` in `.localrc` like
 ```sh
 ## optional binaries
-OPT_BINS=(atom-wrapped csv-check soapui)
+OPT_BINS=(atom-php csv-check)
 ```
 
 ## Installation

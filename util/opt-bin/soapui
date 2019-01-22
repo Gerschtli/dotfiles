@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-wmname LG3D
-export AWT_TOOLKIT=MToolkit
-
-soapui.sh
