@@ -8,8 +8,8 @@ let
     pinnedPkgs = super.fetchFromGitHub {
       owner = "Gerschtli";
       repo = "nixpkgs";
-      rev = "25c9f97197b95b9e3fbb53164f2737f1001d1b75";
-      sha256 = "14dri05rw1sb967hhl98y2yir78b4m2ijmnkbi4lmxv7rjvavdg2";
+      rev = "3c0ce76eea846dd2e03fd65ec10ba9181a19441b";
+      sha256 = "0c8mmkalrkk5aaw75b8pzi0gn0zszpmilwznwfd139jvsb6jv3ii";
     };
   in import pinnedPkgs { overlays = []; };
 in
