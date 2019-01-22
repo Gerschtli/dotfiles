@@ -1,6 +1,6 @@
 # originally taken from https://gist.github.com/3noch/79255f8c5ec3c287b91b7484265a89a8
 
-{ lib, writeTextDir, phpPackage, phpPackages, extensions ? [] }:
+{ lib, writeTextDir, phpPackage, phpPackages, extensions ? [], enableXdebug ? false }:
 
 let
 
@@ -22,6 +22,10 @@ let
     ${optionalString (majorMinor phpPackage.version == "5.5") ''
       ; WARNING: Be sure to load opcache *before* xdebug (http://us3.php.net/manual/en/opcache.installation.php).
       zend_extension = "${phpPackage}/lib/php/extensions/opcache.so"
+    ''}
+
+    ${optionalString enableXdebug ''
+      zend_extension = "${phpPackages.xdebug}/lib/php/extensions/xdebug.so"
     ''}
 
     ${concatMapStringsSep "\n" (includePackage "extension") (extensions)}

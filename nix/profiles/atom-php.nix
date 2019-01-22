@@ -8,4 +8,11 @@ stdenv.mkDerivation {
     php
     phpPackages.composer
   ];
+
+  PHPRC = import ./util/phpIni.nix {
+    inherit lib writeTextDir;
+    phpPackage   = php;
+    phpPackages  = phpPackages;
+    enableXdebug = true;
+  };
 }
