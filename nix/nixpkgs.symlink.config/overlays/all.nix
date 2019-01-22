@@ -5,6 +5,7 @@ self: super:
     name = "all-ubuntu";
 
     paths = with self; [
+      avocode
       docker-compose
       dwm-status
       fzf
@@ -15,6 +16,7 @@ self: super:
       qpdfview
       ripgrep
       rxvt_unicode-with-plugins
+      soapui
     ];
   };
 
