@@ -59,10 +59,10 @@ update_dotfiles() {
     log "dotfiles" "update"
     dotfiles-update
 
-    if _d_has_module "git"; then
-        log "dotfiles" "git hooks reload"
-        git-hooks-reload-all
-    fi
+    # if _d_has_module "git"; then
+    #     log "dotfiles" "git hooks reload"
+    #     git-hooks-reload-all
+    # fi
 
     if _d_has_module "nvim"; then
         log "dotfiles" "nvim update plugins"
