@@ -17,10 +17,12 @@ stdenv.mkDerivation {
 
   buildInputs = [
     ant
+    gitAndTools.overcommit
     jdk
     nodejs-6_x
     php55
     php55Packages.composer
+    ruby
     vagrant
   ] ++ (map (ext: php55Packages.${ext}) extensions);
 

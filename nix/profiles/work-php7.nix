@@ -37,10 +37,12 @@ stdenv.mkDerivation {
 
   buildInputs = [
     ant
+    gitAndTools.overcommit
     jdk
     nodejs-6_x
     php72
     php72Packages_.composer
+    ruby
     vagrant
   ] ++ (map (ext: php72Packages_.${ext}) extensions);
 
