@@ -191,6 +191,7 @@
       "~/projects/pveu/frontend"
     ]
     enable_packages: [
+      "atom-debug-ui"
       "disable-keybindings"
       "emmet"
       "ide-php"
@@ -198,7 +199,12 @@
       "language-puppet"
       "linter-eslint"
       "linter-php"
+      "php-debug"
     ]
+    settings:
+      "php-debug":
+        xdebug:
+          pathMaps: "[{\"remotePath\":\"/var/www/htdocs/\",\"localPath\":\"/home/tobi/projects/pveu/frontend/\"}]"
   }
   {
     title: "integration-test"

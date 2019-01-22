@@ -1,5 +1,6 @@
 packages: [
   "atom-beautify"
+  "atom-debug-ui"
   "Atom-Hack"
   "atom-ide-ui"
   "atom-material-syntax"
@@ -53,6 +54,7 @@ packages: [
   "nix"
   "nuclide"
   "pdf-view"
+  "php-debug"
   "project-manager"
   "selection-highlight"
   "simple-align"
