@@ -33,7 +33,7 @@ let
 in
 
 stdenv.mkDerivation {
-  name = "work-php7";
+  name = "php72";
 
   buildInputs = [
     ant

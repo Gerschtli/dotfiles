@@ -1,7 +1,7 @@
 with import <nixpkgs> { };
 
 stdenv.mkDerivation {
-  name = "atom-php";
+  name = "atom";
 
   buildInputs = [
     nodejs-11_x
