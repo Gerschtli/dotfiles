@@ -5,4 +5,4 @@ source "${DOTFILES_ROOT}/shell/functions.sh"
 source "${DOTFILES_ROOT}/nix/pnix-shell.sh"
 source "${DOTFILES_ROOT}/nix/functions.sh"
 
-nshell atom-php --command atom
+nshell editor --command atom

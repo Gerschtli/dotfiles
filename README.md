@@ -41,7 +41,7 @@
 List binaries from `util/opt-bin` in `.localrc` like
 ```sh
 ## optional binaries
-OPT_BINS=(atom-php csv-check)
+OPT_BINS=(bin1 bin2)
 ```
 
 ## Installation

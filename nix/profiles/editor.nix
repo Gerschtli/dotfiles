@@ -1,7 +1,7 @@
 with import <nixpkgs> { };
 
 stdenv.mkDerivation {
-  name = "atom";
+  name = "editor";
 
   buildInputs = [
     nodejs-11_x
