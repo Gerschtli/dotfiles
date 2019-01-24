@@ -5,18 +5,22 @@ self: super:
     name = "all-ubuntu";
 
     paths = with self; [
+      atom
       avocode
       docker-compose
+      dunst
       dwm-status
       fzf
-      gitAndTools.overcommit
       httpie
       jq
       playerctl
       qpdfview
       ripgrep
       rxvt_unicode-with-plugins
+      skype
+      slack
       soapui
+      xss-lock
     ];
   };
 
