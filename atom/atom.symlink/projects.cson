@@ -241,6 +241,18 @@
     ]
   }
   {
+    title: "preisvergleich-update"
+    group: "pveu"
+    paths: [
+      "~/projects/pveu/preisvergleich-update"
+    ]
+    enable_packages: [
+      "ide-php"
+      "language-ini"
+      "linter-php"
+    ]
+  }
+  {
     title: "profitmax"
     group: "pveu"
     paths: [
