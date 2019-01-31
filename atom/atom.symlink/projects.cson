@@ -152,6 +152,15 @@
     ]
   }
   {
+    title: "ansible"
+    group: "pveu"
+    paths: [
+      "~/projects/pveu/ansible"
+    ]
+    enable_packages: [
+    ]
+  }
+  {
     title: "backend"
     group: "pveu"
     paths: [
