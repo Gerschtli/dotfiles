@@ -1,3 +1,3 @@
 LAYOUT="even-horizontal"
 
-PANE_CMDS=("ssh pveu.hetzner.backend" "ssh pveu.hetzner.frontend")
+PANE_CMDS=("ssh pveu.test.backend" "ssh pveu.test.frontend")

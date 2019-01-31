@@ -1,3 +1,3 @@
 LAYOUT="even-horizontal"
 
-PANE_CMDS=("ssh pveu.robhost.soap01" "ssh pveu.robhost.soap02")
+PANE_CMDS=("ssh pveu.live.soap01" "ssh pveu.live.soap02")
