@@ -92,6 +92,16 @@
     ]
   }
   {
+    title: "hamcrest2-rust"
+    paths: [
+      "~/projects/hamcrest2-rust"
+    ]
+    enable_packages: [
+      "ide-rust"
+      "language-rust"
+    ]
+  }
+  {
     title: "manage-packages"
     paths: [
       "~/projects/manage-packages"
@@ -99,6 +109,16 @@
     devMode: true
     enable_packages: [
       "linter-eslint"
+    ]
+  }
+  {
+    title: "mocktopus"
+    paths: [
+      "~/projects/mocktopus"
+    ]
+    enable_packages: [
+      "ide-rust"
+      "language-rust"
     ]
   }
   {
