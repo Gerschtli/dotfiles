@@ -55,6 +55,7 @@ packages: [
   "nuclide"
   "pdf-view"
   "php-debug"
+  "php-twig"
   "project-manager"
   "selection-highlight"
   "simple-align"

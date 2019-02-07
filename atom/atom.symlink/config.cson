@@ -78,6 +78,7 @@
       "linter-spell-latex"
       "linter-ui-default"
       "php-debug"
+      "php-twig"
       "python-tools"
       "spell-check"
       "ssh-config"
@@ -149,6 +150,7 @@
       "linter-spell-latex"
       "linter-spell"
       "php-debug"
+      "php-twig"
       "ssh-config"
     ]
     resetOnStart: false

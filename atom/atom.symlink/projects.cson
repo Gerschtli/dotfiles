@@ -169,6 +169,7 @@
       "ide-php"
       "language-puppet"
       "linter-php"
+      "php-twig"
     ]
   }
   {
