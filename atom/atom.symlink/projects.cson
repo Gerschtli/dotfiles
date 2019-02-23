@@ -24,6 +24,18 @@
     ]
   }
   {
+    title: "betting-game-backend"
+    paths: [
+      "~/projects/betting-game-backend"
+    ]
+    enable_packages: [
+      "awesome-python-snippets"
+      "docblock-python"
+      "ide-python"
+      "language-ini"
+    ]
+  }
+  {
     title: "dont-fall-crew-backend"
     paths: [
       "~/projects/dont-fall-crew-backend"
