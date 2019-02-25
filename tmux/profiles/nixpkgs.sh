@@ -1,5 +1,5 @@
 ROOT="${HOME}/projects/nixpkgs"
 
-PRESET="git-single"
+PANE_CMDS=("git fa")
 
 NIX_PROFILE="0"
