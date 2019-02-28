@@ -13,6 +13,7 @@ self: super:
       fzf
       httpie
       jq
+      mysql-workbench
       playerctl
       qpdfview
       ripgrep
