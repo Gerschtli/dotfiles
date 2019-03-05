@@ -151,6 +151,18 @@
     ]
   }
   {
+    title: "sbb-statute"
+    paths: [
+      "~/projects/sbb-statute"
+    ]
+    enable_packages: [
+      "language-latex"
+      "latex"
+      "linter-spell-latex"
+      "linter-spell"
+    ]
+  }
+  {
     title: "serversetup"
     paths: [
       "~/projects/serversetup"
