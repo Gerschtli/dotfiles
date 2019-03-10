@@ -33,6 +33,7 @@
       "docblock-python"
       "ide-python"
       "language-ini"
+      "linter-mypy"
     ]
   }
   {
@@ -177,8 +178,8 @@
       "awesome-python-snippets"
       "docblock-python"
       "ide-python"
-      "linter-mypy"
       "language-ini"
+      "linter-mypy"
     ]
   }
   {

@@ -211,6 +211,7 @@
     disallowAnyExpr: false
     disallowAnyUnimported: false
     disallowUntypedDecorators: false
+    mypyIniFile: "$PROJECT_PATH/setup.cfg"
   "linter-spell":
     defaultLanguages: [
       "de_DE"
