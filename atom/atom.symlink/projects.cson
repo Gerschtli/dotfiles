@@ -213,12 +213,18 @@
       "~/projects/pveu/backend"
     ]
     enable_packages: [
+      # "atom-debug-ui"
       "ide-php"
       "language-ini"
       "language-jenkinsfile"
       "language-puppet"
       "linter-php"
+      # "php-debug"
     ]
+    # settings:
+    #   "php-debug":
+    #     xdebug:
+    #       pathMaps: "[{\"remotePath\":\"/var/www/htdocs/\",\"localPath\":\"/home/tobi/projects/pveu/backend/\"}]"
   }
   {
     title: "behat"
