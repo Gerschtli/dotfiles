@@ -33,7 +33,9 @@ let
     error_reporting = E_ALL
     display_errors  = On
 
-    memory_limit=512M
+    memory_limit = 512M
+
+    date.timezone = "Europe/Berlin"
   '';
 
 in
