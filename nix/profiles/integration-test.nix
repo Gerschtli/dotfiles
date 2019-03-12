@@ -4,6 +4,6 @@ stdenv.mkDerivation {
   name = "integration-test";
 
   buildInputs = [
-    nodejs-11_x
+    nodejs-10_x
   ];
 }

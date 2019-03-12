@@ -4,7 +4,7 @@ stdenv.mkDerivation {
   name = "editor";
 
   buildInputs = [
-    nodejs-11_x
+    nodejs-10_x
     php
     phpPackages.composer
   ];

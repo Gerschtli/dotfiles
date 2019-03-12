@@ -7,7 +7,7 @@ self: super:
     paths = with self; [
       atom
       avocode
-      docker-compose
+      docker_compose
       dunst
       dwm-status
       fzf
