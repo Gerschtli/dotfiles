@@ -79,6 +79,7 @@
       "linter-ui-default"
       "php-debug"
       "php-twig"
+      "python-isort"
       "python-tools"
       "spell-check"
       "ssh-config"
@@ -151,6 +152,7 @@
       "linter-spell"
       "php-debug"
       "php-twig"
+      "python-isort"
       "ssh-config"
     ]
     resetOnStart: false
@@ -237,6 +239,8 @@
     alwaysOpenInSameWindow: true
     savePathsRelativeToHome: true
     sortBy: "last modified"
+  "python-isort":
+    sortOnSave: true
   "tree-view":
     hideIgnoredNames: true
     squashDirectoryNames: true

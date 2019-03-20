@@ -34,6 +34,7 @@
       "ide-python"
       "language-ini"
       "linter-mypy"
+      "python-isort"
     ]
   }
   {
@@ -180,6 +181,7 @@
       "ide-python"
       "language-ini"
       "linter-mypy"
+      "python-isort"
     ]
   }
   {

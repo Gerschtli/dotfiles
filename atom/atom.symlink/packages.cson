@@ -57,6 +57,7 @@ packages: [
   "php-debug"
   "php-twig"
   "project-manager"
+  "python-isort"
   "selection-highlight"
   "simple-align"
   "sort-lines"
