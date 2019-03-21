@@ -49,6 +49,7 @@ packages: [
   "linter-php"
   "linter-spell"
   "linter-spell-latex"
+  "linter-tslint"
   "linter-ui-default"
   "manage-packages"
   "nix"

@@ -38,6 +38,18 @@
     ]
   }
   {
+    title: "betting-game-frontend"
+    paths: [
+      "~/projects/betting-game-frontend"
+    ]
+    enable_packages: [
+      "ide-vue"
+      "language-pug"
+      "language-vue"
+      "linter-tslint"
+    ]
+  }
+  {
     title: "dont-fall-crew-backend"
     paths: [
       "~/projects/dont-fall-crew-backend"
