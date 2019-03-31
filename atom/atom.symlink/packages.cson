@@ -57,6 +57,7 @@ packages: [
   "pdf-view"
   "php-debug"
   "php-twig"
+  "pigments"
   "project-manager"
   "python-isort"
   "selection-highlight"
