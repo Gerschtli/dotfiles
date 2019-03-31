@@ -23,6 +23,7 @@ packages: [
   "ide-php"
   "ide-python"
   "ide-rust"
+  "ide-typescript"
   "ide-vue"
   "intentions"
   "language-docker"
@@ -65,5 +66,6 @@ packages: [
   "sort-lines"
   "ssh-config"
   "Sublime-Style-Column-Selection"
+  "typescript-modules-helper"
   "vim-modeline"
 ]

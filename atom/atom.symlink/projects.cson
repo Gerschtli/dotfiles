@@ -43,10 +43,12 @@
       "~/projects/betting-game-frontend"
     ]
     enable_packages: [
+      "ide-typescript"
       "ide-vue"
       "language-pug"
       "language-vue"
       "linter-tslint"
+      "typescript-modules-helper"
     ]
   }
   {

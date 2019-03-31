@@ -53,6 +53,7 @@
       "ide-php"
       "ide-python"
       "ide-rust"
+      "ide-typescript"
       "ide-vue"
       "image-view"
       "language-docker"
@@ -85,6 +86,7 @@
       "spell-check"
       "ssh-config"
       "tree-view"
+      "typescript-modules-helper"
       "whitespace"
     ]
     excludeVcsIgnoredPaths: false
@@ -130,9 +132,10 @@
       "ide-php"
       "ide-python"
       "ide-rust"
+      "ide-typescript"
       "ide-vue"
-      "language-dot"
       "language-docker"
+      "language-dot"
       "language-gherkin"
       "language-hack"
       "language-hjson"
@@ -156,6 +159,7 @@
       "php-twig"
       "python-isort"
       "ssh-config"
+      "typescript-modules-helper"
     ]
     resetOnStart: false
   "exception-reporting":
