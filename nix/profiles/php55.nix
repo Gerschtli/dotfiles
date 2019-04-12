@@ -19,7 +19,7 @@ stdenv.mkDerivation {
     ant
     gitAndTools.overcommit
     jdk
-    nodejs-6_x
+    nodejs-8_x
     php55
     php55Packages.composer
     ruby
