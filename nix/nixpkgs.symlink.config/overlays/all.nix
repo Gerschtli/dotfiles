@@ -6,19 +6,21 @@ self: super:
 
     paths = with self; [
       atom
-      avocode
+      # avocode
       docker_compose
       dunst
       dwm-status
+      # eclipses.eclipse-sdk
       fzf
       httpie
+      # jetbrains.idea-community
       jq
       mysql-workbench
       playerctl
       qpdfview
       ripgrep
       rxvt_unicode-with-plugins
-      skype
+      # skype
       slack
       soapui
       xss-lock
