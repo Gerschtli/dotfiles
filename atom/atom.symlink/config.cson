@@ -178,6 +178,8 @@
     pylsPlugins:
       pycodestyle:
         maxLineLength: 120
+  "ide-rust":
+    rlsToolchain: "nightly"
   latex:
     cleanPatterns: [
       "**/*.aux.bak"
