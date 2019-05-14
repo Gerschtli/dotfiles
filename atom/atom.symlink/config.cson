@@ -2,6 +2,9 @@
   "atom-beautify":
     general:
       _analyticsUserId: "3d709da5-1bc8-4b43-bfcf-e36e5a2d6ea9"
+    markdown:
+      beautify_on_save: true
+      commonmark: true
     rust:
       beautify_on_save: true
     typescript:
