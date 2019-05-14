@@ -208,6 +208,7 @@
       "disable-keybindings"
       "emmet"
       "ide-php"
+      "language-apache"
       "language-puppet"
       "linter-php"
       "php-twig"
@@ -289,6 +290,7 @@
       "disable-keybindings"
       "emmet"
       "ide-php"
+      "language-apache"
       "language-ini"
       "language-puppet"
       "linter-eslint"
@@ -307,6 +309,7 @@
       "~/projects/pveu/integration-test"
     ]
     enable_packages: [
+      "language-apache"
       "language-docker"
       "language-jenkinsfile"
       "linter-eslint"
@@ -356,6 +359,7 @@
       "disable-keybindings"
       "emmet"
       "ide-php"
+      "language-apache"
       "language-ini"
       "language-puppet"
       "linter-php"

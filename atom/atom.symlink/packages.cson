@@ -26,6 +26,7 @@ packages: [
   "ide-typescript"
   "ide-vue"
   "intentions"
+  "language-apache"
   "language-docker"
   "language-dot"
   "language-gherkin"
