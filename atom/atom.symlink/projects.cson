@@ -255,6 +255,23 @@
     ]
   }
   {
+    title: "cms"
+    group: "pveu"
+    paths: [
+      "~/projects/pveu/cms"
+    ]
+    enable_packages: [
+      "awesome-python-snippets"
+      "docblock-python"
+      "ide-python"
+      "language-ini"
+      "language-docker"
+      "language-jenkinsfile"
+      "linter-mypy"
+      "python-isort"
+    ]
+  }
+  {
     title: "documentation"
     group: "pveu"
     paths: [
