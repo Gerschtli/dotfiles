@@ -67,7 +67,7 @@ _d_link_file() {
         _d_info "Moved %s to %s" "${linkname}" "${linkname}${BACKUP_SUFFIX}"
     fi
 
-    if $(ln -snf "${target}" "${linkname}"); then
+    if ln -snf "${target}" "${linkname}"; then
         _d_success "Linked %s to %s" "${target}" "${linkname}"
         echo "${target}:${linkname}" >> "${CACHE_FILE}"
     else

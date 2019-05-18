@@ -51,12 +51,12 @@ _d_source_files -name "symlinker"
 # remove old links
 for old_linkname in "${!links[@]}"; do
     if [[ $(_d_get_symlink_target "${old_linkname}") == "${links["${old_linkname}"]}" ]]; then
-        if $(rm "${old_linkname}"); then
+        if rm "${old_linkname}"; then
             _d_remove_line_in_cache "${old_linkname}"
             _d_success "Removed link %s" "${old_linkname}"
 
             if [[ -e "${old_linkname}${BACKUP_SUFFIX}" ]]; then
-                if $(mv "${old_linkname}${BACKUP_SUFFIX}" "${old_linkname}"); then
+                if mv "${old_linkname}${BACKUP_SUFFIX}" "${old_linkname}"; then
                     _d_success "Restored backup %s" "${old_linkname}${BACKUP_SUFFIX}"
                 else
                     _d_error "Backup could not be moved: %s" "${old_linkname}${BACKUP_SUFFIX}"
