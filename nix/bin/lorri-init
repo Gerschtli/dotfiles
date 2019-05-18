@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+if [[ ! -f shell.nix ]]; then
+    shell_name="${1}"
+    shell_content="import \"\${builtins.getEnv \"HOME\"}/.dotfiles/nix/profiles/${shell_name}.nix\""
+
+    echo -e "Write shell.nix\n\t${shell_content}\n"
+    echo "${shell_content}" > shell.nix
+fi
+
+env_content="eval \"\$(lorri direnv)\""
+echo -e "Write .envrc\n\t${env_content}\n"
+echo "${env_content}" > .envrc
+
+echo -e "Allow .envrc\n"
+direnv allow
+
+echo -e "Run lorri watch"
+lorri watch

@@ -1,0 +1,15 @@
+#compdef lorri-init
+
+LIST=()
+
+prefix="${DOTFILES_ROOT}/nix/profiles/"
+suffix=".nix"
+
+for file in "${prefix}"*"${suffix}"; do
+    tmp="${file#${prefix}}"
+    LIST=("${tmp//${suffix}}" "${LIST}")
+done
+
+_arguments "1:nix-shell profiles:(${LIST})"
+
+# vim: ft=sh
