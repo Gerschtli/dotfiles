@@ -42,7 +42,10 @@ _process_profile() {
     esac
 
     if available nshell \
-        && [[ "${NIX_PROFILE}" != 0 && -e "$(cd "${ROOT}" && nshell-path "${NIX_PROFILE}")" ]]; then
+        && [[ "${NIX_PROFILE}" != 0 \
+            && -e "$(cd "${ROOT}" \
+            && nshell-path "${NIX_PROFILE}")" \
+            && ! -f "${ROOT}/.envrc" ]]; then
         NIX_CMD="nshell ${NIX_PROFILE}"
     fi
 
