@@ -292,6 +292,7 @@
       "ide-php"
       "language-apache"
       "language-ini"
+      "language-jenkinsfile"
       "language-puppet"
       "linter-eslint"
       "linter-php"
