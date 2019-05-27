@@ -7,20 +7,21 @@ self: super:
     paths = with self; [
       atom
       # avocode
+      direnv
       docker_compose
       dunst
       dwm-status
       # eclipses.eclipse-sdk
       fzf
       httpie
-      # jetbrains.idea-community
+      jetbrains.idea-ultimate
       jq
       mysql-workbench
       playerctl
+      postman
       qpdfview
       ripgrep
       rxvt_unicode-with-plugins
-      # skype
       slack
       soapui
       xss-lock
