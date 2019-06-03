@@ -49,6 +49,10 @@ _process_profile() {
         NIX_CMD="nshell ${NIX_PROFILE}"
     fi
 
+    if [[ -f "${ROOT}/.envrc" ]]; then
+        NIX_CMD="shell-reload"
+    fi
+
     [[ -r "${LOCAL_CONF}" ]] && source "${LOCAL_CONF}"
 }
 
