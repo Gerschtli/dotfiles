@@ -32,6 +32,8 @@ available df && alias df="df -h"
 
 available dircolors && eval "$(dircolors -b)"
 
+available rg && alias rg="rg --ignore-case --sort=path"
+
 available xdg-open && alias open="xdg-open"
 
 if available pwgen; then
