@@ -51,6 +51,7 @@ _process_profile() {
 
     if [[ -f "${ROOT}/.envrc" ]]; then
         NIX_CMD="shell-reload"
+        PANE_CMDS+=("lorri-one-shot && exit")
     fi
 
     [[ -r "${LOCAL_CONF}" ]] && source "${LOCAL_CONF}"
