@@ -1,5 +1,4 @@
 ROOT="${HOME}/projects/betting-game-frontend"
 
-LAYOUT="even-horizontal"
-
-PANE_CMDS=("git fm" "npm run serve")
+CMD_PRIMARY="git fm"
+CMD_SECONDARY="npm run serve"

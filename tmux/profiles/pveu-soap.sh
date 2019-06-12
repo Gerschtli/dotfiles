@@ -1,3 +1,2 @@
-LAYOUT="even-horizontal"
-
-PANE_CMDS=("ssh pveu.live.soap01" "ssh pveu.live.soap02")
+CMD_PRIMARY="ssh pveu.live.soap01"
+CMD_SECONDARY="ssh pveu.live.soap02"

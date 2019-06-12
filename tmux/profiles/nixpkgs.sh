@@ -1,3 +1,3 @@
 ROOT="${HOME}/projects/nixpkgs"
 
-PANE_CMDS=("git fa")
+CMD_PRIMARY="git fa"

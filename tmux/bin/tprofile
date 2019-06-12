@@ -20,10 +20,11 @@ _process_profile() {
     source "${CONF}"
 
     ROOT="${ROOT:-${HOME}}"
-    TITLE="${TITLE:-${CONF_NAME}}"
-    NIX_PROFILE="${NIX_PROFILE:-.}"
 
-    [ ! -w "${ROOT}" ] && echo "directory is not writable" && exit 1
+    [[ ! -r "${ROOT}" ]] && echo "directory is not readable" && exit 1
+
+    CMD_PRIMARY="${CMD_PRIMARY:-}"
+    SIDE_CMDS=("${SIDE_CMDS[@]}")
 
     if [[ "${ARG_OPTION}" == "--no-vagrant" && "${PRESET}" == "git-vagrant" ]]; then
         PRESET="git-single"
@@ -31,42 +32,59 @@ _process_profile() {
 
     case "${PRESET}" in
         git-single )
-            LAYOUT=
-            PANE_CMDS=("git fm")
+            CMD_PRIMARY="git fm"
             ;;
         git-vagrant )
-            LAYOUT="main-horizontal"
-            PANE_CMDS=("git fm" "cd vagrant:vup:vauto")
+            CMD_PRIMARY="git fm"
+            SIDE_CMDS=("cd vagrant:vup:vauto")
             ;;
     esac
 
     if [[ -f "${ROOT}/.envrc" ]]; then
         NIX_CMD="shell-reload"
-        PANE_CMDS+=("lorri-one-shot && exit")
+        SIDE_CMDS+=("lorri-one-shot && exit")
+    fi
+}
+
+_send_commands() {
+    local index="${1}"
+    local commands="${2}"
+
+    tmux send-keys -t :.$index "cd ${ROOT}" C-m "${NIX_CMD}" C-m "clear" C-m
+
+    if [[ ! -z "${commands}" ]]; then
+        IFS_BAK=$IFS
+        IFS="\:"; list=(${commands})
+        IFS=$IFS_BAK
+        for cmd in "${list[@]}"; do
+            tmux send-keys -t :.$index "${cmd}" C-m
+        done
     fi
 }
 
 _arrange_panes() {
     [ $(tmux list-panes | wc -l) != 1 ] && tmux kill-pane -a -t $TMUX_PANE
 
-    for cmd_index in "${!PANE_CMDS[@]}"; do
-        [[ $cmd_index != 0 ]] && tmux split-window
-        tmux send-keys -t :.$(($cmd_index + 1)) "cd ${ROOT}" C-m "${NIX_CMD}" C-m "clear" C-m
-        if [[ ! -z "${PANE_CMDS[$cmd_index]}" ]]; then
-            IFS="\:"; list=(${PANE_CMDS[$cmd_index]})
-            for cmd in "${list[@]}"; do
-                tmux send-keys -t :.$(($cmd_index + 1)) "${cmd}" C-m
-            done
-        fi
+    local index=1
+    _send_commands $index "${CMD_PRIMARY}"
+    for cmds in "${SIDE_CMDS[@]}"; do
+        index=$(($index + 1))
+        tmux split-window
+        _send_commands $index "${cmds}"
     done
 
-    [ ! -z "${LAYOUT}" ] && tmux select-layout "${LAYOUT}"
+    tmux select-layout main-horizontal
+
+    if [[ ! -z "${CMD_SECONDARY}" ]]; then
+        tmux select-pane -t :.1
+        tmux split-window -h
+        _send_commands 2 "${CMD_SECONDARY}"
+    fi
+
     tmux select-pane -t :.1
-    tmux rename-window "${TITLE}"
+    tmux rename-window "${CONF_NAME}"
 }
 
 _check_requirements
 _process_profile
 _arrange_panes
-
-exit 0
