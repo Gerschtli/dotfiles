@@ -19,6 +19,6 @@ done
 
 _arguments \
     "1:profiles:(${LIST})" \
-    "2:options:(--no-vagrant)"
+    "2:options:(--only-fetch)"
 
 # vim: ft=sh

@@ -26,7 +26,7 @@ _process_profile() {
     CMD_PRIMARY="${CMD_PRIMARY:-}"
     SIDE_CMDS=("${SIDE_CMDS[@]}")
 
-    if [[ "${ARG_OPTION}" == "--no-vagrant" && "${PRESET}" == "git-vagrant" ]]; then
+    if [[ "${ARG_OPTION}" == "--only-fetch" ]]; then
         PRESET="git-single"
     fi
 
