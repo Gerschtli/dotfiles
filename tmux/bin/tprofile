@@ -9,7 +9,6 @@ CONF_NAME="${1}"
 ARG_OPTION="${2}"
 
 CONF="${DOTFILES_ROOT}/tmux/profiles/${CONF_NAME}.sh"
-LOCAL_CONF="${DOTFILES_ROOT}/tmux/tprofile.conf"
 
 _check_requirements() {
     ! available tmux     && echo "tmux not installed"                           && exit 1
@@ -41,20 +40,10 @@ _process_profile() {
             ;;
     esac
 
-    if available nshell \
-        && [[ "${NIX_PROFILE}" != 0 \
-            && -e "$(cd "${ROOT}" \
-            && nshell-path "${NIX_PROFILE}")" \
-            && ! -f "${ROOT}/.envrc" ]]; then
-        NIX_CMD="nshell ${NIX_PROFILE}"
-    fi
-
     if [[ -f "${ROOT}/.envrc" ]]; then
         NIX_CMD="shell-reload"
         PANE_CMDS+=("lorri-one-shot && exit")
     fi
-
-    [[ -r "${LOCAL_CONF}" ]] && source "${LOCAL_CONF}"
 }
 
 _arrange_panes() {

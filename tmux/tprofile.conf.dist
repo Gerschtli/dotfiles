@@ -1,6 +1,0 @@
-## Override profile configurations
-## Example usage for wide sreens:
-#
-# if [[ "${PRESET}" == "git-vagrant" ]]; then
-#     LAYOUT="even-horizontal"
-# fi

@@ -31,6 +31,4 @@ sublime/User/Package Control.*
 !sublime/User/Package Control.sublime-settings
 sublime/User/phpcs.sublime-settings
 
-tmux/tprofile.conf
-
 vscode/code-sync/local-settings.json

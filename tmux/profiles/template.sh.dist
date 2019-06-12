@@ -12,6 +12,3 @@
 
 ## preset, e.g. git-single or git-vagrant
 # PRESET=
-
-## nix profile to load in each pane
-# NIX_PROFILE=
