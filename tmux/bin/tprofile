@@ -53,10 +53,8 @@ _send_commands() {
     tmux send-keys -t :.$index "cd ${ROOT}" C-m "${NIX_CMD}" C-m "clear" C-m
 
     if [[ ! -z "${commands}" ]]; then
-        IFS_BAK=$IFS
-        IFS="\:"; list=(${commands})
-        IFS=$IFS_BAK
-        for cmd in "${list[@]}"; do
+        local IFS=":"
+        for cmd in ${commands}; do
             tmux send-keys -t :.$index "${cmd}" C-m
         done
     fi
