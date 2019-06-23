@@ -6,7 +6,15 @@ source "${DOTFILES_ROOT}/nix/pnix-shell.sh"
 source "${DOTFILES_ROOT}/nix/functions.sh"
 
 CONF_NAME="${1}"
-ARG_OPTION="${2}"
+
+shift
+while true; do
+  case "${1}" in
+    --only-fetch ) ONLY_FETCH=true; shift ;;
+    --no-lorri-update ) NO_LORRI_UPDATE=true; shift ;;
+    * ) break ;;
+  esac
+done
 
 CONF="${DOTFILES_ROOT}/tmux/profiles/${CONF_NAME}.sh"
 
@@ -26,21 +34,24 @@ _process_profile() {
     CMD_PRIMARY="${CMD_PRIMARY:-}"
     SIDE_CMDS=("${SIDE_CMDS[@]}")
 
-    if [[ "${ARG_OPTION}" == "--only-fetch" ]]; then
+    if [[ ! -z "${ONLY_FETCH}" ]]; then
         PRESET="git-single"
     fi
 
     case "${PRESET}" in
         git-single )
             CMD_PRIMARY="git fm"
+            CMD_SECONDARY=""
+            SIDE_CMDS=()
             ;;
         git-vagrant )
             CMD_PRIMARY="git fm"
+            CMD_SECONDARY=""
             SIDE_CMDS=("cd vagrant:vup:vauto")
             ;;
     esac
 
-    if [[ -f "${ROOT}/.envrc" ]]; then
+    if [[ -f "${ROOT}/.envrc" && -z "${NO_LORRI_UPDATE}" ]]; then
         NIX_CMD="shell-reload"
         SIDE_CMDS+=("lorri-one-shot && exit")
     fi
