@@ -32,3 +32,5 @@ sublime/User/Package Control.*
 sublime/User/phpcs.sublime-settings
 
 vscode/code-sync/local-settings.json
+
+zsh/completion/_docker-compose
