@@ -25,6 +25,8 @@ stdenv.mkDerivation {
     vagrant
   ] ++ (map (ext: php72Packages.${ext}) extensions);
 
+  APPLICATION_ENV = "development";
+
   PHPRC = import ./util/phpIni.nix {
     inherit extensions lib writeTextDir;
     phpPackage  = php72;
