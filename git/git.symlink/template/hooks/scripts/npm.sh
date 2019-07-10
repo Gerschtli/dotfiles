@@ -12,7 +12,9 @@ install() {
 
 check() {
     if npm run | has_match "  test$"; then
-        npm test; track_result
+        npm run-script test; track_result
+    elif npm run | has_match "  verify$"; then
+        npm run-script verify; track_result
     fi
 }
 
