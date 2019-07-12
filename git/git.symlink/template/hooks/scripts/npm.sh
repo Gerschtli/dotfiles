@@ -6,7 +6,7 @@ PACKAGE_JSON="${PWD}/package.json"
 
 install() {
     if has_changed "${PACKAGE_JSON}"; then
-        npm install
+        npm ci
     fi
 }
 
