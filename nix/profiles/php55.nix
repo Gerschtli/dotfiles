@@ -17,7 +17,7 @@ stdenv.mkDerivation {
 
   buildInputs = [
     ant
-    nodejs-8_x
+    nodejs-10_x
     php55
     php55Packages.composer
     vagrant

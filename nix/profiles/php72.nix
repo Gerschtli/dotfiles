@@ -22,7 +22,7 @@ stdenv.mkDerivation {
   name = "php72";
 
   buildInputs = [
-    nodejs-8_x
+    nodejs-10_x
     php72_
     php72Packages.composer
     vagrant
