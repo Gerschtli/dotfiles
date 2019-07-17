@@ -1,0 +1,5 @@
+mkdir -p "${HOME}/.config/nixpkgs"
+
+_d_link_file "${DOTFILES_ROOT}/home-manager/home-manager-configurations/home.nix" "${HOME}/.config/nixpkgs/home.nix"
+
+# vim: ft=sh

@@ -10,6 +10,7 @@
 | dwm          | Configuration for dwm sessions                                    |
 | eclipse      | Configuration for eclipse                                         |
 | git          | Configuration for git with git hooks                              |
+| home-manager | Configuration for home manager                                    |
 | htop         | Configuration for htop                                            |
 | i3           | Configuration for i3                                              |
 | intellij     | Configuration for intellij                                        |
