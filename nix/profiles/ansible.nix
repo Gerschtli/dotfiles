@@ -5,7 +5,5 @@ stdenv.mkDerivation {
 
   buildInputs = [
     ansible
-    gitAndTools.overcommit
-    ruby
   ];
 }

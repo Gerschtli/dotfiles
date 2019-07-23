@@ -1,5 +1,4 @@
 .envrc
-.overcommit.yml
 shell.nix
 
 # Created by https://www.gitignore.io/api/osx,linux,eclipse,intellij+all,libreoffice
