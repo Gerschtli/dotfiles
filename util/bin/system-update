@@ -89,6 +89,7 @@ update_nix() {
     fi
 
     if available lorri; then
+        log "nix" "lorri self-upgrade"
         lorri self-upgrade
     fi
 
