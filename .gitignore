@@ -14,8 +14,6 @@ bin/*
 
 gpg/
 
-nodejs/completion.sh
-
 sublime/projects/**/*.sublime-workspace
 sublime/User/oscrypto-ca-bundle.crt
 sublime/User/Package Control.*
