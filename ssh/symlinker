@@ -1,7 +1,0 @@
-_d_link_file "${DOTFILES_ROOT}/ssh/config" "${HOME}/.ssh/config"
-_d_link_file "${DOTFILES_ROOT}/ssh/modules" "${HOME}/.ssh/modules"
-_d_link_file "${DOTFILES_ROOT}/ssh/sockets" "${HOME}/.ssh/sockets"
-
-chmod 0600 "${DOTFILES_ROOT}/ssh/modules/"*/keys/*
-
-# vim: ft=sh
