@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-source "${PWD}/.git/hooks/helpers/util.sh"
-
-if [[ "${1}" != "${2}" && "${3}" == 1 ]]; then # has new commits and is branch checkout
-    run_scripts post-checkout "$@"
-fi

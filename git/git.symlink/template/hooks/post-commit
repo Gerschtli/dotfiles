@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-source "${PWD}/.git/hooks/helpers/util.sh"
-
-run_scripts post-commit "$@"
