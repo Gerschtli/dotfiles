@@ -16,10 +16,6 @@ gpg/
 
 nodejs/completion.sh
 
-nvim/nvim/.netrwhist
-nvim/nvim/autoload/plug.vim*
-nvim/nvim/plugins
-
 sublime/projects/**/*.sublime-workspace
 sublime/User/oscrypto-ca-bundle.crt
 sublime/User/Package Control.*
