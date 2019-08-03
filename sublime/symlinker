@@ -1,11 +1,3 @@
-if is_osx; then
-    SUBLIME="${HOME}/Library/Application Support/Sublime Text 3"
-else
-    SUBLIME="${HOME}/.config/sublime-text-3"
-fi
-
-_d_link_file "${DOTFILES_ROOT}/sublime/User" "${SUBLIME}/Packages/User"
-
-unset SUBLIME
+_d_link_file "${DOTFILES_ROOT}/sublime/User" "${HOME}/.config/sublime-text-3/Packages/User"
 
 # vim: ft=sh
