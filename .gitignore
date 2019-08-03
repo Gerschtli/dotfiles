@@ -9,9 +9,6 @@ atom/atom.symlink/packages
 atom/atom.symlink/recovery
 atom/atom.symlink/storage
 
-bin/*
-!bin/.gitkeep
-
 gpg/
 
 sublime/projects/**/*.sublime-workspace
