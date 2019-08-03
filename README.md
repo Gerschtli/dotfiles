@@ -1,5 +1,9 @@
 # Dotfiles
 
+The main part of my dotfiles and user environment setup is configured in my
+[home-manager-configurations](https://github.com/Gerschtli/home-manager-configurations) project, mounted in
+`home-manager/home-manager-configurations`.
+
 ## Modules
 
 | Name         | Description                      |
