@@ -37,14 +37,6 @@ for target in $(find "${DOTFILES_ROOT}" -maxdepth 2 -name '*.symlink.config'); d
     fi
 done
 
-# link bin files
-for target in "${DOTFILES_ROOT}"/*/bin/*; do
-    if _d_use_module "${target%/*}"; then
-        linkname="${DOTFILES_ROOT}/bin/${target##*/}"
-        _d_link_file "${target}" "${linkname}"
-    fi
-done
-
 # source symlinker
 _d_source_files -name "symlinker"
 
