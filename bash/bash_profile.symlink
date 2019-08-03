@@ -1,3 +1,0 @@
-[[ -f "${HOME}/.bashrc" ]] && source "${HOME}/.bashrc"
-
-# vim: ft=sh
