@@ -1,7 +1,3 @@
 [submodule "home-manager/home-manager-configurations"]
     path = home-manager/home-manager-configurations
     url = git@github.com:Gerschtli/home-manager-configurations.git
-
-[submodule "liquidprompt/liquidprompt"]
-    path = liquidprompt/liquidprompt
-    url = https://github.com/nojhan/liquidprompt.git
