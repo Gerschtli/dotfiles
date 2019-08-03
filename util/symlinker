@@ -1,8 +1,0 @@
-for bin in "${OPT_BINS[@]}"; do
-    PATH_BIN="${DOTFILES_ROOT}/util/opt-bin/${bin}"
-    if [[ -x "${PATH_BIN}" ]]; then
-        _d_link_file "${PATH_BIN}" "${DOTFILES_ROOT}/bin/${bin}"
-    fi
-done
-
-# vim: ft=sh

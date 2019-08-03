@@ -4,13 +4,8 @@ fi
 
 CACHE_FILE="${CACHE_FILE:-${HOME}/.dotfiles-cache}"
 DOTFILES_ROOT="${DOTFILES_ROOT:-${HOME}/.dotfiles}"
-EXTENDED_PATH=("${EXTENDED_PATH[@]}")
 MODULES=("${MODULES[@]}")
-OPTIONS=("${OPTIONS[@]}")
-OPT_BINS=("${OPT_BINS[@]}")
 
-# last has highest priority
-EXTENDED_PATH+=("${HOME}/.cargo/bin" "${DOTFILES_ROOT}/bin" "${HOME}/bin")
 MODULES+=(util)
 
 # vim: ft=sh

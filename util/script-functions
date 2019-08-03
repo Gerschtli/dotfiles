@@ -1,4 +1,6 @@
-source "${DOTFILES_ROOT}/shell/functions.sh"
+_d_available() {
+    hash "$1" > /dev/null 2>&1
+}
 
 _d_contains_element() {
     local e
@@ -20,10 +22,6 @@ _d_has_module() {
     _d_contains_element "${1}" "${MODULES[@]}"
 }
 
-_d_has_option() {
-    _d_contains_element "${1}" "${OPTIONS[@]}"
-}
-
 _d_indent() {
     local cmd="$1"
     if [[ "${cmd}" == "git" && "$(git --version)" != *1.7.* ]]; then
@@ -37,11 +35,6 @@ _d_indent() {
 
 _d_info() {
     _d_print "34" "INFO" "$@"
-}
-
-_d_is_addable_to_path() {
-    local dir="${1}"
-    [[ -d "${dir}" && ! "${PATH}" =~ (^|:)"${dir}"(:|$) ]]
 }
 
 _d_link_file() {
@@ -95,10 +88,6 @@ _d_pull() {
 
     _d_info "git pull ..."
     git -C "${path}" pull
-}
-
-_d_register_fpath() {
-    fpath=("${1}" $fpath)
 }
 
 _d_remove_line_in_cache() {
