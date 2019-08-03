@@ -9,7 +9,3 @@
 [submodule "pure/pure"]
     path = pure/pure
     url = https://github.com/sindresorhus/pure.git
-
-[submodule "tmux/tpm"]
-    path = tmux/tpm
-    url = https://github.com/tmux-plugins/tpm.git

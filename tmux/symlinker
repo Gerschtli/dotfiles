@@ -1,4 +1,0 @@
-mkdir -p "${HOME}/.tmux/plugins"
-_d_link_file "${DOTFILES_ROOT}/tmux/tpm" "${HOME}/.tmux/plugins/tpm"
-
-# vim: ft=sh
