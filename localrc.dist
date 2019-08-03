@@ -4,19 +4,7 @@
 ## folder of dotfiles installation
 # DOTFILES_ROOT="${HOME}/.dotfiles"
 
-## extended fpath
-# EXTENDED_FPATH=()
-
-## extended path
-# EXTENDED_PATH=()
-
 ## explicitly enable modules
 # MODULES=()
-
-## options
-# OPTIONS=()
-
-## optional binaries
-# OPT_BINS=()
 
 # vim: ft=sh
