@@ -1,5 +1,11 @@
-mkdir -p "${HOME}/.config/nixpkgs"
+HOME_FILE="${DOTFILES_ROOT}/home-manager/home-manager-configurations/home-files/$(hostname)/${USER}.nix"
 
-_d_link_file "${DOTFILES_ROOT}/home-manager/home-manager-configurations/home.nix" "${HOME}/.config/nixpkgs/home.nix"
+if [[ -e "${HOME_FILE}" ]]; then
+    mkdir -p "${HOME}/.config/nixpkgs"
+
+    _d_link_file "${HOME_FILE}" "${HOME}/.config/nixpkgs/home.nix"
+fi
+
+unset HOME_FILE
 
 # vim: ft=sh
