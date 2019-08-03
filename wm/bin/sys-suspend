@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-source "${HOME}/.dotfiles-variables"
-source "${DOTFILES_ROOT}/wm/util/systemctl-wrapper.sh"
-
-systemctl_wrapper suspend "to suspend to ram"

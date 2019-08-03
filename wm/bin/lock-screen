@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-slock
-
-# fix for bug in slock-dpms patch
-#xset -dpms

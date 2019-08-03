@@ -1,7 +1,0 @@
-mkdir -p "${HOME}/.config"
-_d_link_file "${DOTFILES_ROOT}/wm/mimeapps.list" "${HOME}/.config/mimeapps.list"
-
-mkdir -p "${HOME}/.local/share/applications"
-_d_link_file "${DOTFILES_ROOT}/wm/mimeapps.list" "${HOME}/.local/share/applications/mimeapps.list"
-
-# vim: ft=sh
