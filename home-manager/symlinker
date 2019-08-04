@@ -1,4 +1,4 @@
-HOME_FILE="${DOTFILES_ROOT}/home-manager/home-manager-configurations/home-files/$(hostname)/${USER}.nix"
+HOME_FILE="${DOTFILES_ROOT}/home-manager/home-manager-configurations/home-files/$(hostname)/$(whoami).nix"
 
 if [[ -e "${HOME_FILE}" ]]; then
     mkdir -p "${HOME}/.config/nixpkgs"
