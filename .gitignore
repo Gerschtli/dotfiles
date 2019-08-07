@@ -9,7 +9,9 @@ atom/atom.symlink/packages
 atom/atom.symlink/recovery
 atom/atom.symlink/storage
 
-gpg/
+gpg
+
+home-manager/home-manager-configurations
 
 sublime/projects/**/*.sublime-workspace
 sublime/User/oscrypto-ca-bundle.crt
