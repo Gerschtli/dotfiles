@@ -22,6 +22,17 @@ _d_has_module() {
     _d_contains_element "${1}" "${MODULES[@]}"
 }
 
+_d_indent() {
+    local cmd="$1"
+    if [[ "${cmd}" == "git" && "$(git --version)" != *1.7.* ]]; then
+        cmd="git -c color.diff=always -c color.status=always"
+    fi
+
+    while IFS= read -r line; do
+        printf "     > %s\n" "${line}"
+    done < <(${cmd} ${@:2} 2>&1)
+}
+
 _d_info() {
     _d_print "34" "INFO" "$@"
 }
