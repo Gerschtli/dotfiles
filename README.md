@@ -21,7 +21,13 @@ The main part of my dotfiles and user environment setup is configured in my
 ### Clone repo
 
 ```bash
-$ git clone --recursive "https://github.com/Gerschtli/dotfiles.git" ~/.dotfiles
+$ git clone "https://github.com/Gerschtli/dotfiles.git" ~/.dotfiles
+```
+
+### Use of home-manager module
+
+```bash
+$ git clone "https://github.com/Gerschtli/home-manager-configurations.git" ~/.dotfiles/home-manager/home-manager-configurations
 ```
 
 ### Create .localrc (optional)
@@ -36,10 +42,4 @@ Change options if needed.
 
 ```bash
 $ ./bootstrap.sh
-```
-
-## Update
-
-```bash
-$ dotupdate
 ```
