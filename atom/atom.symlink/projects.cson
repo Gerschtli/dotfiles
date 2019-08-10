@@ -80,12 +80,6 @@
     paths: [
       "~/.dotfiles"
     ]
-    enable_packages: [
-      "language-ini"
-      "language-tmux"
-      "language-viml"
-      "ssh-config"
-    ]
   }
   {
     title: "dwm-status"
