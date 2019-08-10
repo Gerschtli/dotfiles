@@ -6,6 +6,20 @@ _d_info() {
     _d_print "34" "INFO" "$@"
 }
 
+_d_print() {
+    local parameters=()
+    for param in ${@:4}; do
+        parameters+=("\033[1m${param/${HOME}/\~}\033[0m")
+    done
+
+    echo -e "[\033[00;${1}m${2}\033[0m] $(printf "${3}" "${parameters[@]}")"
+}
+
+_d_success() {
+    _d_print "32" " OK " "$@"
+}
+
+
 _d_link_file() {
     local src="${1}"
     local destination="${2}"
@@ -38,15 +52,6 @@ _d_link_file() {
     fi
 }
 
-_d_print() {
-    local parameters=()
-    for param in ${@:4}; do
-        parameters+=("\033[1m${param/${HOME}/\~}\033[0m")
-    done
-
-    echo -e "[\033[00;${1}m${2}\033[0m] $(printf "${3}" "${parameters[@]}")"
-}
-
 _d_realpath() {
     realpath "${1}" 2> /dev/null
 }
@@ -55,10 +60,6 @@ _d_remove_line_in_cache() {
     if [ -r "${CACHE_FILE}" ]; then
         sed -ie "\|.*:${1}$|d" "${CACHE_FILE}"
     fi
-}
-
-_d_success() {
-    _d_print "32" " OK " "$@"
 }
 
 _d_use_module() {
