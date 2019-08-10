@@ -10,10 +10,6 @@ _d_error() {
     _d_print "31" "FAIL" "$@"
 }
 
-_d_get_symlink_target() {
-    ls -l "${1}" 2> /dev/null | sed -e 's/.* -> //'
-}
-
 _d_has_module() {
     _d_contains_element "${1}" "${MODULES[@]}"
 }
@@ -23,33 +19,33 @@ _d_info() {
 }
 
 _d_link_file() {
-    local target="${1}"
-    local linkname="${2}"
+    local src="${1}"
+    local destination="${2}"
 
-    local cached_target="${links["${linkname}"]}"
-    unset links["${linkname}"]
+    local cached_src="${links["${destination}"]}"
+    unset links["${destination}"]
 
-    if [[ "${cached_target}" != "${target}" ]]; then
-        _d_remove_line_in_cache "${linkname}"
+    if [[ "${cached_src}" != "${src}" ]]; then
+        _d_remove_line_in_cache "${destination}"
     fi
 
-    if [[ $(_d_get_symlink_target "${linkname}") == "${target}" ]]; then
-        if [[ "${cached_target}" != "${target}" ]]; then
-            echo "${target}:${linkname}" >> "${CACHE_FILE}"
+    if [[ $(realpath "${destination}") == "${src}" ]]; then
+        if [[ "${cached_src}" != "${src}" ]]; then
+            echo "${src}:${destination}" >> "${CACHE_FILE}"
         fi
         return
     fi
 
-    if [[ -e "${linkname}" && ! -L "${linkname}" ]]; then
-        mv "${linkname}" "${linkname}${BACKUP_SUFFIX}"
-        _d_info "Moved %s to %s" "${linkname}" "${linkname}${BACKUP_SUFFIX}"
+    if [[ -e "${destination}" && ! -L "${destination}" ]]; then
+        mv "${destination}" "${destination}${BACKUP_SUFFIX}"
+        _d_info "Moved %s to %s" "${destination}" "${destination}${BACKUP_SUFFIX}"
     fi
 
-    if ln -snf "${target}" "${linkname}"; then
-        _d_success "Linked %s to %s" "${target}" "${linkname}"
-        echo "${target}:${linkname}" >> "${CACHE_FILE}"
+    if ln -snf "${src}" "${destination}"; then
+        _d_success "Linked %s to %s" "${src}" "${destination}"
+        echo "${src}:${destination}" >> "${CACHE_FILE}"
     else
-        _d_error "Failed linking %s to %s" "${target}" "${linkname}"
+        _d_error "Failed linking %s to %s" "${src}" "${destination}"
         FAIL=true
     fi
 }

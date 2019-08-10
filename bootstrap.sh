@@ -10,30 +10,30 @@ declare -A links
 
 if [[ -r "${CACHE_FILE}" ]]; then
     while read -r line; do
-        linkname="${line##*:}"
-        target="${line%:*}"
-        if [[ $(_d_get_symlink_target "${linkname}") == "${target}" ]]; then
-            links["${linkname}"]="${target}"
+        src="${line%:*}"
+        destination="${line##*:}"
+        if [[ $(realpath "${destination}") == "${src}" ]]; then
+            links["${destination}"]="${src}"
         else
-            _d_remove_line_in_cache "${linkname}"
+            _d_remove_line_in_cache "${destination}"
         fi
     done < "${CACHE_FILE}"
 fi
 
 # link files with symlink suffix
-for target in $(find "${DOTFILES_ROOT}" -maxdepth 2 -name '*.symlink'); do
-    if _d_use_module "${target}"; then
-        linkname="${HOME}/.$(basename "${target%.*}")"
-        _d_link_file "${target}" "${linkname}"
+for src in $(find "${DOTFILES_ROOT}" -maxdepth 2 -name '*.symlink'); do
+    if _d_use_module "${src}"; then
+        destination="${HOME}/.$(basename "${src%.*}")"
+        _d_link_file "${src}" "${destination}"
     fi
 done
 
 # link files with symlink.config suffix
-for target in $(find "${DOTFILES_ROOT}" -maxdepth 2 -name '*.symlink.config'); do
-    if _d_use_module "${target}"; then
+for src in $(find "${DOTFILES_ROOT}" -maxdepth 2 -name '*.symlink.config'); do
+    if _d_use_module "${src}"; then
         mkdir -p "${HOME}/.config"
-        linkname="${HOME}/.config/$(basename "${target%.*.*}")"
-        _d_link_file "${target}" "${linkname}"
+        destination="${HOME}/.config/$(basename "${src%.*.*}")"
+        _d_link_file "${src}" "${destination}"
     fi
 done
 
@@ -41,27 +41,27 @@ done
 _d_source_files -name "symlinker"
 
 # remove old links
-for old_linkname in "${!links[@]}"; do
-    if [[ $(_d_get_symlink_target "${old_linkname}") == "${links["${old_linkname}"]}" ]]; then
-        if rm "${old_linkname}"; then
-            _d_remove_line_in_cache "${old_linkname}"
-            _d_success "Removed link %s" "${old_linkname}"
+for old_destination in "${!links[@]}"; do
+    if [[ $(realpath "${old_destination}") == "${links["${old_destination}"]}" ]]; then
+        if rm "${old_destination}"; then
+            _d_remove_line_in_cache "${old_destination}"
+            _d_success "Removed link %s" "${old_destination}"
 
-            if [[ -e "${old_linkname}${BACKUP_SUFFIX}" ]]; then
-                if mv "${old_linkname}${BACKUP_SUFFIX}" "${old_linkname}"; then
-                    _d_success "Restored backup %s" "${old_linkname}${BACKUP_SUFFIX}"
+            if [[ -e "${old_destination}${BACKUP_SUFFIX}" ]]; then
+                if mv "${old_destination}${BACKUP_SUFFIX}" "${old_destination}"; then
+                    _d_success "Restored backup %s" "${old_destination}${BACKUP_SUFFIX}"
                 else
-                    _d_error "Backup could not be moved: %s" "${old_linkname}${BACKUP_SUFFIX}"
+                    _d_error "Backup could not be moved: %s" "${old_destination}${BACKUP_SUFFIX}"
                     FAIL=true
                 fi
             fi
         else
-            _d_error "Link could not be deleted: %s" "${old_linkname}"
+            _d_error "Link could not be deleted: %s" "${old_destination}"
             FAIL=true
         fi
     else
-        _d_remove_line_in_cache "${old_linkname}"
-        _d_info "%s is not a link to %s, updating cache" "${old_linkname}" "${links["${old_linkname}"]}"
+        _d_remove_line_in_cache "${old_destination}"
+        _d_info "%s is not a link to %s, updating cache" "${old_destination}" "${links["${old_destination}"]}"
     fi
 done
 
@@ -69,5 +69,3 @@ if [[ ! -z "${FAIL}" ]]; then
     _d_error "=> An error occured during linking process. Please consider the log above."
     exit 1
 fi
-
-exit 0
