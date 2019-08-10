@@ -1,4 +1,0 @@
-# do not unset DOTFILES_ROOT, is used in shell functions
-unset CACHE_FILE EXTENDED_PATH MODULES OPTIONS OPT_BINS
-
-# vim: ft=sh
