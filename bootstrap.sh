@@ -12,7 +12,7 @@ if [[ -r "${CACHE_FILE}" ]]; then
     while read -r line; do
         src="${line%:*}"
         destination="${line##*:}"
-        if [[ $(realpath "${destination}") == "${src}" ]]; then
+        if [[ $(_d_realpath "${destination}") == "${src}" ]]; then
             links["${destination}"]="${src}"
         else
             _d_remove_line_in_cache "${destination}"
@@ -42,7 +42,7 @@ _d_source_files -name "symlinker"
 
 # remove old links
 for old_destination in "${!links[@]}"; do
-    if [[ $(realpath "${old_destination}") == "${links["${old_destination}"]}" ]]; then
+    if [[ $(_d_realpath "${old_destination}") == "${links["${old_destination}"]}" ]]; then
         if rm "${old_destination}"; then
             _d_remove_line_in_cache "${old_destination}"
             _d_success "Removed link %s" "${old_destination}"

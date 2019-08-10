@@ -29,7 +29,7 @@ _d_link_file() {
         _d_remove_line_in_cache "${destination}"
     fi
 
-    if [[ $(realpath "${destination}") == "${src}" ]]; then
+    if [[ $(_d_realpath "${destination}") == "${src}" ]]; then
         if [[ "${cached_src}" != "${src}" ]]; then
             echo "${src}:${destination}" >> "${CACHE_FILE}"
         fi
@@ -59,13 +59,14 @@ _d_print() {
     echo -e "[\033[00;${1}m${2}\033[0m] $(printf "${3}" "${parameters[@]}")"
 }
 
+_d_realpath() {
+    realpath "${1}" 2> /dev/null
+}
+
 _d_remove_line_in_cache() {
-    local tmp="$(mktemp -t "dotfiles-cache.XXXXXX")"
-
-    [ ! -r "${CACHE_FILE}" ] && touch "${CACHE_FILE}"
-
-    egrep -v ".*:${1}$" "${CACHE_FILE}" > "${tmp}" \
-        && mv "${tmp}" "${CACHE_FILE}" || true
+    if [ -r "${CACHE_FILE}" ]; then
+        sed -ie "\|.*:${1}$|d" "${CACHE_FILE}"
+    fi
 }
 
 _d_source_files() {
