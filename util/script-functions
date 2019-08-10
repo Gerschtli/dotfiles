@@ -1,7 +1,3 @@
-_d_available() {
-    hash "$1" > /dev/null 2>&1
-}
-
 _d_contains_element() {
     local e
     for e in "${@:2}"; do
@@ -20,17 +16,6 @@ _d_get_symlink_target() {
 
 _d_has_module() {
     _d_contains_element "${1}" "${MODULES[@]}"
-}
-
-_d_indent() {
-    local cmd="$1"
-    if [[ "${cmd}" == "git" && "$(git --version)" != *1.7.* ]]; then
-        cmd="git -c color.diff=always -c color.status=always"
-    fi
-
-    while IFS= read -r line; do
-        printf "     > %s\n" "${line}"
-    done < <(${cmd} ${@:2} 2>&1)
 }
 
 _d_info() {
@@ -76,18 +61,6 @@ _d_print() {
     done
 
     echo -e "[\033[00;${1}m${2}\033[0m] $(printf "${3}" "${parameters[@]}")"
-}
-
-_d_pull() {
-    local path="${1}"
-
-    if [[ $(git -C "${path}" rev-parse --abbrev-ref HEAD) != "master" ]]; then
-        _d_info "git checkout master ..."
-        git -C "${path}" checkout master
-    fi
-
-    _d_info "git pull ..."
-    git -C "${path}" pull
 }
 
 _d_remove_line_in_cache() {
