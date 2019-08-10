@@ -1,17 +1,5 @@
-_d_contains_element() {
-    local e
-    for e in "${@:2}"; do
-        [[ "$e" == "$1" ]] && return 0
-    done
-    return 1
-}
-
 _d_error() {
     _d_print "31" "FAIL" "$@"
-}
-
-_d_has_module() {
-    _d_contains_element "${1}" "${MODULES[@]}"
 }
 
 _d_info() {
@@ -69,23 +57,13 @@ _d_remove_line_in_cache() {
     fi
 }
 
-_d_source_files() {
-    for file in $(find "${DOTFILES_ROOT}" -mindepth 2 -maxdepth 2 -type f "$@" | sort); do
-        if _d_use_module "${file}"; then
-            source "${file}"
-        fi
-    done
-}
-
 _d_success() {
     _d_print "32" " OK " "$@"
 }
 
 _d_use_module() {
-    local file="${1}"
-    local directory="${file%/*}"
-    local module="${directory##*/}"
-    _d_has_module "${module}"
+    local module="$(basename "$(dirname "${1}")")"
+    [[ " ${MODULES[@]} " == *" ${module} "* ]]
 }
 
 # vim: ft=sh

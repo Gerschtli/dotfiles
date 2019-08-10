@@ -38,7 +38,11 @@ for src in $(find "${DOTFILES_ROOT}" -maxdepth 2 -name '*.symlink.config'); do
 done
 
 # source symlinker
-_d_source_files -name "symlinker"
+for file in $(find "${DOTFILES_ROOT}" -mindepth 2 -maxdepth 2 -type f -name "symlinker" | sort); do
+    if _d_use_module "${file}"; then
+        source "${file}"
+    fi
+done
 
 # remove old links
 for old_destination in "${!links[@]}"; do
@@ -49,7 +53,7 @@ for old_destination in "${!links[@]}"; do
 
             if [[ -e "${old_destination}${BACKUP_SUFFIX}" ]]; then
                 if mv "${old_destination}${BACKUP_SUFFIX}" "${old_destination}"; then
-                    _d_success "Restored backup %s" "${old_destination}${BACKUP_SUFFIX}"
+                    _d_info "Restored backup %s" "${old_destination}${BACKUP_SUFFIX}"
                 else
                     _d_error "Backup could not be moved: %s" "${old_destination}${BACKUP_SUFFIX}"
                     FAIL=true
