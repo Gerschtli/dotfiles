@@ -1,4 +1,5 @@
 atom/atom.symlink/.apm
+atom/atom.symlink/.atom-socket-*
 atom/atom.symlink/.node-gyp
 atom/atom.symlink/blob-store
 atom/atom.symlink/compile-cache
