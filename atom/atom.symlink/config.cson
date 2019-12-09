@@ -31,23 +31,10 @@
     preserveLastSearch: true
   core:
     autoHideMenuBar: true
-    customFileTypes:
-      "source.ini": [
-        ".buckconfig"
-        ".hgrc"
-        ".flowconfig"
-      ]
-      "source.json": [
-        "BUCK.autodeps"
-      ]
-      "source.python": [
-        "BUCK"
-      ]
     disabledPackages: [
       "Atom-Hack"
       "atom-autocomplete-php"
       "atom-debug-ui"
-      "atom-ide-ui"
       "autocomplete-hack"
       "autocomplete-python"
       "awesome-python-snippets"
@@ -89,7 +76,6 @@
       "python-tools"
       "spell-check"
       "ssh-config"
-      "tree-view"
       "typescript-modules-helper"
       "whitespace"
     ]
@@ -232,14 +218,6 @@
     ]
   "linter-tslint":
     fixOnSave: true
-  nuclide:
-    "atom-ide-code-format":
-      formatOnSave: true
-    "atom-ide-diagnostics-ui":
-      autoVisibility: true
-    "nuclide-home":
-      showHome: false
-    use: {}
   "php-debug":
     noPackageInstallPrompt: [
       "atom-ide-ui"
