@@ -13,6 +13,7 @@ The main part of my dotfiles and user environment setup is configured in my
 | home-manager | Configuration for home manager   |
 | i3           | Configuration for i3             |
 | intellij     | Configuration for intellij       |
+| nix-on-droid | Configuration for nix-on-droid   |
 | sublime      | Configuration for sublime text 3 |
 | vscode       | Configuration for vscode         |
 

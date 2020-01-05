@@ -1,0 +1,8 @@
+NIX_ON_DROID_FILE="${DOTFILES_ROOT}/nix-on-droid/nix-on-droid.nix"
+
+mkdir -p "${HOME}/.config/nixpkgs"
+_d_link_file "${NIX_ON_DROID_FILE}" "${HOME}/.config/nixpkgs/nix-on-droid.nix"
+
+unset NIX_ON_DROID_FILE
+
+# vim: ft=sh
