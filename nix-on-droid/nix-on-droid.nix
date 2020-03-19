@@ -1,13 +1,32 @@
-{ pkgs, ... }:
+{ pkgs, config, lib, ... }:
+
+let
+  homeDir = builtins.getEnv "HOME";
+  homeFile = "${homeDir}/.config/nixpkgs/home.nix";
+in
 
 {
   environment.etcBackupExtension = ".nod-bak";
 
-  home-manager = {
-    config = import "${builtins.getEnv "HOME"}/.config/nixpkgs/home.nix";
+  environment.packages = with pkgs; [
+    gnutar
+    gzip
+  ];
 
-    useUserPackages = true;
-  };
+  home-manager = lib.mkMerge [
+    {
+      backupFileExtension = "hm-bak";
+      config = import homeFile;
+      useUserPackages = true;
+    }
+    {
+      config.nixpkgs = {
+        inherit (config.nixpkgs) overlays;
+      };
+    }
+  ];
 
   system.stateVersion = "19.09";
+
+  time.timeZone = "Europe/Berlin";
 }
