@@ -58,7 +58,7 @@ _d_realpath() {
 
 _d_remove_line_in_cache() {
     if [ -r "${CACHE_FILE}" ]; then
-        sed -ie "\|.*:${1}$|d" "${CACHE_FILE}"
+        sed -i -e "\|.*:${1}$|d" "${CACHE_FILE}"
     fi
 }
 
