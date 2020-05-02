@@ -23,4 +23,6 @@ in
   system.stateVersion = "19.09";
 
   time.timeZone = "Europe/Berlin";
+
+  user.shell = "${pkgs.zsh}/bin/zsh";
 }
