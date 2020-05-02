@@ -13,18 +13,12 @@ in
     gzip
   ];
 
-  home-manager = lib.mkMerge [
-    {
-      backupFileExtension = "hm-bak";
-      config = import homeFile;
-      useUserPackages = true;
-    }
-    {
-      config.nixpkgs = {
-        inherit (config.nixpkgs) overlays;
-      };
-    }
-  ];
+  home-manager = {
+    backupFileExtension = "hm-bak";
+    config = import homeFile;
+    useGlobalPkgs = true;
+    useUserPackages = true;
+  };
 
   system.stateVersion = "19.09";
 
