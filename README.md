@@ -9,7 +9,6 @@ The main part of my dotfiles and user environment setup is configured in my
 | Name         | Description                      |
 | ------------ | -------------------------------- |
 | atom         | Configuration for atom           |
-| eclipse      | Configuration for eclipse        |
 | home-manager | Configuration for home manager   |
 | i3           | Configuration for i3             |
 | intellij     | Configuration for intellij       |
