@@ -11,7 +11,6 @@ The main part of my dotfiles and user environment setup is configured in my
 | atom         | Configuration for atom           |
 | home-manager | Configuration for home manager   |
 | nix-on-droid | Configuration for nix-on-droid   |
-| sublime      | Configuration for sublime text 3 |
 | vscode       | Configuration for vscode         |
 
 ## Installation

@@ -14,10 +14,4 @@ gpg
 
 home-manager/home-manager-configurations
 
-sublime/projects/**/*.sublime-workspace
-sublime/User/oscrypto-ca-bundle.crt
-sublime/User/Package Control.*
-!sublime/User/Package Control.sublime-settings
-sublime/User/phpcs.sublime-settings
-
 vscode/code-sync/local-settings.json
