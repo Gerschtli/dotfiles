@@ -32,51 +32,8 @@
   core:
     autoHideMenuBar: true
     disabledPackages: [
-      "Atom-Hack"
-      "atom-autocomplete-php"
-      "atom-debug-ui"
-      "autocomplete-hack"
-      "autocomplete-python"
-      "awesome-python-snippets"
-      "disable-keybindings"
-      "docblock-python"
-      "emmet"
-      "ide-php"
-      "ide-python"
-      "ide-rust"
-      "ide-typescript"
-      "ide-vue"
-      "image-view"
-      "language-docker"
-      "language-dot"
-      "language-gherkin"
-      "language-hack"
-      "language-hjson"
-      "language-ini"
-      "language-jenkinsfile"
-      "language-latex"
-      "language-pug"
-      "language-puppet"
-      "language-rust"
-      "language-tmux"
-      "language-viml"
-      "language-vue"
-      "latex"
-      "linter"
       "linter-eslint"
-      "linter-mypy"
-      "linter-php"
-      "linter-spell"
-      "linter-spell-latex"
-      "linter-tslint"
-      "linter-ui-default"
-      "php-debug"
-      "php-twig"
-      "python-isort"
-      "python-tools"
       "spell-check"
-      "ssh-config"
-      "typescript-modules-helper"
       "whitespace"
     ]
     excludeVcsIgnoredPaths: false
@@ -106,44 +63,7 @@
     showInvisibles: true
   "enable-packages":
     optionalPackages: [
-      "Atom-Hack"
-      "atom-debug-ui"
-      "autocomplete-hack"
-      "awesome-python-snippets"
-      "disable-keybindings"
-      "docblock-python"
-      "emmet"
-      "ide-php"
-      "ide-python"
-      "ide-rust"
-      "ide-typescript"
-      "ide-vue"
-      "language-docker"
-      "language-dot"
-      "language-gherkin"
-      "language-hack"
-      "language-hjson"
-      "language-ini"
-      "language-jenkinsfile"
-      "language-latex"
-      "language-pug"
-      "language-puppet"
-      "language-rust"
-      "language-tmux"
-      "language-viml"
-      "language-vue"
-      "latex"
       "linter-eslint"
-      "linter-mypy"
-      "linter-php"
-      "linter-spell-latex"
-      "linter-spell"
-      "linter-tslint"
-      "php-debug"
-      "php-twig"
-      "python-isort"
-      "ssh-config"
-      "typescript-modules-helper"
     ]
     resetOnStart: false
   "exception-reporting":
@@ -160,8 +80,7 @@
     pylsPlugins:
       pycodestyle:
         maxLineLength: 120
-  "ide-rust":
-    rlsToolchain: "nightly"
+  "ide-rust": {}
   latex:
     cleanPatterns: [
       "**/*.aux.bak"
