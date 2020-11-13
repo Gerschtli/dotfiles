@@ -82,12 +82,6 @@
     excludeVcsIgnoredPaths: false
     ignoredNames: [
       ".git"
-      ".hg"
-      ".svn"
-      ".DS_Store"
-      "._*"
-      "Thumbs.db"
-      "desktop.ini"
       "*.pyc"
     ]
     packagesWithKeymapsDisabled: []
