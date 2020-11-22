@@ -11,9 +11,6 @@
       "~/projects/enable-packages"
     ]
     devMode: true
-    enable_packages: [
-      "linter-eslint"
-    ]
   }
   {
     title: "manage-packages"
@@ -21,8 +18,5 @@
       "~/projects/manage-packages"
     ]
     devMode: true
-    enable_packages: [
-      "linter-eslint"
-    ]
   }
 ]

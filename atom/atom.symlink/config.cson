@@ -32,7 +32,6 @@
   core:
     autoHideMenuBar: true
     disabledPackages: [
-      "linter-eslint"
       "spell-check"
       "whitespace"
     ]
@@ -61,11 +60,6 @@
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
-  "enable-packages":
-    optionalPackages: [
-      "linter-eslint"
-    ]
-    resetOnStart: false
   "exception-reporting":
     userId: "0e594558-5f6f-463c-aa6a-093b570dedde"
   "file-icons":

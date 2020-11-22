@@ -7,7 +7,6 @@ packages: [
   "busy-signal"
   "docblockr"
   "editorconfig"
-  "enable-packages"
   "file-icons"
   "git-blame"
   "goto-definition"
