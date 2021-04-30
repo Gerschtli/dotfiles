@@ -210,7 +210,7 @@
     "value": false
 }, {
     "key": "POSStyleCurrencyEntryMode",
-    "value": true
+    "value": false
 }, {
     "key": "Pacing",
     "value": "0"
