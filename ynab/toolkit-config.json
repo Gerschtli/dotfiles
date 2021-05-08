@@ -33,7 +33,7 @@
     "value": "0"
 }, {
     "key": "BottomNotificationBar",
-    "value": false
+    "value": true
 }, {
     "key": "BudgetCategoryFeatures",
     "value": true
@@ -60,7 +60,7 @@
     "value": false
 }, {
     "key": "CategoryActivityPopupWidth",
-    "value": "0"
+    "value": "1"
 }, {
     "key": "CategorySoloMode",
     "value": "0"
@@ -159,7 +159,7 @@
     "value": false
 }, {
     "key": "HideDebtRatio",
-    "value": true
+    "value": false
 }, {
     "key": "HideHelp",
     "value": true
@@ -288,7 +288,7 @@
     "value": false
 }, {
     "key": "ToggleTransactionFilters",
-    "value": "0"
+    "value": "2"
 }, {
     "key": "ToolkitReports",
     "value": true
