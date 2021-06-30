@@ -55,7 +55,7 @@
       "tab"
     ]
   editor:
-    fontFamily: "Ubuntu Mono"
+    fontFamily: "UbuntuMono Nerd Font"
     fontSize: 12
     preferredLineLength: 120
     scrollPastEnd: true
