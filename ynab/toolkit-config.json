@@ -63,7 +63,7 @@
     "value": "1"
 }, {
     "key": "CategorySoloMode",
-    "value": "0"
+    "value": "cat-solo-mode"
 }, {
     "key": "ChangeEnterBehavior",
     "value": true
@@ -120,7 +120,7 @@
     "value": false
 }, {
     "key": "DisplayTargetGoalAmount",
-    "value": "0"
+    "value": "1"
 }, {
     "key": "DisplayTotalMonthlyGoals",
     "value": false
@@ -263,6 +263,12 @@
     "key": "SplitTransactionAutoAdjust",
     "value": false
 }, {
+    "key": "SplitTransactionAutoFillPayee",
+    "value": false
+}, {
+    "key": "SplitTransactionTabExpand",
+    "value": false
+}, {
     "key": "SquareNegativeMode",
     "value": true
 }, {
@@ -276,10 +282,10 @@
     "value": false
 }, {
     "key": "TargetBalanceWarning",
-    "value": false
+    "value": true
 }, {
     "key": "ToBeBudgetedWarning",
-    "value": false
+    "value": true
 }, {
     "key": "ToggleAccountColumns",
     "value": true
