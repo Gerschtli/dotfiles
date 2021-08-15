@@ -18,7 +18,7 @@
     "value": "#1e1e1f"
 }, {
     "key": "AssistedClear",
-    "value": false
+    "value": true
 }, {
     "key": "AutoDistributeSplits",
     "value": false
@@ -51,7 +51,7 @@
     "value": true
 }, {
     "key": "BulkManagePayees",
-    "value": false
+    "value": true
 }, {
     "key": "CalendarFirstDay",
     "value": "1"
@@ -96,13 +96,16 @@
     "value": false
 }, {
     "key": "CurrentMonthIndicator",
-    "value": true
+    "value": false
 }, {
     "key": "CustomFlagNames",
     "value": false
 }, {
-    "key": "DateOfMoney",
+    "key": "CustomizeColourScheme",
     "value": true
+}, {
+    "key": "DateOfMoney",
+    "value": false
 }, {
     "key": "DaysOfBuffering",
     "value": false
@@ -261,7 +264,7 @@
     "value": false
 }, {
     "key": "SplitTransactionAutoAdjust",
-    "value": false
+    "value": true
 }, {
     "key": "SplitTransactionAutoFillPayee",
     "value": false
@@ -278,6 +281,9 @@
     "key": "StripedBudgetRows",
     "value": true
 }, {
+    "key": "SubtractUpcomingFromAvailable",
+    "value": "0"
+}, {
     "key": "SwapClearedFlagged",
     "value": false
 }, {
@@ -291,7 +297,7 @@
     "value": true
 }, {
     "key": "ToggleSplits",
-    "value": false
+    "value": true
 }, {
     "key": "ToggleTransactionFilters",
     "value": "2"
