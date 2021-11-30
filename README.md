@@ -1,3 +1,8 @@
+# !DEPRECATED! See [nix-config](https://github.com/Gerschtli/nix-config) and [atom-config](https://github.com/Gerschtli/atom-config)
+
+I am transitioning to a flakes-only setup within a mono-repo containing all configs. My atom-config will remain in a
+separate repository.
+
 # Dotfiles
 
 The main part of my dotfiles and user environment setup is configured in my
